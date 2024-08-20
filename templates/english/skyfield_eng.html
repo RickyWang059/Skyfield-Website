@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKYFIELD</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/skyfield.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cursor.css') }}">
+    <style>
+        body {
+               background: url("{{ url_for('static', filename='picture/test.gif') }}");
+        }
+    </style>
+    <script>
+    window.onload = function () {
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      window.scrollTo(0, 0);
+    }
+  </script>
+  
+</head>
+
+<body>
+  <div id="myCursor"></div>
+  <div id="circle"></div>
+  <div class="wrapper">
+    <div class="nav1">
+      <a class="custom-link" href="/mainpage_eng" data-text="MAIN PAGE"><img id="fade-in" src="{{ url_for('static', filename='picture/astrology.png') }}"></a>
+    </div>
+    <div class="content">
+      <div class="fig-container">
+      <img id="main_fig" src="{{ url_for('static', filename='picture/Black Frost.jpg') }}">
+      
+      <p style="text-align:center;" class="scroll-down">SCROLL DOWN</p>
+      <div class="scroll-down">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 16l-6-6h12l-6 6z" fill="currentColor"/>
+        </svg>
+      </div>
+      </div>
+      <div class="switch-container">
+          <a class="custom-link" href="/skyfield"><button class="switch">Tradional Chinese</button></a>
+          <button class="switch" style="color:#FFD700;">English</button>
+      </div>
+        <br><br>
+        <p>As the sun sets and night falls, the stars shimmer in the sky, captivating the hearts and minds of poets and scholars throughout the ages. What mysterious force governs the rhythmic cycle of day and night, orchestrating the rise and fall of the sun, moon, and stars? How deep is the abyss of the dark night sky? Where do we come from? Where are we heading? Do the heavens, the earth, and everything in between have a beginning and an end? These same questions have persisted for millennia, originally belonging to the realms of philosophy and religion. Now, we gradually unravel the mysteries of celestial bodies through scientific methods...
+        </p>
+      </br></br></br></br>
+        <h6 id="universe" style="color: black;">.</h6>
+        <div class="hr-container">
+          <h1><span class="hr-text">Stars in the Universe</span>
+          </h1>
+          <hr class="custom-hr">
+        </div>
+        <br><br>
+        <h2><a href="https://zh.wikipedia.org/wiki/%E6%81%92%E6%98%9F" id="change-color" style="color: white; font-size: 18px;" target="_blank"
+            data-text="WIKI">Stars</a></h2>
+        <img id="star" src="{{url_for('static', filename='picture/Star.jpg')}}">
+        <p>If we look at the night sky with our naked eyes, the twinkling stars we see, which are the brightest and most easily visible, are typically stars. Stars compose of a glowing plasma sphere formed by gravity, primarily consisting of gases such as hydrogen and helium. They continuously undergo nuclear fusion reactions within their cores. As a result, stars generate vast amounts of energy and radiate it in the form of electromagnetic waves, including visible light, in all directions, allowing us to see them in the night sky.</p>
+        <p>Our Sun is indeed a star. Compared to other stars, the Sun is generally considered to be of medium size, with a mass of about 1.989 × 10^30 kilograms (equivalent to 330,000 Earth masses) and a diameter exceeding 1.4 million kilometers (about 109 times the diameter of Earth). Objects influenced by the Sun's gravitational pull, including planets, asteroids, and comets, are generally distributed within a radius of about 4 light-years, which we consider the size of the solar system.</p>
+        <p>The closest star to the Sun is α Centauri in the constellation of Centaurus, located about 4.24 light-years away. Currently, within a radius of 20 light-years from the Sun, more than 100 stars have been discovered. Some of these stars exist in pairs or triplets, orbiting around a common center of mass, unlike our single Sun. Many of these stars also have planetary systems similar to our solar system. To date, we have discovered nearly 4,000 exoplanetary systems beyond our solar system, totaling over 5,000 confirmed exoplanets, and the discovery of new planetary systems and exoplanets continues.</p>
+        <p>Different masses of stars not only result in differences in size but also affect the internal nuclear fusion reactions and temperature. Consequently, we observe stars with varying brightness and colors. Additionally, since only the core of a star can reach conditions suitable for nuclear fusion (like the Sun's core), once the fusion fuel in the core (such as hydrogen in the Sun) is depleted, nuclear fusion reactions cease, leading the star to evolve into another type of star or other celestial objects.</p>
+        <br>
+        <h2><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E5%9B%A2" id="change-color" style="color: white; font-size: 18px;" target="_blank"
+            data-text="WIKI">Star Cluster</a></h2>
+        <img id="star" src="{{url_for('static', filename='picture/star cluster.jpg')}}">
+        <p>Star clusters, also known as stellar associations, are groups of stars. They can be classified into two types: globular clusters and open clusters. Globular clusters consist of thousands to millions of old stars tightly bound together by gravity. Open clusters, on the other hand, typically comprise only a few hundred stars, often young ones, and have a looser structure.</p>
+        <br>
+        <h2><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E4%BA%91" id="change-color" style="color: white; font-size: 18px;" target="_blank"
+            data-text="WIKI">Nebula</a></h2>
+        <img id="star" src="{{url_for('static', filename='picture/nebula.jpg')}}">
+        <p>Interstellar clouds, composed of cosmic dust, hydrogen, helium, and other ionized gases, are diffuse astronomical objects. Originally a term widely used in astronomy, it refers to any diffuse object in space, including those outside the Milky Way galaxy.</p>
+        <p>Nebulae are typically regions where stars are born and formed. In these areas, gases, dust, and other materials are compressed and accumulated, amassing significant mass. This gravitational attraction draws in more mass, eventually reaching a point where it's sufficient to form a star. The remaining materials can also form other celestial bodies such as planets and other objects within planetary systems.</p>
+        <br>
+        <h2><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E7%B3%BB" id="change-color" style="color: white; font-size: 18px;" target="_blank"
+            data-text="WIKI">Galaxy</a></h2>
+        <img id="star" src="{{url_for('static', filename='picture/galaxy.jpg')}}">
+        <p>A galaxy is a system composed of stars, stellar remnants, interstellar gas, dust, and dark matter, bound together by gravity. The term "galaxy" originates from the Greek word "isgalaxias" (γαλαξίας), which literally means "milky circle" or "milky way." Galaxies vary in size, ranging from dwarf galaxies with only a few hundred million (10^8) stars to giant galaxies containing upwards of a trillion (10^14) stars, all orbiting around their mass center.</p>
+        <br>
+        <h2><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E7%B3%BB%E7%BE%A4" id="change-color" style="color: white; font-size: 18px;" target="_blank"
+            data-text="WIKI">Galaxy Group</a></h2>
+        <p>A galaxy group is a cluster of roughly fewer than 50 galaxies that are gravitationally bound together. Our Milky Way galaxy belongs to a galaxy group known as the Local Group.</p>
+        <p>A galaxy group is the smallest collection of galaxies, typically containing fewer than 50 galaxies, with a diameter usually ranging from 1 to 2 megaparsecs (Mpc). They have a mass of approximately 10^13 solar masses, and the individual galaxies within them typically have velocities of around 150 km/s. However, this definition serves only as a reference point, as galaxy clusters with more galaxies and greater mass may also be classified as galaxy groups.</p>
+        <br>
+        <h2><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E7%B3%BB%E5%9B%A2" id="change-color" style="color: white; font-size: 18px;" target="_blank"
+            data-text="WIKI">Galaxy Cluster</a></h2>
+        <p>A galaxy cluster is a gravitational bound system composed of galaxies, typically spanning several million parsecs or million light-years and containing hundreds to thousands of galaxies. A galaxy cluster containing a small number of galaxies is called a galaxy group. The galaxy group where the Milky Way resides is called the Local Group, consisting of approximately 50 galaxies. A nearby galaxy cluster to the Local Group is the Virgo Cluster, which contains over 2500 galaxies.</p>
+        <p>Galaxy clusters are larger than galaxy groups, but there isn't a clear boundary between the two. When observed visually, galaxy clusters appear to be clusters of galaxies attracted to each other by gravitational forces. However, their velocities are too high to be bound solely by their mutual gravity, implying the presence of additional forces or components attracting them besides gravity.</p>
+    </br></br></br></br>
+      <h6 id="celestial_sphere" style="color: black;">.</h6>
+      <div class="hr-container">
+        <h1><span class="hr-text">Celestial Sphere</span>
+        </h1>
+        <hr class="custom-hr">
+      </div>
+      <br>
+      <p>The celestial sphere is an imaginary sphere with the Earth at its center, sharing the same axis of rotation, and having an infinite radius. All objects in the sky can be considered as projected onto the celestial sphere. The Earth's equator and geographic poles project onto the celestial sphere as the celestial equator and celestial poles, respectively. Stars at different distances from Earth have no physical connection to each other, but due to their projection onto the celestial sphere, they appear close together when viewed from our perspective, forming distinct patterns. Different civilizations have associated these patterns with various animals or objects through imagination and mythology, giving rise to the concept of "constellations."</p>
+      <img  id="star2" src="{{url_for('static', filename='picture/Celestial sphere.gif')}}"><img  id="star2" src="{{url_for('static', filename='picture/Celestial sphere.jpg')}}">
+      <br>
+      <h2>Celestial Equator</h2>
+      <p>The celestial equator is the circle where the plane of the Earth's equator intersects the celestial sphere. Similar to the Earth's equator, it divides the celestial sphere into the northern and southern hemispheres.</p>
+      <br>
+      <h2>Ecliptic</h2>
+      <p>The path of the Sun on the celestial sphere</p>
+      <br>
+      <h2>North Celestial Pole</h2>
+      <p>The North Celestial Pole is the point on the celestial sphere directly above the Earth's North Pole, where the Earth's axis intersects the celestial sphere. It is a fixed point in the sky around which all stars appear to rotate counterclockwise.</p>
+      <br>
+      <img id="star3" src="{{url_for('static', filename='picture/az al.jpg')}}"><img id="star3" src="{{url_for('static', filename='picture/ra dec.jpg')}}">
+      <h2>Altitude</h2>
+      <p>The altitude angle represents the angular distance of an object above the observer's horizon. It is measured in degrees, ranging from +90° at the zenith (directly overhead) to -90° at the nadir (directly below). For example, if the altitude of a celestial object is 45°, it would be positioned halfway between the horizon and the zenith in the sky.</p>
+      <br>
+      <h2>Azimuth</h2>
+      <p>The azimuth angle represents the position of an object along the horizon. It is measured in degrees clockwise from true north (the direction pointing towards the geographic North Pole). For example, an object with an azimuth angle of 90° would be in the observer's due east direction, while an object with an azimuth angle of 180° would be in the due south direction.</p>
+      <br>
+      <h2>Right Ascension (RA)</h2>
+      <p>Right Ascension (RA) is the angular distance measured eastward along the celestial equator from the vernal equinox point. It is equivalent to longitude on Earth. Due to historical reasons, it is not expressed in degrees but rather in hours, minutes, and seconds. For an observer on Earth, the sky "rotates" 360° within 24 hours, or "rotates" 15° within one hour. Therefore, one full rotation (360°) along the celestial equator corresponds to 24 hours of RA, and 1 hour of RA equals 15°. For example, if an object has an RA of 6 hours, it means it is located 90° eastward from the vernal equinox point along the celestial equator (15° × 6 hours).</p>
+      <br>
+      <h2>Declination (Dec)</h2>
+      <p>Declination (Dec) is the angular distance measured north or south of the celestial equator. Declination is equivalent to latitude on Earth. It is expressed in degrees, ranging from +90° (north celestial pole) to -90° (south celestial pole). For example, if an object has a declination of +30°, it means it is located one-third of the distance from the celestial equator to the North Pole.</p>
+      <br><br><br><br><br><br>
+    
+    </div>
+
+
+    <div class="nav2">
+
+
+      <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+      <a href="#" data-text="TOP"><button type="button" id="BackTop" class="toTop-arrow"></button></a>
+      <script>
+      $(function () {
+        $('#BackTop').click(function () {
+          $('html,body').animate({scrollTop: 0}, 333);
+        });
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 100) {
+            $('#BackTop').fadeIn(222);
+          } else {
+            $('#BackTop').stop().fadeOut(222);
+          }
+        }).scroll();
+      });
+      </script>
+
+      <nav class="nav-box">
+        <input type="checkbox" id="menu">
+        <label for="menu" class="line">
+          <div class="menu"></div>
+        </label>
+
+        <div class="menu-list">
+         <ul>
+          <li><a class="custom-link" href="#universe" id="change-color">Stars in the Universe</a></li>
+          <li><a class="custom-link" href="#celestial_sphere" id="change-color">Celestial Sphere</a></li>
+         </ul>
+        </div>
+     </nav>
+   </div>
+   </div>
+
+  <div class="footer">
+    <h2>For entertainment purposes only, non-profit, all rights reserved.</h2>
+  </div>
+  <script>
+    let cursor = document.getElementById("myCursor");
+    let circle = document.getElementById("circle");
+    window.addEventListener("mousemove", function (e) {
+      let x = e.clientX;
+      let y = e.clientY;
+      cursor.style.left = x - 20 + "px";
+      cursor.style.top = y - 20 + "px";
+      circle.style.left = x - 12 + "px";
+      circle.style.top = y - 12 + "px";
+    });
+
+    window.addEventListener("scroll", function (e) {
+      let x = event.clientX;
+      let y = event.clientY;
+      cursor.style.left = x - 20 + "px";
+      cursor.style.top = y - 20 + "px";
+      circle.style.left = x - 12 + "px";
+      circle.style.top = y - 12 + "px";
+    })
+
+  </script>
+  <script>
+    let links = document.querySelectorAll("a");
+
+    // 監聽每個超連結的 mouseover 事件
+    links.forEach(link => {
+      link.addEventListener("mouseover", function () {
+        // 改變特殊鼠標的尺寸
+        myCursor.style.width = "65px";
+        myCursor.style.height = "65px";
+        circle.style.width = "0px";
+        circle.style.height = "0px";
+        circle.style.boxShadow = "none";
+        // 獲取超連結的自定義文字內容屬性
+        let customText = link.getAttribute("data-text");
+
+        // 創建一個新的文字元素，並設置超連結的自定義文字內容
+        let textElement = document.createElement("div");
+        textElement.textContent = customText;
+        textElement.classList.add("cursor-text"); // 添加一個 CSS 類名以便於樣式設置
+
+        // 將文字元素添加到 myCursor 中
+        cursor.appendChild(textElement);
+      });
+
+      // 監聽 mouseout 事件以移除文字元素
+      link.addEventListener("mouseout", function () {
+        myCursor.style.width = "40px";
+        myCursor.style.height = "40px";
+        circle.style.width = "24px";
+        circle.style.height = "24px";
+        circle.style.boxShadow ="0px 0px 10px 2px rgba(250, 150, 50, 0.8), 0px 0px 20px 5px rgba(250, 102, 59, 0.6), 0px 0px 30px 10px rgba(250, 102, 59, 0.4)";
+        let textElement = document.querySelector(".cursor-text");
+        if (textElement) {
+          textElement.remove(); // 移除文字元素
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

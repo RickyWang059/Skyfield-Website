@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CREATER</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/creater.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/cursor.css') }}">
+  <!--設定背景圖片(flask下只能在這裡設定，不能用css) -->
+  <style>
+    body {
+      background: url("{{ url_for('static', filename='picture/meteor.gif') }}");
+    }
+  </style>
+  <!--重新整理時會自動回到頁面頂部 -->
+  <script src="{{ url_for('static', filename='js/refresh_to_top.js') }}"></script>
+
+</head>
+
+<body>
+  <div id="myCursor"></div>
+  <div id="circle"></div>
+  <div class="wrapper">
+    <div class="nav1">
+      <a class="custom-link" href="/mainpage" data-text="MAIN PAGE"><img id="fade-in"
+          src="{{ url_for('static', filename='picture/astrology.png') }}"></a>
+    </div>
+    <div class="content">
+      <div class="fig-container">
+        <img id="main_fig" src="{{ url_for('static', filename='picture/Kuma.png') }}">
+
+        <p style="text-align:center;" class="scroll-down">SCROLL DOWN</p>
+        <div class="scroll-down">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 16l-6-6h12l-6 6z" fill="currentColor" />
+          </svg>
+        </div>
+      </div>
+      <div class="switch-container">
+        <button class="switch" style="color:#FFD700;">繁體中文</button>
+        <a class="custom-link" href="/creater_eng"><button class="switch">English</button></a>
+      </div>
+      </br></br>
+      <h1 id="creater">CHART_CREATER</h1>
+      </br></br>
+      <h6 id="star_map" style="color: black;">.</h6>
+      <div class="hr-container">
+        <h1><span class="hr-text">STAR_MAP</span>
+        </h1>
+        <hr class="custom-hr">
+      </div>
+      </br>
+      <div class="star_map">
+        <div class="star_map1">
+          <h2 style="margin-left: 1em;">INTRODUCTION
+          </h2>
+          <p style="margin-left: 2em;">
+            輸入自訂的時間地點資訊，建立屬於自己的星空圖吧~~
+          </p>
+        </div>
+        <div class="star_map2">
+          <h2 style="margin-left: 1em;">SAMPLE
+          </h2>
+          <a class="custom-link" href="/generator1" data-text="START">
+            <img id="sample" src="{{ url_for('static', filename='picture/sample1.png') }}" alt="Sample">
+          </a>
+        </div>
+      </div>
+      <br><br><br><br>
+      <h6 id="detailed" style="color: black;">.</h6>
+      <div class="hr-container">
+        <h1><span class="hr-text">DETAILED STAR CHART</span>
+        </h1>
+        <hr class="custom-hr">
+      </div>
+      <br>
+      <div class="star_map">
+        <div class="star_map1">
+          <h2 style="margin-left: 1em;">INTRODUCTION
+          </h2>
+          <p style="margin-left: 2em;">
+            輸入自訂的時間地點資訊，建立具有豐富天文資訊的星座盤吧~~
+          </p>
+        </div>
+        <div class="star_map2">
+          <h2 style="margin-left: 1em;">SAMPLE
+          </h2>
+          <a class="custom-link" href="/generator2" data-text="START">
+            <img id="sample" src="{{ url_for('static', filename='picture/sample2.png') }}" alt="Sample">
+          </a>
+        </div>
+      </div>
+      <br><br><br><br>
+      <h6 id="orthographic_map" style="color: black;">.</h6>
+      <div class="hr-container">
+        <h1><span class="hr-text">ORTHOGRAPHIC MAP</span>
+        </h1>
+        <hr class="custom-hr">
+      </div>
+      </br>
+      <div class="star_map">
+        <div class="star_map1">
+          <h2 style="margin-left: 1em;">INTRODUCTION
+          </h2>
+          <p style="margin-left: 2em;">
+            輸入自訂的時間地點資訊，建立天球模型圖吧~~
+          </p>
+        </div>
+        <div class="star_map2">
+          <h2 style="margin-left: 1em;">SAMPLE
+          </h2>
+          <a class="custom-link" href="/generator3" data-text="START">
+            <img id="sample" src="{{ url_for('static', filename='picture/sample3.png') }}" alt="Sample">
+          </a>
+        </div>
+      </div>
+      <br><br><br><br>
+      </br></br></br></br></br></br>
+
+
+
+    </div>
+
+
+    <div class="nav2">
+
+      <!--設定返回頂部的按鈕 -->
+      <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+      <a href="#" data-text="TOP"><button type="button" id="BackTop" class="toTop-arrow"></button></a>
+      <script src="{{ url_for('static', filename='js/scroll_to_top.js') }}"></script>
+
+      <nav class="nav-box">
+        <input type="checkbox" id="menu">
+        <label for="menu" class="line">
+          <div class="menu"></div>
+        </label>
+
+        <div class="menu-list">
+          <ul>
+            <li><a class="custom-link" href="#star_map" id="change-color">Star Map</a></li>
+            <li><a class="custom-link" href="#detailed" id="change-color">Detailed Star Map</a></li>
+            <li><a class="custom-link" href="#orthographic_map" id="change-color">Orthographic Map</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="footer">
+    <h2>純屬娛樂性質，非營利目的，版權歸所有</h2>
+  </div>
+  <!--設定鼠標延遲效果 -->
+  <script src="{{ url_for('static', filename='js/cursor_circle.js') }}"></script>
+  <!--設定鼠標碰到超連結時會放大+文字 -->
+  <script src="{{ url_for('static', filename='js/mouse_link.js') }}"></script>
+
+</body>
+
+</html>

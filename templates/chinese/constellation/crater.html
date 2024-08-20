@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>巨爵座</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/constellation/crater.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cursor.css') }}">
+    <!--設定背景圖片(flask下只能在這裡設定，不能用css) -->
+    <style>
+        body {
+               background: url("{{ url_for('static', filename='picture/meteor.gif') }}");
+        }
+    </style>
+    <!--重新整理時會自動回到頁面頂部 -->
+    <script src="{{ url_for('static', filename='js/refresh_to_top.js') }}"></script>
+  
+</head>
+
+<body>
+  <div id="myCursor"></div>
+  <div id="circle"></div>
+  <div class="wrapper">
+    <div class="nav1">
+      <a class="custom-link" href="/constellation" data-text="BACK"><img id="fade-in" src="{{ url_for('static', filename='picture/astrology.png') }}"></a>
+    </div>
+    <div class="content" style="text-align: center;">
+     <div class="hr-container">
+      <h1><span class="hr-text">巨爵座</span>
+      </h1>
+      <hr class="custom-hr">
+     </div>
+     <br><br>
+       <div class="part1" id="part1">
+        <div class="info">
+          <h2>INFORMATION</h2>
+          <p>
+          <table>
+            <tr>
+              <td>
+                <li>拉丁名</li>
+              </td>
+              <td>:</td>
+              <td>Crater</td>
+            </tr>
+            <tr>
+              <td>
+                <li>縮寫</li>
+              </td>
+              <td>:</td>
+              <td>Crt</td>
+            </tr>
+            <tr>
+              <td>
+                <li>象徵物</li>
+              </td>
+              <td>:</td>
+              <td>杯子</td>
+            </tr>
+            <tr>
+              <td>
+                <li>赤經</li>
+              </td>
+              <td>:</td>
+              <td>11</td>
+            </tr>
+            <tr>
+              <td>
+                <li>赤緯</li>
+              </td>
+              <td>:</td>
+              <td>−16</td>
+            </tr>
+            <tr>
+              <td>
+                <li>面積</li>
+              </td>
+              <td>:</td>
+              <td>282平方度 (第53位)</td>
+            </tr>
+            <tr>
+              <td>
+                <li>可見範圍</li>
+              </td>
+              <td>:</td>
+              <td>65°N至90°S</td>
+            </tr>
+            <tr>
+              <td>
+                <li>最亮星</li>
+              </td>
+              <td>:</td>
+              <td>翼宿七（巨爵座δ）</td>
+            </tr>
+            <tr>
+              <td>
+                <li>特徵</li>
+              </td>
+              <td>:</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <li>鄰近星座</li>
+              </td>
+              <td>:</td>
+              <td>獅子座 | 六分儀座 | 長蛇座 | 烏鴉座<br>室女座</td>
+            </tr>
+          </table>
+          </p>
+        </div>
+        <div class="cover">
+            
+            
+            <div>
+                <div id="1" class="classification">
+                    <img id="pic1" src="{{ url_for('static', filename='picture/constellation/crater/1.png') }}">
+                </div>
+                <div id="2" class="classification">
+                    <img id="pic2" src="{{ url_for('static', filename='picture/constellation/crater/2.png') }}">
+                </div>
+                <div id="3" class="classification">
+                    <img id="pic3" src="{{ url_for('static', filename='picture/constellation/crater/3.png') }}">
+                </div>
+                <div id="4" class="classification">
+                    <img id="pic4" src="{{ url_for('static', filename='picture/constellation/crater/4.png') }}">
+                </div>
+            </div>
+            <!--建立四選一顯示圖片 -->
+            <script src="{{ url_for('static', filename='js/select_figure_con.js') }}"></script>
+            <div class="btn-container">
+                <button onclick="showContent('1')" class="btn">基本星座</button>
+                <button onclick="showContent('2')" class="btn">星座連線</button>
+                <button onclick="showContent('3')" class="btn">星座圖案</button>
+                <button onclick="showContent('4')" class="btn">完整圖示</button>
+            </div>
+        </div>
+      </div>
+      </br></br></br>
+      <div class="part2" id="part2">
+        <div class="fig">
+          <br>
+          <img id="pic5" src="{{ url_for('static', filename='picture/constellation/crater/5.png') }}">
+        </div>
+        <div class="intro">
+          <h2>INTRODUCTION</h2>
+          <h3 style="text-align:left;">如何找到巨爵座？</h3>
+          <p style="text-align:left;">順著北斗七星的杓柄，從天權連一路連到搖光後繼續畫一條弧線，依序經過牧夫座大角星、室女座角宿一、四邊形的烏鴉座後繼續延伸，即可找到暗暗的巨爵座。</p>
+
+        </div>
+      </div>
+      </br></br></br></br>
+      <div>
+      <div class="part3" id="part3">
+        <div class="myth">
+          <h2><a href="#part4" onclick="toggleHide('part4')" title="" type="button" style="color: white;" id="change-color"
+              data-text="MORE">MYTH</a></h2>
+          <p>
+            大英雄伊阿宋在眾英雄和科爾基斯國王的女兒美狄亞的幫助下，歷盡千難萬險，終於取到金羊毛，並順利地榮歸故里，但他的叔父珀利阿斯卻背信棄義，不肯將王位交還給伊阿宋。伊阿宋十分氣憤，決心采取行動復仇。美狄亞十分同情自己丈夫的不幸遭遇，決定幫助他報仇雪恨。她在珀利阿斯的公主們面前施展魔法，把一只老羊殺死並切成碎塊，放入一只魔鼎內，加入魔液後再加水燒煮。待鼎里的東西煮熟後，一只小羊便從魔鼎中跳了出來。小公主們目睹了這一奇跡，便要美狄亞幫助她們的父親恢覆青春。她們趁珀利阿斯熟睡的時候，將他殺死然後剁成碎塊放入魔鼎中燒煮。當小公主們知道上當後，已為時過晚。後來珀利阿斯的兒子繼承了王位，將伊阿宋夫婦驅逐出境並將魔鼎放到神王宙斯的神廟里以哀悼他被殺害的父王。宙斯為了不使魔鼎留在世上，落入壞人手中危害於人，便將魔鼎升上天空成為巨爵座
+          </p>
+          
+        </div>
+        <div class="fig2">
+          <br><br>
+          <img id="pic6" src="{{ url_for('static', filename='picture/constellation/crater/6.jpg') }}">
+        </div>
+      </div>
+      <br><br><br><br><br><br>
+      <div class="part4" id="part4" style="text-align:left; display:none;">
+      <h2>巨爵座的故事──</h2>
+      <p>傳說在離希臘很遠很遠的黑海岸邊，有個地方叫科爾喀斯（今高加索地區），那里有一件稀世之寶——金羊毛。多少英雄豪傑為了得到它而蹋上了艱險的路程，但他們沒有一個能成功，很多人甚至連寶物的影子都沒看到，就倒在漫長的征途中了。</p>
+      <p>儘管如此，依然有人不甘心，英雄伊阿宋就在摩拳擦掌，躍躍欲試。不過，他的想法與眾不同。原來，伊阿宋是國王埃宋的兒子。埃宋是個賢明的君主，他把國家治理得井井有條，人民安居樂業。可好景不長，他的弟弟珀利阿斯陰謀篡奪了王位，並把埃宋父子倆趕出國境。埃宋只好帶著幼子四處流浪，苦苦尋求覆仇的機會。後來，他終於找到了喀戎。喀戎在古希臘神話中是著名的教育家，很多傑出的人物都出自他的門下。小伊阿宋眼神中的英氣和他不幸的遭遇深深打動了這位長者，喀戎毅然答應了埃宋的懇求，決心盡自己平生所能，將伊阿宋培養成才。</p>
+      <p>珀利阿斯更是被伊阿宋英俊而鎮定的容貌所震撼，“這可真是個難對付的家夥！好在，他畢竟只是個乳臭未幹的小孩子。”一個狠毒的念頭在他心里生成了。“賢侄，你知道金羊毛的故事吧？多少自稱英雄的人為了它死於非命，沒有一個能得手。看來，這世界上真是沒有英雄了！不過，孩子，如果你能把金羊毛取回來，那我甘心為此獻出神聖的王位。</p>
+      <p>可是藝高人膽大，伊阿宋勇敢而平靜地接受了挑戰。珀利阿斯樂壞了，他知道伊阿宋是個一諾千金的人，只等著看他的好下場了。為了完成這一壯舉，伊阿宋請來了多位他師從喀戎時的同窗好友。這些人個個都是頂天立地的豪傑，每個人都有一身絕世功夫。在智慧女神雅典娜的幫助下，希臘最優秀的船匠阿耳戈斯為他們造了一艘大船。這條船用在海水中永不腐爛的木料制成，船上雕梁畫棟，更襯托出英雄們飛揚的神采。它可以容納五十名槳手，並取造船者的名字而命名為“阿爾戈”號，意即“輕快的船”。據說，這是希臘人駛向大海的第一艘大船。
+走進神話世界的大門</p>
+      <p>英雄們來到了科爾喀斯，決定先去晉見國王埃厄忒斯。伊阿宋叫大家放下手中的武器，他和幾位同伴拿著象征和平的橄欖枝走進王宮。伊阿宋並不隱瞞，他把來意原原本本地向國王說了。國王聽了他的話不禁哈哈大笑，“年輕人，我佩服你的坦誠。可金羊毛是我國的傳國之寶，怎能輕易外傳呢？你如果真要得到這件寶物，那你必須做到兩件事，我才會答應你的請求。</p>
+      <p>“您說吧，為了復仇和我的誓言，做什麽我都在所不辭！“首先，你必須能幹我經常做的一件事。我有兩頭神牛，它們生有銅蹄，鼻孔噴火，兇猛無比。黎明時，我駕著它們去耕種四畝貧瘠的土地。當土塊被犁起後，我撒下一種可怕的毒龍的牙齒。到了晚上收獲的全是兇惡的武士，他們從四面八方向我擁來，我要用劍把他們一一刺死。其次，在掛著金羊毛的樹林里，有一條毒龍日夜守候著。你必須想辦法制服它，才能取得最後的成功。”</p>
+      <p>聽著這些令人毛骨悚然的描述，英雄們驚呆了。國王心里暗暗發笑，他就知道這是誰也幹不了的，否則，傳國之寶怎能穩若磐石呢？伊阿宋也是心中無底，但事已至此，只得硬著頭皮答應下來。回到住所，眾人都心事重重，誰也不願多說一句話。這時，國王的女兒美狄亞忽然來訪。原來，剛才國王會見眾英雄時她也在場。伊阿宋的英雄氣概立刻使她心生愛意，她決定不惜一切代價幫助心上人。
+歡迎來到本站，一定要記下域名</p>
+      <p>伊阿宋終於完成了國王所說的二件事。伊阿宋勝利地取回了金羊毛，可是無論怎麽據理力爭，珀利阿斯就是不認賬。伊阿宋雖是個頂天立地的英雄，可對這種無賴還真沒辦法。</p>
+      <p>倒是美狄亞下得了狠心。一天，珀利阿斯的幾個女兒去樹林里散步。走到一棵樹下，她們看見美狄亞正坐在那兒。美狄亞的面前放著一口大缽，缽下火焰正旺，缽中的水燒得滾開。過了一會兒，美狄亞牽來一只羊。這只羊又老又病，晃晃悠悠地都快站不住了。美狄亞一刀把羊殺死，並切成很多碎塊兒放進了缽里。煮了一會兒，只見美狄亞閉上眼，口中念念有詞。然後，她猛地掀開缽蓋，奇跡發生了，里面竟跳出一只活蹦亂跳的小羊羔！</p>
+      <p>珀利阿斯的女兒們被眼前的情景驚呆了。她們想到了年邁多病的父親，要是他老人家也能返老還童該多好啊！於是她們就去問美狄亞，這個缽是不是也能把人變年輕。</p>
+      <p>美狄亞知道她們已經上當了，便肯定地回答了她們，還甜言蜜語地慫恿她們。聽了美狄亞的話，天真的女孩們高興地跑回家，趁父親熟睡之機把他砍成了碎塊。可這些碎塊放在缽中無論怎麽煮，年輕的父親也沒能從里面走出來。女兒們這才知道中了毒計，但一切都晚了，她們只能抱頭痛哭！珀利阿斯當然是罪有應得，只是美狄亞的手段也過於殘忍了。宙斯有些看不過去，他怕美狄亞再用這個魔缽去害人，便將它提升到天界，這就是巨爵座。</p>
+       
+      </div>
+      <script src="{{ url_for('static', filename='js/togglehide.js') }}"></script>
+      </div>
+    </div>
+    <div class="nav2">
+
+     <!--設定返回頂部的按鈕 -->
+     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+     <a href="#" data-text="TOP"><button type="button" id="BackTop" class="toTop-arrow"></button></a>
+     <script src="{{ url_for('static', filename='js/scroll_to_top.js') }}"></script>
+
+     <nav class="nav-box">
+      <input type="checkbox" id="menu">
+      <label for="menu" class="line">
+        <div class="menu"></div>
+      </label>
+
+      <div class="menu-list">
+         <ul>
+          <li><a class="custom-link" href="#part1" id="change-color">Information</a></li>
+          <li><a class="custom-link" href="#part2" id="change-color">Introduction</a></li>
+          <li><a class="custom-link" href="#part3" id="change-color">Myth</a></li>
+         </ul>
+      </div>
+     </nav>
+    </div>
+  </div>
+  <div class="footer">
+    <h2>純屬娛樂性質，非營利目的，版權歸所有</h2>
+  </div>
+  <!--設定鼠標延遲效果 -->
+  <script src="{{ url_for('static', filename='js/cursor_circle.js') }}"></script>
+  <!--設定鼠標碰到超連結時會放大+文字 -->
+  <script src="{{ url_for('static', filename='js/mouse_link.js') }}"></script>
+
+</body>
+
+</html>

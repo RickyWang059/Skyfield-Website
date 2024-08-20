@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKYFIELD</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/skyfield.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/cursor.css') }}">
+  <!--設定背景圖片(flask下只能在這裡設定，不能用css) -->
+  <style>
+    body {
+      background: url("{{ url_for('static', filename='picture/test.gif') }}");
+    }
+  </style>
+  <!--重新整理時會自動回到頁面頂部 -->
+  <script src="{{ url_for('static', filename='js/refresh_to_top.js') }}"></script>
+
+</head>
+
+<body>
+  <div id="myCursor"></div>
+  <div id="circle"></div>
+  <div class="wrapper">
+    <div class="nav1">
+      <a class="custom-link" href="/mainpage" data-text="MAIN PAGE"><img id="fade-in"
+          src="{{ url_for('static', filename='picture/astrology.png') }}"></a>
+    </div>
+    <div class="content">
+      <div class="fig-container">
+        <img id="main_fig" src="{{ url_for('static', filename='picture/Black Frost.jpg') }}">
+
+        <p style="text-align:center;" class="scroll-down">SCROLL DOWN</p>
+        <div class="scroll-down">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 16l-6-6h12l-6 6z" fill="currentColor" />
+          </svg>
+        </div>
+      </div>
+      <div class="switch-container">
+        <button class="switch" style="color:#FFD700;">繁體中文</button>
+        <a class="custom-link" href="/skyfield_eng"><button class="switch">English</button></a>
+      </div>
+      <br><br>
+      <p>
+        夕陽落下，夜幕低垂，繁星爭輝，這般景觀自古以來不知勾發了多少詩人墨客的思愁與好奇的心靈。是什麼神秘力量讓日夜規律交替、牽動日月星辰東昇西落？漆黑的夜空有多深邃？我們從哪裡來？將往何處去？天、地，以及天地之間的這一切有起點、終點嗎？千百年來同樣的問題一再出現，這些原本只屬於哲學與宗教範疇的問題，如今我們以科學的方法逐漸揭開宇宙天體的奧秘...
+      </p>
+      </br></br></br></br>
+      <h6 id="universe" style="color: black;">.</h6>
+      <div class="hr-container">
+        <h1><span class="hr-text">宇宙中的星體</span>
+        </h1>
+        <hr class="custom-hr">
+      </div>
+      <br><br>
+      <h2><a href="https://zh.wikipedia.org/wiki/%E6%81%92%E6%98%9F" id="change-color"
+          style="color: white; font-size: 18px;" target="_blank" data-text="WIKI">恆星</a></h2>
+      <img id="star" src="{{url_for('static', filename='picture/Star.jpg')}}">
+      <p>
+        如果我們用肉眼看星空，那星空中最亮最容易被看見的一閃一閃小星星，通常就是恆星。恆星是一種由重力凝聚在一起的一顆球型發光電漿的星體，恆星是由氫、氦等氣體所組成，且內部持續進行核融合反應的天體。因此恆星會不停產生巨大的能量，並以電磁波的形式（包含可見光）往各個方向輻射，讓我們可以在夜空中看見它們。
+      </p>
+      <p>
+        我們的太陽也是一顆恆星，相較於其他恆星，太陽大致上屬於中等身材，質量約1030公斤（是30萬顆地球的質量），直徑超過100萬公里（是地球的100倍）。受到太陽萬有引力影響的天體（包括行星、小行星、彗星），大致分布在直徑4光年的範圍裡面，我們把這個範圍當作太陽系的大小。
+      </p>
+      <p>
+        與太陽最近的恆星是南門二（半人馬座α），距離大約4光年。目前在距離太陽20光年的範圍內，已經發現100多顆以上的恆星。有些恆星是兩顆或三顆一組，互相繞行彼此共同的質量中心，和我們單獨一顆的太陽並不一樣。很多恆星周圍同樣存在類似太陽系一樣的行星系統，目前我們已經發現將近4000個太陽系外的行星系統，總共5000顆以上的系外行星，而且還在持續發現新的行星系統與系外行星。
+      </p>
+      <p>
+        質量不同的恆星，除了會有大小顆的差別之外，也會影響到恆星內部的核融合反應和溫度，導致我們看見恆星的亮度和顏色也會不一樣。除此之外，由於只有恆星核心部分可以達到核融合的條件（例如太陽的日核），所以只要核心部分的核融合反應物用完（例如太陽的氫），核融合反應就會停止，恆星就會演化成另一個種類的恆星或是其他天體。
+      </p>
+      <br>
+      <h2><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E5%9B%A2" id="change-color"
+          style="color: white; font-size: 18px;" target="_blank" data-text="WIKI">星團</a></h2>
+      <img id="star" src="{{url_for('static', filename='picture/star cluster.jpg')}}">
+      <p>即恆星集團，又稱恆星雲，是恆星組成的集團，可以區分為兩種類型：球狀星團是由成千上萬顆老年恆星被萬有引力緊密束縛在一起的恆星集團；而疏散星團一般只有數百顆恆星，而且通常都很年輕的恆星組成，是結構較為鬆散的恆星集團。</p>
+      <br>
+      <h2><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E4%BA%91" id="change-color"
+          style="color: white; font-size: 18px;" target="_blank" data-text="WIKI">星雲</a></h2>
+      <img id="star" src="{{url_for('static', filename='picture/nebula.jpg')}}">
+      <p>是宇宙塵、氫氣、氦氣和其他電漿體聚集的星際雲。原本是天文學上通用的名詞，泛指任何天文上的擴散天體，包括在銀河系之外的星系</p>
+      <p>星雲通常也是孕育並形成恆星的區域。在這個區域形成的氣體、塵埃和其他材料擠在一起，聚集了巨大的質量，這吸引了更多的質量，最後大到足以形成恆星。剩餘的材料還可以形成行星和行星系的其它天體。</p>
+      <br>
+      <h2><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E7%B3%BB" id="change-color"
+          style="color: white; font-size: 18px;" target="_blank" data-text="WIKI">星系</a></h2>
+      <img id="star" src="{{url_for('static', filename='picture/galaxy.jpg')}}">
+      <p>是由恆星、恆星遺骸、星際氣體、塵埃和暗物質等組成，並受到引力綁定的系統。Galaxy 這個詞源於希臘
+        isgalaxias（γαλαξίας），字面的意思是「銀河」。星系的大小從只有幾億顆（108）恆星的矮星系到擁有上兆顆（1014）恆星的巨大星系，都繞著其質量中心運行。</p>
+      <br>
+      <h2><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E7%B3%BB%E7%BE%A4" id="change-color"
+          style="color: white; font-size: 18px;" target="_blank" data-text="WIKI">星系群</a></h2>
+      <p>星系群是約少於50個星系左右，因為重力的拘束而聚集在一起的集團；。我們的銀河屬於被稱為本星系群的成員。</p>
+      <p>
+        星系群是最小的星系集合體，它們擁有的數量通常少於50個，直徑通常在1-2Mpc，而它們的質量大約是1013太陽質量，個別星系擴散的速度大約是150km/s。然而，此一定義僅能做為參考，有數量更多、質量更大的星系集團也會被歸類為星系群。
+      </p>
+      <br>
+      <h2><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E7%B3%BB%E5%9B%A2" id="change-color"
+          style="color: white; font-size: 18px;" target="_blank" data-text="WIKI">星系團</a></h2>
+      <p>
+        是由星系組成的自引力束縛體系，通常尺度在數百萬秒差距或數百萬光年，包含了數百到數千個星系。包含了少量星系的星系集團叫做星系群。銀河系所在的星系群叫做本星系群，成員星系大約為50個。距離本星系群較近的一個星系團是室女座星系團，包含了超過2500個星系
+      </p>
+      <p>
+        星系團比星系群大，但是兩者之間並沒有明確的界線。當以目視觀測，星系團似乎是由星系之間相互的引力吸引在一起的集團。但是，它們的速度都太大，不是它們共有的重力可以束縛住的，這意味著除了重力的束縛之外，還有額外的力量或元件的吸引力。
+      </p>
+      </br></br></br></br>
+      <h6 id="celestial_sphere" style="color: black;">.</h6>
+      <div class="hr-container">
+        <h1><span class="hr-text">天球</span>
+        </h1>
+        <hr class="custom-hr">
+      </div>
+      <br>
+      <p>
+        天球是在天文學和導航上想出的一個與地球同球心，並有相同的自轉軸，半徑無限大的球。天空中所有的物體都可以當成投影在天球上的物件。地球的赤道和地理極點投射到天球上，就是天球赤道和天極。不同遠近的星星它們彼此沒有關連，但是因為投影在天球上，以致從我們這個角度看出去，似乎相隔很近而呈現某種特殊圖案，不同文明伴隨著想像及神話，將這些圖案賦予不同的動物或器物形象，這便是「星座」的概念。
+      </p>
+      <img id="star2" src="{{url_for('static', filename='picture/Celestial sphere.gif')}}"><img id="star2"
+        src="{{url_for('static', filename='picture/Celestial sphere.jpg')}}">
+      <br>
+      <h2>天球赤道</h2>
+      <p>地球赤道平面與天球相交的圓。就像地球赤道一樣，它將天球分為北半球和南半球。</p>
+      <br>
+      <h2>黃道</h2>
+      <p>太陽在天球上的路徑</p>
+      <br>
+      <h2>天北極</h2>
+      <p>天球上位于地球北極正上方的點，地球軸與天球相交。它是天空中的一個固定點，所有星星看起來都圍繞它以逆時針方向旋轉。</p>
+      <br>
+      <img id="star3" src="{{url_for('static', filename='picture/az al.jpg')}}"><img id="star3"
+        src="{{url_for('static', filename='picture/ra dec.jpg')}}">
+      <h2>高度角</h2>
+      <p>物體在觀察者地平線上方的角距離。它以度為單位測量，範圍從天頂的+90°到天底的-90°。例如，如果天空物體的高度為45°，則它將位于地平線和天頂之間的中間位置。</p>
+      <br>
+      <h2>方位角</h2>
+      <p>表示物體沿地平線的位置。它是從真北（指向地理北極的方向）順時針測量的度數。例如，如果一個物體的方位角為90°，則它在觀察者的正東方向，而有180°方位角的物體則在正南方向。</p>
+      <br>
+      <h2>赤經（RA）</h2>
+      <p>
+        測量物體從春分點沿天赤道向東方向的角距離。赤經相當于地球經度。由于曆史原因，它不是以度表示，而是以時、分、秒表示。對于地球上的觀察者來說，天空在24小時內“轉動”360°，或者在一小時內“轉動”15°。因此，天赤道一周（360°）對應赤經24小時，赤經1小時等于15°。例如，如果一個物體的赤經為6時，則意味著它位于春分點以東90°（15°
+        × 6時）沿天赤道。</p>
+      <br>
+      <h2>赤緯（Dec）</h2>
+      <p>測量天體赤道以北或以南物體的角距離。赤緯度相當于地球緯度。它以度數表示，範圍從+90°（北天極）到-90°（南天極）。例如，如果一個物體的赤緯為+30°，這意味著它位于天赤道以北到世界北極距離的三分之一處。</p>
+      <br><br><br><br><br><br>
+
+    </div>
+
+
+    <div class="nav2">
+
+
+      <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+      <a href="#" data-text="TOP"><button type="button" id="BackTop" class="toTop-arrow"></button></a>
+      <script src="{{ url_for('static', filename='js/scroll_to_top.js') }}"></script>
+
+      <nav class="nav-box">
+        <input type="checkbox" id="menu">
+        <label for="menu" class="line">
+          <div class="menu"></div>
+        </label>
+
+        <div class="menu-list">
+          <ul>
+            <li><a class="custom-link" href="#universe" id="change-color">宇宙的星體</a></li>
+            <li><a class="custom-link" href="#celestial_sphere" id="change-color">天球</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="footer">
+    <h2>純屬娛樂性質，非營利目的，版權歸所有</h2>
+  </div>
+  <!--設定鼠標延遲效果 -->
+  <script src="{{ url_for('static', filename='js/cursor_circle.js') }}"></script>
+  <!--設定鼠標碰到超連結時會放大+文字 -->
+  <script src="{{ url_for('static', filename='js/mouse_link.js') }}"></script>
+
+</body>
+
+</html>

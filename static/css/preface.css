@@ -1,0 +1,68 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    background-size: 100% 100%;
+    cursor: none;
+}
+
+
+#MoonCursor{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  opacity: 0.8;
+  left: 80%; 
+  top: 20%;
+  z-index: 9999;
+}
+
+#preface{
+    width:100%;
+    height:auto;
+}
+
+#full-page-link {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    cursor: none;
+
+}
+
+#welcomeText {
+      position: absolute;
+      font-size: 3em;
+      color: #B107ED;
+      opacity: 0;
+      animation: fadeIn 5s forwards;
+      animation-delay: 1s;
+    }
+#enterText {
+      
+      font-size: 1em;
+      color: #CC9AEF;
+      opacity: 0;
+      animation: fadeIn 3s forwards;
+      margin-bottom: -20%;
+      animation-delay: 4s;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }

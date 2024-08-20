@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/question_show.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/cursor.css') }}">
+  <!--設定背景圖片(flask下只能在這裡設定，不能用css) -->
+  <style>
+    body {
+      background: url("{{ url_for('static', filename='picture/meteor.gif') }}");
+    }
+  </style>
+  <!--重新整理時會自動回到頁面頂部 -->
+  <script src="{{ url_for('static', filename='js/refresh_to_top.js') }}"></script>
+  <!--建立表單除錯彈跳視窗 -->
+  <script src="{{ url_for('static', filename='js/warning.js') }}"></script>
+</head>
+
+<body>
+  <div id="myCursor"></div>
+  <div id="circle"></div>
+  <div class="wrapper">
+    <div class="nav1">
+      <a class="custom-link" href="{{ url_for('mainpage') }}" data-text="MAIN PAGE"><img id="fade-in"
+          src="{{ url_for('static', filename='picture/astrology.png') }}"></a>
+    </div>
+    <div class="content" >
+      <div class="hr-container">
+        <h1><span class="hr-text">天文知識小測驗</span>
+        </h1>
+        <hr class="custom-hr">
+      </div>
+      <div class="app">
+        <div class="quiz">
+          <h2 id="question-number"></h2>
+          <h2 id="question">Question goes here</h2>
+          <div id="answer-buttons">
+            <!-- 這裡會動態插入選項按鈕 -->
+          </div>
+          <form id="answer-form" action="{{ url_for('show_question') }}" method="post">
+            <input type="hidden" name="answer" id="selected-answer">
+            <button type="submit" id="next-btn">Next</button>
+          </form>
+        </div>
+      </div>
+      
+      <script>
+          document.addEventListener('DOMContentLoaded', (event) => {
+              const questionIndex = {{ question_index }};
+              fetch('{{ url_for('quiz_data') }}')
+                  .then(response => response.json())
+                  .then(data => {
+                      const questions = data;
+                      const question = questions[questionIndex - 1];
+                      document.getElementById('question-number').innerText = `Q${questionIndex}:`; // 題目編號
+                      document.getElementById('question').innerText = question[1]; // 題目內容
+                      const answerButtons = document.getElementById('answer-buttons');
+                      answerButtons.innerHTML = ''; // 清空選項區域
+                      for (let i = 2; i <= 5; i++) {
+                          const btn = document.createElement('button');
+                          btn.className = 'btn';
+                          btn.innerText = `(${i - 1}) ${question[i]}`;
+                          btn.dataset.correct = (i - 1) == question[6]; // ANSWER
+                          btn.onclick = (e) => {
+                              const isCorrect = e.target.dataset.correct === 'true';
+                              if (isCorrect) {
+                                  e.target.classList.add('correct');
+                              } else {
+                                  e.target.classList.add('incorrect');
+                              }
+                              document.querySelectorAll('.btn').forEach(button => {
+                                  button.disabled = true;
+                                  if (button.dataset.correct === 'true') {
+                                      button.classList.add('correct');
+                                  }
+                              });
+                              document.getElementById('selected-answer').value = i - 1;
+                              document.getElementById('next-btn').style.display = 'block';
+                          };
+                          answerButtons.appendChild(btn);
+                      }
+                  });
+
+              document.getElementById('next-btn').addEventListener('click', function() {
+                  document.getElementById('answer-form').submit();
+              });
+          });
+      </script>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+
+  </div>
+  <div class="nav2">
+
+    <!--設定返回頂部的按鈕 -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+    <a href="#" data-text="TOP"><button type="button" id="BackTop" class="toTop-arrow"></button></a>
+    <script src="{{ url_for('static', filename='js/scroll_to_top.js') }}"></script>
+
+    <nav class="nav-box">
+      <input type="checkbox" id="menu">
+      <label for="menu" class="line">
+        <div class="menu"></div>
+      </label>
+
+      <div class="menu-list">
+
+      </div>
+    </nav>
+  </div>
+  </div>
+  </div>
+  <div class="footer">
+    <h2>純屬娛樂性質，非營利目的，版權歸所有</h2>
+  </div>
+  <!--設定鼠標延遲效果 -->
+  <script src="{{ url_for('static', filename='js/cursor_circle.js') }}"></script>
+  <!--設定鼠標碰到超連結時會放大+文字 -->
+  <script src="{{ url_for('static', filename='js/mouse_link.js') }}"></script>
+
+</body>
+
+</html>

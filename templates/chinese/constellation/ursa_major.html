@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大熊座</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/constellation/ursa_major.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cursor.css') }}">
+    <!--設定背景圖片(flask下只能在這裡設定，不能用css) -->
+    <style>
+        body {
+               background: url("{{ url_for('static', filename='picture/meteor.gif') }}");
+        }
+    </style>
+    <!--重新整理時會自動回到頁面頂部 -->
+    <script src="{{ url_for('static', filename='js/refresh_to_top.js') }}"></script>
+  
+</head>
+
+<body>
+  <div id="myCursor"></div>
+  <div id="circle"></div>
+  <div class="wrapper">
+    <div class="nav1">
+      <a class="custom-link" href="/constellation" data-text="BACK"><img id="fade-in" src="{{ url_for('static', filename='picture/astrology.png') }}"></a>
+    </div>
+    <div class="content" style="text-align: center;">
+     <div class="hr-container">
+      <h1><span class="hr-text">大熊座</span>
+      </h1>
+      <hr class="custom-hr">
+     </div>
+     <br><br>
+       <div class="part1" id="part1">
+        <div class="info">
+          <h2>INFORMATION</h2>
+          <p>
+          <table>
+            <tr>
+              <td>
+                <li>拉丁名</li>
+              </td>
+              <td>:</td>
+              <td>Ursa Major</td>
+            </tr>
+            <tr>
+              <td>
+                <li>縮寫</li>
+              </td>
+              <td>:</td>
+              <td>UMa</td>
+            </tr>
+            <tr>
+              <td>
+                <li>象徵物</li>
+              </td>
+              <td>:</td>
+              <td>巨熊</td>
+            </tr>
+            <tr>
+              <td>
+                <li>赤經</li>
+              </td>
+              <td>:</td>
+              <td>10.67</td>
+            </tr>
+            <tr>
+              <td>
+                <li>赤緯</li>
+              </td>
+              <td>:</td>
+              <td>55.38</td>
+            </tr>
+            <tr>
+              <td>
+                <li>面積</li>
+              </td>
+              <td>:</td>
+              <td>1280平方度(第3位)</td>
+            </tr>
+            <tr>
+              <td>
+                <li>可見範圍</li>
+              </td>
+              <td>:</td>
+              <td>90°N至30°S</td>
+            </tr>
+            <tr>
+              <td>
+                <li>最亮星</li>
+              </td>
+              <td>:</td>
+              <td>玉衡 (大熊座ε)</td>
+            </tr>
+            <tr>
+              <td>
+                <li>特徵</li>
+              </td>
+              <td>:</td>
+              <td>全天第三大星座<br>包含北斗七星</td>
+            </tr>
+            <tr>
+              <td>
+                <li>鄰近星座</li>
+              </td>
+              <td>:</td>
+              <td>天龍座 | 鹿豹座 | 天貓座 | 小獅座<br>獅子座 | 后髮座 | 獵犬座 | 牧夫座</td>
+            </tr>
+          </table>
+          </p>
+        </div>
+        <div class="cover">
+            
+            
+            <div>
+                <div id="1" class="classification">
+                    <img id="pic1" src="{{ url_for('static', filename='picture/constellation/ursa_major/1.png') }}">
+                </div>
+                <div id="2" class="classification">
+                    <img id="pic2" src="{{ url_for('static', filename='picture/constellation/ursa_major/2.png') }}">
+                </div>
+                <div id="3" class="classification">
+                    <img id="pic3" src="{{ url_for('static', filename='picture/constellation/ursa_major/3.png') }}">
+                </div>
+                <div id="4" class="classification">
+                    <img id="pic4" src="{{ url_for('static', filename='picture/constellation/ursa_major/4.png') }}">
+                </div>
+            </div>
+            <!--建立四選一顯示圖片 -->
+            <script src="{{ url_for('static', filename='js/select_figure_con.js') }}"></script>
+            <div class="btn-container">
+                <button onclick="showContent('1')" class="btn">基本星座</button>
+                <button onclick="showContent('2')" class="btn">星座連線</button>
+                <button onclick="showContent('3')" class="btn">星座圖案</button>
+                <button onclick="showContent('4')" class="btn">完整圖示</button>
+            </div>
+        </div>
+      </div>
+      </br></br></br>
+      <div class="part2" id="part2">
+        <div class="fig">
+          <br>
+          <img id="pic5" src="{{ url_for('static', filename='picture/constellation/ursa_major/5.png') }}">
+        </div>
+        <div class="intro">
+          <h2>INTRODUCTION</h2>
+          <h3 style="text-align:left;">如何找到大熊座？</h3>
+          <p style="text-align:left;">首先面向北方，找到鼎鼎大名的北斗七星，這7顆星所排成的「勺子」十分明亮，即使是沒有經驗的觀測者也能輕鬆的辨認。這個明亮且著名的星群，自勺口往勺柄數過去分別是天樞、天璇、天璣、天權(這顆比較暗一點)、玉衡、開陽(是一顆雙星，視力好的話肉眼就可以看得出兩顆星，亮的開陽跟暗的輔星)、搖光；在西方的星座中，北斗七星構成了大熊座的身體及尾巴，再從天樞和天璇可以向前連出大熊的頭及前腳，天璣則可以延伸出後腳。</p>
+          <h3 style="text-align:left;">如何使用北斗七星找到其他天體？</h3>
+          <p style="text-align:left;">從天樞往天璇連線的長度延伸5倍就可以找到勾陳一，也就是現在的北極星。</p>
+
+        </div>
+      </div>
+      </br></br></br></br>
+      <div>
+      <div class="part3" id="part3">
+        <div class="myth">
+          <h2><a href="#part4" onclick="toggleHide('part4')" title="" type="button" style="color: white;" id="change-color"
+              data-text="MORE">MYTH</a></h2>
+          <p>美貌與技藝兼具的女神卡列斯托(Callisto)，女神被幻化成不同樣子的宙斯迷惑，介入了他的家庭，並且懷有了小阿卡斯(Arcas)，消息傳到全宇宙中最善妒的天后赫拉耳裡，就把卡列斯托變成一隻醜陋的大熊並迫使母子分離，</p>
+          <p>不久之後，阿爾卡司成為一名有名的獵人。有一天，不知情的他決定去獵殺他母親變成的那頭大熊。宙斯發現了，為了阻止弒母的慘劇發生，宙斯最後不得已將阿爾卡司也變成熊。生氣的希拉將母熊和小熊雙雙拋入星空，成為大熊和小熊星座。</p>
+        
+        </div>
+        <div class="fig2">
+          <br>
+          <img id="pic6" src="{{ url_for('static', filename='picture/constellation/ursa_major/6.jpg') }}">
+        </div>
+      </div>
+      <br><br><br><br><br><br>
+      <div class="part4" id="part4" style="text-align:left; display:none;">
+      <h2>大熊座、小熊座的故事──天后希拉的忌妒</h2>
+      <h3>風流的丈夫</h3>
+      <p>很久很久以前曾經有過一個金色時代，當時的世界是一片祥和，人類的心比起今時今日不知純真幾百倍，既沒有戰爭也沒有仇恨，就連被尊稱為人類之父的宙斯，也住在希臘奧林匹斯山的山頂，就近看護著整個世界。<br><br>
+         在奧林匹斯山的神殿中，除了天帝宙斯外，還住著他美麗的妻子希拉，以及掌管各種不同職務的諸神們，像是太陽神阿波羅、月亮女神雅狄密斯、戰神亞歷斯等等。只是相較於人類的善良單純，這個時期的諸神們，卻常常有一些任性脫軌的舉動出現，讓奧林匹斯山爆發一些緊張衝突。<br><br>
+         就拿天帝宙斯來說好了，他仗著自己是萬物之神，長得又是英俊瀟灑，雖然已經有了妻子希拉，不過他風流的習性還是從來不改。因為宙斯的觀念認為，美麗的事物實在太叫人動心，他無法違背自己的天性不去與她們親近。<br><br>
+         不過希拉也不是省油的燈，她對自己的智慧、美麗相當引以為傲，尤其又是貴為天帝宙斯的妻子，她的自尊心當然就比任何一位女神都更加強烈。她絕對不允許有人敢向自己的天后寶座挑釁，所以每當發現宙斯又愛上其他女子時，希拉就會嚴厲懲罰這些女子，好讓她們知難而退。<br><br>
+         只是宙斯並不會因為希拉的強悍善妒就有所收斂，他畢竟是世間至尊的天神，風流韻事還是一樁接著一樁地發生。</p>
+      <br>
+      <h3>如花似玉的卡麗斯托公主</h3>
+      <p>俗話說「紅顏多薄命」，如花似玉的阿爾卡迪亞王國公主──卡麗斯托就不巧應驗了這樣的悲慘宿命。<br><br>
+         「卡麗斯托」的意思，是指世間最美麗的人，公主的父親──阿爾卡迪亞王國的國王里卡旺，就是因為公主出生時實在太美麗了，所以才會給她取名為卡麗斯托公主。而在阿爾卡迪亞王國裡，全國人民也都深以這位公主的美貌為榮。公主生日時，全國人民會從四處八方摘取美麗奇特的花朵為她祝賀，有才華的詩人們也會為公主創作許多歌詠的詩篇，甚至就連鄰國的王子們為了目睹美麗的卡麗斯托公主，也爭相前來阿爾卡迪亞求親。<br><br>
+         不過卡麗斯托公主對這些讚美，並不會感到特別地高興，因為天真浪漫的她總相信，一定有人會發覺她美貌之外的優點，在遼闊的草原中與她不期而遇。所以對於那些前來求親的王子，卡麗斯托公主總是理都不想理，因為在她心中，早就想好自己的真命天子應該有的模樣。<br><br>
+         在某年生日的幾天過後，這個她心中期待已久的人選終於出現。在一個風和日麗的上午，心情甚佳的卡麗斯托公主一邊唱歌一邊摘著花，就在她漫步回王宮的途中，一位看起來英俊挺拔的年輕獵人出現在她眼前。<br><br>
+         就像是美夢成真一般，這個獵人與卡麗斯托公主心目中所勾畫的形象完全一致，不，應該說是更加地優秀。他的臉龐英氣煥發、他的身材雄壯威武、他的舉止優雅得宜、他的言談親切有禮，全身上下散發出一種熱情奔放的氣息，與公主過去認識的男孩們截然不同。<br><br>
+         尤其年輕獵人似乎不知道卡麗斯托公主的身分，可是他並不會因此就對她有所輕蔑，也不會像其他初次見面的人一般，被自己的美貌驚訝得失魂落魄。這位獵人的態度是那樣地不卑不亢，顯得自信十足卻又柔情無限，才第一眼，公主就明白真愛已經出現。<br><br>
+         其實，卡麗斯托公主會有這樣的反應，一切都在宙斯的料想之中，因為當他到阿爾卡迪亞王國巡視時，馬上就被公主的美貌所吸引，於是他便運用自己的神力，變身為公主所喜歡的模樣，因此想要擄獲她的芳心，簡直是易如反掌。<br><br>
+         當然，公主並不知道這位年輕人就是天帝宙斯，她只是單純地以為身著獵人裝扮的宙斯是個普通的年輕人，兩人相遇一切都是上天的安排。於是就像天雷勾動地火一般，他們很快地就墜入情網，公主每天都會到王宮外面與他相會，卡麗斯托公主相信自己終於找到理想的夫婿。</p>
+      <br>
+      <h3>真相的揭穿</h3>
+      <p>不久之後，卡麗斯托公主發現自己懷孕了，她對情郎提出了結婚的要求。可是每當提到這個問題時，由宙斯所變身的情郎就會開始顧左右而言他，遲遲不肯給她一個肯定的答覆。<br><br>
+         卡麗斯托公主雖然有點苦惱，不過她以為是對方礙於她是公主的身分而有所顧忌，也就不再苦苦相逼。反正她心中已經做好打算，只要請求父王里卡旺國王做主，她的未來根本不用擔心。<br><br>
+         就在這時候，宙斯那善妒的妻子希拉已經得到通報，自己丈夫又勾搭上了凡間女子，對方甚至還囂張地懷了孕，怒不可遏的希拉，決定要給這個不知檢點的女人一個狠狠的教訓。於是，希拉趁著宙斯返回天上的時候，私下跑去找卡麗斯托公主攤牌。<br><br>
+         「你就是卡麗斯托嗎？果然長得不錯！難怪宙斯會為你神魂顛倒。」<br><br>
+         「妳是誰？妳到底在說什麼，為什麼我一點也聽不懂？」卡麗斯托公主回答。<br><br>
+         「我是誰？我是天后希拉，每天與妳見面的情郎就是我的丈夫，也就是天帝宙斯。妳好大的膽子，居然敢搶我的老公！」希拉咬牙切齒的回應。<br><br>
+         「什麼！他是天帝宙斯？難怪他一直不肯結婚。」<br><br>
+         卡麗斯托公主知道大事不妙了，因為天后希拉的善妒是天下皆知，自己恐怕無法躲開希拉的報復，就算父王里卡旺國王出面也一樣。越想越害怕的她，只好跪地求饒。「對不起，我不曉得他的身分，請您原諒我。」<br><br>
+         妒火中燒的希拉哪會就此善罷甘休，她的詛咒馬上脫口而出：「妳以為自己很美就可以勾引別人的丈夫嗎？那麼我就要讓你面目全非，變成醜不拉嘰的熊。」<br><br>
+         說時遲那時快，受到詛咒的卡麗斯托公主，身體立刻出現了變化。<br><br>
+         她過去最引以為傲的雪白肌膚，慢慢地長出棕色的熊毛；她纖細的手指，也開始長出凶狠的鉤爪；而她清亮的聲音，也變成人人聞之色變的低吼聲。轉眼之間，美麗的公主變成了醜陋的大熊。</p>
+       <br>       
+       <h3>艱苦的歲月</h3>
+       <p>變成熊的卡麗斯托公主一開始還不太能夠適應自己的變化，她想接近過去的家人朋友告訴他們自己悲慘的遭遇，但誰曉得那些人全都嚇得落荒而逃，還放出獵狗來趕跑她。逼於無奈，卡麗斯托公主只好躲近森林深處一個人過活。<br><br>
+          有好幾次卡麗斯托公主想死掉算了，可是一想到肚子裡的小孩，她只好堅強地活下去。幾個月之後，卡麗斯托公主生下了一個可愛的男嬰。<br><br>
+          但棘手的是，一隻熊是無法養育人類的小孩，她既無法餵奶給他吃，也無法給他衣服穿。於是卡麗斯托公主只好在樹下鋪滿了柔軟的草，祈禱有人能發現這個小孩，將他帶回去養育。<br><br>
+          所幸一個路過的獵人發現了嬰孩便把他帶回家撫養，取名為亞爾卡斯。<br><br>
+          十五年後，亞爾卡斯已經長成一個優秀的獵人，他對自己的箭法十分有自信。一天，他在森林裡遇到一隻好大好大的熊。<br><br>
+         「太好了，如果能射殺一隻這麼大的熊，父親一定會非常高興的！」亞爾卡斯信心滿滿地將箭搭在弓上。<br><br>
+          其實這隻大熊正是卡麗斯托公主，他一看到與宙斯長得十分相像的亞爾卡斯，就知道他是自己的孩子，一時之間顧不了自己已是一隻熊，開心地朝亞爾卡斯奔去，嘴巴裡還不停地說道：「孩子，你不認得我了嗎？我是你的母親啊！」<br><br>
+          可是就亞爾卡斯來說，眼前見到的也只是一隻大熊，而且對方不但朝自己飛奔過來，嘴巴還發出可怕的嘶吼聲，此時不射殺更待何時。<br><br>
+          就在悲劇即將發生的千鈞一髮之際，天上忽然刮起了大風，將大熊及亞爾卡斯一起捲到天空中。原來是宙斯發現了他們，為了不想使這對可憐的母子再度面臨悲慘的命運，他及時伸出了援手。<br><br>
+          於是他將亞爾卡斯變成小熊星座，然後再將卡麗斯托公主變成大熊星座，分離的兩人終於重新在天空相聚。</p>
+        <br>          
+        <h3>不願罷休的希拉</h3>          
+        <p>可是，這樣的結果令希拉非常地不滿，她認為這對母子搶了她的丈夫不僅沒有得到懲罰，居然還變成星座在天空中閃耀，實在是太可恨了。<br><br>
+           「不過，變成星座的事實已成定局了，於今之計只好設法讓他們不得休息。」<br><br>
+           希拉想出了一個辦法，她前去找海神波賽頓幫忙，要求海神不要讓大熊星座與小熊星座像其他的星座一樣，可以每天進入海中休息一次。希拉強烈表示，這兩個星座必須永遠留在北方的天空運轉。<br><br>
+           「為何要這麼做呢？」海神覺得很奇怪。<br><br>
+           於是希拉就把前因後果敘述一次，並且加油添醋地說，宙斯為了那個不要臉的女子想趕走自己，她逼不得已只好將對方變成熊。沒想到後來宙斯發現之後，又把他們母子放在天上變成星座，簡直太不把她這個做妻子的放在眼裡了。<br><br>
+           海神很明白反抗天后希拉只會招來可怕的怨恨，於是只好答應她的要求，讓大熊星座及小熊星座日夜不停運轉，終年不得沒入海中休息。</p>
+        <br><br><br><br><br><br>   
+      </div>
+      <script src="{{ url_for('static', filename='js/togglehide.js') }}"></script>
+      </div>
+    </div>
+    <div class="nav2">
+
+     <!--設定返回頂部的按鈕 -->
+     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+     <a href="#" data-text="TOP"><button type="button" id="BackTop" class="toTop-arrow"></button></a>
+     <script src="{{ url_for('static', filename='js/scroll_to_top.js') }}"></script>
+
+     <nav class="nav-box">
+      <input type="checkbox" id="menu">
+      <label for="menu" class="line">
+        <div class="menu"></div>
+      </label>
+
+      <div class="menu-list">
+         <ul>
+          <li><a class="custom-link" href="#part1" id="change-color">Information</a></li>
+          <li><a class="custom-link" href="#part2" id="change-color">Introduction</a></li>
+          <li><a class="custom-link" href="#part3" id="change-color">Myth</a></li>
+         </ul>
+      </div>
+     </nav>
+    </div>
+  </div>
+  <div class="footer">
+    <h2>純屬娛樂性質，非營利目的，版權歸所有</h2>
+  </div>
+  <!--設定鼠標延遲效果 -->
+  <script src="{{ url_for('static', filename='js/cursor_circle.js') }}"></script>
+  <!--設定鼠標碰到超連結時會放大+文字 -->
+  <script src="{{ url_for('static', filename='js/mouse_link.js') }}"></script>
+
+</body>
+
+</html>

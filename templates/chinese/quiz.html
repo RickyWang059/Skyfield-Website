@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astronomy Knowledge Quiz</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/cursor.css') }}">
+  <!--設定背景圖片(flask下只能在這裡設定，不能用css) -->
+  <style>
+    body {
+      background: url("{{ url_for('static', filename='picture/meteor.gif') }}");
+    }
+  </style>
+  <!--重新整理時會自動回到頁面頂部 -->
+  <script src="{{ url_for('static', filename='js/refresh_to_top.js') }}"></script>
+  <!--建立表單除錯彈跳視窗 -->
+  <script src="{{ url_for('static', filename='js/warning.js') }}"></script>
+</head>
+
+<body>
+  <div id="myCursor"></div>
+  <div id="circle"></div>
+  <div class="wrapper">
+    <div class="nav1">
+      <a class="custom-link" href="{{ url_for('mainpage') }}" data-text="MAIN PAGE"><img id="fade-in"
+          src="{{ url_for('static', filename='picture/astrology.png') }}"></a>
+    </div>
+    <div class="content" style="text-align: center;">
+      <div class="hr-container">
+        <h1><span class="hr-text">天文知識小測驗</span>
+        </h1>
+        <hr class="custom-hr">
+      </div>
+      <!--表單回傳 -->
+      <div class="app">
+        <form action="{{ url_for('start_quiz') }}" method="post">
+          <h3 style="text-align:left; color:#001e4d;">歡迎來到天文知識小測驗~~</h3>
+          <p style="text-align:left; color:#001e4d;">題目共有五題，加油!!</p>
+          <p style=" text-align:left; color:red;">**注意!!選項一經點擊即送出答案，請好好思考再作答喔~~</p>
+          <button type="submit" class="btn" style="text-align:center;">開始測驗</button>
+        </form>
+      </div>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+
+  </div>
+  <div class="nav2">
+
+    <!--設定返回頂部的按鈕 -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+    <a href="#" data-text="TOP"><button type="button" id="BackTop" class="toTop-arrow"></button></a>
+    <script src="{{ url_for('static', filename='js/scroll_to_top.js') }}"></script>
+
+    <nav class="nav-box">
+      <input type="checkbox" id="menu">
+      <label for="menu" class="line">
+        <div class="menu"></div>
+      </label>
+
+      <div class="menu-list">
+
+      </div>
+    </nav>
+  </div>
+  </div>
+  </div>
+  <div class="footer">
+    <h2>純屬娛樂性質，非營利目的，版權歸所有</h2>
+  </div>
+  <!--設定鼠標延遲效果 -->
+  <script src="{{ url_for('static', filename='js/cursor_circle.js') }}"></script>
+  <!--設定鼠標碰到超連結時會放大+文字 -->
+  <script src="{{ url_for('static', filename='js/mouse_link.js') }}"></script>
+
+</body>
+
+</html>

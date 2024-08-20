@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>牧夫座</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/constellation/bootes.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/cursor.css') }}">
+  <!--設定背景圖片(flask下只能在這裡設定，不能用css) -->
+  <style>
+    body {
+      background: url("{{ url_for('static', filename='picture/meteor.gif') }}");
+    }
+  </style>
+  <!--重新整理時會自動回到頁面頂部 -->
+  <script src="{{ url_for('static', filename='js/refresh_to_top.js') }}"></script>
+</head>
+
+<body>
+  <div id="myCursor"></div>
+  <div id="circle"></div>
+  <div class="wrapper">
+    <div class="nav1">
+      <a class="custom-link" href="/constellation" data-text="BACK"><img id="fade-in"
+          src="{{ url_for('static', filename='picture/astrology.png') }}"></a>
+    </div>
+    <div class="content" style="text-align: center;">
+      <div class="hr-container">
+        <h1><span class="hr-text">牧夫座</span>
+        </h1>
+        <hr class="custom-hr">
+      </div>
+      <br><br>
+      <div class="part1" id="part1">
+        <div class="info">
+          <h2>INFORMATION</h2>
+          <p>
+          <table>
+            <tr>
+              <td>
+                <li>拉丁名</li>
+              </td>
+              <td>:</td>
+              <td>Boötes</td>
+            </tr>
+            <tr>
+              <td>
+                <li>縮寫</li>
+              </td>
+              <td>:</td>
+              <td>Boo</td>
+            </tr>
+            <tr>
+              <td>
+                <li>象徵物</li>
+              </td>
+              <td>:</td>
+              <td>放牧人</td>
+            </tr>
+            <tr>
+              <td>
+                <li>赤經</li>
+              </td>
+              <td>:</td>
+              <td>13h 36.1m ~ 15h 49.3m</td>
+            </tr>
+            <tr>
+              <td>
+                <li>赤緯</li>
+              </td>
+              <td>:</td>
+              <td>+7.36° to +55.1°</td>
+            </tr>
+            <tr>
+              <td>
+                <li>面積</li>
+              </td>
+              <td>:</td>
+              <td>907平方度(第13位)</td>
+            </tr>
+            <tr>
+              <td>
+                <li>可見範圍</li>
+              </td>
+              <td>:</td>
+              <td>90°N至35°S</td>
+            </tr>
+            <tr>
+              <td>
+                <li>最亮星</li>
+              </td>
+              <td>:</td>
+              <td>大角星（牧夫座α）</td>
+            </tr>
+            <tr>
+              <td>
+                <li>特徵</li>
+              </td>
+              <td>:</td>
+              <td>大角星為全天第四亮星<br>大角星為春季大三角中的一員</td>
+            </tr>
+            <tr>
+              <td>
+                <li>鄰近星座</li>
+              </td>
+              <td>:</td>
+              <td>獵犬座 | 后髮座 | 北冕座 | 天龍座<br>武仙座 | 巨蛇座 | 室女座 | 大熊座</td>
+            </tr>
+          </table>
+          </p>
+        </div>
+        <div class="cover">
+
+
+          <div>
+            <div id="1" class="classification">
+              <img id="pic1" src="{{ url_for('static', filename='picture/constellation/bootes/1.png') }}">
+            </div>
+            <div id="2" class="classification">
+              <img id="pic2" src="{{ url_for('static', filename='picture/constellation/bootes/2.png') }}">
+            </div>
+            <div id="3" class="classification">
+              <img id="pic3" src="{{ url_for('static', filename='picture/constellation/bootes/3.png') }}">
+            </div>
+            <div id="4" class="classification">
+              <img id="pic4" src="{{ url_for('static', filename='picture/constellation/bootes/4.png') }}">
+            </div>
+          </div>
+          <!--建立四選一顯示圖片 -->
+          <script src="{{ url_for('static', filename='js/select_figure_con.js') }}"></script>
+          <div class="btn-container">
+            <button onclick="showContent('1')" class="btn">基本星座</button>
+            <button onclick="showContent('2')" class="btn">星座連線</button>
+            <button onclick="showContent('3')" class="btn">星座圖案</button>
+            <button onclick="showContent('4')" class="btn">完整圖示</button>
+          </div>
+        </div>
+      </div>
+      </br></br></br>
+      <div class="part2" id="part2">
+        <div class="fig">
+          <br>
+          <img id="pic5" src="{{ url_for('static', filename='picture/constellation/bootes/5.png') }}">
+        </div>
+        <div class="intro">
+          <h2>INTRODUCTION</h2>
+          <h3 style="text-align:left;">如何找到牧夫座？</h3>
+          <p style="text-align:left;">順著北斗七星的杓柄，從天權連一路連到搖光後繼續畫一條弧線，可以找到明亮的大角，以它為尖點可以畫出水滴形(或是魚形)的牧夫座。</p>
+          <h3 style="text-align:left;">春季大三角</h3>
+          <p style="text-align:left;">大角星與室女座角宿一、獅子座五帝座一共同組成春季大三角，如果再加上獵犬座的常陳一就成為春季大鑽石。</p>
+
+        </div>
+      </div>
+      </br></br></br></br>
+      <div>
+        <div class="part3" id="part3">
+          <div class="myth">
+            <h2><a href="#part4" onclick="toggleHide('part4')" title="" type="button" style="color: white;"
+                id="change-color" data-text="MORE">MYTH</a></h2>
+            <p>
+              在希臘神話中，奧林匹斯山頂的主神宙斯和妻子赫拉，用法術把美麗的仙女卡利斯托和他的孩子阿卡斯變成了大熊座、小熊座。生性傲慢又妒忌的那赫拉還不甘心，又請海神波塞冬（Poseidon）派出一個獵人，帶上兩隻獵犬(獵犬座)，到天上追趕這兩頭熊，永遠不許它們到地平線下去休息。這個獵人就是牧夫座。
+            </p>
+            <p>牧夫座的大角星(Arcturus)這個字是從希臘文的Αρκτοῦρος所演變而來的，意為「熊的看守者」。</p>
+          </div>
+          <div class="fig2">
+            <br>
+            <img id="pic6" src="{{ url_for('static', filename='picture/constellation/bootes/6.jpg') }}">
+          </div>
+        </div>
+        <br><br><br><br><br><br>
+        <div class="part4" id="part4" style="text-align:left; display:none;">
+          <h2>頂天立地的巨人——牧夫座</h2>
+          <p>
+            在希獵神話中，遠古時期的神族分為兩派：泰坦巨神族和奧林帕斯神族，最後由宙斯所領導的奧林帕斯神族獲勝，而泰坦巨神族的領導者－阿特拉斯，則被宙斯處以背負頂天的苦刑。沒錯！就像中國神話的盤古一樣，需要腳踩著地、手頂起天，人類才能在天地之間生活無虞。頂天的任務對於身強體壯的泰坦巨神來說並非難事，但神是長生不死的，永久背負天空實在相當苦悶難熬。
+            話說當時有個蛇髮女妖梅杜莎，只要和她四目相接的生物都會馬上變成石頭，後來被人類英雄柏修斯給斬殺。有一天柏修斯騎著飛馬經過奧林帕斯山，阿特拉斯再也受不了頂天的苦刑，遂請求柏修斯的協助。善良的柏修斯緩緩拿出梅杜莎的頭顱，阿特拉斯定睛一看，馬上變成一尊石像，但在變成石像前，臉上已露出一抹淺淺的微笑。
+          </p>
+          <br><br><br><br><br><br><br>
+        </div>
+        <script src="{{ url_for('static', filename='js/togglehide.js') }}"></script>
+      </div>
+    </div>
+    <div class="nav2">
+
+      <!--設定返回頂部的按鈕 -->
+      <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+      <a href="#" data-text="TOP"><button type="button" id="BackTop" class="toTop-arrow"></button></a>
+      <script src="{{ url_for('static', filename='js/scroll_to_top.js') }}"></script>
+
+      <nav class="nav-box">
+        <input type="checkbox" id="menu">
+        <label for="menu" class="line">
+          <div class="menu"></div>
+        </label>
+
+        <div class="menu-list">
+          <ul>
+            <li><a class="custom-link" href="#part1" id="change-color">Information</a></li>
+            <li><a class="custom-link" href="#part2" id="change-color">Introduction</a></li>
+            <li><a class="custom-link" href="#part3" id="change-color">Myth</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="footer">
+    <h2>純屬娛樂性質，非營利目的，版權歸所有</h2>
+  </div>
+  <!--設定鼠標延遲效果 -->
+  <script src="{{ url_for('static', filename='js/cursor_circle.js') }}"></script>
+  <!--設定鼠標碰到超連結時會放大+文字 -->
+  <script src="{{ url_for('static', filename='js/mouse_link.js') }}"></script>
+
+</body>
+
+</html>

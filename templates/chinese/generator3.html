@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generator3</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/generator3.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/cursor.css') }}">
+  <!--設定背景圖片(flask下只能在這裡設定，不能用css) -->
+  <style>
+    body {
+      background: url("{{ url_for('static', filename='picture/meteor.gif') }}");
+    }
+  </style>
+  <!--重新整理時會自動回到頁面頂部 -->
+  <script src="{{ url_for('static', filename='js/refresh_to_top.js') }}"></script>
+  <!--建立表單除錯彈跳視窗 -->
+  <script src="{{ url_for('static', filename='js/warning2.js') }}"></script>
+</head>
+
+<body>
+  <div id="myCursor"></div>
+  <div id="circle"></div>
+  <div class="wrapper">
+    <div class="nav1">
+      <a class="custom-link" href="{{ url_for('creater') }}" data-text="CREATER"><img id="fade-in"
+          src="{{ url_for('static', filename='picture/astrology.png') }}"></a>
+    </div>
+    <div class="content" style="text-align: center;">
+      <div class="hr-container">
+        <h1><span class="hr-text">ORTHOGRAPHIC MAP</span>
+        </h1>
+        <hr class="custom-hr">
+      </div>
+      </br>
+      <!--表單回傳 -->
+      <form action="/generator3" method="post">
+        <div id="location_time">
+          <div class="form">
+            <p><label for="location">地點:</label></p>
+            <input class="form-name" placeholder="請輸入地點" type="text" id="location" name="location" required
+              autocomplete="off"><br>
+            <p style="color:red;">{{location_error}}</p>
+          </div>
+          <br>
+          <div class="form">
+            <p><label for="year">年份 (YYYY):</label></p>
+            <input class="form-name" placeholder="請輸入年份(1550~2650)" type="number" id="year" name="year" required
+              autocomplete="off"><br>
+          </div>
+          <br>
+          <div class="form">
+            <p><label for="month">月份 (MM):</label></p>
+            <input class="form-name" placeholder="請輸入月份" type="number" id="month" name="month" required
+              autocomplete="off"><br>
+          </div>
+          <br>
+          <div class="form">
+            <p><label for="day">日期 (DD):</label></p>
+            <input class="form-name" placeholder="請輸入日期" type="number" id="day" name="day" required
+              autocomplete="off"><br>
+            <p style="color:red;">{{date_error}}</p>
+          </div>
+          <br>
+          <div class="form">
+            <p><label for="hour">小時 (HH):</label></p>
+            <input class="form-name" placeholder="請輸入小時" type="number" id="hour" name="hour" required
+              autocomplete="off"><br>
+          </div>
+          <br>
+          <div class="form">
+            <p><label for="minute">分鐘 (MM):</label></p>
+            <input class="form-name" placeholder="請輸入分鐘" type="number" id="minute" name="minute" required
+              autocomplete="off"><br>
+          </div>
+          <br>
+          <br>
+          <div class="checkbox">
+            <input class="form-name" type="checkbox" id="draw_lines_names" name="draw_lines_names">
+            <label for="draw_lines_names">星座連線與名稱(僅英文)</label>
+            <input class="form-name" type="checkbox" id="draw_constellation_border" name="draw_constellation_border">
+            <label for="draw_constellation_border">星座界線</label><br>
+            <input class="form-name" type="checkbox" id="draw_ecliptic" name="draw_ecliptic">
+            <label for="draw_ecliptic">黃道</label>
+            <input class="form-name" type="checkbox" id="draw_celestial_equator" name="draw_celestial_equator">
+            <label for="draw_celestial_equator">天球赤道</label>
+            <input class="form-name" type="checkbox" id="draw_milky_way" name="draw_milky_way">
+            <label for="draw_milky_way">銀河</label><br>
+            <input class="form-name" type="checkbox" id="draw_planet" name="draw_planet">
+            <label for="draw_planet">行星</label>
+          </div>
+          <br>
+          <a class="custom-link" data-text="SUBMIT"><button type="submit" class="btn">送出</button></a>
+        </div>
+      </form>
+      <br><br>
+    </div>
+
+  </div>
+  <div class="nav2">
+
+    <!--設定返回頂部的按鈕 -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+    <a href="#" data-text="TOP"><button type="button" id="BackTop" class="toTop-arrow"></button></a>
+    <script src="{{ url_for('static', filename='js/scroll_to_top.js') }}"></script>
+
+    <nav class="nav-box">
+      <input type="checkbox" id="menu">
+      <label for="menu" class="line">
+        <div class="menu"></div>
+      </label>
+
+      <div class="menu-list">
+
+      </div>
+    </nav>
+  </div>
+  </div>
+  </div>
+  <div class="footer">
+    <h2>純屬娛樂性質，非營利目的，版權歸所有</h2>
+  </div>
+  <!--設定鼠標延遲效果 -->
+  <script src="{{ url_for('static', filename='js/cursor_circle.js') }}"></script>
+  <!--設定鼠標碰到超連結時會放大+文字 -->
+  <script src="{{ url_for('static', filename='js/mouse_link.js') }}"></script>
+
+</body>
+
+</html>

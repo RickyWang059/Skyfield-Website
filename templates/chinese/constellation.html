@@ -1,0 +1,2813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONSTELLATION</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/constellation.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cursor.css') }}">
+    <!--設定背景圖片(flask下只能在這裡設定，不能用css) -->
+    <style>
+        body {
+               background: url("{{ url_for('static', filename='picture/test.gif') }}");
+        }
+    </style>
+    <!--重新整理時會自動回到頁面頂部 -->
+    <script src="{{ url_for('static', filename='js/refresh_to_top.js') }}"></script>
+
+</head>
+
+<body>
+  <div id="myCursor"></div>
+  <div id="circle"></div>
+  <div class="wrapper">
+    <div class="nav1">
+      <a class="custom-link" href="/mainpage" data-text="MAIN PAGE"><img id="fade-in" src="{{ url_for('static', filename='picture/astrology.png') }}"></a>
+    </div>
+    <div class="content">
+      <div class="fig-container">
+      <img id="main_fig" src="{{ url_for('static', filename='picture/King Frost.jpg') }}">
+
+      <p style="text-align:center;" class="scroll-down">SCROLL DOWN</p>
+      <div class="scroll-down">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 16l-6-6h12l-6 6z" fill="currentColor"/>
+        </svg>
+      </div>
+      </div>
+      <div class="switch-container">
+          <button class="switch" style="color:#FFD700;">繁體中文</button>
+          <a class="custom-link" href="/constellation_eng"><button class="switch">English</button></a>
+      </div>
+      <br><br>
+      <p>星座是指天上一群群的恆星組合。自從古代以來，人類便把三五成群的恆星與他們神話中的人物或器具聯繫起來，這些迷思的綜合稱之為「星座」。星座的劃分及命名在不同的文明不盡相同，直到1930年，國際天文學聯合會為了統一繁雜的星座劃分，以中世紀傳下來的古希臘傳統星座為基礎，用精確的邊界把天空分為88個正式的星座，使天空多數恆星都屬於某一特定星座。</p>
+      <p>在三維的宇宙中，這些恆星其實相互間不一定有實際關係，就算其在天球這一個球殼面上的位置相近，它們實際之間可能相距很遠。如果我們身處銀河中另一太陽系，我們看到的星空將會完全不同。</p>
+        </br></br></br></br>
+        <h6 id="meaning" style="color: black;">.</h6>
+        <div class="hr-container">
+          <h1><span class="hr-text">星座的意義和應用</span>
+          </h1>
+          <hr class="custom-hr">
+        </div>
+        <br><br>
+        <p>恆星或星座的起落在古代常常用於導航和時間的確定。古埃及通過觀測天狼星的偕日升來確定一年的開始；在有些地區，通過恆星觀測確定方位的古老技術仍有保存。星座及其本身代表的文學意象也常常出現在文人墨客的作品當中。</p>
+        <p>雖然星座的重要性在現代已經相對降低，但是對於夜空愛好者來說，星座並沒有失去它的魅力。通過其引人入勝的傳說，星座在天文學普及方面起到了極其重要的作用。每當發生顯著的重大天象時，天文學家、科普工作者和媒體總會在社會上，特別是年輕人之間掀起一股天文學熱潮。</p>
+        </br>
+        </br></br></br></br>
+        <h6 id="motion" style="color: black;">.</h6>
+        <div class="hr-container">
+          <h1><span class="hr-text">星座的運動</span>
+          </h1>
+          <hr class="custom-hr">
+        </div>
+        <br><br>
+        <p>星座看起來隨著天球運動是由於地球自身的運動引起的，其中對星空變化較為顯著的乃地球的自轉和公轉。由於地球自轉，星空背景每天繞天軸轉動一圈；星空也隨著季節的變化而緩慢變化，經過一年之後，星空與一年之前的星空幾乎一致。基本的星座週期運動如下:</p>
+        </br>
+        <div>
+        <!--設定按鈕可以顯示隱藏內容 -->
+        <h2><a href="#diurnal_motion" onclick="toggleHide('diurnal_motion')" title="" type="button" style="color: white;" id="change-color"
+            data-text="OPEN">周日運動</a></h2>
+        <div id="diurnal_motion" style="display: none;">
+        <p>由於地球是由西向東轉，使得天球上的太陽、月球等眾多星球每天看起來都是東方升起、西方落下，各自沿著大小不同的圓弧形軌跡在天空中移動，這種規律的天體運行就是「周日運動」。</p>
+        <p>在地球上不同緯度的觀測者，於同一時間所看到的天球部分不同，因此所能見到的星座及星群也不同，以下圖北緯25度的觀測者為例，對於觀測者來說恆星甲之軌跡全天都在地平面上，因此整日可見，但相對應的有一些較接近天南極的星體會永遠在地平面下。</p>
+        <img id="diurnal_pic" src="{{ url_for('static', filename='picture/diurnal motion.png') }}">
+        <br>
+        </div>
+        <script src="{{ url_for('static', filename='js/togglehide.js') }}"></script>
+        </div>
+        <br>
+        <div>
+        <!--設定按鈕可以顯示隱藏內容 -->
+        <h2><a href="#annualmotion" onclick="toggleHide('annualmotion')" title="" type="button" style="color: white;" id="change-color"
+            data-text="OPEN">周年運動</a></h2>
+        <div id="annualmotion" style="display: none;">
+        <p>天球上的天體除了因為地球自轉產生的周日運動外，還有因為地球公轉太陽，以一年為周期的「周年運動」，因此在地球上隨著季節的不同會看到不同的星座。</p>
+        <p>由於地球的自轉與繞太陽的公轉同時進行，地球以太陽為參考點自轉一周的周日運動過程，實際上會比自轉360度還要多轉1度(如下圖)，約為4分鐘，這個效應會使同一個天體或星座每天約提早四分鐘升起。所以在不同季節，星空中的星座並不相同</p>
+        <img id="annualmotion_pic" src="{{ url_for('static', filename='picture/annualmotion.png') }}">
+        <br>
+        </div>
+        <script src="{{ url_for('static', filename='js/togglehide.js') }}"></script>
+        </div>
+        </br></br></br></br>
+        <h6 id="88_constellation" style="color: black;">.</h6>
+        <div class="hr-container">
+          <h1><span class="hr-text">現代88星座</span>
+          </h1>
+          <hr class="custom-hr">
+        </div>
+        <br><br>
+        <p>1930年國際天文學聯合會正式公佈國際通用的88個星座方案，同時規定以1875年的春分點和赤道為基準。其中我們可以根據星座的中心點的赤經座標將全天88個星座分為春季星座、夏季星座、秋季星座及冬季星座，也可以根據星座的中心點的赤緯座標將全天88個星座分為北天星座、赤道帶星座、黃道星座及南天星座。</p>
+        <p>此外，我們也可以按照不同區域的星座集合來劃分，這些星座家族分別以集團中最重要的星座、黃道、神話區域、天上的水族和創造南天星座的天文學家約翰·拜耳、尼古拉斯·拉卡伊命名。</p>
+        </br>
+    <div class="btn-container">
+        <button onclick="showContent('season')" class="btn">季節星座</button>
+        <button onclick="showContent('sphere')" class="btn">半球星座</button>
+        <button onclick="showContent('group')" class="btn">星座家族</button>
+    </div>
+        <br><br>
+    <div>
+        <div id="season" class="classification">
+            <div>
+                <h2><a href="#spring" onclick="toggleHide('spring')" title="" type="button" style="color: white;" id="change-color"
+                    data-text="OPEN">春季星座 (共15個星座)</a></h2>
+                <div id="spring" style="display: none;">
+                <img style="width:900px;height:auto;" src="{{ url_for('static', filename='picture/spring.png') }}">    
+                <h4 style="margin-left: 2em;">春季認星歌:</h4>
+                <p style="margin-left: 3em;">春風送暖學認星，北斗高懸柄指東。斗口兩星指北極，找到北極方向清。<br>
+                   獅子橫臥春夜空，軒轅十四一等星。牧夫大角沿斗柄，星光點點照航程。
+                </p>
+                </div>
+               <table border="1" style="margin-left: 2em;">
+                <tr>
+                <th style="width:75px;">名稱</th>
+                <th style="width:50px;">簡寫</th>
+                <th style="width:180px;">拉丁名</th>
+                <th style="width:130px;">面積(平方度)</th>
+                <th style="width:100px;">赤經(時、分)</th>
+                <th style="width:100px;">赤緯(度、分)</th>
+                <th style="width:200px;">最亮星</th>
+                </tr>
+                <tr>
+                <th><a class="custom-link" href="/ursa_major" data-text="MORE">大熊座</a></th>
+                <th>UMA</th>
+                <th>Ursa Major</th>
+                <th>1279.66</th>
+                <th>(11,18.76)</th>
+                <th>(50,43.27)</th>
+                <th>大熊座ε(玉衡/北斗五)</th>
+                </tr>
+                <tr>
+                <th><a class="custom-link" href="/bootes" data-text="MORE">牧夫座</a></th>
+                <th>BOO</th>
+                <th>Boötes</th>
+                <th>906.831</th>
+                <th>(14,42.64)</th>
+                <th>(31,12.16)</th>
+                <th>牧夫座α(大角星)</th>
+                </tr>
+                <tr>
+                <th><a class="custom-link" href="/virgo" data-text="MORE">室女座</a></th>
+                <th>VIR</th>
+                <th>Virgo</th>
+                <th>1294.428</th>
+                <th>(13,24.39)</th>
+                <th>(-4,9.51)</th>
+                <th>室女座α(角宿一)</th>
+                </tr>
+                <tr>
+                <th><a class="custom-link" href="/corvus" data-text="MORE">烏鴉座</a></th>
+                <th>CRV</th>
+                <th>Corvus</th>
+                <th>183.801</th>
+                <th>(12,26.52)</th>
+                <th>(-18,26.2)</th>
+                <th>烏鴉座γ(軫宿一)</th>
+                </tr>
+                <tr>
+                <th><a class="custom-link" href="/hydra" data-text="MORE">長蛇座</a></th>
+                <th>HYA</th>
+                <th>Hydra</th>
+                <th>1302.844</th>
+                <th>(11,36.73)</th>
+                <th>(-14,31.91)</th>
+                <th>長蛇座α(星宿一)</th>
+                </tr>
+                <tr>
+                <th><a class="custom-link" href="/crater" data-text="MORE">巨爵座</a></th>
+                <th>CRT</th>
+                <th>Crater</th>
+                <th>282.398</th>
+                <th>(11,23.75)</th>
+                <th>(-15,55.74)</th>
+                <th>巨爵座δ(翼宿七)</th>
+                </tr>
+                <tr>
+                <th><a class="custom-link" href="/sextans" data-text="MORE">六分儀座</a></th>
+                <th>SEX</th>
+                <th>Sextans</th>
+                <th>313.515</th>
+                <th>(10,16.29)</th>
+                <th>(-2,36.88)</th>
+                <th>六分儀座α(天相二)</th>
+                </tr>
+                <tr>
+                <th><a class="custom-link" href="/leo" data-text="MORE">獅子座</a></th>
+                <th>LEO</th>
+                <th>Leo</th>
+                <th>946.964</th>
+                <th>(10,40.03)</th>
+                <th>(13,8.32)</th>
+                <th>獅子座α(軒轅十四)</th>
+                </tr>
+                <tr>
+                <th><a class="custom-link" href="/leo_minor" data-text="MORE">小獅座</a></th>
+                <th>LMI</th>
+                <th>Leo Minor</th>
+                <th>231.956</th>
+                <th>(10,14.72)</th>
+                <th>(32,8.08)</th>
+                <th>小獅座46(勢四)</th>
+                </tr>
+                <tr>
+                <th><a class="custom-link" href="/canes_venatici" data-text="MORE">獵犬座</a></th>
+                <th>CVN</th>
+                <th>Canes Venatici</th>
+                <th>465.194</th>
+                <th>(13,6.96)</th>
+                <th>(40,6.11)</th>
+                <th>獵犬座α(常陳一)</th>
+                </tr>
+                <tr>
+                <th><a class="custom-link" href="/coma_berenices" data-text="MORE">后髮座</a></th>
+                <th>COM</th>
+                <th>Coma Berenices</th>
+                <th>386.475</th>
+                <th>(12,47.27)</th>
+                <th>(23,18.34)</th>
+                <th>后髮座β(周鼎一)</th>
+                </tr>
+                <tr>
+                <th><a class="custom-link" href="/ursa_minor" data-text="MORE">小熊座</a></th>
+                <th>UMI</th>
+                <th>Ursa Minor</th>
+                <th>255.864</th>
+                <th>(15,0)</th>
+                <th>(77,41.99)</th>
+                <th>小熊座α(勾陳一)</th>
+                </tr>
+                <tr>
+                <th><a class="custom-link" href="/draco" data-text="MORE">天龍座</a></th>
+                <th>DRA</th>
+                <th>Draco</th>
+                <th>1082.952</th>
+                <th>(15,8.64)</th>
+                <th>(67,0.4)</th>
+                <th>天龍座γ(天棓四)</th>
+                </tr>
+                <tr>
+                <th><a class="custom-link" href="lynx" data-text="MORE">天貓座</a></th>
+                <th>LYN</th>
+                <th>Lynx</th>
+                <th>545.386</th>
+                <th>(7,59.53)</th>
+                <th>(47,28)</th>
+                <th>天貓座α(軒轅四)</th>
+                </tr>
+                <tr>
+                <th><a class="custom-link" href="camelopardalis" data-text="MORE">鹿豹座</a></th>
+                <th>CAM</th>
+                <th>Camelopardalis</th>
+                <th>756.828</th>
+                <th>(8,51.37)</th>
+                <th>(69,22.89)</th>
+                <th>鹿豹座β(八穀增十四)</th>
+                </tr>
+               </table>
+             <script src="{{ url_for('static', filename='js/togglehide.js') }}"></script>
+            </div>
+            <br>
+            <div>
+                <h2><a href="#summer" onclick="toggleHide('summer')" title="" type="button" style="color: white;" id="change-color"
+                    data-text="OPEN">夏季星座 (共16個星座)</a></h2>
+                <div id="summer" style="display: none;">
+                <img style="width:900px; height:auto;" src="{{ url_for('static', filename='picture/summer.png') }}">    
+                <h4 style="margin-left: 2em;">夏季認星歌:</h4>
+                <p style="margin-left: 3em;">斗柄南指夏夜來，天蝎人馬緊相挨。順著銀河向北看，天鷹天琴兩邊排。<br>
+                   天鵝飛翔銀河歪，牛郎織女色青白。心宿紅星照南斗，夏夜星空記心懷。
+                </p>
+               </div>
+               <table border="1" style="margin-left: 2em;">
+                <tr>
+                <th style="width:75px;">名稱</th>
+                <th style="width:50px;">簡寫</th>
+                <th style="width:180px;">拉丁名</th>
+                <th style="width:130px;">面積(平方度)</th>
+                <th style="width:100px;">赤經(時、分)</th>
+                <th style="width:100px;">赤緯(度、分)</th>
+                <th style="width:200px;">最亮星</th>
+                </tr>
+                <tr>
+                <th><a class="custom-link" href="lyra" data-text="MORE">天琴座</a></th>
+                <th>LYR</th>
+                <th>Lyra</th>
+                <th>286.476</th>
+                <th>(18,51.17)</th>
+                <th>(36,41.36)</th>
+                <th>天琴座α(織女一)</th>
+                </tr>
+                <tr>
+                <th><a class="custom-link" href="aquila" data-text="MORE">天鷹座</a></th>
+                <th>AQL</th>
+                <th>Aquila</th>
+                <th>652.473</th>
+                <th>(19,40.02)</th>
+                <th>(3,24.65)</th>
+                <th>天鷹座α(河鼓二)</th>
+                </tr>
+                <tr>
+                <th><a class="custom-link" href="cygnus" data-text="MORE">天鵝座</a></th>
+                <th>CYG</th>
+                <th>Cygnus</th>
+                <th>803.983</th>
+                <th>(20,35.28)</th>
+                <th>(44,32.7)</th>
+                <th>天鵝座α(天津四)</th>
+                </tr>
+                <tr>
+                <th>海豚座</th>
+                <th>DEL</th>
+                <th>Delphinus</th>
+                <th>188.549</th>
+                <th>(20,41.61)</th>
+                <th>(11,40.26)</th>
+                <th>海豚座β(瓠瓜四)</th>
+                </tr>
+                <tr>
+                <th>天箭座</th>
+                <th>SGE</th>
+                <th>Sagitta</th>
+                <th>79.932</th>
+                <th>(19,39.05)</th>
+                <th>(18,51.68)</th>
+                <th>天箭座γ(左旗五)</th>
+                </tr>
+                <tr>
+                <th>狐狸座</th>
+                <th>VUL</th>
+                <th>Vulpecula</th>
+                <th>268.165</th>
+                <th>(20,13.88)</th>
+                <th>(24,26.56)</th>
+                <th>狐狸座α(齊增五)</th>
+                </tr>
+                <tr>
+                <th><a class="custom-link" href="scorpius" data-text="MORE">天蝎座</a></th>
+                <th>SCO</th>
+                <th>Scorpius</th>
+                <th>496.783</th>
+                <th>(16,53.24)</th>
+                <th>(-27,1.89)</th>
+                <th>天蝎座α(心宿二)</th>
+                </tr>
+                <tr>
+                <th>人馬座</th>
+                <th>SGR</th>
+                <th>Sagittarius</th>
+                <th>867.432</th>
+                <th>(19,5.94)</th>
+                <th>(-28,28.61)</th>
+                <th>人馬座ε(箕宿三)</th>
+                </tr>
+                <tr>
+                <th>南冕座</th>
+                <th>CRA</th>
+                <th>Corona Australis</th>
+                <th>127.696</th>
+                <th>(18,38.79)</th>
+                <th>(-41,8.85)</th>
+                <th>南冕座α(鱉六)</th>
+                </tr>
+                <tr>
+                <th>北冕座</th>
+                <th>CRB</th>
+                <th>Corona Borealis</th>
+                <th>178.71</th>
+                <th>(15,50.59)</th>
+                <th>(32,37.49)</th>
+                <th>北冕座α(貫索四)</th>
+                </tr>
+                <tr>
+                <th>天秤座</th>
+                <th>LIB</th>
+                <th>Libra</th>
+                <th>538.052</th>
+                <th>(15,11.96)</th>
+                <th>(-15,14.08)</th>
+                <th>天秤座β(氐宿四)</th>
+                </tr>
+                <tr>
+                <th>摩羯座</th>
+                <th>CAP</th>
+                <th>Capricornus</th>
+                <th>413.947</th>
+                <th>(21,2.93)</th>
+                <th>(-18,1.39)</th>
+                <th>摩羯座δ(壘壁陣四)</th>
+                </tr>
+                <tr>
+                <th>蛇夫座</th>
+                <th>OPH</th>
+                <th>Ophiuchus</th>
+                <th>948.34</th>
+                <th>(17,23.69)</th>
+                <th>(-7,54.74)</th>
+                <th>蛇夫座α(候)</th>
+                </tr>
+                <tr>
+                <th>武仙座</th>
+                <th>HER</th>
+                <th>Hercules</th>
+                <th>1225.148</th>
+                <th>(17,23.16)</th>
+                <th>(27,29.93)</th>
+                <th>武仙座β(河中/天市右垣一)</th>
+                </tr>
+                <tr>
+                <th>巨蛇座</th>
+                <th>SER</th>
+                <th>Serpens</th>
+                <th>636.928</th>
+                <th>(16,57.04)</th>
+                <th>(6,7.32)</th>
+                <th>巨蛇座α(蜀/天市右垣七)</th>
+                </tr>
+                <tr>
+                <th>盾牌座</th>
+                <th>SCT</th>
+                <th>Scutum</th>
+                <th>109.114</th>
+                <th>(18,40.39)</th>
+                <th>(-9,53.32)</th>
+                <th>盾牌座α(天弁一)</th>
+                </tr>                
+               </table>
+             <script src="{{ url_for('static', filename='js/togglehide.js') }}"></script>
+            </div>
+            <br>
+            <div>
+                <h2><a href="#fall" onclick="toggleHide('fall')" title="" type="button" style="color: white;" id="change-color"
+                    data-text="OPEN">秋季星座 (共14個星座)</a></h2>
+                <div id="fall" style="display: none;">
+                <img style="width:700px;height:auto;" src="{{ url_for('static', filename='picture/fall.png') }}">    
+                <h4 style="margin-left: 2em;">秋季認星歌:</h4>
+                <p style="margin-left: 3em;">秋夜北斗靠地平，仙后五星空中昇。仙女一字指東北，飛馬凌空四邊形。<br>
+                   英仙星座照夜空，大陵五星光會變。南天寂靜亮星少，北落師門賽明燈。
+                </p>
+                </div>
+               <table border="1" style="margin-left: 2em;">
+                <tr>
+                <th style="width:75px;">名稱</th>
+                <th style="width:50px;">簡寫</th>
+                <th style="width:180px;">拉丁名</th>
+                <th style="width:130px;">面積(平方度)</th>
+                <th style="width:100px;">赤經(時、分)</th>
+                <th style="width:100px;">赤緯(度、分)</th>
+                <th style="width:200px;">最亮星</th>
+                </tr>
+                <tr>
+                <th>飛馬座</th>
+                <th>PEG</th>
+                <th>Pegasus</th>
+                <th>1120.794</th>
+                <th>(22,41.84)</th>
+                <th>(19,27.98)</th>
+                <th>飛馬座ε(危宿三)</th>
+                </tr>
+                <tr>
+                <th>仙女座</th>
+                <th>AND</th>
+                <th>Andromeda</th>
+                <th>722.278</th>
+                <th>(0,48.46)</th>
+                <th>(37,25.91)</th>
+                <th>仙女座α(壁宿二)</th>
+                </tr>
+                <tr>
+                <th>英仙座</th>
+                <th>PER</th>
+                <th>Perseus</th>
+                <th>614.997</th>
+                <th>(3,10.5)</th>
+                <th>(45,0.79)</th>
+                <th>英仙座α(天船三)</th>
+                </tr>
+                <tr>
+                <th>仙后座</th>
+                <th>CAS</th>
+                <th>Cassiopeia</th>
+                <th>598.407</th>
+                <th>(1,19.16)</th>
+                <th>(62,11.04)</th>
+                <th>仙后座α(王良四)</th>
+                </tr>
+                <tr>
+                <th>仙王座</th>
+                <th>CEP</th>
+                <th>Cepheus</th>
+                <th>587.787</th>
+                <th>(22,0)</th>
+                <th>(71,0.51)</th>
+                <th>仙王座α(天鉤五)</th>
+                </tr>
+                <tr>
+                <th>蝎虎座</th>
+                <th>LAC</th>
+                <th>Lacerta</th>
+                <th>200.688</th>
+                <th>(22,27.68)</th>
+                <th>(46,2.51)</th>
+                <th>蝎虎座α(螣蛇一)</th>
+                </tr>
+                <tr>
+                <th>白羊座</th>
+                <th>ARI</th>
+                <th>Aries</th>
+                <th>441.395</th>
+                <th>(2,38.16)</th>
+                <th>(20,47.54)</th>
+                <th>白羊座α(婁宿三)</th>
+                </tr>
+                <tr>
+                <th>三角座</th>
+                <th>TRI</th>
+                <th>Triangulum</th>
+                <th>131.847</th>
+                <th>(2,11.07)</th>
+                <th>(31,28.56)</th>
+                <th>三角座β(天大將軍九)</th>
+                </tr>
+                <tr>
+                <th>雙魚座</th>
+                <th>PSC</th>
+                <th>Pisces</th>
+                <th>889.417</th>
+                <th>(0,28.97)</th>
+                <th>(13,41.23)</th>
+                <th>雙魚座η(右更二)</th>
+                </tr>
+                <tr>
+                <th><a class="custom-link" href="aquarius" data-text="MORE">寶瓶座</a></th>
+                <th>AQR</th>
+                <th>Aquarius</th>
+                <th>979.854</th>
+                <th>(22,17.38)</th>
+                <th>(-10,47.35)</th>
+                <th>寶瓶座β(虛宿一)</th>
+                </tr>
+                <tr>
+                <th>小馬座</th>
+                <th>EQU</th>
+                <th>Equuleus</th>
+                <th>71.641</th>
+                <th>(21,11.26)</th>
+                <th>(7,45.49)</th>
+                <th>小馬座α(虛宿二)</th>
+                </tr>
+                <tr>
+                <th>南魚座</th>
+                <th>PSA</th>
+                <th>Piscis Austrinus</th>
+                <th>245.375</th>
+                <th>(22,17.07)</th>
+                <th>(-30,38.53)</th>
+                <th>南魚座α(北落師門)</th>
+                </tr>
+                <tr>
+                <th>鯨魚座</th>
+                <th>CET</th>
+                <th>Cetus</th>
+                <th>1231.411</th>
+                <th>(1,40.1)</th>
+                <th>(-7,10.76)</th>
+                <th>鯨魚座β(土司空)</th>
+                </tr>
+                <tr>
+                <th>玉夫座</th>
+                <th>SCL</th>
+                <th>Sculptor</th>
+                <th>474.764</th>
+                <th>(0,26.28)</th>
+                <th>(-32,5.3)</th>
+                <th>玉夫座α(近土司空南)</th>
+                </tr>
+               </table>
+             <script src="{{ url_for('static', filename='js/togglehide.js') }}"></script>
+            </div>
+            <br>
+            <div>
+                <h2><a href="#winter" onclick="toggleHide('winter')" title="" type="button" style="color: white;" id="change-color"
+                    data-text="OPEN">冬季星座 (共12個星座)</a></h2>
+                <div id="winter" style="display: none;">
+                <img style="width:900px;height:auto;" src="{{ url_for('static', filename='picture/winter.png') }}">    
+                <h4 style="margin-left: 2em;">冬季認星歌:</h4>
+                <p style="margin-left: 3em;">三星高照入寒冬，昴星成團亮晶晶。金牛低頭衝獵戶，群星燦爛放光明。<br>
+                   御夫五星五邊形，天河上面放風箏。冬夜星空認星座，全天最亮天狼星。
+                </p>
+                </div>
+               <table border="1" style="margin-left: 2em;">
+                <tr>
+                <th style="width:75px;">名稱</th>
+                <th style="width:50px;">簡寫</th>
+                <th style="width:180px;">拉丁名</th>
+                <th style="width:130px;">面積(平方度)</th>
+                <th style="width:100px;">赤經(時、分)</th>
+                <th style="width:100px;">赤緯(度、分)</th>
+                <th style="width:200px;">最亮星</th>
+                </tr>
+                <tr>
+                <th>獵戶座</th>
+                <th>ORI</th>
+                <th>Orion</th>
+                <th>594.12</th>
+                <th>(5,34.59)</th>
+                <th>(5,56.94)</th>
+                <th>獵戶座β(參宿七)</th>
+                </tr>
+                <tr>
+                <th>金牛座</th>
+                <th>TAU</th>
+                <th>Taurus</th>
+                <th>797.249</th>
+                <th>(4,42.13)</th>
+                <th>(14,52.63)</th>
+                <th>金牛座α(畢宿五)</th>
+                </tr>
+                <tr>
+                <th>御夫座</th>
+                <th>AUR</th>
+                <th>Auriga</th>
+                <th>657.438</th>
+                <th>(6,4.42)</th>
+                <th>(42,1.68)</th>
+                <th>御夫座α(五車二)</th>
+                </tr>
+                <tr>
+                <th>雙子座</th>
+                <th>GEM</th>
+                <th>Gemini</th>
+                <th>513.761</th>
+                <th>(7,4.24)</th>
+                <th>(22,36.01)</th>
+                <th>雙子座β(北河三)</th>
+                </tr>
+                <tr>
+                <th>小犬座</th>
+                <th>CMI</th>
+                <th>Canis Minor</th>
+                <th>183.367</th>
+                <th>(7,39.17)</th>
+                <th>(6,25.63)</th>
+                <th>小犬座α(南河三)</th>
+                </tr>
+                <tr>
+                <th>大犬座</th>
+                <th>CMA</th>
+                <th>Canis Major</th>
+                <th>380.118</th>
+                <th>(6,49.74)</th>
+                <th>(-22,8.42)</th>
+                <th>大犬座α(天狼星)</th>
+                </tr>
+                <tr>
+                <th><a class="custom-link" href="/cancer" data-text="MORE">巨蟹座</a></th>
+                <th>CNC</th>
+                <th>Cancer</th>
+                <th>505.872</th>
+                <th>(8,38.96)</th>
+                <th>(19,48.35)</th>
+                <th>巨蟹座β(柳宿增十)</th>
+                </tr>
+                <tr>
+                <th>天兔座</th>
+                <th>LEP</th>
+                <th>Lepus</th>
+                <th>290.291</th>
+                <th>(5,33.95)</th>
+                <th>(-19,2.78)</th>
+                <th>天兔座α(廁一)</th>
+                </tr>
+                <tr>
+                <th>天鴿座</th>
+                <th>COL</th>
+                <th>Columba</th>
+                <th>270.184</th>
+                <th>(5,51.76)</th>
+                <th>(-35,5.67)</th>
+                <th>天鴿座α(丈人一)</th>
+                </tr>
+                <tr>
+                <th>麒麟座</th>
+                <th>MON</th>
+                <th>Monoceros</th>
+                <th>481.569</th>
+                <th>(7,3.63)</th>
+                <th>(0,16.93)</th>
+                <th>麒麟座β(參宿增二十六)</th>
+                </tr>
+                <tr>
+                <th>波江座</th>
+                <th>ERI</th>
+                <th>Eridanus</th>
+                <th>1137.919</th>
+                <th>(3,18.02)</th>
+                <th>(-28,45.37)</th>
+                <th>波江座α(水委一)</th>
+                </tr>
+                <tr>
+                <th>天爐座</th>
+                <th>FOR</th>
+                <th>Fornax</th>
+                <th>397.502</th>
+                <th>(2,47.88)</th>
+                <th>(-31,38.07)</th>
+                <th>天爐座α(天苑增三)</th>
+                </tr>
+               </table>
+             <script src="{{ url_for('static', filename='js/togglehide.js') }}"></script>
+            </div>
+            <div>
+            <br>
+                <h2><a href="#south1" onclick="toggleHide('south1')" title="" type="button" style="color: white;" id="change-color"
+                    data-text="OPEN">南天星座 (共31個星座)</a></h2>
+                <div id="south1" style="display: none;">
+                <img style="width:900px;height:auto;" src="{{ url_for('static', filename='picture/south.png') }}">    
+                <br>
+                </div>
+                <br>
+               <table border="1" style="margin-left: 2em;">
+                <tr>
+                <th style="width:75px;">名稱</th>
+                <th style="width:50px;">簡寫</th>
+                <th style="width:180px;">拉丁名</th>
+                <th style="width:130px;">面積(平方度)</th>
+                <th style="width:100px;">赤經(時、分)</th>
+                <th style="width:100px;">赤緯(度、分)</th>
+                <th style="width:200px;">最亮星</th>
+                </tr>
+                <tr>
+                <th>南十字座</th>
+                <th>CRU</th>
+                <th>Crux</th>
+                <th>68.447</th>
+                <th>(12,26.99)</th>
+                <th>(-60,11.19)</th>
+                <th>南十字座α(十字架二)</th>
+                </tr>
+                <tr>
+                <th>半人馬座</th>
+                <th>CEN</th>
+                <th>Centaurus</th>
+                <th>1060.422</th>
+                <th>(13,4.27)</th>
+                <th>(-47,20.72)</th>
+                <th>半人馬座α(南門二)</th>
+                </tr>
+                <tr>
+                <th>蒼蠅座</th>
+                <th>MUS</th>
+                <th>Musca</th>
+                <th>138.355</th>
+                <th>(12,35.28)</th>
+                <th>(-70,9.66)</th>
+                <th>蒼蠅座α(蜜蜂三)</th>
+                </tr>
+                <tr>
+                <th>蝘蜓座</th>
+                <th>CHA</th>
+                <th>Chamaeleon</th>
+                <th>131.592</th>
+                <th>(10,41.53)</th>
+                <th>(-79,12.3)</th>
+                <th>蝘蜓座α(小斗增一)</th>
+                </tr>
+                <tr>
+                <th>天燕座</th>
+                <th>APS</th>
+                <th>Apus</th>
+                <th>206.327</th>
+                <th>(16,8.65)</th>
+                <th>(-75,18)</th>
+                <th>天燕座α(異雀八)</th>
+                </tr>
+                <tr>
+                <th>豺狼座</th>
+                <th>LUP</th>
+                <th>Lupus</th>
+                <th>333.683</th>
+                <th>(15,13.21)</th>
+                <th>(-42,42.53)</th>
+                <th>豺狼座α(騎官十)</th>
+                </tr>
+                <tr>
+                <th>圓規座</th>
+                <th>CIR</th>
+                <th>Circinus</th>
+                <th>93.353</th>
+                <th>(14,34.54)</th>
+                <th>(-63,1.82)</th>
+                <th>圓規座α(南門增二)</th>
+                </tr>
+                <tr>
+                <th>南三角座</th>
+                <th>TRA</th>
+                <th>Triangulum Australe</th>
+                <th>109.978</th>
+                <th>(16,4.95)</th>
+                <th>(-65,23.28)</th>
+                <th>南三角座α(三角形三)</th>
+                </tr>
+                <tr>
+                <th>矩尺座</th>
+                <th>NOR</th>
+                <th>Norma</th>
+                <th>165.29</th>
+                <th>(15,54.18)</th>
+                <th>(-51,21.09)</th>
+                <th>矩尺座γ2(近波斯一)</th>
+                </tr>
+                <tr>
+                <th>天壇座</th>
+                <th>ARA</th>
+                <th>Ara</th>
+                <th>237.057</th>
+                <th>(17,22.49)</th>
+                <th>(-56,35.3)</th>
+                <th>天壇座β(杵三)</th>
+                </tr>
+                <tr>
+                <th>顯微鏡座</th>
+                <th>MIC</th>
+                <th>Microscopium</th>
+                <th>209.513</th>
+                <th>(20,57.88)</th>
+                <th>(-36,16.49)</th>
+                <th>顯微鏡座γ(璃瑜增一)</th>
+                </tr>
+                <tr>
+                <th>鳳凰座</th>
+                <th>PHE</th>
+                <th>Phoenix</th>
+                <th>469.319</th>
+                <th>(0,55.91)</th>
+                <th>(-48,34.84)</th>
+                <th>鳳凰座α(火鳥六)</th>
+                </tr>
+                <tr>
+                <th>天鶴座</th>
+                <th>GRU</th>
+                <th>Grus</th>
+                <th>365.513</th>
+                <th>(22,27.39)</th>
+                <th>(-46,21.11)</th>
+                <th>天鶴座α(鶴一)</th>
+                </tr>
+                <tr>
+                <th>杜鵑座</th>
+                <th>TUC</th>
+                <th>Tucana</th>
+                <th>294.557</th>
+                <th>(23,46.64)</th>
+                <th>(-65,49.8)</th>
+                <th>杜鵑座α(鳥喙一)</th>
+                </tr>
+                <tr>
+                <th>孔雀座</th>
+                <th>PAV</th>
+                <th>Pavo</th>
+                <th>377.666</th>
+                <th>(19,36.71)</th>
+                <th>(-65,46.89)</th>
+                <th>孔雀座α(孔雀十一)</th>
+                </tr>
+                <tr>
+                <th>印第安座</th>
+                <th>IND</th>
+                <th>Indus</th>
+                <th>294.006</th>
+                <th>(21,58.33)</th>
+                <th>(-59,42.4)</th>
+                <th>印第安座α(波斯二)</th>
+                </tr>
+                <tr>
+                <th>船帆座</th>
+                <th>VEL</th>
+                <th>Vela</th>
+                <th>499.649</th>
+                <th>(9,34.64)</th>
+                <th>(-47,10.03)</th>
+                <th>船帆座γ(天社一)</th>
+                </tr>
+                <tr>
+                <th>船底座</th>
+                <th>CAR</th>
+                <th>Carina</th>
+                <th>494.184</th>
+                <th>(8,41.7)</th>
+                <th>(-63,13.16)</th>
+                <th>船底座α(老人星)</th>
+                </tr>
+                <tr>
+                <th>船尾座</th>
+                <th>PUP</th>
+                <th>Puppis</th>
+                <th>673.434</th>
+                <th>(7,15.48)</th>
+                <th>(-31,10.64)</th>
+                <th>船尾座ζ(弧矢增二十二)</th>
+                </tr>
+                <tr>
+                <th>唧筒座</th>
+                <th>ANT</th>
+                <th>Antlia</th>
+                <th>238.901</th>
+                <th>(10,16.43)</th>
+                <th>(-32,29.01)</th>
+                <th>唧筒座α(近天紀增二)</th>
+                </tr>
+                <tr>
+                <th>羅盤座</th>
+                <th>PYX</th>
+                <th>Pyxis</th>
+                <th>220.833</th>
+                <th>(8,57.16)</th>
+                <th>(-27,21.1)</th>
+                <th>羅盤座α(天狗五)</th>
+                </tr>
+                <tr>
+                <th>望遠鏡座</th>
+                <th>TEL</th>
+                <th>Telescopium</th>
+                <th>251.512</th>
+                <th>(19,19.54)</th>
+                <th>(-51,2.21)</th>
+                <th>望遠鏡座α(鱉一)</th>
+                </tr>
+                <tr>
+                <th>劍魚座</th>
+                <th>DOR</th>
+                <th>Dorado</th>
+                <th>179.173</th>
+                <th>(5,14.51)</th>
+                <th></th>
+                <th>劍魚座α(金魚二)</th>
+                </tr>
+                <tr>
+                <th>飛魚座</th>
+                <th>VOL</th>
+                <th>Volans</th>
+                <th>141.354</th>
+                <th>(7,47.73)</th>
+                <th>(-69,48.07)</th>
+                <th>飛魚座β(飛魚三)</th>
+                </tr>
+                <tr>
+                <th>網罟座</th>
+                <th>RET</th>
+                <th>Reticulum</th>
+                <th>113.936</th>
+                <th>(3,55.27)</th>
+                <th>(-59,59.85)</th>
+                <th>網罟座α(夾白二)</th>
+                </tr>
+                <tr>
+                <th>時鐘座</th>
+                <th>HOR</th>
+                <th>Horologium</th>
+                <th>248.885</th>
+                <th>(3,16.56)</th>
+                <th>(-53,20.18)</th>
+                <th>時鐘座α(天園增六)</th>
+                </tr>
+                <tr>
+                <th>繪架座</th>
+                <th>PIC</th>
+                <th>Pictor</th>
+                <th>246.739</th>
+                <th>(5,42.46)</th>
+                <th>(-53,28.45)</th>
+                <th>繪架座α(金魚增一)</th>
+                </tr>
+                <tr>
+                <th>水蛇座</th>
+                <th>HYI</th>
+                <th>Hydrus</th>
+                <th>243.035</th>
+                <th>(2,20.65)</th>
+                <th>(-69,57.39)</th>
+                <th>水蛇座β(蛇尾一)</th>
+                </tr>
+                <tr>
+                <th>山案座</th>
+                <th>MEN</th>
+                <th>Mensa</th>
+                <th>153.484</th>
+                <th>(5,24.9)</th>
+                <th>(-77,30.24)</th>
+                <th>山案座α(近附白一)</th>
+                </tr>
+                <tr>
+                <th>雕具座</th>
+                <th>CAE</th>
+                <th>Caelum</th>
+                <th>124.865</th>
+                <th>(4,42.27)</th>
+                <th>(-37,52.9)</th>
+                <th>雕具座α(近天園增六)</th>
+                </tr>
+                <tr>
+                <th>南極座</th>
+                <th>OCT</th>
+                <th>Octans</th>
+                <th>291.045</th>
+                <th>(23,0)</th>
+                <th>(-82,9.12)</th>
+                <th>南極座ν(蛇尾三)</th>
+                </tr>
+               </table>
+             <script src="{{ url_for('static', filename='js/togglehide.js') }}"></script>
+            </div>
+        </div>
+        <div id="sphere" class="classification">
+            <h2>北天星座 (共24個星座)</h2>
+            <table border="1" style="margin-left: 2em;">
+             <tr>
+             <th style="width:75px;">名稱</th>
+             <th style="width:50px;">簡寫</th>
+             <th style="width:180px;">拉丁名</th>
+             <th style="width:130px;">面積(平方度)</th>
+             <th style="width:100px;">赤經(時、分)</th>
+             <th style="width:100px;">赤緯(度、分)</th>
+             <th style="width:200px;">最亮星</th>
+             </tr>
+             <tr>
+             <th>小熊座</th>
+             <th>UMI</th>
+             <th>Ursa Minor</th>
+             <th>255.864</th>
+             <th>(15,0)</th>
+             <th>(77,41.99)</th>
+             <th>小熊座α(勾陳一)</th>
+             </tr>
+             <tr>
+             <th>大熊座</th>
+             <th>UMA</th>
+             <th>Ursa Major</th>
+             <th>1279.66</th>
+             <th>(11,18.76)</th>
+             <th>(50,43.27)</th>
+             <th>大熊座ε(玉衡/北斗五)</th>
+             </tr>
+             <tr>
+             <th>仙后座</th>
+             <th>CAS</th>
+             <th>Cassiopeia</th>
+             <th>598.407</th>
+             <th>(1,19.16)</th>
+             <th>(62,11.04)</th>
+             <th>仙后座α(王良四)</th>
+             </tr>
+             <tr>
+             <th>仙王座</th>
+             <th>CEP</th>
+             <th>Cepheus</th>
+             <th>587.787</th>
+             <th>(22,0)</th>
+             <th>(71,0.51)</th>
+             <th>仙王座α(天鉤五)</th>
+             </tr>
+             <tr>
+             <th>天龍座</th>
+             <th>DRA</th>
+             <th>Draco</th>
+             <th>1082.952</th>
+             <th>(15,8.64)</th>
+             <th>(67,0.4)</th>
+             <th>天龍座γ(天棓四)</th>
+             </tr>
+             <tr>
+             <th>飛馬座</th>
+             <th>PEG</th>
+             <th>Pegasus</th>
+             <th>1120.794</th>
+             <th>(22,41.84)</th>
+             <th>(19,27.98)</th>
+             <th>飛馬座ε(危宿三)</th>
+             </tr>
+             <tr>
+             <th>天鵝座</th>
+             <th>CYG</th>
+             <th>Cygnus</th>
+             <th>803.983</th>
+             <th>(20,35.28)</th>
+             <th>(44,32.7)</th>
+             <th>天鵝座α(天津四)</th>
+             </tr>
+             <tr>
+             <th>蝎虎座</th>
+             <th>LAC</th>
+             <th>Lacerta</th>
+             <th>200.688</th>
+             <th>(22,27.68)</th>
+             <th>(46,2.51)</th>
+             <th>蝎虎座α(螣蛇一)</th>
+             </tr>
+             <tr>
+             <th>仙女座</th>
+             <th>AND</th>
+             <th>Andromeda</th>
+             <th>722.278</th>
+             <th>(0,48.46)</th>
+             <th>(37,25.91)</th>
+             <th>仙女座α(壁宿二)</th>
+             </tr>
+             <tr>
+             <th>鹿豹座</th>
+             <th>CAM</th>
+             <th>Camelopardalis</th>
+             <th>756.828</th>
+             <th>(8,51.37)</th>
+             <th>(69,22.89)</th>
+             <th>鹿豹座β(八穀增十四)</th>
+             </tr>
+             <tr>
+             <th>御夫座</th>
+             <th>AUR</th>
+             <th>Auriga</th>
+             <th>657.438</th>
+             <th>(6,4.42)</th>
+             <th>(42,1.68)</th>
+             <th>御夫座α(五車二)</th>
+             </tr>
+             <tr>
+             <th>獵犬座</th>
+             <th>CVN</th>
+             <th>Canes Venatici</th>
+             <th>465.194</th>
+             <th>(13,6.96)</th>
+             <th>(40,6.11)</th>
+             <th>獵犬座α(常陳一)</th>
+             </tr>
+             <tr>
+             <th>狐狸座</th>
+             <th>VUL</th>
+             <th>Vulpecula</th>
+             <th>268.165</th>
+             <th>(20,13.88)</th>
+             <th>(24,26.56)</th>
+             <th>狐狸座α(齊增五)</th>
+             </tr>
+             <tr>
+             <th>小獅座</th>
+             <th>LMI</th>
+             <th>Leo Minor</th>
+             <th>231.956</th>
+             <th>(10,14.72)</th>
+             <th>(32,8.08)</th>
+             <th>小獅座46(勢四)</th>
+             </tr>
+             <tr>
+             <th>英仙座</th>
+             <th>PER</th>
+             <th>Perseus</th>
+             <th>614.997</th>
+             <th>(3,10.5)</th>
+             <th>(45,0.79)</th>
+             <th>英仙座α(天船三)</th>
+             </tr>
+             <tr>
+             <th>牧夫座</th>
+             <th>BOO</th>
+             <th>Boötes</th>
+             <th>906.831</th>
+             <th>(14,42.64)</th>
+             <th>(31,12.16)</th>
+             <th>牧夫座α(大角星)</th>
+             </tr>
+             <tr>
+             <th>武仙座</th>
+             <th>HER</th>
+             <th>Hercules</th>
+             <th>1225.148</th>
+             <th>(17,23.16)</th>
+             <th>(27,29.93)</th>
+             <th>武仙座β(河中/天市右垣一)</th>
+             </tr>
+             <tr>
+             <th>后髮座</th>
+             <th>COM</th>
+             <th>Coma Berenices</th>
+             <th>386.475</th>
+             <th>(12,47.27)</th>
+             <th>(23,18.34)</th>
+             <th>后髮座β(周鼎一)</th>
+             </tr>
+             <tr>
+             <th>北冕座</th>
+             <th>CRB</th>
+             <th>Corona Borealis</th>
+             <th>178.71</th>
+             <th>(15,50.59)</th>
+             <th>(32,37.49)</th>
+             <th>北冕座α(貫索四)</th>
+             </tr>
+             <tr>
+             <th>天貓座</th>
+             <th>LYN</th>
+             <th>Lynx</th>
+             <th>545.386</th>
+             <th>(7,59.53)</th>
+             <th>(47,28)</th>
+             <th>天貓座α(軒轅四)</th>
+             </tr>
+             <tr>
+             <th>天琴座</th>
+             <th>LYR</th>
+             <th>Lyra</th>
+             <th>286.476</th>
+             <th>(18,51.17)</th>
+             <th>(36,41.36)</th>
+             <th>天琴座α(織女一)</th>
+             </tr>
+             <tr>
+             <th>海豚座</th>
+             <th>DEL</th>
+             <th>Delphinus</th>
+             <th>188.549</th>
+             <th>(20,41.61)</th>
+             <th>(11,40.26)</th>
+             <th>海豚座β(瓠瓜四)</th>
+             </tr>
+             <tr>
+             <th>三角座</th>
+             <th>TRI</th>
+             <th>Triangulum</th>
+             <th>131.847</th>
+             <th>(2,11.07)</th>
+             <th>(31,28.56)</th>
+             <th>三角座β(天大將軍九)</th>
+             </tr>
+             <tr>
+             <th>天箭座</th>
+             <th>SGE</th>
+             <th>Sagitta</th>
+             <th>79.932</th>
+             <th>(19,39.05)</th>
+             <th>(18,51.68)</th>
+             <th>天箭座γ(左旗五)</th>
+             </tr>
+            </table>
+            <br>
+            <h2>黃道星座 (共13個星座)</h2>
+            <table border="1" style="margin-left: 2em;">
+             <tr>
+             <th style="width:75px;">名稱</th>
+             <th style="width:50px;">簡寫</th>
+             <th style="width:180px;">拉丁名</th>
+             <th style="width:130px;">面積(平方度)</th>
+             <th style="width:100px;">赤經(時、分)</th>
+             <th style="width:100px;">赤緯(度、分)</th>
+             <th style="width:200px;">最亮星</th>
+             </tr>
+             <tr>
+             <th>雙魚座</th>
+             <th>PSC</th>
+             <th>Pisces</th>
+             <th>889.417</th>
+             <th>(0,28.97)</th>
+             <th>(13,41.23)</th>
+             <th>雙魚座η(右更二)</th>
+             </tr>
+             <tr>
+             <th>白羊座</th>
+             <th>ARI</th>
+             <th>Aries</th>
+             <th>441.395</th>
+             <th>(2,38.16)</th>
+             <th>(20,47.54)</th>
+             <th>牡羊座α(婁宿三)</th>
+             </tr>
+             <tr>
+             <th>金牛座</th>
+             <th>TAU</th>
+             <th>Taurus</th>
+             <th>797.249</th>
+             <th>(4,42.13)</th>
+             <th>(14,52.63)</th>
+             <th>金牛座α(畢宿五)</th>
+             </tr>
+             <tr>
+             <th>雙子座</th>
+             <th>GEM</th>
+             <th>Gemini</th>
+             <th>513.761</th>
+             <th>(7,4.24)</th>
+             <th>(22,36.01)</th>
+             <th>雙子座β(北河三)</th>
+             </tr>
+             <tr>
+             <th>巨蟹座</th>
+             <th>CNC</th>
+             <th>Cancer</th>
+             <th>505.872</th>
+             <th>(8,38.96)</th>
+             <th>(19,48.35)</th>
+             <th>巨蟹座β(柳宿增十)</th>
+             </tr>
+             <tr>
+             <th>獅子座</th>
+             <th>LEO</th>
+             <th>Leo</th>
+             <th>946.964</th>
+             <th>(10,40.03)</th>
+             <th>(13,8.32)</th>
+             <th>獅子座α(軒轅十四)</th>
+             </tr>
+             <tr>
+             <th>室女座</th>
+             <th>VIR</th>
+             <th>Virgo</th>
+             <th>1294.428</th>
+             <th>(13,24.39)</th>
+             <th>(-4,9.51)</th>
+             <th>室女座α(角宿一)</th>
+             </tr>
+             <tr>
+             <th>天秤座</th>
+             <th>LIB</th>
+             <th>Libra</th>
+             <th>538.052</th>
+             <th>(15,11.96)</th>
+             <th>(-15,14.08)</th>
+             <th>天秤座β(氐宿四)</th>
+             </tr>
+             <tr>
+             <th>天蝎座</th>
+             <th>SCO</th>
+             <th>Scorpius</th>
+             <th>496.783</th>
+             <th>(16,53.24)</th>
+             <th>(-27,1.89)</th>
+             <th>天蝎座α(心宿二)</th>
+             </tr>
+             <tr>
+             <th>蛇夫座</th>
+             <th>OPH</th>
+             <th>Ophiuchus</th>
+             <th>948.34</th>
+             <th>(17,23.69)</th>
+             <th>(-7,54.74)</th>
+             <th>蛇夫座α(候)</th>
+             </tr>
+             <tr>
+             <th>人馬座</th>
+             <th>SGR</th>
+             <th>Sagittarius</th>
+             <th>867.432</th>
+             <th>(19,5.94)</th>
+             <th>(-28,28.61)</th>
+             <th>人馬座ε(箕宿三)</th>
+             </tr>
+             <tr>
+             <th>摩羯座</th>
+             <th>CAP</th>
+             <th>Capricornus</th>
+             <th>413.947</th>
+             <th>(21,2.93)</th>
+             <th>(-18,1.39)</th>
+             <th>摩羯座δ(壘壁陣四)</th>
+             </tr>
+             <tr>
+             <th>寶瓶座</th>
+             <th>AQR</th>
+             <th>Aquarius</th>
+             <th>979.854</th>
+             <th>(22,17.38)</th>
+             <th>(-10,47.35)</th>
+             <th>寶瓶座β(虛宿一)</th>
+             </tr>
+            </table>
+            <br>
+            <h2>赤道帶星座 (共10個星座)</h2>
+            <table border="1" style="margin-left: 2em;">
+             <tr>
+             <th style="width:75px;">名稱</th>
+             <th style="width:50px;">簡寫</th>
+             <th style="width:180px;">拉丁名</th>
+             <th style="width:130px;">面積(平方度)</th>
+             <th style="width:100px;">赤經(時、分)</th>
+             <th style="width:100px;">赤緯(度、分)</th>
+             <th style="width:200px;">最亮星</th>
+             </tr>
+             <tr>
+             <th>蛇夫座</th>
+             <th>OPH</th>
+             <th>Ophiuchus</th>
+             <th>948.34</th>
+             <th>(17,23.69)</th>
+             <th>(-7,54.74)</th>
+             <th>蛇夫座α(候)</th>
+             </tr>
+             <tr>
+             <th>天鷹座</th>
+             <th>AQL</th>
+             <th>Aquila</th>
+             <th>652.473</th>
+             <th>(19,40.02)</th>
+             <th>(3,24.65)</th>
+             <th>天鷹座α(河鼓二)</th>
+             </tr>
+             <tr>
+             <th>麒麟座</th>
+             <th>MON</th>
+             <th>Monoceros</th>
+             <th>481.569</th>
+             <th>(7,3.63)</th>
+             <th>(0,16.93)</th>
+             <th>麒麟座β(參宿增二十六)</th>
+             </tr>
+             <tr>
+             <th>小馬座</th>
+             <th>EQU</th>
+             <th>Equuleus</th>
+             <th>71.641</th>
+             <th>(21,11.26)</th>
+             <th>(7,45.49)</th>
+             <th>小馬座α(虛宿二)</th>
+             </tr>
+             <tr>
+             <th>小犬座</th>
+             <th>CMI</th>
+             <th>Canis Minor</th>
+             <th>183.367</th>
+             <th>(7,39.17)</th>
+             <th>(6,25.63)</th>
+             <th>小犬座α(南河三)</th>
+             </tr>
+             <tr>
+             <th>巨蛇座</th>
+             <th>SER</th>
+             <th>Serpens</th>
+             <th>636.928</th>
+             <th>(16,57.04)</th>
+             <th>(6,7.32)</th>
+             <th>巨蛇座α(蜀/天市右垣七)</th>
+             </tr>
+             <tr>
+             <th>六分儀座</th>
+             <th>SEX</th>
+             <th>Sextans</th>
+             <th>313.515</th>
+             <th>(10,16.29)</th>
+             <th>(-2,36.88)</th>
+             <th>六分儀座α(天相二)</th>
+             </tr>
+             <tr>
+             <th>長蛇座</th>
+             <th>HYA</th>
+             <th>Hydra</th>
+             <th>1302.844</th>
+             <th>(11,36.73)</th>
+             <th>(-14,31.91)</th>
+             <th>長蛇座α(星宿一)</th>
+             </tr>
+             <tr>
+             <th>獵戶座</th>
+             <th>ORI</th>
+             <th>Orion</th>
+             <th>594.12</th>
+             <th>(5,34.59)</th>
+             <th>(5,56.94)</th>
+             <th>獵戶座β(參宿七)</th>
+             </tr>
+             <tr>
+             <th>鯨魚座</th>
+             <th>CET</th>
+             <th>Cetus</th>
+             <th>1231.411</th>
+             <th>(1,40.1)</th>
+             <th>(-7,10.76)</th>
+             <th>鯨魚座β(土司空)</th>
+             </tr>
+             </table>
+             <br>
+            <h2>南天星座 (共42個星座)</h2>
+            <table border="1" style="margin-left: 2em;">
+             <tr>
+             <th style="width:75px;">名稱</th>
+             <th style="width:50px;">簡寫</th>
+             <th style="width:180px;">拉丁名</th>
+             <th style="width:130px;">面積(平方度)</th>
+             <th style="width:100px;">赤經(時、分)</th>
+             <th style="width:100px;">赤緯(度、分)</th>
+             <th style="width:200px;">最亮星</th>
+             </tr>
+             <tr>
+             <th>南十字座</th>
+             <th>CRU</th>
+             <th>Crux</th>
+             <th>68.447</th>
+             <th>(12,26.99)</th>
+             <th>(-60,11.19)</th>
+             <th>南十字座α(十字架二)</th>
+             </tr>
+             <tr>
+             <th>半人馬座</th>
+             <th>CEN</th>
+             <th>Centaurus</th>
+             <th>1060.422</th>
+             <th>(13,4.27)</th>
+             <th>(-47,20.72)</th>
+             <th>半人馬座α(南門二)</th>
+             </tr>
+             <tr>
+             <th>蒼蠅座</th>
+             <th>MUS</th>
+             <th>Musca</th>
+             <th>138.355</th>
+             <th>(12,35.28)</th>
+             <th>(-70,9.66)</th>
+             <th>蒼蠅座α(蜜蜂三)</th>
+             </tr>
+             <tr>
+             <th>蝘蜓座</th>
+             <th>CHA</th>
+             <th>Chamaeleon</th>
+             <th>131.592</th>
+             <th>(10,41.53)</th>
+             <th>(-79,12.3)</th>
+             <th>蝘蜓座α(小斗增一)</th>
+             </tr>
+             <tr>
+             <th>天燕座</th>
+             <th>APS</th>
+             <th>Apus</th>
+             <th>206.327</th>
+             <th>(16,8.65)</th>
+             <th>(-75,18)</th>
+             <th>天燕座α(異雀八)</th>
+             </tr>
+             <tr>
+             <th>豺狼座</th>
+             <th>LUP</th>
+             <th>Lupus</th>
+             <th>333.683</th>
+             <th>(15,13.21)</th>
+             <th>(-42,42.53)</th>
+             <th>豺狼座α(騎官十)</th>
+             </tr>
+             <tr>
+             <th>圓規座</th>
+             <th>CIR</th>
+             <th>Circinus</th>
+             <th>93.353</th>
+             <th>(14,34.54)</th>
+             <th>(-63,1.82)</th>
+             <th>圓規座α(南門增二)</th>
+             </tr>
+             <tr>
+             <th>南三角座</th>
+             <th>TRA</th>
+             <th>Triangulum Australe</th>
+             <th>109.978</th>
+             <th>(16,4.95)</th>
+             <th>(-65,23.28)</th>
+             <th>南三角座α(三角形三)</th>
+             </tr>
+             <tr>
+             <th>矩尺座</th>
+             <th>NOR</th>
+             <th>Norma</th>
+             <th>165.29</th>
+             <th>(15,54.18)</th>
+             <th>(-51,21.09)</th>
+             <th>矩尺座γ2(近波斯一)</th>
+             </tr>
+             <tr>
+             <th>天壇座</th>
+             <th>ARA</th>
+             <th>Ara</th>
+             <th>237.057</th>
+             <th>(17,22.49)</th>
+             <th>(-56,35.3)</th>
+             <th>天壇座β(杵三)</th>
+             </tr>
+             <tr>
+             <th>顯微鏡座</th>
+             <th>MIC</th>
+             <th>Microscopium</th>
+             <th>209.513</th>
+             <th>(20,57.88)</th>
+             <th>(-36,16.49)</th>
+             <th>顯微鏡座γ(璃瑜增一)</th>
+             </tr>
+             <tr>
+             <th>鳳凰座</th>
+             <th>PHE</th>
+             <th>Phoenix</th>
+             <th>469.319</th>
+             <th>(0,55.91)</th>
+             <th>(-48,34.84)</th>
+             <th>鳳凰座α(火鳥六)</th>
+             </tr>
+             <tr>
+             <th>天鶴座</th>
+             <th>GRU</th>
+             <th>Grus</th>
+             <th>365.513</th>
+             <th>(22,27.39)</th>
+             <th>(-46,21.11)</th>
+             <th>天鶴座α(鶴一)</th>
+             </tr>
+             <tr>
+             <th>杜鵑座</th>
+             <th>TUC</th>
+             <th>Tucana</th>
+             <th>294.557</th>
+             <th>(23,46.64)</th>
+             <th>(-65,49.8)</th>
+             <th>杜鵑座α(鳥喙一)</th>
+             </tr>
+             <tr>
+             <th>孔雀座</th>
+             <th>PAV</th>
+             <th>Pavo</th>
+             <th>377.666</th>
+             <th>(19,36.71)</th>
+             <th>(-65,46.89)</th>
+             <th>孔雀座α(孔雀十一)</th>
+             </tr>
+             <tr>
+             <th>印第安座</th>
+             <th>IND</th>
+             <th>Indus</th>
+             <th>294.006</th>
+             <th>(21,58.33)</th>
+             <th>(-59,42.4)</th>
+             <th>印第安座α(波斯二)</th>
+             </tr>
+             <tr>
+             <th>船帆座</th>
+             <th>VEL</th>
+             <th>Vela</th>
+             <th>499.649</th>
+             <th>(9,34.64)</th>
+             <th>(-47,10.03)</th>
+             <th>船帆座γ(天社一)</th>
+             </tr>
+             <tr>
+             <th>船底座</th>
+             <th>CAR</th>
+             <th>Carina</th>
+             <th>494.184</th>
+             <th>(8,41.7)</th>
+             <th>(-63,13.16)</th>
+             <th>船底座α(老人星)</th>
+             </tr>
+             <tr>
+             <th>船尾座</th>
+             <th>PUP</th>
+             <th>Puppis</th>
+             <th>673.434</th>
+             <th>(7,15.48)</th>
+             <th>(-31,10.64)</th>
+             <th>船尾座ζ(弧矢增二十二)</th>
+             </tr>
+             <tr>
+             <th>唧筒座</th>
+             <th>ANT</th>
+             <th>Antlia</th>
+             <th>238.901</th>
+             <th>(10,16.43)</th>
+             <th>(-32,29.01)</th>
+             <th>唧筒座α(近天紀增二)</th>
+             </tr>
+             <tr>
+             <th>羅盤座</th>
+             <th>PYX</th>
+             <th>Pyxis</th>
+             <th>220.833</th>
+             <th>(8,57.16)</th>
+             <th>(-27,21.1)</th>
+             <th>羅盤座α(天狗五)</th>
+             </tr>
+             <tr>
+             <th>望遠鏡座</th>
+             <th>TEL</th>
+             <th>Telescopium</th>
+             <th>251.512</th>
+             <th>(19,19.54)</th>
+             <th>(-51,2.21)</th>
+             <th>望遠鏡座α(鱉一)</th>
+             </tr>
+             <tr>
+             <th>劍魚座</th>
+             <th>DOR</th>
+             <th>Dorado</th>
+             <th>179.173</th>
+             <th>(5,14.51)</th>
+             <th></th>
+             <th>劍魚座α(金魚二)</th>
+             </tr>
+             <tr>
+             <th>飛魚座</th>
+             <th>VOL</th>
+             <th>Volans</th>
+             <th>141.354</th>
+             <th>(7,47.73)</th>
+             <th>(-69,48.07)</th>
+             <th>飛魚座β(飛魚三)</th>
+             </tr>
+             <tr>
+             <th>網罟座</th>
+             <th>RET</th>
+             <th>Reticulum</th>
+             <th>113.936</th>
+             <th>(3,55.27)</th>
+             <th>(-59,59.85)</th>
+             <th>網罟座α(夾白二)</th>
+             </tr>
+             <tr>
+             <th>時鐘座</th>
+             <th>HOR</th>
+             <th>Horologium</th>
+             <th>248.885</th>
+             <th>(3,16.56)</th>
+             <th>(-53,20.18)</th>
+             <th>時鐘座α(天園增六)</th>
+             </tr>
+             <tr>
+             <th>繪架座</th>
+             <th>PIC</th>
+             <th>Pictor</th>
+             <th>246.739</th>
+             <th>(5,42.46)</th>
+             <th>(-53,28.45)</th>
+             <th>繪架座α(金魚增一)</th>
+             </tr>
+             <tr>
+             <th>水蛇座</th>
+             <th>HYI</th>
+             <th>Hydrus</th>
+             <th>243.035</th>
+             <th>(2,20.65)</th>
+             <th>(-69,57.39)</th>
+             <th>水蛇座β(蛇尾一)</th>
+             </tr>
+             <tr>
+             <th>山案座</th>
+             <th>MEN</th>
+             <th>Mensa</th>
+             <th>153.484</th>
+             <th>(5,24.9)</th>
+             <th>(-77,30.24)</th>
+             <th>山案座α(近附白一)</th>
+             </tr>
+             <tr>
+             <th>雕具座</th>
+             <th>CAE</th>
+             <th>Caelum</th>
+             <th>124.865</th>
+             <th>(4,42.27)</th>
+             <th>(-37,52.9)</th>
+             <th>雕具座α(近天園增六)</th>
+             </tr>
+             <tr>
+             <th>南極座</th>
+             <th>OCT</th>
+             <th>Octans</th>
+             <th>291.045</th>
+             <th>(23,0)</th>
+             <th>(-82,9.12)</th>
+             <th>南極座ν(蛇尾三)</th>
+             </tr>
+             <tr>
+             <th>南冕座</th>
+             <th>CRA</th>
+             <th>Corona Australis</th>
+             <th>127.696</th>
+             <th>(18,38.79)</th>
+             <th>(-41,8.85)</th>
+             <th>南冕座α(鱉六)</th>
+             </tr>
+             <tr>
+             <th>大犬座</th>
+             <th>CMA</th>
+             <th>Canis Major</th>
+             <th>380.118</th>
+             <th>(6,49.74)</th>
+             <th>(-22,8.42)</th>
+             <th>大犬座α(天狼星)</th>
+             </tr>
+             <tr>
+             <th>天鴿座</th>
+             <th>COL</th>
+             <th>Columba</th>
+             <th>270.184</th>
+             <th>(5,51.76)</th>
+             <th>(-35,5.67)</th>
+             <th>天鴿座α(丈人一)</th>
+             </tr>
+             <tr>
+             <th>烏鴉座</th>
+             <th>CRV</th>
+             <th>Corvus</th>
+             <th>183.801</th>
+             <th>(12,26.52)</th>
+             <th>(-18,26.2)</th>
+             <th>烏鴉座γ(軫宿一)</th>
+             </tr>
+             <tr>
+             <th>南魚座</th>
+             <th>PSA</th>
+             <th>Piscis Austrinus</th>
+             <th>245.375</th>
+             <th>(22,17.07)</th>
+             <th>(-30,38.53)</th>
+             <th>南魚座α(北落師門)</th>
+             </tr>
+             <tr>
+             <th>天兔座</th>
+             <th>LEP</th>
+             <th>Lepus</th>
+             <th>290.291</th>
+             <th>(5,33.95)</th>
+             <th>(-19,2.78)</th>
+             <th>天兔座α(廁一)</th>
+             </tr>
+             <tr>
+             <th>波江座</th>
+             <th>ERI</th>
+             <th>Eridanus</th>
+             <th>1137.919</th>
+             <th>(3,18.02)</th>
+             <th>(-28,45.37)</th>
+             <th>波江座α(水委一)</th>
+             </tr>
+             <tr>
+             <th>盾牌座</th>
+             <th>SCT</th>
+             <th>Scutum</th>
+             <th>109.114</th>
+             <th>(18,40.39)</th>
+             <th>(-9,53.32)</th>
+             <th>盾牌座α(天弁一)</th>
+             </tr>
+             <tr>
+             <th>天爐座</th>
+             <th>FOR</th>
+             <th>Fornax</th>
+             <th>397.502</th>
+             <th>(2,47.88)</th>
+             <th>(-31,38.07)</th>
+             <th>天爐座α(天苑增三)</th>
+             </tr>
+             <tr>
+             <th>巨爵座</th>
+             <th>CRT</th>
+             <th>Crater</th>
+             <th>282.398</th>
+             <th>(11,23.75)</th>
+             <th>(-15,55.74)</th>
+             <th>巨爵座δ(翼宿七)</th>
+             </tr>
+             <tr>
+             <th>玉夫座</th>
+             <th>SCL</th>
+             <th>Sculptor</th>
+             <th>474.764</th>
+             <th>(0,26.28)</th>
+             <th>(-32,5.3)</th>
+             <th>玉夫座α(近土司空南)</th>
+             </tr>
+            </table>
+        </div>
+        <div id="group" class="classification">
+            <h2>大熊家族 (共10個星座)</h2>
+            <table border="1" style="margin-left: 2em;">
+             <tr>
+             <th style="width:75px;">名稱</th>
+             <th style="width:50px;">簡寫</th>
+             <th style="width:180px;">拉丁名</th>
+             <th style="width:130px;">面積(平方度)</th>
+             <th style="width:100px;">赤經(時、分)</th>
+             <th style="width:100px;">赤緯(度、分)</th>
+             <th style="width:200px;">最亮星</th>
+             </tr>
+             <tr>
+             <th>大熊座</th>
+             <th>UMA</th>
+             <th>Ursa Major</th>
+             <th>1279.66</th>
+             <th>(11,18.76)</th>
+             <th>(50,43.27)</th>
+             <th>大熊座ε(玉衡/北斗五)</th>
+             </tr>
+             <tr>
+             <th>小熊座</th>
+             <th>UMI</th>
+             <th>Ursa Minor</th>
+             <th>255.864</th>
+             <th>(15,0)</th>
+             <th>(77,41.99)</th>
+             <th>小熊座α(勾陳一)</th>
+             </tr>
+             <tr>
+             <th>天龍座</th>
+             <th>DRA</th>
+             <th>Draco</th>
+             <th>1082.952</th>
+             <th>(15,8.64)</th>
+             <th>(67,0.4)</th>
+             <th>天龍座γ(天棓四)</th>
+             </tr>
+             <tr>
+             <th>獵犬座</th>
+             <th>CVN</th>
+             <th>Canes Venatici</th>
+             <th>465.194</th>
+             <th>(13,6.96)</th>
+             <th>(40,6.11)</th>
+             <th>獵犬座α(常陳一)</th>
+             </tr>
+             <tr>
+             <th>牧夫座</th>
+             <th>BOO</th>
+             <th>Boötes</th>
+             <th>906.831</th>
+             <th>(14,42.64)</th>
+             <th>(31,12.16)</th>
+             <th>牧夫座α(大角星)</th>
+             </tr>
+             <tr>
+             <th>后髮座</th>
+             <th>COM</th>
+             <th>Coma Berenices</th>
+             <th>386.475</th>
+             <th>(12,47.27)</th>
+             <th>(23,18.34)</th>
+             <th>后髮座β(周鼎一)</th>
+             </tr>
+             <tr>
+             <th>北冕座</th>
+             <th>CRB</th>
+             <th>Corona Borealis</th>
+             <th>178.71</th>
+             <th>(15,50.59)</th>
+             <th>(32,37.49)</th>
+             <th>北冕座α(貫索四)</th>
+             </tr>
+             <tr>
+             <th>天貓座</th>
+             <th>LYN</th>
+             <th>Lynx</th>
+             <th>545.386</th>
+             <th>(7,59.53)</th>
+             <th>(47,28)</th>
+             <th>天貓座α(軒轅四)</th>
+             </tr>
+             <tr>
+             <th>鹿豹座</th>
+             <th>CAM</th>
+             <th>Camelopardalis</th>
+             <th>756.828</th>
+             <th>(8,51.37)</th>
+             <th>(69,22.89)</th>
+             <th>鹿豹座β(八穀增十四)</th>
+             </tr>
+             <tr>
+             <th>小獅座</th>
+             <th>LMI</th>
+             <th>Leo Minor</th>
+             <th>231.956</th>
+             <th>(10,14.72)</th>
+             <th>(32,8.08)</th>
+             <th>小獅座46(勢四)</th>
+             </tr>
+            </table>
+            <br>
+            <h2>黃道家族 (共13個星座)</h2>
+            <table border="1" style="margin-left: 2em;">
+             <tr>
+             <th style="width:75px;">名稱</th>
+             <th style="width:50px;">簡寫</th>
+             <th style="width:180px;">拉丁名</th>
+             <th style="width:130px;">面積(平方度)</th>
+             <th style="width:100px;">赤經(時、分)</th>
+             <th style="width:100px;">赤緯(度、分)</th>
+             <th style="width:200px;">最亮星</th>
+             </tr>
+             <tr>
+             <th>雙魚座</th>
+             <th>PSC</th>
+             <th>Pisces</th>
+             <th>889.417</th>
+             <th>(0,28.97)</th>
+             <th>(13,41.23)</th>
+             <th>雙魚座η(右更二)</th>
+             </tr>
+             <tr>
+             <th>白羊座</th>
+             <th>ARI</th>
+             <th>Aries</th>
+             <th>441.395</th>
+             <th>(2,38.16)</th>
+             <th>(20,47.54)</th>
+             <th>牡羊座α(婁宿三)</th>
+             </tr>
+             <tr>
+             <th>金牛座</th>
+             <th>TAU</th>
+             <th>Taurus</th>
+             <th>797.249</th>
+             <th>(4,42.13)</th>
+             <th>(14,52.63)</th>
+             <th>金牛座α(畢宿五)</th>
+             </tr>
+             <tr>
+             <th>雙子座</th>
+             <th>GEM</th>
+             <th>Gemini</th>
+             <th>513.761</th>
+             <th>(7,4.24)</th>
+             <th>(22,36.01)</th>
+             <th>雙子座β(北河三)</th>
+             </tr>
+             <tr>
+             <th>巨蟹座</th>
+             <th>CNC</th>
+             <th>Cancer</th>
+             <th>505.872</th>
+             <th>(8,38.96)</th>
+             <th>(19,48.35)</th>
+             <th>巨蟹座β(柳宿增十)</th>
+             </tr>
+             <tr>
+             <th>獅子座</th>
+             <th>LEO</th>
+             <th>Leo</th>
+             <th>946.964</th>
+             <th>(10,40.03)</th>
+             <th>(13,8.32)</th>
+             <th>獅子座α(軒轅十四)</th>
+             </tr>
+             <tr>
+             <th>室女座</th>
+             <th>VIR</th>
+             <th>Virgo</th>
+             <th>1294.428</th>
+             <th>(13,24.39)</th>
+             <th>(-4,9.51)</th>
+             <th>室女座α(角宿一)</th>
+             </tr>
+             <tr>
+             <th>天秤座</th>
+             <th>LIB</th>
+             <th>Libra</th>
+             <th>538.052</th>
+             <th>(15,11.96)</th>
+             <th>(-15,14.08)</th>
+             <th>天秤座β(氐宿四)</th>
+             </tr>
+             <tr>
+             <th>天蝎座</th>
+             <th>SCO</th>
+             <th>Scorpius</th>
+             <th>496.783</th>
+             <th>(16,53.24)</th>
+             <th>(-27,1.89)</th>
+             <th>天蝎座α(心宿二)</th>
+             </tr>
+             <tr>
+             <th>蛇夫座</th>
+             <th>OPH</th>
+             <th>Ophiuchus</th>
+             <th>948.34</th>
+             <th>(17,23.69)</th>
+             <th>(-7,54.74)</th>
+             <th>蛇夫座α(候)</th>
+             </tr>
+             <tr>
+             <th>人馬座</th>
+             <th>SGR</th>
+             <th>Sagittarius</th>
+             <th>867.432</th>
+             <th>(19,5.94)</th>
+             <th>(-28,28.61)</th>
+             <th>人馬座ε(箕宿三)</th>
+             </tr>
+             <tr>
+             <th>摩羯座</th>
+             <th>CAP</th>
+             <th>Capricornus</th>
+             <th>413.947</th>
+             <th>(21,2.93)</th>
+             <th>(-18,1.39)</th>
+             <th>摩羯座δ(壘壁陣四)</th>
+             </tr>
+             <tr>
+             <th>寶瓶座</th>
+             <th>AQR</th>
+             <th>Aquarius</th>
+             <th>979.854</th>
+             <th>(22,17.38)</th>
+             <th>(-10,47.35)</th>
+             <th>寶瓶座β(虛宿一)</th>
+             </tr>
+            </table>
+            <br>
+            <h2>英仙家族 (共9個星座)</h2>
+            <table border="1" style="margin-left: 2em;">
+             <tr>
+             <th style="width:75px;">名稱</th>
+             <th style="width:50px;">簡寫</th>
+             <th style="width:180px;">拉丁名</th>
+             <th style="width:130px;">面積(平方度)</th>
+             <th style="width:100px;">赤經(時、分)</th>
+             <th style="width:100px;">赤緯(度、分)</th>
+             <th style="width:200px;">最亮星</th>
+             </tr>
+             <tr>
+             <th>飛馬座</th>
+             <th>PEG</th>
+             <th>Pegasus</th>
+             <th>1120.794</th>
+             <th>(22,41.84)</th>
+             <th>(19,27.98)</th>
+             <th>飛馬座ε(危宿三)</th>
+             </tr>
+             <tr>
+             <th>仙女座</th>
+             <th>AND</th>
+             <th>Andromeda</th>
+             <th>722.278</th>
+             <th>(0,48.46)</th>
+             <th>(37,25.91)</th>
+             <th>仙女座α(壁宿二)</th>
+             </tr>
+             <tr>
+             <th>英仙座</th>
+             <th>PER</th>
+             <th>Perseus</th>
+             <th>614.997</th>
+             <th>(3,10.5)</th>
+             <th>(45,0.79)</th>
+             <th>英仙座α(天船三)</th>
+             </tr>
+             <tr>
+             <th>仙后座</th>
+             <th>CAS</th>
+             <th>Cassiopeia</th>
+             <th>598.407</th>
+             <th>(1,19.16)</th>
+             <th>(62,11.04)</th>
+             <th>仙后座α(王良四)</th>
+             </tr>
+             <tr>
+             <th>仙王座</th>
+             <th>CEP</th>
+             <th>Cepheus</th>
+             <th>587.787</th>
+             <th>(22,0)</th>
+             <th>(71,0.51)</th>
+             <th>仙王座α(天鉤五)</th>
+             </tr>
+             <tr>
+             <th>鯨魚座</th>
+             <th>CET</th>
+             <th>Cetus</th>
+             <th>1231.411</th>
+             <th>(1,40.1)</th>
+             <th>(-7,10.76)</th>
+             <th>鯨魚座β(土司空)</th>
+             </tr>
+             <tr>
+             <th>御夫座</th>
+             <th>AUR</th>
+             <th>Auriga</th>
+             <th>657.438</th>
+             <th>(6,4.42)</th>
+             <th>(42,1.68)</th>
+             <th>御夫座α(五車二)</th>
+             </tr>
+             <tr>
+             <th>蝎虎座</th>
+             <th>LAC</th>
+             <th>Lacerta</th>
+             <th>200.688</th>
+             <th>(22,27.68)</th>
+             <th>(46,2.51)</th>
+             <th>蝎虎座α(螣蛇一)</th>
+             </tr>
+             <tr>
+             <th>三角座</th>
+             <th>TRI</th>
+             <th>Triangulum</th>
+             <th>131.847</th>
+             <th>(2,11.07)</th>
+             <th>(31,28.56)</th>
+             <th>三角座β(天大將軍九)</th>
+             </tr>
+             </table>
+             <br>
+            <h2>武仙家族 (共18個星座)</h2>
+            <table border="1" style="margin-left: 2em;">
+             <tr>
+             <th style="width:75px;">名稱</th>
+             <th style="width:50px;">簡寫</th>
+             <th style="width:180px;">拉丁名</th>
+             <th style="width:130px;">面積(平方度)</th>
+             <th style="width:100px;">赤經(時、分)</th>
+             <th style="width:100px;">赤緯(度、分)</th>
+             <th style="width:200px;">最亮星</th>
+             </tr>
+             <tr>
+             <th>武仙座</th>
+             <th>HER</th>
+             <th>Hercules</th>
+             <th>1225.148</th>
+             <th>(17,23.16)</th>
+             <th>(27,29.93)</th>
+             <th>武仙座β(河中/天市右垣一)</th>
+             </tr>
+             <tr>
+             <th>天箭座</th>
+             <th>SGE</th>
+             <th>Sagitta</th>
+             <th>79.932</th>
+             <th>(19,39.05)</th>
+             <th>(18,51.68)</th>
+             <th>天箭座γ(左旗五)</th>
+             </tr>
+             <tr>
+             <th>天琴座</th>
+             <th>LYR</th>
+             <th>Lyra</th>
+             <th>286.476</th>
+             <th>(18,51.17)</th>
+             <th>(36,41.36)</th>
+             <th>天琴座α(織女一)</th>
+             </tr>
+             <tr>
+             <th>天鷹座</th>
+             <th>AQL</th>
+             <th>Aquila</th>
+             <th>652.473</th>
+             <th>(19,40.02)</th>
+             <th>(3,24.65)</th>
+             <th>天鷹座α(河鼓二)</th>
+             </tr>
+             <tr>
+             <th>天鵝座</th>
+             <th>CYG</th>
+             <th>Cygnus</th>
+             <th>803.983</th>
+             <th>(20,35.28)</th>
+             <th>(44,32.7)</th>
+             <th>天鵝座α(天津四)</th>
+             </tr>
+             <tr>
+             <th>狐狸座</th>
+             <th>VUL</th>
+             <th>Vulpecula</th>
+             <th>268.165</th>
+             <th>(20,13.88)</th>
+             <th>(24,26.56)</th>
+             <th>狐狸座α(齊增五)</th>
+             </tr>
+             <tr>
+             <th>烏鴉座</th>
+             <th>CRV</th>
+             <th>Corvus</th>
+             <th>183.801</th>
+             <th>(12,26.52)</th>
+             <th>(-18,26.2)</th>
+             <th>烏鴉座γ(軫宿一)</th>
+             </tr>
+             <tr>
+             <th>長蛇座</th>
+             <th>HYA</th>
+             <th>Hydra</th>
+             <th>1302.844</th>
+             <th>(11,36.73)</th>
+             <th>(-14,31.91)</th>
+             <th>長蛇座α(星宿一)</th>
+             </tr>
+             <tr>
+             <th>巨爵座</th>
+             <th>CRT</th>
+             <th>Crater</th>
+             <th>282.398</th>
+             <th>(11,23.75)</th>
+             <th>(-15,55.74)</th>
+             <th>巨爵座δ(翼宿七)</th>
+             </tr>
+             <tr>
+             <th>六分儀座</th>
+             <th>SEX</th>
+             <th>Sextans</th>
+             <th>313.515</th>
+             <th>(10,16.29)</th>
+             <th>(-2,36.88)</th>
+             <th>六分儀座α(天相二)</th>
+             </tr>
+             <tr>
+             <th>巨蛇座</th>
+             <th>SER</th>
+             <th>Serpens</th>
+             <th>636.928</th>
+             <th>(16,57.04)</th>
+             <th>(6,7.32)</th>
+             <th>巨蛇座α(蜀/天市右垣七)</th>
+             </tr>
+             <tr>
+             <th>盾牌座</th>
+             <th>SCT</th>
+             <th>Scutum</th>
+             <th>109.114</th>
+             <th>(18,40.39)</th>
+             <th>(-9,53.32)</th>
+             <th>盾牌座α(天弁一)</th>
+             </tr>
+             <tr>
+             <th>半人馬座</th>
+             <th>CEN</th>
+             <th>Centaurus</th>
+             <th>1060.422</th>
+             <th>(13,4.27)</th>
+             <th>(-47,20.72)</th>
+             <th>半人馬座α(南門二)</th>
+             </tr>
+             <tr>
+             <th>豺狼座</th>
+             <th>LUP</th>
+             <th>Lupus</th>
+             <th>333.683</th>
+             <th>(15,13.21)</th>
+             <th>(-42,42.53)</th>
+             <th>豺狼座α(騎官十)</th>
+             </tr>
+             <tr>
+             <th>南冕座</th>
+             <th>CRA</th>
+             <th>Corona Australis</th>
+             <th>127.696</th>
+             <th>(18,38.79)</th>
+             <th>(-41,8.85)</th>
+             <th>南冕座α(鱉六)</th>
+             </tr>
+             <tr>
+             <th>天壇座</th>
+             <th>ARA</th>
+             <th>Ara</th>
+             <th>237.057</th>
+             <th>(17,22.49)</th>
+             <th>(-56,35.3)</th>
+             <th>天壇座β(杵三)</th>
+             </tr>
+             <tr>
+             <th>南三角座</th>
+             <th>TRA</th>
+             <th>Triangulum Australe</th>
+             <th>109.978</th>
+             <th>(16,4.95)</th>
+             <th>(-65,23.28)</th>
+             <th>南三角座α(三角形三)</th>
+             </tr>
+             <tr>
+             <th>南十字座</th>
+             <th>CRU</th>
+             <th>Crux</th>
+             <th>68.447</th>
+             <th>(12,26.99)</th>
+             <th>(-60,11.19)</th>
+             <th>南十字座α(十字架二)</th>
+             </tr>
+            </table>
+            <br>
+            <h2>獵戶家族 (共5個星座)</h2>
+            <table border="1" style="margin-left: 2em;">
+             <tr>
+             <th style="width:75px;">名稱</th>
+             <th style="width:50px;">簡寫</th>
+             <th style="width:180px;">拉丁名</th>
+             <th style="width:130px;">面積(平方度)</th>
+             <th style="width:100px;">赤經(時、分)</th>
+             <th style="width:100px;">赤緯(度、分)</th>
+             <th style="width:200px;">最亮星</th>
+             </tr>
+             <tr>
+             <th>獵戶座</th>
+             <th>ORI</th>
+             <th>Orion</th>
+             <th>594.12</th>
+             <th>(5,34.59)</th>
+             <th>(5,56.94)</th>
+             <th>獵戶座β(參宿七)</th>
+             </tr>
+             <tr>
+             <th>小犬座</th>
+             <th>CMI</th>
+             <th>Canis Minor</th>
+             <th>183.367</th>
+             <th>(7,39.17)</th>
+             <th>(6,25.63)</th>
+             <th>小犬座α(南河三)</th>
+             </tr>
+             <tr>
+             <th>大犬座</th>
+             <th>CMA</th>
+             <th>Canis Major</th>
+             <th>380.118</th>
+             <th>(6,49.74)</th>
+             <th>(-22,8.42)</th>
+             <th>大犬座α(天狼星)</th>
+             </tr>
+             <tr>
+             <th>天兔座</th>
+             <th>LEP</th>
+             <th>Lepus</th>
+             <th>290.291</th>
+             <th>(5,33.95)</th>
+             <th>(-19,2.78)</th>
+             <th>天兔座α(廁一)</th>
+             </tr>
+             <tr>
+             <th>麒麟座</th>
+             <th>MON</th>
+             <th>Monoceros</th>
+             <th>481.569</th>
+             <th>(7,3.63)</th>
+             <th>(0,16.93)</th>
+             <th>麒麟座β(參宿增二十六)</th>
+             </tr>
+             </table>
+             <br>
+            <h2>幻之水族家族 (共9個星座)</h2>
+            <table border="1" style="margin-left: 2em;">
+             <tr>
+             <th style="width:75px;">名稱</th>
+             <th style="width:50px;">簡寫</th>
+             <th style="width:180px;">拉丁名</th>
+             <th style="width:130px;">面積(平方度)</th>
+             <th style="width:100px;">赤經(時、分)</th>
+             <th style="width:100px;">赤緯(度、分)</th>
+             <th style="width:200px;">最亮星</th>
+             </tr>
+             <tr>
+             <th>海豚座</th>
+             <th>DEL</th>
+             <th>Delphinus</th>
+             <th>188.549</th>
+             <th>(20,41.61)</th>
+             <th>(11,40.26)</th>
+             <th>海豚座β(瓠瓜四)</th>
+             </tr>
+             <tr>
+             <th>小馬座</th>
+             <th>EQU</th>
+             <th>Equuleus</th>
+             <th>71.641</th>
+             <th>(21,11.26)</th>
+             <th>(7,45.49)</th>
+             <th>小馬座α(虛宿二)</th>
+             </tr>
+             <tr>
+             <th>波江座</th>
+             <th>ERI</th>
+             <th>Eridanus</th>
+             <th>1137.919</th>
+             <th>(3,18.02)</th>
+             <th>(-28,45.37)</th>
+             <th>波江座α(水委一)</th>
+             </tr>
+             <tr>
+             <th>南魚座</th>
+             <th>PSA</th>
+             <th>Piscis Austrinus</th>
+             <th>245.375</th>
+             <th>(22,17.07)</th>
+             <th>(-30,38.53)</th>
+             <th>南魚座α(北落師門)</th>
+             </tr>
+             <tr>
+             <th>船帆座</th>
+             <th>VEL</th>
+             <th>Vela</th>
+             <th>499.649</th>
+             <th>(9,34.64)</th>
+             <th>(-47,10.03)</th>
+             <th>船帆座γ(天社一)</th>
+             </tr>
+             <tr>
+             <th>船底座</th>
+             <th>CAR</th>
+             <th>Carina</th>
+             <th>494.184</th>
+             <th>(8,41.7)</th>
+             <th>(-63,13.16)</th>
+             <th>船底座α(老人星)</th>
+             </tr>
+             <tr>
+             <th>船尾座</th>
+             <th>PUP</th>
+             <th>Puppis</th>
+             <th>673.434</th>
+             <th>(7,15.48)</th>
+             <th>(-31,10.64)</th>
+             <th>船尾座ζ(弧矢增二十二)</th>
+             </tr>
+             <tr>
+             <th>羅盤座</th>
+             <th>PYX</th>
+             <th>Pyxis</th>
+             <th>220.833</th>
+             <th>(8,57.16)</th>
+             <th>(-27,21.1)</th>
+             <th>羅盤座α(天狗五)</th>
+             </tr>
+             <tr>
+             <th>天鴿座</th>
+             <th>COL</th>
+             <th>Columba</th>
+             <th>270.184</th>
+             <th>(5,51.76)</th>
+             <th>(-35,5.67)</th>
+             <th>天鴿座α(丈人一)</th>
+             </tr>
+            </table>
+            <br>
+            <h2>拜耳家族 (共11個星座)</h2>
+            <table border="1" style="margin-left: 2em;">
+             <tr>
+             <th style="width:75px;">名稱</th>
+             <th style="width:50px;">簡寫</th>
+             <th style="width:180px;">拉丁名</th>
+             <th style="width:130px;">面積(平方度)</th>
+             <th style="width:100px;">赤經(時、分)</th>
+             <th style="width:100px;">赤緯(度、分)</th>
+             <th style="width:200px;">最亮星</th>
+             </tr>
+             <tr>
+             <th>水蛇座</th>
+             <th>HYI</th>
+             <th>Hydrus</th>
+             <th>243.035</th>
+             <th>(2,20.65)</th>
+             <th>(-69,57.39)</th>
+             <th>水蛇座β(蛇尾一)</th>
+             </tr>
+             <tr>
+             <th>劍魚座</th>
+             <th>DOR</th>
+             <th>Dorado</th>
+             <th>179.173</th>
+             <th>(5,14.51)</th>
+             <th></th>
+             <th>劍魚座α(金魚二)</th>
+             </tr>
+             <tr>
+             <th>飛魚座</th>
+             <th>VOL</th>
+             <th>Volans</th>
+             <th>141.354</th>
+             <th>(7,47.73)</th>
+             <th>(-69,48.07)</th>
+             <th>飛魚座β(飛魚三)</th>
+             </tr>
+             <tr>
+             <th>天燕座</th>
+             <th>APS</th>
+             <th>Apus</th>
+             <th>206.327</th>
+             <th>(16,8.65)</th>
+             <th>(-75,18)</th>
+             <th>天燕座α(異雀八)</th>
+             </tr>
+             <tr>
+             <th>孔雀座</th>
+             <th>PAV</th>
+             <th>Pavo</th>
+             <th>377.666</th>
+             <th>(19,36.71)</th>
+             <th>(-65,46.89)</th>
+             <th>孔雀座α(孔雀十一)</th>
+             </tr>
+             <tr>
+             <th>鳳凰座</th>
+             <th>PHE</th>
+             <th>Phoenix</th>
+             <th>469.319</th>
+             <th>(0,55.91)</th>
+             <th>(-48,34.84)</th>
+             <th>鳳凰座α(火鳥六)</th>
+             </tr>
+             <tr>
+             <th>天鶴座</th>
+             <th>GRU</th>
+             <th>Grus</th>
+             <th>365.513</th>
+             <th>(22,27.39)</th>
+             <th>(-46,21.11)</th>
+             <th>天鶴座α(鶴一)</th>
+             </tr>
+             <tr>
+             <th>杜鵑座</th>
+             <th>TUC</th>
+             <th>Tucana</th>
+             <th>294.557</th>
+             <th>(23,46.64)</th>
+             <th>(-65,49.8)</th>
+             <th>杜鵑座α(鳥喙一)</th>
+             </tr>
+             <tr>
+             <th>蒼蠅座</th>
+             <th>MUS</th>
+             <th>Musca</th>
+             <th>138.355</th>
+             <th>(12,35.28)</th>
+             <th>(-70,9.66)</th>
+             <th>蒼蠅座α(蜜蜂三)</th>
+             </tr>
+             <tr>
+             <th>蝘蜓座</th>
+             <th>CHA</th>
+             <th>Chamaeleon</th>
+             <th>131.592</th>
+             <th>(10,41.53)</th>
+             <th>(-79,12.3)</th>
+             <th>蝘蜓座α(小斗增一)</th>
+             </tr>
+             <tr>
+             <th>印第安座</th>
+             <th>IND</th>
+             <th>Indus</th>
+             <th>294.006</th>
+             <th>(21,58.33)</th>
+             <th>(-59,42.4)</th>
+             <th>印第安座α(波斯二)</th>
+             </tr>
+            </table>
+            <br>
+            <h2>拉卡伊家族 (共13個星座)</h2>
+            <table border="1" style="margin-left: 2em;">
+             <tr>
+             <th style="width:75px;">名稱</th>
+             <th style="width:50px;">簡寫</th>
+             <th style="width:180px;">拉丁名</th>
+             <th style="width:130px;">面積(平方度)</th>
+             <th style="width:100px;">赤經(時、分)</th>
+             <th style="width:100px;">赤緯(度、分)</th>
+             <th style="width:200px;">最亮星</th>
+             </tr>
+             <tr>
+             <th>矩尺座</th>
+             <th>NOR</th>
+             <th>Norma</th>
+             <th>165.29</th>
+             <th>(15,54.18)</th>
+             <th>(-51,21.09)</th>
+             <th>矩尺座γ2(近波斯一)</th>
+             </tr>
+             <tr>
+             <th>圓規座</th>
+             <th>CIR</th>
+             <th>Circinus</th>
+             <th>93.353</th>
+             <th>(14,34.54)</th>
+             <th>(-63,1.82)</th>
+             <th>圓規座α(南門增二)</th>
+             </tr>
+             <tr>
+             <th>望遠鏡座</th>
+             <th>TEL</th>
+             <th>Telescopium</th>
+             <th>251.512</th>
+             <th>(19,19.54)</th>
+             <th>(-51,2.21)</th>
+             <th>望遠鏡座α(鱉一)</th>
+             </tr>
+             <tr>
+             <th>顯微鏡座</th>
+             <th>MIC</th>
+             <th>Microscopium</th>
+             <th>209.513</th>
+             <th>(20,57.88)</th>
+             <th>(-36,16.49)</th>
+             <th>顯微鏡座γ(璃瑜增一)</th>
+             </tr>
+             <tr>
+             <th>玉夫座</th>
+             <th>SCL</th>
+             <th>Sculptor</th>
+             <th>474.764</th>
+             <th>(0,26.28)</th>
+             <th>(-32,5.3)</th>
+             <th>玉夫座α(近土司空南)</th>
+             </tr>
+             <tr>
+             <th>天爐座</th>
+             <th>FOR</th>
+             <th>Fornax</th>
+             <th>397.502</th>
+             <th>(2,47.88)</th>
+             <th>(-31,38.07)</th>
+             <th>天爐座α(天苑增三)</th>
+             </tr>
+             <tr>
+             <th>雕具座</th>
+             <th>CAE</th>
+             <th>Caelum</th>
+             <th>124.865</th>
+             <th>(4,42.27)</th>
+             <th>(-37,52.9)</th>
+             <th>雕具座α(近天園增六)</th>
+             </tr>
+             <tr>
+             <th>時鐘座</th>
+             <th>HOR</th>
+             <th>Horologium</th>
+             <th>248.885</th>
+             <th>(3,16.56)</th>
+             <th>(-53,20.18)</th>
+             <th>時鐘座α(天園增六)</th>
+             </tr>
+             <tr>
+             <th>南極座</th>
+             <th>OCT</th>
+             <th>Octans</th>
+             <th>291.045</th>
+             <th>(23,0)</th>
+             <th>(-82,9.12)</th>
+             <th>南極座ν(蛇尾三)</th>
+             </tr>
+             <tr>
+             <th>山案座</th>
+             <th>MEN</th>
+             <th>Mensa</th>
+             <th>153.484</th>
+             <th>(5,24.9)</th>
+             <th>(-77,30.24)</th>
+             <th>山案座α(近附白一)</th>
+             </tr>
+             <tr>
+             <th>網罟座</th>
+             <th>RET</th>
+             <th>Reticulum</th>
+             <th>113.936</th>
+             <th>(3,55.27)</th>
+             <th>(-59,59.85)</th>
+             <th>網罟座α(夾白二)</th>
+             </tr>
+             <tr>
+             <th>繪架座</th>
+             <th>PIC</th>
+             <th>Pictor</th>
+             <th>246.739</th>
+             <th>(5,42.46)</th>
+             <th>(-53,28.45)</th>
+             <th>繪架座α(金魚增一)</th>
+             </tr>
+             <tr>
+             <th>唧筒座</th>
+             <th>ANT</th>
+             <th>Antlia</th>
+             <th>238.901</th>
+             <th>(10,16.43)</th>
+             <th>(-32,29.01)</th>
+             <th>唧筒座α(近天紀增二)</th>
+             </tr>
+            </table>
+            <br>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/select_content_con.js') }}"></script>
+    <br><br><br><br>
+    </div>
+
+
+    <div class="nav2">
+
+
+      <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+      <a href="#" data-text="TOP"><button type="button" id="BackTop" class="toTop-arrow"></button></a>
+      <script src="{{ url_for('static', filename='js/scroll_to_top.js') }}"></script>
+
+      <nav class="nav-box">
+        <input type="checkbox" id="menu">
+        <label for="menu" class="line">
+          <div class="menu"></div>
+        </label>
+
+        <div class="menu-list">
+         <ul>
+          <li><a class="custom-link" href="#meaning" id="change-color">星座的意義</a></li>
+          <li><a class="custom-link" href="#motion" id="change-color">星座的運動</a></li>
+          <li><a class="custom-link" href="#88_constellation" id="change-color">88星座</a></li>
+         </ul>
+        </div>
+     </nav>
+   </div>
+   </div>
+
+  <div class="footer">
+    <h2>純屬娛樂性質，非營利目的，版權歸所有</h2>
+  </div>
+  <!--設定鼠標延遲效果 -->
+  <script src="{{ url_for('static', filename='js/cursor_circle.js') }}"></script>
+  <!--設定鼠標碰到超連結時會放大+文字 -->
+  <script src="{{ url_for('static', filename='js/mouse_link.js') }}"></script>
+
+</body>
+
+</html>

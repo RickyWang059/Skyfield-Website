@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天琴座</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/constellation/lyra.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cursor.css') }}">
+    <!--設定背景圖片(flask下只能在這裡設定，不能用css) -->
+    <style>
+        body {
+               background: url("{{ url_for('static', filename='picture/meteor.gif') }}");
+        }
+    </style>
+    <!--重新整理時會自動回到頁面頂部 -->
+    <script src="{{ url_for('static', filename='js/refresh_to_top.js') }}"></script>
+  
+</head>
+
+<body>
+  <div id="myCursor"></div>
+  <div id="circle"></div>
+  <div class="wrapper">
+    <div class="nav1">
+      <a class="custom-link" href="/constellation" data-text="BACK"><img id="fade-in" src="{{ url_for('static', filename='picture/astrology.png') }}"></a>
+    </div>
+    <div class="content" style="text-align: center;">
+     <div class="hr-container">
+      <h1><span class="hr-text">天琴座</span>
+      </h1>
+      <hr class="custom-hr">
+     </div>
+     <br><br>
+       <div class="part1" id="part1">
+        <div class="info">
+          <h2>INFORMATION</h2>
+          <p>
+          <table>
+            <tr>
+              <td>
+                <li>拉丁名</li>
+              </td>
+              <td>:</td>
+              <td>Lyra</td>
+            </tr>
+            <tr>
+              <td>
+                <li>縮寫</li>
+              </td>
+              <td>:</td>
+              <td>Lyr</td>
+            </tr>
+            <tr>
+              <td>
+                <li>象徵物</li>
+              </td>
+              <td>:</td>
+              <td>豎琴</td>
+            </tr>
+            <tr>
+              <td>
+                <li>赤經</li>
+              </td>
+              <td>:</td>
+              <td>19</td>
+            </tr>
+            <tr>
+              <td>
+                <li>赤緯</li>
+              </td>
+              <td>:</td>
+              <td>+40</td>
+            </tr>
+            <tr>
+              <td>
+                <li>面積</li>
+              </td>
+              <td>:</td>
+              <td>286平方度 (第52位)</td>
+            </tr>
+            <tr>
+              <td>
+                <li>可見範圍</li>
+              </td>
+              <td>:</td>
+              <td>90°N至40°S</td>
+            </tr>
+            <tr>
+              <td>
+                <li>最亮星</li>
+              </td>
+              <td>:</td>
+              <td>織女星（天琴座α）</td>
+            </tr>
+            <tr>
+              <td>
+                <li>特徵</li>
+              </td>
+              <td>:</td>
+              <td>織女星為夏季大三角之一<br>是北天銀河中最燦爛的星座之一</td>
+            </tr>
+            <tr>
+              <td>
+                <li>鄰近星座</li>
+              </td>
+              <td>:</td>
+              <td>天龍座 | 武仙座 | 狐狸座 | 天鵝座</td>
+            </tr>
+          </table>
+          </p>
+        </div>
+        <div class="cover">
+            
+            
+            <div>
+                <div id="1" class="classification">
+                    <img id="pic1" src="{{ url_for('static', filename='picture/constellation/lyra/1.png') }}">
+                </div>
+                <div id="2" class="classification">
+                    <img id="pic2" src="{{ url_for('static', filename='picture/constellation/lyra/2.png') }}">
+                </div>
+                <div id="3" class="classification">
+                    <img id="pic3" src="{{ url_for('static', filename='picture/constellation/lyra/3.png') }}">
+                </div>
+                <div id="4" class="classification">
+                    <img id="pic4" src="{{ url_for('static', filename='picture/constellation/lyra/4.png') }}">
+                </div>
+            </div>
+            <!--建立四選一顯示圖片 -->
+            <script src="{{ url_for('static', filename='js/select_figure_con.js') }}"></script>
+            <div class="btn-container">
+                <button onclick="showContent('1')" class="btn">基本星座</button>
+                <button onclick="showContent('2')" class="btn">星座連線</button>
+                <button onclick="showContent('3')" class="btn">星座圖案</button>
+                <button onclick="showContent('4')" class="btn">完整圖示</button>
+            </div>
+        </div>
+      </div>
+      </br></br></br>
+      <div class="part2" id="part2">
+        <div class="fig">
+          <br>
+          <img id="pic5" src="{{ url_for('static', filename='picture/constellation/lyra/5.png') }}">
+        </div>
+        <div class="intro">
+          <h2>INTRODUCTION</h2>
+          <h3 style="text-align:left;">如何找到天琴座？</h3>
+          <p style="text-align:left;">在銀河附近的織女星，織女星旁邊有一個小小的平行四邊形，這5顆星構成了天琴座。</p>
+          <h3 style="text-align:left;">夏季大三角</h3>
+          <p style="text-align:left;">天琴座的織女星與天鷹座的牛郎星、天鵝座的天津四，於夏季的天空排列為直角三角型，為夏季大三角</p>
+
+        </div>
+      </div>
+      </br></br></br></br>
+      <div>
+      <div class="part3" id="part3">
+        <div class="myth">
+          <h2><a href="#part4" onclick="toggleHide('part4')" title="" type="button" style="color: white;" id="change-color"
+              data-text="MORE">MYTH</a></h2>
+        <p>相傳俄耳甫斯彈得一手好琴，琴聲之悠揚，連山川鳥獸都為之動容。後來有位水神歐律狄克因而愛上了他，不久兩人便成了婚。婚後有一天，俄耳甫斯在演奏時，歐律狄克竟被毒蛇咬傷而中毒死亡，並墜入陰曹地府。俄耳甫斯情急之下，就抱了琴冒險勇闖地府，要尋回愛妻。到了地府，他悲傷哀怨的琴音感動軟化了冥王普魯托，於是冥王史無前例的答應讓歐律狄克回陽重返人間，但再三叮囑俄耳甫斯在回到陽間的歸途上，千萬不可回頭看自己的妻子。俄耳甫斯答應了，一路上都沒有回頭，但是就在快要抵達陽間時，忍不住想看看妻子有沒有跟上來而回頭，沒想到就在這個時候，他的愛妻卻在一聲慘叫聲中，再度墜入冥界。極度悲傷的琴聖俄耳甫斯眼見一切再也難以挽回，於是毀琴並投河自盡。天神宙斯聞訊後，感念俄耳甫斯絕世琴藝將永遠失傳，便將他的七弦琴移置天界成為星座，供後人追念。</p>
+        </div>
+        <div class="fig2">
+          <br><br>
+          <img id="pic6" src="{{ url_for('static', filename='picture/constellation/lyra/6.jpg') }}">
+        </div>
+      </div>
+      <br><br><br><br><br><br>
+      <div class="part4" id="part4" style="text-align:left; display:none;">
+      <h2>天琴座的故事──譜出悲曲的俄耳甫斯</h2>
+          <p>傳説俄耳甫斯有一位情投意合，如花似玉的妻子，叫歐律狄克。她生性活潑，最喜歡跟眾仙女到山間田野嬉戲遊玩。有一天，她正在原野上跑着，不料腳下踩着了一條毒蛇，毒蛇出其不意狠狠地咬了她一口，她只哎喲了一聲便倒在了草地上，當同來的女伴趕來救護時，只見她已是毒氣攻心一命嗚呼了。</p>
+          <p>俄耳甫斯聽到噩耗痛不欲生，他拿出金琴震顫地彈出一曲歌，那琴聲就連冥頑的石頭都為之流淚。為了再見見妻子，他不惜自己的生命，捨身進入冥界。冥界是一個悽慘可怖的境界，那裏黑暗冷酷、悲涼愁慘。俄耳甫斯顧不了許多，他一心要把妻子找回來!他的琴聲打動了冥河上的艄公，馴服了守衞冥土大門的三頭惡狗，連復仇女神們都被感動了。最後他來到冥王與冥后的面前，請求冥王把妻子還給他，並表示如若不然他寧可死在這裏，決不一個人回去！冥王冥后見此，憐憫之情油然而生，便答應了他的請求，但提出一個條件：在他領着妻子走出地府之前決不能回頭看她，否則他的妻子將永遠不能回到人間。</p>
+          <p>俄耳甫斯滿心歡喜地謝了冥王冥后，然後領着心愛的妻子踏上重返人間的道路。歐律狄克的蛇傷還沒有好，每走一步都痛苦地呻吟一聲，然而俄耳甫斯卻連看也不看她一眼。他們一前一後默默地走着，出了死關，穿過幽谷、渡過死河，沿途一片陰森。終於看到了人間的微光，他們就要離開昏暗的冥界重返光明的樂土了!這時，歐律狄克再也禁不住丈夫的冷遇，嘴裏不高興地嘟嚷起來，可憐的俄耳甫斯聽到妻子的埋怨忘卻了冥王的叮囑，他回過身來想擁抱妻子。突然，一切像夢幻一樣消失，死亡的長臂又一次將他的妻子拉回死國，只給他留下兩串晶瑩的淚珠。俄耳甫斯歷盡艱辛結果卻功虧一簣，他真想隨着妻子一起去冥界，可是死河上船伕不肯將他渡過河去，他只好一個人返回人間。</p>
+          <p>從此以後，俄耳甫斯對一切都失去了興趣，孤身一人隱居在色雷斯的巖穴之中。後來，由於他不敬重酒神，被酒神手下的狂女殺害並將他的屍體撕得粉碎拋到荒郊野外，他的頭顱隨着海水漂到了列斯波斯島，後來這裏便成為抒情詩歌的故鄉。俄耳甫斯母親費盡周折將兒子的屍體收集起來埋藏在奧林帕斯山麓，所以，那裏的夜鶯比任何地方的鳥都唱得好聽。阿波羅也十分懷念他的兒子，便去請求天上最大的神宙斯，宙斯可憐俄耳甫斯死得悲慘，便把他父親阿波羅送給他的七絃琴高高掛在空中，點綴蒼莽的天穹，這便是天琴座的來歷。</p>
+        
+      <br><br><br><br><br><br>   
+    </div>
+    <script src="{{ url_for('static', filename='js/togglehide.js') }}"></script>
+      </div>
+    </div>
+    <div class="nav2">
+
+     <!--設定返回頂部的按鈕 -->
+     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+     <a href="#" data-text="TOP"><button type="button" id="BackTop" class="toTop-arrow"></button></a>
+     <script src="{{ url_for('static', filename='js/scroll_to_top.js') }}"></script>
+
+     <nav class="nav-box">
+      <input type="checkbox" id="menu">
+      <label for="menu" class="line">
+        <div class="menu"></div>
+      </label>
+
+      <div class="menu-list">
+         <ul>
+          <li><a class="custom-link" href="#part1" id="change-color">Information</a></li>
+          <li><a class="custom-link" href="#part2" id="change-color">Introduction</a></li>
+          <li><a class="custom-link" href="#part3" id="change-color">Myth</a></li>
+         </ul>
+      </div>
+     </nav>
+    </div>
+  </div>
+  <div class="footer">
+    <h2>純屬娛樂性質，非營利目的，版權歸所有</h2>
+  </div>
+  <!--設定鼠標延遲效果 -->
+  <script src="{{ url_for('static', filename='js/cursor_circle.js') }}"></script>
+  <!--設定鼠標碰到超連結時會放大+文字 -->
+  <script src="{{ url_for('static', filename='js/mouse_link.js') }}"></script>
+
+</body>
+
+</html>

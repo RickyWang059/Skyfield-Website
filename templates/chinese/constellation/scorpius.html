@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天蝎座</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/constellation/scorpius.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cursor.css') }}">
+    <!--設定背景圖片(flask下只能在這裡設定，不能用css) -->
+    <style>
+        body {
+               background: url("{{ url_for('static', filename='picture/meteor.gif') }}");
+        }
+    </style>
+    <!--重新整理時會自動回到頁面頂部 -->
+    <script src="{{ url_for('static', filename='js/refresh_to_top.js') }}"></script>
+  
+</head>
+
+<body>
+  <div id="myCursor"></div>
+  <div id="circle"></div>
+  <div class="wrapper">
+    <div class="nav1">
+      <a class="custom-link" href="/constellation" data-text="BACK"><img id="fade-in" src="{{ url_for('static', filename='picture/astrology.png') }}"></a>
+    </div>
+    <div class="content" style="text-align: center;">
+     <div class="hr-container">
+      <h1><span class="hr-text">天蝎座</span>
+      </h1>
+      <hr class="custom-hr">
+     </div>
+     <br><br>
+       <div class="part1" id="part1">
+        <div class="info">
+          <h2>INFORMATION</h2>
+          <p>
+          <table>
+            <tr>
+              <td>
+                <li>拉丁名</li>
+              </td>
+              <td>:</td>
+              <td>Scorpius</td>
+            </tr>
+            <tr>
+              <td>
+                <li>縮寫</li>
+              </td>
+              <td>:</td>
+              <td>Sco</td>
+            </tr>
+            <tr>
+              <td>
+                <li>象徵物</li>
+              </td>
+              <td>:</td>
+              <td>蠍子</td>
+            </tr>
+            <tr>
+              <td>
+                <li>赤經</li>
+              </td>
+              <td>:</td>
+              <td>17</td>
+            </tr>
+            <tr>
+              <td>
+                <li>赤緯</li>
+              </td>
+              <td>:</td>
+              <td>-40</td>
+            </tr>
+            <tr>
+              <td>
+                <li>面積</li>
+              </td>
+              <td>:</td>
+              <td>497平方度 (第33位)</td>
+            </tr>
+            <tr>
+              <td>
+                <li>可見範圍</li>
+              </td>
+              <td>:</td>
+              <td>40°N至90°S</td>
+            </tr>
+            <tr>
+              <td>
+                <li>最亮星</li>
+              </td>
+              <td>:</td>
+              <td>心宿二（天蝎座α）</td>
+            </tr>
+            <tr>
+              <td>
+                <li>特徵</li>
+              </td>
+              <td>:</td>
+              <td>為黃道星座之一<br>最亮星心宿二是全天第十五亮星</td>
+            </tr>
+            <tr>
+              <td>
+                <li>鄰近星座</li>
+              </td>
+              <td>:</td>
+              <td>天秤座 | 人馬座 | 豺狼座 | 矩尺座<br>天壇座 | 南冕座 | 蛇夫座</td>
+            </tr>
+          </table>
+          </p>
+        </div>
+        <div class="cover">
+            
+            <br>
+            <div>
+                <div id="1" class="classification">
+                    <img id="pic1" src="{{ url_for('static', filename='picture/constellation/scorpius/1.png') }}">
+                </div>
+                <div id="2" class="classification">
+                    <img id="pic2" src="{{ url_for('static', filename='picture/constellation/scorpius/2.png') }}">
+                </div>
+                <div id="3" class="classification">
+                    <img id="pic3" src="{{ url_for('static', filename='picture/constellation/scorpius/3.png') }}">
+                </div>
+                <div id="4" class="classification">
+                    <img id="pic4" src="{{ url_for('static', filename='picture/constellation/scorpius/4.png') }}">
+                </div>
+            </div>
+            <!--建立四選一顯示圖片 -->
+            <script src="{{ url_for('static', filename='js/select_figure_con.js') }}"></script>
+            <div class="btn-container">
+                <button onclick="showContent('1')" class="btn">基本星座</button>
+                <button onclick="showContent('2')" class="btn">星座連線</button>
+                <button onclick="showContent('3')" class="btn">星座圖案</button>
+                <button onclick="showContent('4')" class="btn">完整圖示</button>
+            </div>
+        </div>
+      </div>
+      </br></br></br>
+      <div class="part2" id="part2">
+        <div class="fig">
+          <br>
+          <img id="pic5" src="{{ url_for('static', filename='picture/constellation/scorpius/5.png') }}">
+        </div>
+        <div class="intro">
+          <h2>INTRODUCTION</h2>
+          <h3 style="text-align:left;">如何找到天蝎座？</h3>
+          <p style="text-align:left;">面向南方，看夏季最明顯的天蝎座。天蝎座的主星心宿二是一顆紅色明亮的超巨星，也是天蠍座的心臟，其往前連出三顆代表頭部跟雙螯的星，往後連出明亮的鉤子狀尾巴</p>
+        </div>
+      </div>
+      </br></br></br></br>
+      <div>
+      <div class="part3" id="part3">
+        <div class="myth">
+          <h2><a href="#part4" onclick="toggleHide('part4')" title="" type="button" style="color: white;" id="change-color"
+              data-text="MORE">MYTH</a></h2>
+        <p>獵人俄里翁過於傲慢，誇口說天下沒有一個動物是他的對手，天后希拉就派毒蠍子咬傷了他的腳，使他中毒而死。所以它們到了天上以後也互相為敵，遠居天空的兩邊，每當天蝎座從東方地平線上升起時，獵戶俄里翁便從西方匆匆離去。</p>
+        </div>
+        <div class="fig2">
+          <br><br>
+          <img id="pic6" src="{{ url_for('static', filename='picture/constellation/scorpius/6.jpg') }}">
+        </div>
+      </div>
+      <br><br><br><br><br><br>
+      <div class="part4" id="part4" style="text-align:left; display:none;">
+      <h2>天蝎座與獵戶座的故事──永不相見的死對頭</h2>
+          <p>俄里翁是海神波塞頓的兒子，長得高大英俊，也是一名出色的獵人。</p>
+          <p>俄里翁在一次打獵的途中，遇到其爾斯國王安諾爾的女兒－－海洛珀，俄里翁對海洛珀一見鍾情，因此費盡心思想接近她。 梅洛珀公主對這位英俊不凡的獵人也頗有好感，可是國王安諾爾卻不這麼想。 “你只是一個小獵人罷了，”安諾你不屑他説：“我的女兒可是金枝玉葉的公主，你有辦法讓她過好日子嗎？” 俄里翁信心十足地點頭道：“國王請放心，我一定能使海洛珀幸福，絕不會讓她吃苦的。” 安諾爾輕蔑地看着俄里翁，他決挫挫他的鋭氣，於是，諾爾改口道，“要是你能夠把其他斯國境內所有的獵物全都打死，並送來這兒，我就把公主嫁給你。” 對俄里翁而言，這年工作實在太簡單了。 一言為定！”俄里翁向國王敬個禮，便轉身離開了。 “這個大傻瓜！”安諾爾心中暗自笑道：“我看你是沒這個能耐的。” </p>
+          <p>這天，早已忘記這件事的安諾爾國王正在吃早餐，一名待臣跌跌撞撞地跑進來，驚慌地説：“大王，外－－外面堆滿了獵物啊！” “什麼？”安諾爾心中一驚，不由得脱口叫道。 待臣喘了一口氣，這才慢慢地説：“前幾天來見陛下的那位年輕獵人，如今正在外面等着見您的呢！” 安諾爾沒想到那位年輕人真的做到了他的要求，他走到窗前往外一看，城保外面果然堆了許多獵物，一座座比山還高呢！ 而站在皇宮外的俄里翁正滿心歡喜地等着國王答應他和海洛珀的婚事。 安諾爾不得不接見亞利，可是他實在不願意把女兒嫁給這位年輕獵人，他只好顧左右而言他，從頭到尾未曾提到兩人的婚事。 俄里翁忍不住了，他開口問道：“我已經辦到你所説的事，你什麼時候把公主嫁給我？” 安諾爾依然敷衍地説：“為了慶祝你打獵滿載而歸，我已經命人替你準備慶功宴，今天晚上我們就好好慶祝一番吧！” 俄里翁無奈，只好留下參加酒宴。 梅洛公主知道這件事後，心想父親一定是打算悔婚，便悄悄派一位宮女找俄里翁，告訴俄里翁她房間的位置，並且要俄里翁來見她。 俄里翁把宮女的話記在心裏，當大家酒酣耳熱的時候，才悄悄溜到梅洛珀的房間，互訴相思之苦。</p>
+          <p>安諾爾知道這件事大怒不已，他向酒神戴蒙塞斯抱怨道：“俄里翁這個臭小子，他竟敢侵犯我的女兒，你一定要替我報仇！” 戴蒙塞斯拿了一瓶酒給安諾爾，並且告訴他： “俄里翁只要喝下這瓶酒便會沉睡，到時你只要把他的眼睛弄瞎，再將眼珠子丟到沙灘上，他就再也見不到你的女兒了。” 安諾爾聽後很高興，回到皇宮後便派人去召俄里翁來，説是要和他商量婚禮的事。 俄里翁果然興高采烈地來見安諾爾，安諾爾也早已擺好宴席在等他了。 “請坐啊！俄里翁，”安諾爾滿臉笑容他説：“你和海洛珀真心相愛，我應該早已讓你們結婚才對！” “謝謝陛下！”俄里翁衷心地感謝道。 安諾爾命人向俄里翁斟酒，然後頻頻勸酒道：“今天我們應該多喝幾杯才是！” 俄里翁不疑有詐，不一會兒，酒神給的那一瓶酒全被他喝完了，不久，便便不省人事地昏倒了。 “來人啊！”安諾爾厲聲下令道：“把他的眼睛挖出來丟到海邊，再把他的身體丟到山上！我再也不要見到他！” 當俄里翁昏昏沉沉地醒來，才發現自己暗了，這時，他才明白自己中了安諾爾的詭計。 </p>
+          <p>勇敢的俄里翁並沒有因此而氣餒，他曾經聽説過鐵神沃肯什麼都能修，他決心求他幫忙，儘管瞎了，俄里翁伯摸索着來到沃肯的門前，向他講述自己的遭遇。 沃肯被俄里翁的精神所感動，便代他向太陽神阿波羅求助，找回了眼珠，並把它們裝回眼眶裏，俄里翁才得以復明。 </p>
+          <p>當俄里翁在向沃肯陳述他的打獵技巧時，忍不住得意洋洋地説：“在這個世界上，沒有任何一隻多動物能躲過我的箭！” 天后希拉聽到這句話時，勃然大怒：“俄里翁，你太狂妄了！” 希拉決定懲治自大的俄里翁。 這天，俄里翁走在每天狩獵必經的路上，希拉早已經派了一隻巨大的蠍子躲在一旁，俄里翁自恃本領高強，毫無戒心地走着，不料毒蠍子突然跳出來攻擊他，俄里翁當場毒發身亡，但是蠍子依然咬着他不放，而俄里翁倒下的巨大身軀也把蠍子給壓死了。 希拉為了感謝蠍子的盡忠職守，便把它放在天上成為天蝎座。而俄里翁也被升為獵戶座，它們到了天上以後也互相為敵，遠居天空的兩邊，每當天蝎座從東方地平線上升起時，獵戶俄里翁便從西方匆匆離去，永不相見。</p>
+      <br><br><br><br><br><br>   
+    </div>
+    <script src="{{ url_for('static', filename='js/togglehide.js') }}"></script>
+      </div>
+    </div>
+    <div class="nav2">
+
+     <!--設定返回頂部的按鈕 -->
+     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+     <a href="#" data-text="TOP"><button type="button" id="BackTop" class="toTop-arrow"></button></a>
+     <script src="{{ url_for('static', filename='js/scroll_to_top.js') }}"></script>
+
+     <nav class="nav-box">
+      <input type="checkbox" id="menu">
+      <label for="menu" class="line">
+        <div class="menu"></div>
+      </label>
+
+      <div class="menu-list">
+         <ul>
+          <li><a class="custom-link" href="#part1" id="change-color">Information</a></li>
+          <li><a class="custom-link" href="#part2" id="change-color">Introduction</a></li>
+          <li><a class="custom-link" href="#part3" id="change-color">Myth</a></li>
+         </ul>
+      </div>
+     </nav>
+    </div>
+  </div>
+  <div class="footer">
+    <h2>純屬娛樂性質，非營利目的，版權歸所有</h2>
+  </div>
+  <!--設定鼠標延遲效果 -->
+  <script src="{{ url_for('static', filename='js/cursor_circle.js') }}"></script>
+  <!--設定鼠標碰到超連結時會放大+文字 -->
+  <script src="{{ url_for('static', filename='js/mouse_link.js') }}"></script>
+
+</body>
+
+</html>

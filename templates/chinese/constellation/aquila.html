@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天鷹座</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/constellation/aquila.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cursor.css') }}">
+    <!--設定背景圖片(flask下只能在這裡設定，不能用css) -->
+    <style>
+        body {
+               background: url("{{ url_for('static', filename='picture/meteor.gif') }}");
+        }
+    </style>
+    <!--重新整理時會自動回到頁面頂部 -->
+    <script src="{{ url_for('static', filename='js/refresh_to_top.js') }}"></script>
+  
+</head>
+
+<body>
+  <div id="myCursor"></div>
+  <div id="circle"></div>
+  <div class="wrapper">
+    <div class="nav1">
+      <a class="custom-link" href="/constellation" data-text="BACK"><img id="fade-in" src="{{ url_for('static', filename='picture/astrology.png') }}"></a>
+    </div>
+    <div class="content" style="text-align: center;">
+     <div class="hr-container">
+      <h1><span class="hr-text">天鷹座</span>
+      </h1>
+      <hr class="custom-hr">
+     </div>
+     <br><br>
+       <div class="part1" id="part1">
+        <div class="info">
+          <h2>INFORMATION</h2>
+          <p>
+          <table>
+            <tr>
+              <td>
+                <li>拉丁名</li>
+              </td>
+              <td>:</td>
+              <td>Aquila</td>
+            </tr>
+            <tr>
+              <td>
+                <li>縮寫</li>
+              </td>
+              <td>:</td>
+              <td>Aql</td>
+            </tr>
+            <tr>
+              <td>
+                <li>象徵物</li>
+              </td>
+              <td>:</td>
+              <td>鵰</td>
+            </tr>
+            <tr>
+              <td>
+                <li>赤經</li>
+              </td>
+              <td>:</td>
+              <td>18h41m~20</td>
+            </tr>
+            <tr>
+              <td>
+                <li>赤緯</li>
+              </td>
+              <td>:</td>
+              <td>-11.9°~+18.7</td>
+            </tr>
+            <tr>
+              <td>
+                <li>面積</li>
+              </td>
+              <td>:</td>
+              <td>652平方度 (第22位)</td>
+            </tr>
+            <tr>
+              <td>
+                <li>可見範圍</li>
+              </td>
+              <td>:</td>
+              <td>85°N至75°S</td>
+            </tr>
+            <tr>
+              <td>
+                <li>最亮星</li>
+              </td>
+              <td>:</td>
+              <td>河鼓二（天鷹座α）</td>
+            </tr>
+            <tr>
+              <td>
+                <li>特徵</li>
+              </td>
+              <td>:</td>
+              <td>河鼓二為夏季大三角之一<br>河鼓二即為牛郎星</td>
+            </tr>
+            <tr>
+              <td>
+                <li>鄰近星座</li>
+              </td>
+              <td>:</td>
+              <td>天箭座 | 武仙座 | 蛇夫座 | 巨蛇座<br>盾牌座 | 人馬座 | 摩羯座 | 寶瓶座<br>海豚座</td>
+            </tr>
+          </table>
+          </p>
+        </div>
+        <div class="cover">
+            
+            <br><br>
+            <div>
+                <div id="1" class="classification">
+                    <img id="pic1" src="{{ url_for('static', filename='picture/constellation/aquila/1.png') }}">
+                </div>
+                <div id="2" class="classification">
+                    <img id="pic2" src="{{ url_for('static', filename='picture/constellation/aquila/2.png') }}">
+                </div>
+                <div id="3" class="classification">
+                    <img id="pic3" src="{{ url_for('static', filename='picture/constellation/aquila/3.png') }}">
+                </div>
+                <div id="4" class="classification">
+                    <img id="pic4" src="{{ url_for('static', filename='picture/constellation/aquila/4.png') }}">
+                </div>
+            </div>
+            <!--建立四選一顯示圖片 -->
+            <script src="{{ url_for('static', filename='js/select_figure_con.js') }}"></script>
+            <div class="btn-container">
+                <button onclick="showContent('1')" class="btn">基本星座</button>
+                <button onclick="showContent('2')" class="btn">星座連線</button>
+                <button onclick="showContent('3')" class="btn">星座圖案</button>
+                <button onclick="showContent('4')" class="btn">完整圖示</button>
+            </div>
+        </div>
+      </div>
+      </br></br></br>
+      <div class="part2" id="part2">
+        <div class="fig">
+          <br>
+          <img id="pic5" src="{{ url_for('static', filename='picture/constellation/aquila/5.png') }}">
+        </div>
+        <div class="intro">
+          <h2>INTRODUCTION</h2>
+          <h3 style="text-align:left;">如何找到天鷹座？</h3>
+          <p style="text-align:left;">在織女星跨過銀河的對面，可以找到一顆明亮的星星，旁邊還有一橘一白兩顆較暗的星伴著，其中最亮的那顆是河鼓二，也就是七夕故事中的牛郎，而旁邊兩顆較暗的河鼓一、河鼓三則是七夕故事中牛郎織女的兩個小孩。而在西方的神話中，河鼓二是天鷹座的頭，可以連著繼續畫出老鷹的身體和展開的雙翅。</p>
+          <h3 style="text-align:left;">夏季大三角</h3>
+          <p style="text-align:left;">天鷹座的牛郎星與天琴座的織女星、天鵝座的天津四，於夏季的天空排列為直角三角型，為夏季大三角</p>
+
+        </div>
+      </div>
+      </br></br></br></br>
+      <div>
+      <div class="part3" id="part3">
+        <div class="myth">
+          <h2>MYTH</h2>
+        <p>古希臘人有一個習俗，那就是家中飲宴或是招待客人時，未出嫁的女兒必須做為宴會的侍者，負責為大家端茶倒水。不但普通人家，就是名門望族、王公貴戚，甚至天上的神仙也莫不如此。</p>
+        <p>大神宙斯和神後赫拉的女兒赫柏，可以説是神國最高貴的公主了。每當眾神聚會的時候，她總是最忙碌的一位，像個輕盈的小精靈在酒席間飛來飛去，笑靨如花，輕聲曼語，使宴會充滿了歡樂輕鬆的氣氛。可惜，好景不長。大英雄赫拉克勒斯到了天界以後，宙斯和赫拉都很喜歡他的英俊、勇敢，便把赫柏許配給他為妻。這樣一來，在宴會上神仙們再也看不到公主的身影了，雖然照樣是歌舞昇平，但大家總覺得有些冷清。</p>
+        <p>宙斯也覺察到了這一點，他想到人間去尋找一個合適的人物，來代替他的女兒擔任神宴的侍者。於是他搖身一變，化作一隻大鷹。“雄鷹”在天上翱翔，忽然，他發現有一羣少年在山間嬉戲。宙斯的眼睛一亮，一眼就看中了其中一個機靈、活潑的小男孩。孩子名叫甘尼美提斯，是這個國家的小王子。宙斯一個俯衝落到了孩子們面前。</p>
+        <p>面對突如其來的這隻大鷹，孩子們嚇得四散奔逃。唯有小甘尼美提斯沒有動，他見這隻美麗的雄鷹英武挺拔，看上去並不兇猛，就大着膽子向它走去。走到跟前，他輕輕地撫摸蒼鷹光豔亮澤的羽毛，鷹也温順地看着他。甘尼美提斯越來越喜歡它，後來竟騎到鷹背上去了。等他坐穩了，大鷹展開雙翅，陡然飛了起來。它越飛越快，越飛越高，眨眼間就消失得無影無蹤了。</p>
+        <p>國王聽説愛子竟然被一隻大鷹誘走了，急忙派人四下尋找。幾天過去了，一點消息也沒有。他悲痛得仰天長嘆，不知向誰訴説這不幸的遭遇。可就在他抬起頭的時候，在夜空的繁星當中，突然發現自己乖巧、可愛的小兒子，正拿着赫柏公主用過的玉瓶，為眾神斟酒呢。後來，宙斯為了紀念赫柏和甘尼美提斯做過的工作，就把他們經常用到的那個玉瓶化作一個星座，這就是寶瓶座。而且他對他所變過的那隻雄鷹也十分得意，就把它變作一個星座，這就是天鷹座。</p>
+        </div>
+        <div class="fig2">
+          <br><br>
+          <img id="pic6" src="{{ url_for('static', filename='picture/constellation/aquila/6.jpg') }}">
+        </div>
+      </div>
+      <br><br><br><br><br><br>
+      </div>
+    </div>
+    <div class="nav2">
+
+     <!--設定返回頂部的按鈕 -->
+     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+     <a href="#" data-text="TOP"><button type="button" id="BackTop" class="toTop-arrow"></button></a>
+     <script src="{{ url_for('static', filename='js/scroll_to_top.js') }}"></script>
+
+     <nav class="nav-box">
+      <input type="checkbox" id="menu">
+      <label for="menu" class="line">
+        <div class="menu"></div>
+      </label>
+
+      <div class="menu-list">
+         <ul>
+          <li><a class="custom-link" href="#part1" id="change-color">Information</a></li>
+          <li><a class="custom-link" href="#part2" id="change-color">Introduction</a></li>
+          <li><a class="custom-link" href="#part3" id="change-color">Myth</a></li>
+         </ul>
+      </div>
+     </nav>
+    </div>
+  </div>
+  <div class="footer">
+    <h2>純屬娛樂性質，非營利目的，版權歸所有</h2>
+  </div>
+  <!--設定鼠標延遲效果 -->
+  <script src="{{ url_for('static', filename='js/cursor_circle.js') }}"></script>
+  <!--設定鼠標碰到超連結時會放大+文字 -->
+  <script src="{{ url_for('static', filename='js/mouse_link.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>長蛇座</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/constellation/hydra.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cursor.css') }}">
+    <!--設定背景圖片(flask下只能在這裡設定，不能用css) -->
+    <style>
+        body {
+               background: url("{{ url_for('static', filename='picture/meteor.gif') }}");
+        }
+    </style>
+    <!--重新整理時會自動回到頁面頂部 -->
+    <script src="{{ url_for('static', filename='js/refresh_to_top.js') }}"></script>
+  
+</head>
+
+<body>
+  <div id="myCursor"></div>
+  <div id="circle"></div>
+  <div class="wrapper">
+    <div class="nav1">
+      <a class="custom-link" href="/constellation" data-text="BACK"><img id="fade-in" src="{{ url_for('static', filename='picture/astrology.png') }}"></a>
+    </div>
+    <div class="content" style="text-align: center;">
+     <div class="hr-container">
+      <h1><span class="hr-text">長蛇座</span>
+      </h1>
+      <hr class="custom-hr">
+     </div>
+     <br><br>
+       <div class="part1" id="part1">
+        <div class="info">
+          <h2>INFORMATION</h2>
+          <p>
+          <table>
+            <tr>
+              <td>
+                <li>拉丁名</li>
+              </td>
+              <td>:</td>
+              <td>Hydra</td>
+            </tr>
+            <tr>
+              <td>
+                <li>縮寫</li>
+              </td>
+              <td>:</td>
+              <td>Hya</td>
+            </tr>
+            <tr>
+              <td>
+                <li>象徵物</li>
+              </td>
+              <td>:</td>
+              <td>九頭蛇</td>
+            </tr>
+            <tr>
+              <td>
+                <li>赤經</li>
+              </td>
+              <td>:</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>
+                <li>赤緯</li>
+              </td>
+              <td>:</td>
+              <td>−20</td>
+            </tr>
+            <tr>
+              <td>
+                <li>面積</li>
+              </td>
+              <td>:</td>
+              <td>1303平方度 (第1位)</td>
+            </tr>
+            <tr>
+              <td>
+                <li>可見範圍</li>
+              </td>
+              <td>:</td>
+              <td>54°N至83°S</td>
+            </tr>
+            <tr>
+              <td>
+                <li>最亮星</li>
+              </td>
+              <td>:</td>
+              <td>星宿一（長蛇座α）</td>
+            </tr>
+            <tr>
+              <td>
+                <li>特徵</li>
+              </td>
+              <td>:</td>
+              <td>全天範圍最大的星座</td>
+            </tr>
+            <tr>
+              <td>
+                <li>鄰近星座</li>
+              </td>
+              <td>:</td>
+              <td>唧筒座 | 巨蟹座 | 小犬座 | 半人馬座<br>烏鴉座 | 巨爵座 | 獅子座 | 天秤座<br>豺狼座 | 麒麟座 | 船尾座 | 羅盤座<br>六分儀座 | 室女座</td>
+            </tr>
+          </table>
+          </p>
+        </div>
+        <div class="cover">
+            
+            
+            <div>
+                <div id="1" class="classification">
+                    <img id="pic1" src="{{ url_for('static', filename='picture/constellation/hydra/1.png') }}">
+                </div>
+                <div id="2" class="classification">
+                    <img id="pic2" src="{{ url_for('static', filename='picture/constellation/hydra/2.png') }}">
+                </div>
+                <div id="3" class="classification">
+                    <img id="pic3" src="{{ url_for('static', filename='picture/constellation/hydra/3.png') }}">
+                </div>
+                <div id="4" class="classification">
+                    <img id="pic4" src="{{ url_for('static', filename='picture/constellation/hydra/4.png') }}">
+                </div>
+            </div>
+            <!--建立四選一顯示圖片 -->
+            <script src="{{ url_for('static', filename='js/select_figure_con.js') }}"></script>
+            <div class="btn-container">
+                <button onclick="showContent('1')" class="btn">基本星座</button>
+                <button onclick="showContent('2')" class="btn">星座連線</button>
+                <button onclick="showContent('3')" class="btn">星座圖案</button>
+                <button onclick="showContent('4')" class="btn">完整圖示</button>
+            </div>
+        </div>
+      </div>
+      </br></br></br>
+      <div class="part2" id="part2">
+        <div class="fig">
+          <br>
+          <img id="pic5" src="{{ url_for('static', filename='picture/constellation/hydra/5.png') }}">
+        </div>
+        <div class="intro">
+          <h2>INTRODUCTION</h2>
+          <h3 style="text-align:left;">如何找到長蛇座？</h3>
+          <p style="text-align:left;">順著北斗七星的杓柄，從天權連一路連到搖光後繼續畫一條弧線，依序經過牧夫座大角星、室女座角宿一及烏鴉座，烏鴉座也位於長蛇座的蛇尾，因此找到烏鴉座後，可以順著蛇尾一路連線，依序經過背在蛇身上的烏鴉座、代表酒杯的巨爵座和一個暗淡的小星座六分儀座，經過星宿一最後連到不太明顯的，五邊形的蛇頭。</p>
+
+        </div>
+      </div>
+      </br></br></br></br>
+      <div>
+      <div class="part3" id="part3">
+        <div class="myth">
+          <h2>MYTH</h2>
+          <p>
+            希臘神話中，赫拉克勒斯是宙斯與凡人的私生子，他天生具有無比的神力，天后赫拉也因此視他為眼中釘，千方百計想殺死赫拉克勒斯，在赫拉克勒斯還是嬰兒的時候，就放了兩條巨蛇在搖籃裏，希望咬死赫拉克勒斯，沒想到赫拉克勒斯笑嘻嘻的握死了它們，從小赫拉克勒斯就被奉為“人類最偉大的英雄”。
+          </p>
+          <p>
+            赫拉當然不會因為一次失敗就放棄殺死赫拉克勒斯，赫拉詛咒讓赫拉克勒斯發瘋打死自己三個無辜的兒子。赫拉克勒斯醒後十分懊惱。為了贖罪他決定以苦行來洗清自己的罪孽，他來到邁錫尼為國王歐律斯透斯（Eurystheus）服役十二年。赫拉克勒斯在十二年中完成了十二項英勇業績，其中第二項任務就是殺死在勒拿湖的一隻九頭妖蛇黑德拉。
+          </p>
+          <p>但是這妖蛇並不容易對付，因為其九個頭的中間那一個頭是永遠殺不死的，且其他的八個頭每當被斬下一個頭時，就會在原處再生出兩個新的頭來，後來海克力斯得到好友伊奧利斯的協助，每當海格力斯砍下一個蛇頭後，他的好友就用火炬把切口燒焦，使得它無法在該處再生出新的頭來，海克力斯費了很大的功夫才將八個蛇頭全砍下來，然後他再將妖蛇那顆不死的蛇頭，用巨大的岩石壓住，使它永遠無法再危害人畜。而天后赫拉在眼見黑德拉陷入苦戰的時候，偷偷地派遣了一隻同住在沼澤裡的大巨蟹來幫助，大巨蟹跳出來用鉗子緊緊的夾住海克力斯的腳，想使他不能動彈，結果巨蟹被踩碎，黑德拉也被制服，海克力斯完成了不可能完成的任務。天后赫拉因感念它的功勞，而在天上設立長蛇座及巨蟹座。</p>
+        </div>
+        <div class="fig2">
+          <br>
+          <img id="pic6" src="{{ url_for('static', filename='picture/constellation/hydra/6.jpg') }}">
+          <img id="pic6" src="{{ url_for('static', filename='picture/constellation/hydra/7.jpg') }}">
+        </div>
+      </div>
+      <br><br><br>
+      </div>
+    </div>
+    <div class="nav2">
+
+     <!--設定返回頂部的按鈕 -->
+     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+     <a href="#" data-text="TOP"><button type="button" id="BackTop" class="toTop-arrow"></button></a>
+     <script src="{{ url_for('static', filename='js/scroll_to_top.js') }}"></script>
+
+     <nav class="nav-box">
+      <input type="checkbox" id="menu">
+      <label for="menu" class="line">
+        <div class="menu"></div>
+      </label>
+
+      <div class="menu-list">
+         <ul>
+          <li><a class="custom-link" href="#part1" id="change-color">Information</a></li>
+          <li><a class="custom-link" href="#part2" id="change-color">Introduction</a></li>
+          <li><a class="custom-link" href="#part3" id="change-color">Myth</a></li>
+         </ul>
+      </div>
+     </nav>
+    </div>
+  </div>
+  <div class="footer">
+    <h2>純屬娛樂性質，非營利目的，版權歸所有</h2>
+  </div>
+  <!--設定鼠標延遲效果 -->
+  <script src="{{ url_for('static', filename='js/cursor_circle.js') }}"></script>
+  <!--設定鼠標碰到超連結時會放大+文字 -->
+  <script src="{{ url_for('static', filename='js/mouse_link.js') }}"></script>
+
+</body>
+
+</html>

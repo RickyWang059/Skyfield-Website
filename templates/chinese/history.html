@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HISTORY</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/history.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cursor.css') }}">
+    <!--設定背景圖片(flask下只能在這裡設定，不能用css) -->
+    <style>
+        body {
+            background: url("{{ url_for('static', filename='picture/meteor.gif') }}");
+        }
+    </style>
+    <!--重新整理時會自動回到頁面頂部 -->
+    <script src="{{ url_for('static', filename='js/refresh_to_top.js') }}"></script>
+
+</head>
+
+<body>
+    <div id="myCursor"></div>
+    <div id="circle"></div>
+    <div class="wrapper">
+        <div class="nav1">
+            <a class="custom-link" href="/mainpage" data-text="MAIN PAGE"><img id="fade-in"
+                    src="{{ url_for('static', filename='picture/astrology.png') }}"></a>
+        </div>
+        <div class="content">
+            <div class="fig-container">
+                <img id="main_fig" src="{{ url_for('static', filename='picture/Jack.jpg') }}">
+
+                <p style="text-align:center;" class="scroll-down">SCROLL DOWN</p>
+                <div class="scroll-down">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 16l-6-6h12l-6 6z" fill="currentColor" />
+                    </svg>
+                </div>
+            </div>
+            <div class="switch-container">
+                <button class="switch" style="color:#FFD700;">繁體中文</button>
+                <a class="custom-link" href="/history_eng"><button class="switch">English</button></a>
+            </div>
+            <br><br>
+            <p>為了方便研究及觀測天上諸多恆星，人們把星空分為若干個區域，每一區就是一個星座。很難確切的說出人類是從何時開始有星座的概念的，這類天文知識遠在有歷史記載以前就被人們所領會。星座的名稱則很可能來源於早期航海的水手。不同地域的文明中，星座的起源可能完全不同，但是隨著各文明的擴張和相互影響，星座的文化也包含了融合的過程。
+            </p>
+            <p>星座的起源與發展是一段悠久且迷人的天文學歷史。現代通用的星座系統主要由古巴比倫、古希臘和古羅馬等文明的星座發展而來。</p>
+            </br></br></br></br>
+            <h6 id="original" style="color: black;">.</h6>
+            <div class="hr-container">
+                <h1><span class="hr-text">星座的起源</span>
+                </h1>
+                <hr class="custom-hr">
+            </div>
+            <br><br>
+            <h2>古代</h2>
+            <p>西方星座起源於四大文明古國之一的古巴比倫。據説，所謂的黃道12星座等總共有20個以上的星座名稱，在約5000年以前美索不達米亞就已誕生。此後，古代巴比倫人繼續將天空分為許多區域，提出新的星座。在公元前1000年前後已提出30個星座。古希臘天文學家對巴比倫的星座進行了補充和發展，編制出了古希臘星座表。公元2世紀，古希臘天文學家托勒密綜合了當時的天文成就，編制了48個星座。並用假象的線條將星座內的主要亮星連起來，把它們想象成動物或人物的形象，結合神話故事給它們起出適當的名字，這就是星座名稱的由來。希臘神話故事中的48個星座大都居於北方天空和赤道南北。
+            </p>
+            <br>
+            <h2>西方</h2>
+            <p>公元前270年希臘詩人阿拉托斯寫的《物象》中提到47個星座。從《物象》所記載的星區可得知，由於歲差的原因，書中所描述時期的南極點與現在的南極點並不一致，據此可以推斷出書中所記錄的是公元前2000年前的星空；同時星空記錄的空白區域表明觀察者應該在北緯35°到36°附近。因此有人認為將星空劃分為星座的做法起源於美索不達米亞的巴比倫和蘇美爾時期，希臘和埃及的星座有可能是從該地區傳入的。
+            </p>
+            <p>在《約伯記》裡提到大熊、獵戶等幾個星座；公元前十二世紀尼布甲尼撒一世時代建造的土地界標石上刻有人馬座、天蠍座和長蛇座的圖案。古希臘詩人荷馬和赫西奧德的著作中也提及了大熊、獵戶和昴星團，而在同一時期的巴比倫已經用楔形文字記錄了黃道十二星座。
+            </p>
+            <p>到公元二世紀，托勒密在他的《天文學大成》中記錄了48個星座中的1022顆恆星，這也是現代星座的原型。之後許多天文學家在托勒密星座的空檔里填充新的星座；1603年巴耶、1690年赫維留、1752年拉卡伊先後在兩個世紀內為南天的星座命了名。
+            </p>
+            </br>
+            <div>
+                <h2>中國</h2>
+                <p>古代中國以<a href="#chinese1" onclick="toggleHide('chinese1')" title="" type="button"
+                        style="color: white;" id="change-color" data-text="MORE">星官</a>來劃分天空。最早記載<a href="#chinese1"
+                        onclick="toggleHide('chinese1')" title="" type="button" style="color: white;" id="change-color"
+                        data-text="MORE">星官</a>的著作是司馬遷的史記·天官書，其中錄有91個<a href="#chinese1"
+                        onclick="toggleHide('chinese1')" title="" type="button" style="color: white;" id="change-color"
+                        data-text="MORE">星官</a>共五百多顆恆星。到隋朝的《步天歌》中已記載<a href="#chinese1" onclick="toggleHide('chinese1')"
+                        title="" type="button" style="color: white;" id="change-color"
+                        data-text="MORE">星官</a>283個，它們分別屬於<a href="#chinese2" onclick="toggleHide('chinese2')" title=""
+                        type="button" style="color: white;" id="change-color" data-text="MORE">三垣</a>或<a
+                        href="#chinese3" onclick="toggleHide('chinese3')" title="" type="button" style="color: white;"
+                        id="change-color"
+                        data-text="MORE">二十八宿</a>之一。中國古代以太陰曆紀年，由於月亮圍繞地球自轉一周約為每月廿八日，因此每天經過一區的稱為「宿」或「舍」。到了明朝末期，由於西學東漸的影響，徐光啟所編的《崇禎曆書》參考歐洲天文學的數據增補了近南極星區的<a
+                        href="#chinese1" onclick="toggleHide('chinese1')" title="" type="button" style="color: white;"
+                        id="change-color" data-text="MORE">星官</a>23個。</p>
+                <p>中國古代把北極附近的<a href="#chinese2" onclick="toggleHide('chinese2')" title="" type="button"
+                        style="color: white;" id="change-color" data-text="MORE">三垣</a>定為中官，而<a href="#chinese3"
+                        onclick="toggleHide('chinese3')" title="" type="button" style="color: white;" id="change-color"
+                        data-text="MORE">二十八宿</a>實際上是自<a href="#chinese4" onclick="toggleHide('chinese4')" title=""
+                        type="button" style="color: white;" id="change-color" data-text="MORE">四象</a>細分出來的，<a
+                        href="#chinese3" onclick="toggleHide('chinese3')" title="" type="button" style="color: white;"
+                        id="change-color"
+                        data-text="MORE">二十八宿</a>以南的星區則稱為外官，即「中官+四象+外官」，這只是中國古代為數諸多的星區劃分方法之一。除此之外也有把星區分為七個區域的「五獸+中官+外官」、分為11個區域的「九野+中官+外官」等多種方法，只不過「中官+四象」的劃分方法流傳較為廣泛罷了。
+                </p>
+                </br></br>
+                <div id="chinese1" style="display: none;">
+                    <h2><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E5%AE%98#" id="change-color"
+                            style="color: white;" target="_blank" data-text="WIKI">星官</a></h2>
+                    <p>是中國古代對恆星分組的方式，古時通星坐，其名稱通常是由星群排列的特徵來聯想附會。</p>
+                    <p>在《史記·天官書》裡，星象分為中、東、西、南、北等五官，中官是北極，裡頭有太一、天一與陰德，東官則是蒼龍，南官則是朱鳥，其旁邊有黃龍，而西官是白虎，北官是玄武。而在《晉書·天文志》裡，則將赤道以南的星列為外官，以北則是中官，《隋書·天文志》則改以二十八宿為界，遂形成由四獸、中官與外官構成六大區的分類體系。而除了這種分法之外，也有用五獸、中官、外官的七區分法，或是由北斗七星加上四象的「五七」與中、外官構成的七區分法，此外還有九野（九天）與中、外官構成的十一區分法
+                    </p>
+                </div>
+                <div id="chinese2" style="display: none;">
+                    <h2><a href="https://zh.wikipedia.org/wiki/%E4%B8%89%E5%9E%A3" id="change-color"
+                            style="color: white;" target="_blank" data-text="WIKI">三垣</a></h2>
+                    <p>為中國古代劃分星空的星官之一，與黃道帶上之二十八宿合稱三垣二十八宿。三垣包括上垣之太微垣、中垣之紫微垣及下垣之天市垣；三垣始見於唐初《開元占經》中。</p>
+                </div>
+                <div id="chinese3" style="display: none;">
+                    <h2><a href="https://zh.wikipedia.org/wiki/%E4%BA%8C%E5%8D%81%E5%85%AB%E5%AE%BF" id="change-color"
+                            style="color: white;" target="_blank" data-text="WIKI">二十八宿</a></h2>
+                    <p>是古代中國天文學的術語，指的是天球上黃道和天赤道附近的二十八個星座。這二十八個星座成為中國古代天文學赤道坐標系的重要組成部分，每一宿均以一顆恆星為距星，以此作為天文坐標，可以用來計量太陽、月亮、五大行星、彗星等運動天體的運行位置，也是觀測其他恆星的基礎。
+                    </p>
+                    <p>東方青龍所屬七宿是：角、亢、氐、房、心、尾、箕</p>
+                    <p>南方朱雀所屬七宿是：井、鬼、柳、星、張、翼、軫</p>
+                    <p>西方白虎所屬七宿是：奎、婁、胃、昴、畢、觜、參</p>
+                    <p>北方玄武所屬七宿是：斗、牛、女、虛、危、室、壁</p>
+                </div>
+                <div id="chinese4" style="display: none;">
+                    <h2><a href="https://zh.wikipedia.org/wiki/%E5%9B%9B%E8%B1%A1" id="change-color"
+                            style="color: white;" target="_blank" data-text="WIKI">四象</a></h2>
+                    <p>指中國象徵四方星宿的四種神獸青龍、白虎、朱雀和玄武，即四種星象，這樣的稱呼方式見於《雲笈七籤》：「夫四象者乃青龍、白虎、朱雀、玄武也」。這四種神獸，即四獸，又稱為四靈，四獸時常被運用於戰場上的軍列，成為打仗時的保護神。在道教的北帝經典中，青龍號為「孟章神君」，白虎號為「監兵神君」，朱雀號為「陵光神君」，玄武號為「執明神君」。
+                    </p>
+                </div>
+                <script src="{{ url_for('static', filename='js/togglehide.js') }}"></script>
+            </div>
+            <h6 id="name" style="color: black;">.</h6>
+            <div class="hr-container">
+                <h1><span class="hr-text">星座的命名</span>
+                </h1>
+                <hr class="custom-hr">
+            </div>
+            <br><br>
+            <h2>古代星座的命名</h2>
+            <p>因為古代文明之間相對隔絕，在不同文化裡，星星組成的圖案被賦予了不盡相同的形象。例如北斗七星在古希臘被視作熊的尾巴；中國人則將它看作舀酒的器具斗；英國人認為它是耕田的犁；法國南部的人認為它是平底鍋；龐尼印第安人認為它是擔架上的病人；瑪雅人認為那是七隻金剛鸚鵡；印度人將它看作是七位智者；羅馬人則看作是七頭牛。
+            </p>
+            <p>中國古代星官體系反映的是人間的社會體系，星官的名字來自帝王將相、宮廷廟宇、軍營車騎、農耕狩獵等各個方面。這體現了中國古代文化的「天地對應」和「天人合一」的思想。</p>
+            <p>西方星座系統中星座的名字多數來源於希臘神話中的人物和動物，而對於在希臘本土看不到的近南極星區，約翰·拜耳用與大海及海中的生物相關的名詞予以命名。之後法國天文學家尼可拉·路易·拉卡伊用科學裝置和儀器的名稱命名了13個亮星較少的星區。
+            </p>
+            <br><br>
+            <h2>現代星座的命名</h2>
+            <p>現代星座常使用的88星座里包含14個人類形象、9種鳥類、2種昆蟲、19種陸地動物、10種水生物，2個半人馬怪物以及29種非生物；頭髮、巨蛇、龍、飛馬、河流各一種。</p>
+            <br><br>
+            <h2>恆星的命名</h2>
+            <p>在學術上並沒有一套單一的恆星命名系統。較亮的恆星基本上是根據它們所處的星座，使用拜耳命名法或弗蘭斯蒂德恆星命名法來定名。如半人馬座α（拜耳命名法）、天鵝座61（弗蘭斯蒂德恆星命名法）。還有一些恆星使用變星的命名方式，如天琴座RR等。對於肉眼無法看見的恆星，一般不按照其所在的星座命名，除非它與較亮的恆星形成雙星或聯星系統。這些需要通過望遠鏡才能看到的恆星通常使用它們在特定的星表中的編號作為其名稱。
+            </p>
+            <p>一些明亮的恆星有源於拉丁、希臘或阿拉伯的俗名，如α
+                Aql，在英語中一般稱作「Altair」，而在中文裡被稱為「牛郎星」。實際上如果要按照星座來命名，這顆恆星應該稱作「天鷹座α」（英文）或「河鼓二」（中文）。「天鷹座」和「河鼓」分別是它所在西方星座和中國星官。
+            </p>
+            <br><br>
+            <h2>深空天體的命名</h2>
+            <p>雖然深空天體（星雲、星團、星系）也隨著天球一起轉動，但是深空天體並不普遍以星座命名。它們一般在數字編號前加上M、NGC、IC等字母，分別代表梅西爾星表、星雲星團新總表、索引星表。對於顯著的深空天體有時會有更加通用的名稱，如位於獵戶座的M42往往叫做獵戶星雲；位於中國古代星宿昴宿的M45稱為昴宿星團等。
+            </p>
+            <br><br>
+            <h6 id="evolution" style="color: black;">.</h6>
+            <div class="hr-container">
+                <h1><span class="hr-text">現代星座演變</span>
+                </h1>
+                <hr class="custom-hr">
+            </div>
+            <br><br>
+            <p>現代星座中的50個由托勒密星座演化而來，12個由約翰·拜耳在1603年命名，7個由約翰·赫維留在1690年命名，14個由尼古拉斯·拉卡伊在1763年命名。到公元1922年，國際天文學會決定將全天劃分為88個星座，並成立了比利時天文學家尤金·德爾波特主導的第三委員會（IAU
+                Commission 3）；1930年，國際天文學會正式定義了這些星座的邊界。在這之後，任何恆星（除了太陽）、星雲、星系都精確的屬於某一個特定的星座。</p>
+            <p>在現代88星座中，最亮的星座為南十字座；可見恆星最多的星座是半人馬座，6等以上星數為101顆；面積最大的星座是長蛇座，為1302.844平方度，占到了全天面積的3.158%；而面積最小的南十字座僅有68.447平方度。巨蛇座是唯一不連續的星座，它被蛇夫座分割為頭、尾兩部分。
+            </p>
+            <br>
+            <h2><a href="#ptolemy" onclick="toggleHide('ptolemy')" title="" type="button" style="color: white;"
+                    id="change-color" data-text="MORE">托勒密星座</a></h2>
+            <p>現在國際通用的星座是以公元2世紀托勒密的《天文學大成》所載的48星座為基礎的，這48個星座被稱為托勒密星座。除了南船座被拉卡伊分開為船底座、船尾座、船帆座以外，所有星座都保留在現代星座中。托勒密星座主要繼承了公元前2世紀希臘天文學家喜帕恰斯所著的星表，其中還引用了公元前700年至公元前200年間巴比倫的觀測記錄。
+            </p>
+            <br>
+            <div id="ptolemy" style="display: none;">
+                <h2>托勒密48星座</h2>
+                <p>仙女座 | 寶瓶座 | 天鷹座 | 天壇座 | 南船座 | 白羊座 | 御夫座 | 牧夫座 | 巨蟹座 | 大犬座 | 小犬座 | 摩羯座 | 仙后座 | 半人馬座 | 仙王座 | 鯨魚座 | 南冕座
+                    | 北冕座 | 烏鴉座 | 巨爵座 | 天鵝座 | 海豚座 | 天龍座 | 小馬座 | 波江座 | 雙子座 | 武仙座 | 長蛇座 | 獅子座 | 天兔座 | 天秤座 | 天狼座 | 天琴座 |
+                    蛇夫座 | 獵戶座 | 飛馬座 | 英仙座 | 雙魚座 | 南魚座 | 天箭座 | 人馬座 | 天蝎座 | 巨蛇座 | 金牛座 | 三角座 | 大熊座 | 小熊座 | 室女座</p>
+            </div>
+            <script src="{{ url_for('static', filename='js/togglehide.js') }}"></script>
+            <h2>現代八十八星座</h2>
+            <p>後來星座的數目不斷增加，主要是為填補托勒密星座間的空缺（因古希臘人認為明亮的星座間是有暗淡的空白地帶的），另一原因是當歐洲的探險家往南進發時，能夠看見一些以前看不到的星空，所以要加入新星座以填滿南面的天空。上述48個托勒密星座中刪去了南船座，加上以下41個較新的星座就構成了現代的88星座：
+            </p>
+            <ul>
+                <li>韋斯普奇或科內利烏斯，16世紀初：南十字座 · 南三角座</li>
+                <li>Vopel，1536：后髮座</li>
+                <li>凱澤和豪特曼，1596： 天燕座 · 蝘蜓座 · 劍魚座 · 天鶴座 · 水蛇座 · 印第安座 · 蒼蠅座 · 孔雀座 · 鳳凰座 · 杜鵑座 · 飛魚座</li>
+                <li>普朗修斯，1613： 鹿豹座 · 天鴿座 · 麒麟座</li>
+                <li>Habrecht，1621： 網罟座</li>
+                <li>赫維留，1683： 獵犬座 · 蝎虎座 · 小獅座 · 天貓座 · 盾牌座 · 六分儀座 · 狐狸座</li>
+                <li>拉卡伊，1763： 唧筒座 · 雕具座 · 船底座 · 圓規座 · 天爐座 · 時鐘座 · 山案座 · 顯微鏡座 · 矩尺座 · 南極座 · 繪架座 · 船尾座 · 羅盤座 · 玉夫座 · 望遠鏡座
+                    · 船帆座</li>
+            </ul>
+            <p>其中29個在地球赤道以北，46個在地球赤道以南，跨在地球赤道南北有13個。</p>
+            <br>
+            <h2>不再使用的星座</h2>
+            <p>有一些歷史上使用過的星座不再被國際天文學聯合會承認，最後沒有被採納成為正式的星座，較著名的一個為象限儀座（現為牧夫座的一部份，象限儀座流星雨以它命名）。但是由於它們曾經被長期使用，我們仍然可以在歷史書或者古星圖中看到它們。以下是這些星座的統計：
+            </p>
+        </div>
+
+
+        <div class="nav2">
+
+            <!--設定返回頂部的按鈕 -->
+            <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+            <a href="#" data-text="TOP"><button type="button" id="BackTop" class="toTop-arrow"></button></a>
+            <script src="{{ url_for('static', filename='js/scroll_to_top.js') }}"></script>
+
+            <nav class="nav-box">
+                <input type="checkbox" id="menu">
+                <label for="menu" class="line">
+                    <div class="menu"></div>
+                </label>
+
+                <div class="menu-list">
+                    <ul>
+                        <li><a class="custom-link" href="#original" id="change-color">星座的起源</a></li>
+                        <li><a class="custom-link" href="#name" id="change-color">星座的命名</a></li>
+                        <li><a class="custom-link" href="#evolution" id="change-color">星座的演變</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h2>純屬娛樂性質，非營利目的，版權歸所有</h2>
+    </div>
+    <!--設定鼠標延遲效果 -->
+    <script src="{{ url_for('static', filename='js/cursor_circle.js') }}"></script>
+    <!--設定鼠標碰到超連結時會放大+文字 -->
+    <script src="{{ url_for('static', filename='js/mouse_link.js') }}"></script>
+
+</body>
+
+</html>

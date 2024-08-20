@@ -1,0 +1,279 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+html {
+    height: 100%;
+    width: 100%;
+    color: #FFFFFF;
+    scroll-behavior: smooth;
+    font-family: 'Noto Sans TC', sans-serif !important;
+    cursor: none
+}
+
+a {
+    text-decoration: none;
+}
+
+.fig-container {
+    text-align: center;
+    height:100vh;
+
+}
+
+#main_fig {
+    
+    width: auto;
+    height: 80vh;
+    
+}
+
+.scroll-down {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(10px);
+    }
+    60% {
+        transform: translateY(5px);
+    }
+}
+
+.custom-link {
+    color: inherit;
+    text-decoration: none;
+    cursor: none;
+}
+
+
+.nav1 {
+
+    float: left;
+    width: 13%;
+}
+
+#fade-in {
+    position: fixed;
+    width: 50px;
+    height: auto;
+    margin: 0 auto;
+    animation: fade 3s linear 0s;
+    z-index: 999;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.content {
+    float: left;
+    width: 74%;
+    margin-left: 13%;
+
+}
+
+
+
+
+
+#change-color:hover {
+    color: #FFD700 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.nav2 {
+
+    float: left;
+    width: 13%;
+
+}
+
+.language {
+    font-size: 10px;
+}
+
+.line {
+    width: 24px;
+    height: 24px;
+    background: #000000;
+    cursor: pointer;
+    display: flex;
+    padding: 16px;
+    position: fixed;
+    z-index: 2;
+    right: 0;
+
+}
+
+.line .menu,
+.line .menu::before,
+.line .menu::after {
+    background: #FFFFFF;
+    content: '';
+    display: block;
+    height: 1px;
+    position: absolute;
+    transition: background ease .3s, top ease .3s, transform ease .3s;
+    width: 20px;
+}
+
+.line .menu {
+    right: 18px;
+
+}
+
+.line .menu::before {
+    top: -6px;
+}
+
+.line .menu::after {
+    top: 6px;
+}
+
+/*
+點選選單變叉叉
+*/
+#menu:checked+.line .menu {
+    background: transparent;
+}
+
+#menu:checked+.line .menu::before {
+    transform: rotate(-45deg);
+    /* 逆時針旋轉 */
+}
+
+#menu:checked+.line .menu::after {
+    transform: rotate(45deg);
+    /* 順時針旋轉 */
+}
+
+#menu:checked+.line .menu::before,
+#menu:checked+.line .menu::after {
+    top: 0;
+    transition: top ease .3s, transform ease .3s .3s;
+}
+
+/*
+選單開合
+*/
+#menu:checked~.menu-list {
+    width: 140px;
+    right: 0;
+    /* 從右側開始 */
+}
+
+.menu-list {
+    width: 40px;
+    height: 100vh;
+    background: #000000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+    padding-top: 60px;
+    position: fixed;
+    z-index: 1;
+    transition: all .6s;
+    overflow: hidden;
+    right: -200px;
+    /* 初始隱藏在右側 */
+}
+
+/*
+選單向外推
+*/
+.menu-list ul {
+    list-style: none;
+    margin-right: 70px;
+    /* 從右側開始 */
+    padding: 0;
+}
+
+.menu-list ul>li {
+    display: block;
+    width: 100px;
+}
+
+/*
+隱藏核許框
+*/
+input#menu {
+    display: none;
+}
+
+nav a {
+    display: block;
+    color: #fff;
+    padding: 20px 10px;
+    position: relative;
+    font-weight: 300;
+}
+
+.toTop-arrow {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 33%;
+    opacity: 0.8;
+    background: #000;
+    cursor: none;
+    position: fixed;
+    right: 5%;
+    bottom: 20%;
+    display: none;
+}
+
+.toTop-arrow::before,
+.toTop-arrow::after {
+    width: 18px;
+    height: 5px;
+    border-radius: 3px;
+    background: white;
+    position: absolute;
+    content: "";
+}
+
+.toTop-arrow::before {
+    transform: rotate(-45deg) translate(0, -50%);
+    left: 0.5rem;
+}
+
+.toTop-arrow::after {
+    transform: rotate(45deg) translate(0, -50%);
+    right: 0.5rem;
+}
+
+.toTop-arrow:focus {
+    outline: none;
+}
+
+.footer {
+    background-color: #3C3C3C;
+    text-align: center;
+    font-size: 8px;
+    clear: both;
+    width: 100%;
+
+}
+
+* {
+    cursor: none !important;
+}

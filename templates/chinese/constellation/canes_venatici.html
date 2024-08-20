@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>獵犬座</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/constellation/canes_venatici.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/cursor.css') }}">
+  <!--設定背景圖片(flask下只能在這裡設定，不能用css) -->
+  <style>
+    body {
+      background: url("{{ url_for('static', filename='picture/meteor.gif') }}");
+    }
+  </style>
+  <!--重新整理時會自動回到頁面頂部 -->
+  <script src="{{ url_for('static', filename='js/refresh_to_top.js') }}"></script>
+</head>
+
+<body>
+  <div id="myCursor"></div>
+  <div id="circle"></div>
+  <div class="wrapper">
+    <div class="nav1">
+      <a class="custom-link" href="/constellation" data-text="BACK"><img id="fade-in"
+          src="{{ url_for('static', filename='picture/astrology.png') }}"></a>
+    </div>
+    <div class="content" style="text-align: center;">
+      <div class="hr-container">
+        <h1><span class="hr-text">獵犬座</span>
+        </h1>
+        <hr class="custom-hr">
+      </div>
+      <br><br>
+      <div class="part1" id="part1">
+        <div class="info">
+          <h2>INFORMATION</h2>
+          <p>
+          <table>
+            <tr>
+              <td>
+                <li>拉丁名</li>
+              </td>
+              <td>:</td>
+              <td>Canes Venatici</td>
+            </tr>
+            <tr>
+              <td>
+                <li>縮寫</li>
+              </td>
+              <td>:</td>
+              <td>CVn</td>
+            </tr>
+            <tr>
+              <td>
+                <li>象徵物</li>
+              </td>
+              <td>:</td>
+              <td>狗</td>
+            </tr>
+            <tr>
+              <td>
+                <li>赤經</li>
+              </td>
+              <td>:</td>
+              <td>13</td>
+            </tr>
+            <tr>
+              <td>
+                <li>赤緯</li>
+              </td>
+              <td>:</td>
+              <td>+40</td>
+            </tr>
+            <tr>
+              <td>
+                <li>面積</li>
+              </td>
+              <td>:</td>
+              <td>465平方度 (第38位)</td>
+            </tr>
+            <tr>
+              <td>
+                <li>可見範圍</li>
+              </td>
+              <td>:</td>
+              <td>90°N至40°S</td>
+            </tr>
+            <tr>
+              <td>
+                <li>最亮星</li>
+              </td>
+              <td>:</td>
+              <td>常陳一（獵犬座α）</td>
+            </tr>
+            <tr>
+              <td>
+                <li>特徵</li>
+              </td>
+              <td>:</td>
+              <td>常陳一為春季大鑽石中的一員</td>
+            </tr>
+            <tr>
+              <td>
+                <li>鄰近星座</li>
+              </td>
+              <td>:</td>
+              <td>大熊座 | 后髮座 | 牧夫座</td>
+            </tr>
+          </table>
+          </p>
+        </div>
+        <div class="cover">
+
+
+          <div>
+            <div id="1" class="classification">
+              <img id="pic1" src="{{ url_for('static', filename='picture/constellation/canes_venatici/1.png') }}">
+            </div>
+            <div id="2" class="classification">
+              <img id="pic2" src="{{ url_for('static', filename='picture/constellation/canes_venatici/2.png') }}">
+            </div>
+            <div id="3" class="classification">
+              <img id="pic3" src="{{ url_for('static', filename='picture/constellation/canes_venatici/3.png') }}">
+            </div>
+            <div id="4" class="classification">
+              <img id="pic4" src="{{ url_for('static', filename='picture/constellation/canes_venatici/4.png') }}">
+            </div>
+          </div>
+          <!--建立四選一顯示圖片 -->
+          <script src="{{ url_for('static', filename='js/select_figure_con.js') }}"></script>
+          <div class="btn-container">
+            <button onclick="showContent('1')" class="btn">基本星座</button>
+            <button onclick="showContent('2')" class="btn">星座連線</button>
+            <button onclick="showContent('3')" class="btn">星座圖案</button>
+            <button onclick="showContent('4')" class="btn">完整圖示</button>
+          </div>
+        </div>
+      </div>
+      </br></br></br>
+      <div class="part2" id="part2">
+        <div class="fig">
+          <br>
+          <img id="pic5" src="{{ url_for('static', filename='picture/constellation/canes_venatici/5.png') }}">
+        </div>
+        <div class="intro">
+          <h2>INTRODUCTION</h2>
+          <h3 style="text-align:left;">如何找到獵犬座？</h3>
+          <p style="text-align:left;">從大熊座北斗的α星和γ星引出一條直線，向大角方向延長約兩倍，就可以找到獵犬座α星(常陳一)。</p>
+          <h3 style="text-align:left;">春季大鑽石</h3>
+          <p style="text-align:left;">獵犬座常陳一與牧夫座大角星、室女座角宿一及獅子座五帝座一構成春季大鑽石</p>
+        </div>
+      </div>
+      </br></br></br></br>
+      <div>
+        <div class="part3" id="part3">
+          <div class="myth">
+            <h2>MYTH</h2>
+            <p>
+              在希臘神話中，奧林匹斯山頂的主神宙斯和妻子赫拉，用法術把美麗的仙女卡利斯托和他的孩子阿卡斯變成了大熊座、小熊座。生性傲慢又妒忌的那赫拉還不甘心，又請海神波塞冬（Poseidon）派出一個獵人，帶上兩隻獵犬(獵犬座)，到天上追趕這兩頭熊，永遠不許它們到地平線下去休息。這個獵人就是牧夫座。
+            </p>
+            <p>牧夫座的大角星(Arcturus)這個字是從希臘文的Αρκτοῦρος所演變而來的，意為「熊的看守者」。</p>
+          </div>
+          <div class="fig2">
+            <br>
+            <img id="pic6" src="{{ url_for('static', filename='picture/constellation/canes_venatici/6.jpg') }}">
+          </div>
+        </div>
+        <br><br><br><br><br><br>
+        
+      </div>
+    </div>
+    <div class="nav2">
+
+      <!--設定返回頂部的按鈕 -->
+      <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+      <a href="#" data-text="TOP"><button type="button" id="BackTop" class="toTop-arrow"></button></a>
+      <script src="{{ url_for('static', filename='js/scroll_to_top.js') }}"></script>
+
+      <nav class="nav-box">
+        <input type="checkbox" id="menu">
+        <label for="menu" class="line">
+          <div class="menu"></div>
+        </label>
+
+        <div class="menu-list">
+          <ul>
+            <li><a class="custom-link" href="#part1" id="change-color">Information</a></li>
+            <li><a class="custom-link" href="#part2" id="change-color">Introduction</a></li>
+            <li><a class="custom-link" href="#part3" id="change-color">Myth</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="footer">
+    <h2>純屬娛樂性質，非營利目的，版權歸所有</h2>
+  </div>
+  <!--設定鼠標延遲效果 -->
+  <script src="{{ url_for('static', filename='js/cursor_circle.js') }}"></script>
+  <!--設定鼠標碰到超連結時會放大+文字 -->
+  <script src="{{ url_for('static', filename='js/mouse_link.js') }}"></script>
+
+</body>
+
+</html>

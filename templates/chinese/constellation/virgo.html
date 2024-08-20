@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>室女座</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/constellation/virgo.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/cursor.css') }}">
+  <!--設定背景圖片(flask下只能在這裡設定，不能用css) -->
+  <style>
+    body {
+      background: url("{{ url_for('static', filename='picture/meteor.gif') }}");
+    }
+  </style>
+  <!--重新整理時會自動回到頁面頂部 -->
+  <script src="{{ url_for('static', filename='js/refresh_to_top.js') }}"></script>
+
+</head>
+
+<body>
+  <div id="myCursor"></div>
+  <div id="circle"></div>
+  <div class="wrapper">
+    <div class="nav1">
+      <a class="custom-link" href="/constellation" data-text="BACK"><img id="fade-in"
+          src="{{ url_for('static', filename='picture/astrology.png') }}"></a>
+    </div>
+    <div class="content" style="text-align: center;">
+      <div class="hr-container">
+        <h1><span class="hr-text">室女座</span>
+        </h1>
+        <hr class="custom-hr">
+      </div>
+      <br><br>
+      <div class="part1" id="part1">
+        <div class="info">
+          <h2>INFORMATION</h2>
+          <p>
+          <table>
+            <tr>
+              <td>
+                <li>拉丁名</li>
+              </td>
+              <td>:</td>
+              <td>Virgo</td>
+            </tr>
+            <tr>
+              <td>
+                <li>縮寫</li>
+              </td>
+              <td>:</td>
+              <td>Vir</td>
+            </tr>
+            <tr>
+              <td>
+                <li>象徵物</li>
+              </td>
+              <td>:</td>
+              <td>美麗的女神</td>
+            </tr>
+            <tr>
+              <td>
+                <li>赤經</li>
+              </td>
+              <td>:</td>
+              <td>13</td>
+            </tr>
+            <tr>
+              <td>
+                <li>赤緯</li>
+              </td>
+              <td>:</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>
+                <li>面積</li>
+              </td>
+              <td>:</td>
+              <td>1294平方度 (第2位)</td>
+            </tr>
+            <tr>
+              <td>
+                <li>可見範圍</li>
+              </td>
+              <td>:</td>
+              <td>67°N至75°S</td>
+            </tr>
+            <tr>
+              <td>
+                <li>最亮星</li>
+              </td>
+              <td>:</td>
+              <td>角宿一（室女座α）</td>
+            </tr>
+            <tr>
+              <td>
+                <li>特徵</li>
+              </td>
+              <td>:</td>
+              <td>室女座為全天第二大的星座<br>大角星為春季大三角中的一員<br>為黃道十三星座之一</td>
+            </tr>
+            <tr>
+              <td>
+                <li>鄰近星座</li>
+              </td>
+              <td>:</td>
+              <td>獅子座 | 天秤座 | 后髮座 | 巨爵座<br>烏鴉座 | 巨蛇座 | 長蛇座 | 牧夫座</td>
+            </tr>
+          </table>
+          </p>
+        </div>
+        <div class="cover">
+
+
+          <div>
+            <div id="1" class="classification">
+              <img id="pic1" src="{{ url_for('static', filename='picture/constellation/virgo/1.png') }}">
+            </div>
+            <div id="2" class="classification">
+              <img id="pic2" src="{{ url_for('static', filename='picture/constellation/virgo/2.png') }}">
+            </div>
+            <div id="3" class="classification">
+              <img id="pic3" src="{{ url_for('static', filename='picture/constellation/virgo/3.png') }}">
+            </div>
+            <div id="4" class="classification">
+              <img id="pic4" src="{{ url_for('static', filename='picture/constellation/virgo/4.png') }}">
+            </div>
+          </div>
+          <!--建立四選一顯示圖片 -->
+          <script src="{{ url_for('static', filename='js/select_figure_con.js') }}"></script>
+          <div class="btn-container">
+            <button onclick="showContent('1')" class="btn">基本星座</button>
+            <button onclick="showContent('2')" class="btn">星座連線</button>
+            <button onclick="showContent('3')" class="btn">星座圖案</button>
+            <button onclick="showContent('4')" class="btn">完整圖示</button>
+          </div>
+        </div>
+      </div>
+      </br></br></br>
+      <div class="part2" id="part2">
+        <div class="fig">
+          <br>
+          <img id="pic5" src="{{ url_for('static', filename='picture/constellation/virgo/5.png') }}">
+        </div>
+        <div class="intro">
+          <h2>INTRODUCTION</h2>
+          <h3 style="text-align:left;">如何找到室女座？</h3>
+          <p style="text-align:left;">
+            順著北斗七星的杓柄，從天權連一路連到搖光後繼續畫一條弧線，可以找到明亮的大角，繼續畫弧線，經過大角後連至下一個亮星角宿一，是室女座的腰部，找到構成室女身體的四邊形後，可以更進一步的向外連出雙手雙腳。</p>
+          <h3 style="text-align:left;">春季大三角</h3>
+          <p style="text-align:left;">角宿一與牧夫座大角星、獅子座五帝座一共同組成春季大三角，如果再加上獵犬座的常陳一就成為春季大鑽石。</p>
+
+        </div>
+      </div>
+      </br></br></br></br>
+      <div>
+        <div class="part3" id="part3">
+          <div class="myth">
+            <h2><a href="#part4" onclick="toggleHide('part4')" title="" type="button" style="color: white;"
+                id="change-color" data-text="MORE">MYTH</a></h2>
+            <p>希臘神話中室女座是大地女神狄蜜特（Demeter）的化身，在人間是掌管穀物的農業之神。<br>
+              狄蜜特的女兒珀耳塞福涅(Persephone)被冥王黑帝斯(Hades)看到之後對她一見鍾情，就設下詭計把她擄回地府，狄蜜特遍尋不見愛女，傷心欲絕，無心耕作，導致大地一片荒蕪，人民飢餓難耐，於是請出天神宙斯出面調停，讓弟弟黑帝斯把愛女放回，但黑帝斯哪能輕易放人，於是在珀耳塞福涅臨走前讓她吃了地獄石榴，據聞吃了這果子便須再回到地府，宙斯沒辦法，只好對黑帝斯說「一年之中，你將只有四分之一的時間可以和珀耳塞福涅在一起」。從此以後只要大地結滿冰霜，寸草不生的時候，人們就知道這是因為珀耳塞福涅又回去地府，但當大地欣欣向榮，萬物復甦就是春天的季節來臨，這也是季節更替的由來。
+            </p>
+          </div>
+          <div class="fig2">
+            <br><br>
+            <img id="pic6" src="{{ url_for('static', filename='picture/constellation/virgo/6.jpeg') }}">
+          </div>
+        </div>
+        <br><br><br><br><br><br>
+        <div class="part4" id="part4" style="text-align:left; display:none;">
+          <h2>人世間掌管穀物的農業之神一室女座</h2>
+          <p>
+            在希臘神話中，處女座是大地女神狄蜜特（Demeter）的化身，她是宙斯的姊姊，在人間是掌管穀物的農業之神，星座中最亮的一顆恆星角宿一(Spica)就好像是農業女神手上拿著的麥穗閃閃發亮，代表今年是豐收的一年。有一說是其女兒珀耳塞福涅（Persephone）的化身。聖經記載的掌管生產的邪神亞斯他錄可能就是指她。
+          </p>
+          <p>
+            人間管理穀物的農業之神、希臘的大地之母狄蜜特是宙斯的姊姊，有一個美麗的獨生女珀耳塞福涅，她是春天的燦爛女神，只要她輕輕踏過的地方，都會開滿嬌艷欲滴的花朵。有一天她和同伴正在山谷中的一片草地上摘花，突然間，她看到一朵銀色的水仙，甜美的利味飄散在空氣中，珀耳塞福涅想：「它比我任何一朵花都漂亮！」美得光彩照人，於是她遠離同伴偷偷地走近，伸手正要碰到花兒，突然，地底裂開了一個洞，一輛馬車由兩匹黑馬拉著，衝出地面，原來是冥王黑帝斯（Hades），他因愛慕「最美的春神」珀耳塞福涅，設下詭計擄走了她。
+          </p>
+          <p>珀耳塞福涅的呼救聲迴蕩在山谷、海洋之間，當然，也傳到了母親狄蜜特的耳中，狄蜜特 非常的悲傷，她拋下了收割的穀物，飛過千山萬水去尋找女兒。</p>
+          <p>
+            人間少了大地之母，種子不再發芽，肥沃的土地結不出成串的麥穗，人類都要餓死了，宙斯看到這個情形只好命令黑帝斯放了珀耳塞福涅，黑帝斯不得不服從宙斯，但暗中卻生詭計，臨走前給珀耳塞福涅一顆果子——地獄石榴，珀耳塞福涅吃了這顆果子便必須回到陰暗惡臭的地獄裡。
+          </p>
+          <p>
+            宙斯沒有辦法，只好對黑帝斯說：「一年之中，你將只有四分之一的時間可以和珀耳塞福涅在一起」。從此以後只要大地結滿冰霜，寸草不生的時候，人們就知道這是因珀耳塞福涅又去了地府。處女座象徵著春神珀耳塞福涅的美麗與純潔，母親養育的麥穗，也成為她手持之物。
+          </p>
+          <br>
+
+          <br><br><br><br><br><br>
+        </div>
+        <script src="{{ url_for('static', filename='js/togglehide.js') }}"></script>
+      </div>
+    </div>
+    <div class="nav2">
+
+      <!--設定返回頂部的按鈕 -->
+      <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+      <a href="#" data-text="TOP"><button type="button" id="BackTop" class="toTop-arrow"></button></a>
+      <script src="{{ url_for('static', filename='js/scroll_to_top.js') }}"></script>
+
+      <nav class="nav-box">
+        <input type="checkbox" id="menu">
+        <label for="menu" class="line">
+          <div class="menu"></div>
+        </label>
+
+        <div class="menu-list">
+          <ul>
+            <li><a class="custom-link" href="#part1" id="change-color">Information</a></li>
+            <li><a class="custom-link" href="#part2" id="change-color">Introduction</a></li>
+            <li><a class="custom-link" href="#part3" id="change-color">Myth</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="footer">
+    <h2>純屬娛樂性質，非營利目的，版權歸所有</h2>
+  </div>
+  <!--設定鼠標延遲效果 -->
+  <script src="{{ url_for('static', filename='js/cursor_circle.js') }}"></script>
+  <!--設定鼠標碰到超連結時會放大+文字 -->
+  <script src="{{ url_for('static', filename='js/mouse_link.js') }}"></script>
+
+</body>
+
+</html>

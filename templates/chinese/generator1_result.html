@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generator1</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/generator1_result.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/cursor.css') }}">
+  <!--設定背景圖片(flask下只能在這裡設定，不能用css) -->
+  <style>
+    body {
+      background: url("{{ url_for('static', filename='picture/meteor.gif') }}");
+    }
+  </style>
+  <!--重新整理時會自動回到頁面頂部 -->
+  <script src="{{ url_for('static', filename='js/refresh_to_top.js') }}"></script>
+
+</head>
+
+<body>
+  <div id="myCursor"></div>
+  <div id="circle"></div>
+  <div class="wrapper">
+    <div class="nav1">
+      <a class="custom-link" href="/creater" data-text="CREATER"><img id="fade-in"
+          src="{{ url_for('static', filename='picture/astrology.png') }}"></a>
+    </div>
+    <div class="content" style="text-align: center;">
+      <h1>生成成功!!</h1>
+      <h2>以下是您的星圖，可點擊右鍵下載</h2>
+      <img src="{{ url_for('static', filename='picture/star_chart.png') }}" alt="Star Chart">
+      <br><br><br>
+      <a href="/generator1" style="color: white;" class="custom-link" data-text="BACK"><button type="submit"
+          class="btn">再來一張</button></a>
+      <br><br><br>
+    </div>
+
+  </div>
+  <div class="nav2">
+
+    <!--設定返回頂部的按鈕 -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+    <a href="#" data-text="TOP"><button type="button" id="BackTop" class="toTop-arrow"></button></a>
+    <script src="{{ url_for('static', filename='js/scroll_to_top.js') }}"></script>
+
+    <nav class="nav-box">
+      <input type="checkbox" id="menu">
+      <label for="menu" class="line">
+        <div class="menu"></div>
+      </label>
+
+      <div class="menu-list">
+
+      </div>
+    </nav>
+  </div>
+  </div>
+  </div>
+  <div class="footer">
+    <h2>純屬娛樂性質，非營利目的，版權歸所有</h2>
+  </div>
+  <!--設定鼠標延遲效果 -->
+  <script src="{{ url_for('static', filename='js/cursor_circle.js') }}"></script>
+  <!--設定鼠標碰到超連結時會放大+文字 -->
+  <script src="{{ url_for('static', filename='js/mouse_link.js') }}"></script>
+
+</body>
+
+</html>

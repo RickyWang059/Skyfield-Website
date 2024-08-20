@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>烏鴉座</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/constellation/corvus.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cursor.css') }}">
+    <!--設定背景圖片(flask下只能在這裡設定，不能用css) -->
+    <style>
+        body {
+               background: url("{{ url_for('static', filename='picture/meteor.gif') }}");
+        }
+    </style>
+    <!--重新整理時會自動回到頁面頂部 -->
+    <script src="{{ url_for('static', filename='js/refresh_to_top.js') }}"></script>
+  
+</head>
+
+<body>
+  <div id="myCursor"></div>
+  <div id="circle"></div>
+  <div class="wrapper">
+    <div class="nav1">
+      <a class="custom-link" href="/constellation" data-text="BACK"><img id="fade-in" src="{{ url_for('static', filename='picture/astrology.png') }}"></a>
+    </div>
+    <div class="content" style="text-align: center;">
+     <div class="hr-container">
+      <h1><span class="hr-text">烏鴉座</span>
+      </h1>
+      <hr class="custom-hr">
+     </div>
+     <br><br>
+       <div class="part1" id="part1">
+        <div class="info">
+          <h2>INFORMATION</h2>
+          <p>
+          <table>
+            <tr>
+              <td>
+                <li>拉丁名</li>
+              </td>
+              <td>:</td>
+              <td>Corvus</td>
+            </tr>
+            <tr>
+              <td>
+                <li>縮寫</li>
+              </td>
+              <td>:</td>
+              <td>Crv</td>
+            </tr>
+            <tr>
+              <td>
+                <li>象徵物</li>
+              </td>
+              <td>:</td>
+              <td>烏鴉</td>
+            </tr>
+            <tr>
+              <td>
+                <li>赤經</li>
+              </td>
+              <td>:</td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <td>
+                <li>赤緯</li>
+              </td>
+              <td>:</td>
+              <td>−20</td>
+            </tr>
+            <tr>
+              <td>
+                <li>面積</li>
+              </td>
+              <td>:</td>
+              <td>184平方度 (第70)</td>
+            </tr>
+            <tr>
+              <td>
+                <li>可見範圍</li>
+              </td>
+              <td>:</td>
+              <td>60°N至90°S</td>
+            </tr>
+            <tr>
+              <td>
+                <li>最亮星</li>
+              </td>
+              <td>:</td>
+              <td>軫宿一 (烏鴉座γ)</td>
+            </tr>
+            <tr>
+              <td>
+                <li>特徵</li>
+              </td>
+              <td>:</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <li>鄰近星座</li>
+              </td>
+              <td>:</td>
+              <td>室女座 | 巨爵座 | 長蛇座</td>
+            </tr>
+          </table>
+          </p>
+        </div>
+        <div class="cover">
+            
+            
+            <div>
+                <div id="1" class="classification">
+                    <img id="pic1" src="{{ url_for('static', filename='picture/constellation/corvus/1.png') }}">
+                </div>
+                <div id="2" class="classification">
+                    <img id="pic2" src="{{ url_for('static', filename='picture/constellation/corvus/2.png') }}">
+                </div>
+                <div id="3" class="classification">
+                    <img id="pic3" src="{{ url_for('static', filename='picture/constellation/corvus/3.png') }}">
+                </div>
+                <div id="4" class="classification">
+                    <img id="pic4" src="{{ url_for('static', filename='picture/constellation/corvus/4.png') }}">
+                </div>
+            </div>
+            <!--建立四選一顯示圖片 -->
+            <script src="{{ url_for('static', filename='js/select_figure_con.js') }}"></script>
+            <div class="btn-container">
+                <button onclick="showContent('1')" class="btn">基本星座</button>
+                <button onclick="showContent('2')" class="btn">星座連線</button>
+                <button onclick="showContent('3')" class="btn">星座圖案</button>
+                <button onclick="showContent('4')" class="btn">完整圖示</button>
+            </div>
+        </div>
+      </div>
+      </br></br></br>
+      <div class="part2" id="part2">
+        <div class="fig">
+          <br>
+          <img id="pic5" src="{{ url_for('static', filename='picture/constellation/corvus/5.png') }}">
+        </div>
+        <div class="intro">
+          <h2>INTRODUCTION</h2>
+          <h3 style="text-align:left;">如何找到長蛇座？</h3>
+          <p style="text-align:left;">順著北斗七星的杓柄，從天權連一路連到搖光後繼續畫一條弧線，依序經過牧夫座大角星、室女座角宿一後繼續延伸，最後停在四邊形的烏鴉座。</p>
+
+        </div>
+      </div>
+      </br></br></br></br>
+      <div>
+      <div class="part3" id="part3">
+        <div class="myth">
+          <h2><a href="#part4" onclick="toggleHide('part4')" title="" type="button" style="color: white;" id="change-color"
+              data-text="MORE">MYTH</a></h2>
+          <p>
+            傳說太陽神阿波羅有個侍從烏鴉最愛說謊。有一次，由於烏鴉說謊，阿波羅誤殺了他的妻子科洛尼斯，使他犯了不可挽回的錯誤。烏鴉因此被罰將身上漂亮的銀白色羽毛變成黑色，並永受乾渴之苦。因而至今烏鴉的羽毛是黑的，而且叫聲嘶啞難聽。烏鴉死後，天神宙斯爲了告誡後人，把這隻烏鴉升到天上化爲星座。
+          </p>
+          
+        </div>
+        <div class="fig2">
+          <br>
+          <img id="pic6" src="{{ url_for('static', filename='picture/constellation/corvus/6.jpg') }}">
+        </div>
+      </div>
+      <br><br><br><br><br><br>
+      <div class="part4" id="part4" style="text-align:left; display:none;">
+      <h2>烏鴉座的故事──</h2>
+      <p>在希臘神話中，這隻烏鴉為太陽神阿波羅，送給一位美女庫魯妮絲的禮物；這隻擁有銀色羽毛的烏鴉聰明絕倫，不但聽懂人類的語言，甚至也會說人話，當然也就學會了喋喋不休、搬弄是非的「絕技」。</p>
+      <p>阿波羅娶了美麗的迪絲沙麗亞王國的女王庫魯妮絲爲妻子，但是他一人身兼四職，既是太陽神、音樂神、預言神，同時也是醫家之神；因此非常的忙碌，一直沒有時間陪他心愛的妻子。所以當阿波羅無法待在庫魯妮絲身旁時，他給了烏鴉一個使命，就是每天將庫魯妮絲的狀況傳達給阿波羅。</p>
+      <p>有一次烏鴉因爲偷懶而遲到了，使得想要早早知道庫魯妮絲狀況的阿波羅等得心浮氣躁，就大發怒氣。爲了要找藉口，烏鴉說了一個謊，它說因爲庫魯妮絲紅杏出牆，所以它在煩惱到底應不應該報告出來而遲到了。</p>
+      <p>正在氣頭上的阿波羅馬上趕往庫魯妮絲那兒，當他發現一個可疑的人影時，立刻就把箭射了出去，沒想到竟然是庫魯妮絲，可憐的庫魯妮絲就這樣香消玉殞了。知道事情真相的阿波羅，生氣地把烏鴉會講話的能力奪走，並把它銀色的羽毛變成烏黑黑的顏色，然後將它定在黑暗的天空上，這就是在春天的夜裏閃亮的烏鴉座。</p>
+       
+      </div>
+      <script src="{{ url_for('static', filename='js/togglehide.js') }}"></script>
+      </div>
+    </div>
+    <div class="nav2">
+
+     <!--設定返回頂部的按鈕 -->
+     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+     <a href="#" data-text="TOP"><button type="button" id="BackTop" class="toTop-arrow"></button></a>
+     <script src="{{ url_for('static', filename='js/scroll_to_top.js') }}"></script>
+
+     <nav class="nav-box">
+      <input type="checkbox" id="menu">
+      <label for="menu" class="line">
+        <div class="menu"></div>
+      </label>
+
+      <div class="menu-list">
+         <ul>
+          <li><a class="custom-link" href="#part1" id="change-color">Information</a></li>
+          <li><a class="custom-link" href="#part2" id="change-color">Introduction</a></li>
+          <li><a class="custom-link" href="#part3" id="change-color">Myth</a></li>
+         </ul>
+      </div>
+     </nav>
+    </div>
+  </div>
+  <div class="footer">
+    <h2>純屬娛樂性質，非營利目的，版權歸所有</h2>
+  </div>
+  <!--設定鼠標延遲效果 -->
+  <script src="{{ url_for('static', filename='js/cursor_circle.js') }}"></script>
+  <!--設定鼠標碰到超連結時會放大+文字 -->
+  <script src="{{ url_for('static', filename='js/mouse_link.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/result_show.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/cursor.css') }}">
+  <!--設定背景圖片(flask下只能在這裡設定，不能用css) -->
+  <style>
+    body {
+      background: url("{{ url_for('static', filename='picture/meteor.gif') }}");
+    }
+  </style>
+  <!--重新整理時會自動回到頁面頂部 -->
+  <script src="{{ url_for('static', filename='js/refresh_to_top.js') }}"></script>
+  <!--建立表單除錯彈跳視窗 -->
+  <script src="{{ url_for('static', filename='js/warning.js') }}"></script>
+</head>
+
+<body>
+  <div id="myCursor"></div>
+  <div id="circle"></div>
+  <div class="wrapper">
+    <div class="nav1">
+      <a class="custom-link" href="{{ url_for('mainpage') }}" data-text="MAIN PAGE"><img id="fade-in"
+          src="{{ url_for('static', filename='picture/astrology.png') }}"></a>
+    </div>
+    <div class="content" >
+      <div class="hr-container">
+        <h1><span class="hr-text">天文知識小測驗</span>
+        </h1>
+        <hr class="custom-hr">
+      </div>
+      <div class="app">
+        <h1 style="text-align:center;">測驗結果</h1>
+        <table>
+          <tr>
+            <th>總題數</th>
+            <td>{{ total_questions }}</td>
+          </tr>
+          <tr>
+            <th>答對題數</th>
+            <td>{{ correct_answers }}</td>
+          </tr>
+          <tr>
+            <th>答錯題數</th>
+            <td>{{ incorrect_answers }}</td>
+          </tr>
+          <tr>
+            <th>分數</th>
+            <td>{{ score }}</td>
+          </tr>
+        </table>
+        <div class="result-button-container">
+          <form action="{{ url_for('restart_quiz') }}" method="post" style="display: inline;">
+            <button type="submit" class="result-btn">再來一次</button>
+          </form>
+          <button id="toggle-details" class="result-btn">顯示詳細結果</button>
+        </div>
+        <div id="detailed-results">
+          <h2>詳細結果</h2>
+
+          <ul>
+            {% for result in results %}
+            <li>
+              <strong>Q{{ result.index }}: {{ result.question }}</strong><br>
+              {% for option in result.options %}
+                {% if loop.index == result.correct_answer %}
+                  <span class="correct-answer">({{ loop.index }}) {{ option.text }}</span><br>
+                {% else %}
+                  {% if loop.index == result.answer %}
+                    <span class="incorrect-answer">({{ loop.index }}) {{ option.text }}</span><br>
+                  {% else %}
+                    ({{ loop.index }}) {{ option.text }}<br>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+              <br>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <script>
+        document.getElementById('toggle-details').addEventListener('click', function() {
+          const details = document.getElementById('detailed-results');
+          if (details.style.display === 'none') {
+            details.style.display = 'block';
+            this.textContent = '隱藏詳細結果';
+          } else {
+            details.style.display = 'none';
+            this.textContent = '顯示詳細結果';
+          }
+        });
+      </script>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+
+  </div>
+  <div class="nav2">
+
+    <!--設定返回頂部的按鈕 -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+    <a href="#" data-text="TOP"><button type="button" id="BackTop" class="toTop-arrow"></button></a>
+    <script src="{{ url_for('static', filename='js/scroll_to_top.js') }}"></script>
+
+    <nav class="nav-box">
+      <input type="checkbox" id="menu">
+      <label for="menu" class="line">
+        <div class="menu"></div>
+      </label>
+
+      <div class="menu-list">
+
+      </div>
+    </nav>
+  </div>
+  </div>
+  </div>
+  <div class="footer">
+    <h2>純屬娛樂性質，非營利目的，版權歸所有</h2>
+  </div>
+  <!--設定鼠標延遲效果 -->
+  <script src="{{ url_for('static', filename='js/cursor_circle.js') }}"></script>
+  <!--設定鼠標碰到超連結時會放大+文字 -->
+  <script src="{{ url_for('static', filename='js/mouse_link.js') }}"></script>
+
+</body>
+
+</html>

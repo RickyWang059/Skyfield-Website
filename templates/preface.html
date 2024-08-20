@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKY FIELD</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/preface.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/cursor.css') }}">
+  <!--設定背景圖片(flask下只能在這裡設定，不能用css) -->
+  <style>
+    body {
+      background: url("{{ url_for('static', filename='picture/preface.gif') }}");
+
+    }
+  </style>
+</head>
+
+<body>
+  <img id="MoonCursor" src="{{ url_for('static', filename='picture/moon.png') }}">
+  <div id="welcomeText">Welcome to the World of the Starry Sky</div>
+  <div id="enterText">Click anywhere to enter</div>
+  <a id="full-page-link" href="{{ url_for('mainpage') }}" data-text="ENTER"></a>
+  <!--特殊鼠標設定 -->
+  <script src="{{ url_for('static', filename='js/mooncursor.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>天龍座</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/constellation/draco.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/cursor.css') }}">
+  <!--設定背景圖片(flask下只能在這裡設定，不能用css) -->
+  <style>
+    body {
+      background: url("{{ url_for('static', filename='picture/meteor.gif') }}");
+    }
+  </style>
+  <!--重新整理時會自動回到頁面頂部 -->
+  <script src="{{ url_for('static', filename='js/refresh_to_top.js') }}"></script>
+
+</head>
+
+<body>
+  <div id="myCursor"></div>
+  <div id="circle"></div>
+  <div class="wrapper">
+    <div class="nav1">
+      <a class="custom-link" href="/constellation" data-text="BACK"><img id="fade-in"
+          src="{{ url_for('static', filename='picture/astrology.png') }}"></a>
+    </div>
+    <div class="content" style="text-align: center;">
+      <div class="hr-container">
+        <h1><span class="hr-text">天龍座</span>
+        </h1>
+        <hr class="custom-hr">
+      </div>
+      <br><br>
+      <div class="part1" id="part1">
+        <div class="info">
+          <h2>INFORMATION</h2>
+          <p>
+          <table>
+            <tr>
+              <td>
+                <li>拉丁名</li>
+              </td>
+              <td>:</td>
+              <td>Draco</td>
+            </tr>
+            <tr>
+              <td>
+                <li>縮寫</li>
+              </td>
+              <td>:</td>
+              <td>Dra</td>
+            </tr>
+            <tr>
+              <td>
+                <li>象徵物</li>
+              </td>
+              <td>:</td>
+              <td>龍</td>
+            </tr>
+            <tr>
+              <td>
+                <li>赤經</li>
+              </td>
+              <td>:</td>
+              <td>17</td>
+            </tr>
+            <tr>
+              <td>
+                <li>赤緯</li>
+              </td>
+              <td>:</td>
+              <td>+65</td>
+            </tr>
+            <tr>
+              <td>
+                <li>面積</li>
+              </td>
+              <td>:</td>
+              <td>1083平方度 (第8位)</td>
+            </tr>
+            <tr>
+              <td>
+                <li>可見範圍</li>
+              </td>
+              <td>:</td>
+              <td>+90°N至−15°S</td>
+            </tr>
+            <tr>
+              <td>
+                <li>最亮星</li>
+              </td>
+              <td>:</td>
+              <td>天棓四(天龍座γ)</td>
+            </tr>
+            <tr>
+              <td>
+                <li>特徵</li>
+              </td>
+              <td>:</td>
+              <td>右樞(天龍座α)是從西元前3,942年至1793年的北極星。</td>
+            </tr>
+            <tr>
+              <td>
+                <li>鄰近星座</li>
+              </td>
+              <td>:</td>
+              <td>牧夫座 | 武仙座 | 天琴座 | 天鵝座<br>仙王座 | 小熊座 | 鹿豹座 | 大熊座</td>
+            </tr>
+          </table>
+          </p>
+        </div>
+        <div class="cover">
+
+
+          <div>
+            <div id="1" class="classification">
+              <img id="pic1" src="{{ url_for('static', filename='picture/constellation/draco/1.png') }}">
+            </div>
+            <div id="2" class="classification">
+              <img id="pic2" src="{{ url_for('static', filename='picture/constellation/draco/2.png') }}">
+            </div>
+            <div id="3" class="classification">
+              <img id="pic3" src="{{ url_for('static', filename='picture/constellation/draco/3.png') }}">
+            </div>
+            <div id="4" class="classification">
+              <img id="pic4" src="{{ url_for('static', filename='picture/constellation/draco/4.png') }}">
+            </div>
+          </div>
+          <!--建立四選一顯示圖片 -->
+          <script src="{{ url_for('static', filename='js/select_figure_con.js') }}"></script>
+          <div class="btn-container">
+            <button onclick="showContent('1')" class="btn">基本星座</button>
+            <button onclick="showContent('2')" class="btn">星座連線</button>
+            <button onclick="showContent('3')" class="btn">星座圖案</button>
+            <button onclick="showContent('4')" class="btn">完整圖示</button>
+          </div>
+        </div>
+      </div>
+      </br></br></br>
+      <div class="part2" id="part2">
+        <div class="fig">
+          <br>
+          <img id="pic5" src="{{ url_for('static', filename='picture/constellation/draco/5.png') }}">
+        </div>
+        <div class="intro">
+          <h2>INTRODUCTION</h2>
+          <h3 style="text-align:left;">如何找到天龍座?</h3>
+          <p style="text-align:left;">
+            先把北極星跟北斗的搖光連線，再自天璣往天權方向連線延伸出去，能發現天龍座的主星右樞就在這兩條線的交點附近。找到右樞後，我們可以從大熊座跟小熊座之間開始連線，經過右樞連一個'2'字形，最後連到四邊形的龍頭(天龍頭頂的兩顆星比較亮，較容易辨識)，這樣就連成天龍座了。
+          </p>
+          <h3 style="text-align:left;">曾經的北極星</h3>
+          <p style="text-align:left;">
+            右樞（天龍座α，Thuban），在北極點遠離天槍三（牧夫座θ）之後，是從西元前3,942年至1793年的北極星，不過因為地球自轉軸進動的關係漸漸被取代，現今的北極星是小熊座的勾陳一。埃及金字塔在設計上是有一側是朝向當時的北方，因此可以在夜晚導入右樞來觀察。
+          </p>
+
+        </div>
+      </div>
+      </br></br></br></br>
+      <div>
+        <div class="part3" id="part3">
+          <div class="myth">
+            <h2>MYTH</h2>
+            <br>
+            <h2>天空中威武霸氣巨龍—天龍座</h2>
+            <p>
+              赫拉克勒斯的十二項大冒險中，天龍座的故事是第十一項命令，與奪取黃金蘋果的故事有關。這個蘋果是大地女神蓋婭送給希拉的結婚禮物，希拉女神非常喜歡這個禮物，將它種在祕密的黑斯胚力底斯花園裡，那裡的樹木由巨人阿托拉斯的女兒們照顧，而那個蘋果就由有一百個頭的龍拉洞守護。
+            </p>
+            <p>
+              在智慧賢者普魯曼弟斯的教導下，赫拉克勒斯經過重重的危險之後，總算到了阿托拉斯的身旁。阿托拉斯告訴赫拉克勒斯，可怕的龍拉洞守在蘋果旁邊，連他也無法接近。赫拉克勒斯望著遙遠的一座山，看到了圍繞青蘋果樹旁一隻很大的龍，赫拉克勒斯搭上弓箭，瞄準那隻龍，非常準確地射中了拉洞，拉洞很快的就死了，因為赫拉克勒斯的箭塗了沼澤怪物希卓拉的毒血。
+            </p>
+            <p>過了好一陣子，阿托拉斯終於平安的將蘋果帶回來了，赫拉克勒斯順利地完成了第十一項命令。而被赫拉克勒斯所殺的龍拉洞，因為長久守護蘋果有功，所以被希拉女神舉向天空變成了星座。</p>
+          </div>
+          <div class="fig2">
+            <br>
+            <img id="pic6" src="{{ url_for('static', filename='picture/constellation/draco/6.jpg') }}">
+          </div>
+        </div>
+        <br><br><br><br><br><br>
+      </div>
+    </div>
+    <div class="nav2">
+
+      <!--設定返回頂部的按鈕 -->
+      <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+      <a href="#" data-text="TOP"><button type="button" id="BackTop" class="toTop-arrow"></button></a>
+      <script src="{{ url_for('static', filename='js/scroll_to_top.js') }}"></script>
+
+      <nav class="nav-box">
+        <input type="checkbox" id="menu">
+        <label for="menu" class="line">
+          <div class="menu"></div>
+        </label>
+
+        <div class="menu-list">
+          <ul>
+            <li><a class="custom-link" href="#part1" id="change-color">Information</a></li>
+            <li><a class="custom-link" href="#part2" id="change-color">Introduction</a></li>
+            <li><a class="custom-link" href="#part3" id="change-color">Myth</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="footer">
+    <h2>純屬娛樂性質，非營利目的，版權歸所有</h2>
+  </div>
+  <!--設定鼠標延遲效果 -->
+  <script src="{{ url_for('static', filename='js/cursor_circle.js') }}"></script>
+  <!--設定鼠標碰到超連結時會放大+文字 -->
+  <script src="{{ url_for('static', filename='js/mouse_link.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAIN PAGE</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mainpage.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cursor.css') }}">
+    <style>
+        body {
+               background: url("{{ url_for('static', filename='picture/mainpage.gif') }}");
+        }
+    </style>
+    <script>
+    window.onload = function () {
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      window.scrollTo(0, 0);
+    }
+  </script>
+  
+</head>
+
+<body>
+  <div id="myCursor"></div>
+  <div id="circle"></div>
+  <div class="wrapper">
+    <div class="nav1">
+      <a class="custom-link" href="/" data-text="PREFACE"><img id="fade-in" src="{{ url_for('static', filename='picture/astrology.png') }}"></a>
+    </div>
+    <div class="content">
+      <div class="fig-container">
+      <img id="main_fig" src="{{ url_for('static', filename='picture/Jack Frost.jpg') }}">
+      
+      <p class="scroll-down" style="text-align:center;">SCROLL DOWN</p>
+      <div class="scroll-down">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 16l-6-6h12l-6 6z" fill="currentColor"/>
+        </svg>
+      </div>
+      </div>
+      <div class="switch-container">
+          <a class="custom-link" href="/mainpage"><button class="switch">Tradional Chinese</button></a>
+          <button class="switch" style="color:#FFD700;">English</button>
+      </div>
+      </br></br>
+      <h1 id="introduction">INTRODUCTION</h1>
+        </br>
+        <h2 style="text-indent: 2em;">Skyfield</h2>
+        <p style="margin-left: 3em;">
+          As the sun sets and night descends, the stars compete for brilliance in the sky. This captivating scene has stirred the hearts and minds of poets and scholars since ancient times, evoking both melancholy and curiosity. What mysterious force governs the rhythmic cycle of day and night, orchestrating the rise and fall of the sun, moon, and stars? How deep is the abyss of the night sky? Where do we come from, and where are we headed? Do the heavens, the earth, and everything in between have a beginning and an end? These age-old questions, once confined to the realms of philosophy and religion, are gradually being unraveled through scientific inquiry as we uncover the mysteries of the cosmos...
+        </p>
+        </br></br>
+        <div class="btn-container">
+          <a href="/skyfield_eng"><button class="btn">More</button></a>
+        </div>
+        </br>
+        <h2 style="text-indent: 2em;">Constellation</h2>
+        <p style="margin-left: 3em;">
+          The term refers to a group of stars whose projected positions on the celestial sphere are close together. The delineation of constellations may vary across different civilizations and historical periods. Most modern constellations evolved from ancient Greek traditions and are precisely delineated into 88 constellations by the International Astronomical Union.
+        </p>
+        </br></br>
+        <div class="btn-container">
+          <a href="/constellation_eng"><button class="btn">More</button></a>
+        </div>
+      
+      </br></br></br></br></br></br>
+
+      <h1 id="history">HISTORY</h1>
+      <br>
+      <p style="margin-left: 3em;">
+        For the convenience of studying and observing the myriad of stars in the sky, people divided the celestial sphere into several regions, with each region forming a constellation. It's challenging to pinpoint exactly when humans began conceptualizing constellations, as this astronomical knowledge likely predates recorded history. The names of constellations may have originated from early seafaring sailors. The origins of constellations in different civilizations could be entirely different, but with the expansion and mutual influence of various civilizations, the cultural aspects of constellations have undergone a process of amalgamation.
+      </p>
+      </br></br>
+        <div class="btn-container">
+          <a href="/history_eng"><button class="btn">More</button></a>
+        </div>
+      </br></br></br></br></br></br>
+      <h1 id="creater">CHART_CREATER</h1>
+      </br></br>
+      <div class="star_map">
+        <div class="star_map1">
+          <h2 style="margin-left: 1em;">STAR_MAP CREATER
+          </h2>
+          <p style="margin-left: 2em;">
+            Enter custom time, location, altitude, and azimuth to create your own star map!
+          </p>
+        </div>
+        <div class="star_map2">
+        <h2 style="margin-left: 1em;">SAMPLE
+        </h2>
+          <a class="custom-link" href="/generator1_eng" data-text="START">
+          <img id="sample1" src="{{ url_for('static', filename='picture/sample1_eng.png') }}" alt="Sample">
+          </a>        
+        </div>
+      </div>
+      </br></br>
+      </br></br>
+      <div class="btn-container">
+        <a href="/creater_eng"><button class="btn">More</button></a>
+      </div>
+        
+    </br></br></br></br></br></br>
+    <div>
+      <h1><a href="#web" onclick="toggleHide('web')" title="" type="button" style="color: white;" id="change-color"
+          data-text="OPEN">REFERENCE</a><a name="bottom"></a></h1></br>
+      <div id="web" style="display: none;">
+        <a class="custom-link" href="/presentation" data-text="PPT">
+        <img id="ref_fig" src="{{ url_for('static', filename='picture/logo.gif') }}">
+        </a>
+        <ul>
+          <li><a href="https://zh.wikipedia.org/zh-tw/%E6%98%9F%E5%BA%A7#" id="change-color" style="color: white; font-size: 18px;" target="_blank"
+              data-text="LINK">WIKI:https://zh.wikipedia.org/zh-tw/%E6%98%9F%E5%BA%A7# </a></li>
+          <li><a href="https://baike.baidu.hk/item/%E6%98%9F%E5%BA%A7/12781#3" id="change-color" style="color: white; font-size: 18px;" target="_blank"
+              data-text="LINK">Baidu:https://baike.baidu.hk/item/%E6%98%9F%E5%BA%A7/12781#3 </a></li>
+          <li><a href="https://moodle.fg.tp.edu.tw/~tfgcoocs/blog/wp-content/uploads/2015/11/textbook10401_37_43.pdf" id="change-color" style="color: white; font-size: 18px;" target="_blank"
+              data-text="LINK">Textbook:https://moodle.fg.tp.edu.tw/~tfgcoocs/blog/wp-content/uploads/2015/11/textbook10401_37_43.pdf </a></li>
+          <li><a href="https://home.gamer.com.tw/creationDetail.php?sn=4983451" id="change-color" style="color: white; font-size: 18px;" target="_blank"
+              data-text="LINK">Constellation guide:https://home.gamer.com.tw/creationDetail.php?sn=4983451 </a></li>
+          <li><a href="https://mynotes.org/earth/?p=7172" id="change-color" style="color: white; font-size: 18px;" target="_blank"
+              data-text="LINK">Starry sky and cosmos:https://mynotes.org/earth/?p=7172 </a></li>
+          <li><a href="https://starwalk.space/zh-Hant/news/celestial-coordinates" id="change-color" style="color: white; font-size: 18px;" target="_blank"
+              data-text="LINK">Starwalk:https://starwalk.space/zh-Hant/news/celestial-coordinates </a></li>
+        </ul>
+      </div>
+      <script>
+        function toggleHide(id) {
+          event.preventDefault();
+          var element = document.getElementById(id);
+          if (element.style.display === 'none') {
+            element.style.display = '';
+          } else {
+            element.style.display = 'none';
+          }
+        }
+      </script>
+    </div>
+    </br></br></br></br></br></br></br></br></br></br>
+
+    </div>
+
+
+    <div class="nav2">
+
+
+      <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+      <a href="#" data-text="TOP"><button type="button" id="BackTop" class="toTop-arrow"></button></a>
+      <script>
+      $(function () {
+        $('#BackTop').click(function () {
+          $('html,body').animate({scrollTop: 0}, 333);
+        });
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 100) {
+            $('#BackTop').fadeIn(222);
+          } else {
+            $('#BackTop').stop().fadeOut(222);
+          }
+        }).scroll();
+      });
+      </script>
+
+      <nav class="nav-box">
+        <input type="checkbox" id="menu">
+        <label for="menu" class="line">
+          <div class="menu"></div>
+        </label>
+
+        <div class="menu-list">
+         <ul>
+          <li><a class="custom-link" href="#introduction" id="change-color">Introduction</a></li>
+          <li><a class="custom-link" href="#history" id="change-color">History</a></li>
+          <li><a class="custom-link" href="#creater" id="change-color">Chart_Creater</a></li>
+          <li><a class="custom-link" href="#bottom" id="change-color">Reference</a></li>
+         </ul>
+        </div>
+     </nav>
+   </div>
+   </div>
+
+  <div class="footer">
+    <h2>For entertainment purposes only, non-profit, all rights reserved.</h2>
+  </div>
+  <script>
+    let cursor = document.getElementById("myCursor");
+    let circle = document.getElementById("circle");
+    window.addEventListener("mousemove", function (e) {
+      let x = e.clientX;
+      let y = e.clientY;
+      cursor.style.left = x - 20 + "px";
+      cursor.style.top = y - 20 + "px";
+      circle.style.left = x - 12 + "px";
+      circle.style.top = y - 12 + "px";
+    });
+
+    window.addEventListener("scroll", function (e) {
+      let x = event.clientX;
+      let y = event.clientY;
+      cursor.style.left = x - 20 + "px";
+      cursor.style.top = y - 20 + "px";
+      circle.style.left = x - 12 + "px";
+      circle.style.top = y - 12 + "px";
+    })
+
+  </script>
+  <script>
+    let links = document.querySelectorAll("a");
+
+    // 監聽每個超連結的 mouseover 事件
+    links.forEach(link => {
+      link.addEventListener("mouseover", function () {
+        // 改變特殊鼠標的尺寸
+        myCursor.style.width = "65px";
+        myCursor.style.height = "65px";
+        circle.style.width = "0px";
+        circle.style.height = "0px";
+        circle.style.boxShadow = "none";
+        // 獲取超連結的自定義文字內容屬性
+        let customText = link.getAttribute("data-text");
+
+        // 創建一個新的文字元素，並設置超連結的自定義文字內容
+        let textElement = document.createElement("div");
+        textElement.textContent = customText;
+        textElement.classList.add("cursor-text"); // 添加一個 CSS 類名以便於樣式設置
+
+        // 將文字元素添加到 myCursor 中
+        cursor.appendChild(textElement);
+      });
+
+      // 監聽 mouseout 事件以移除文字元素
+      link.addEventListener("mouseout", function () {
+        myCursor.style.width = "40px";
+        myCursor.style.height = "40px";
+        circle.style.width = "24px";
+        circle.style.height = "24px";
+        circle.style.boxShadow ="0px 0px 10px 2px rgba(250, 150, 50, 0.8), 0px 0px 20px 5px rgba(250, 102, 59, 0.6), 0px 0px 30px 10px rgba(250, 102, 59, 0.4)";
+        let textElement = document.querySelector(".cursor-text");
+        if (textElement) {
+          textElement.remove(); // 移除文字元素
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,2849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONSTELLATION</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/constellation.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cursor.css') }}">
+    <style>
+        body {
+               background: url("{{ url_for('static', filename='picture/test.gif') }}");
+        }
+    </style>
+    <script>
+    window.onload = function () {
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      window.scrollTo(0, 0);
+    }
+  </script>
+  
+</head>
+
+<body>
+  <div id="myCursor"></div>
+  <div id="circle"></div>
+  <div class="wrapper">
+    <div class="nav1">
+      <a class="custom-link" href="/mainpage_eng" data-text="MAIN PAGE"><img id="fade-in" src="{{ url_for('static', filename='picture/astrology.png') }}"></a>
+    </div>
+    <div class="content">
+      <div class="fig-container">
+      <img id="main_fig" src="{{ url_for('static', filename='picture/King Frost.jpg') }}">
+      
+      <p style="text-align:center;" class="scroll-down">SCROLL DOWN</p>
+      <div class="scroll-down">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 16l-6-6h12l-6 6z" fill="currentColor"/>
+        </svg>
+      </div>
+      </div>
+      <div class="switch-container">
+          <a class="custom-link" href="/constellation"><button class="switch">Tradional Chinese</button></a>
+          <button class="switch" style="color:#FFD700;">English</button>
+      </div>
+      <br><br>
+      <p>Constellations refer to groups of stars in the sky. Since ancient times, humans have linked clusters of stars with characters or objects from their mythology, and these collective myths are known as constellations. The division and naming of constellations varied across different civilizations until 1930, when the International Astronomical Union standardized the complex divisions. They based this on the ancient Greek constellations passed down through the Middle Ages and divided the sky into 88 official constellations with precise boundaries, ensuring that most stars belong to a specific constellation.</p>
+      <p>In the three-dimensional universe, these stars do not necessarily have any actual relationship with each other. Even if they appear close to each other on the celestial sphere, they may be very far apart in reality. If we were located in another solar system within the Milky Way, the night sky we see would be completely different.</p>
+        </br></br></br></br>
+        <h6 id="meaning" style="color: black;">.</h6>
+        <div class="hr-container">
+          <h1><span class="hr-text">Significance and Application</span>
+          </h1>
+          <hr class="custom-hr">
+        </div>
+        <br><br>
+        <p>The rising and setting of stars or constellations were often used for navigation and determining time in ancient times. The ancient Egyptians determined the beginning of the year by observing the heliacal rising of Sirius. In some regions, the ancient techniques of determining direction by observing stars are still preserved. Constellations and their literary symbolism frequently appear in the works of scholars and poets.</p>
+        <p>Although the importance of constellations has relatively diminished in modern times, they have not lost their charm for night sky enthusiasts. Through their captivating legends, constellations play an extremely important role in the popularization of astronomy. Whenever significant astronomical events occur, astronomers, science communicators, and the media often spark a wave of enthusiasm for astronomy in society, especially among young people.</p>
+        </br>
+        </br></br></br></br>
+        <h6 id="motion" style="color: black;">.</h6>
+        <div class="hr-container">
+          <h1><span class="hr-text">Motion</span>
+          </h1>
+          <hr class="custom-hr">
+        </div>
+        <br><br>
+        <p>The apparent motion of constellations with the celestial sphere is caused by the Earth's own movements, particularly its rotation and revolution. The Earth's rotation causes the background of the night sky to rotate around the celestial poles once every 24 hours. This daily motion makes the stars and constellations appear to rise in the east and set in the west. As the Earth orbits the Sun over the course of a year, the night sky changes gradually with the seasons. After a year, the night sky appears almost the same as it did the previous year. The basic cyclical motion of constellations is as follows:</p>
+        </br>
+        <div>
+        <h2><a href="#diurnal_motion" onclick="toggleHide('diurnal_motion')" title="" type="button" style="color: white;" id="change-color"
+            data-text="OPEN">Diurnal Motion</a></h2>
+        <div id="diurnal_motion" style="display: none;">
+        <p>Due to the Earth's rotation from west to east, celestial bodies such as the Sun, Moon, and many other planets appear to rise in the east and set in the west each day. They each move along curved paths of varying sizes in the sky. This regular motion of celestial bodies is known as "diurnal motion."</p>
+        <p>Observers at different latitudes on Earth see different portions of the celestial sphere at the same time, resulting in variations in the constellations and star clusters visible to them. For example, for an observer at latitude 25 degrees north, the path of star A remains visible throughout the entire day as it appears to move along the celestial equator. However, there are stars closer to the celestial South Pole that will always remain below the observer's horizon.</p>
+        <img id="diurnal_pic" src="{{ url_for('static', filename='picture/diurnal motion.png') }}">
+        <br>
+        </div>
+        <script>
+          function toggleHide(id) {
+            event.preventDefault();
+            var element = document.getElementById(id);
+            if (element.style.display === 'none') {
+              element.style.display = '';
+            } else {
+              element.style.display = 'none';
+            }
+          }
+        </script>
+        </div>
+        <br>
+        <div>
+        <h2><a href="#annualmotion" onclick="toggleHide('annualmotion')" title="" type="button" style="color: white;" id="change-color"
+            data-text="OPEN">Annual Motion</a></h2>
+        <div id="annualmotion" style="display: none;">
+        <p>In addition to the daily motion caused by the Earth's rotation, celestial bodies on the celestial sphere also exhibit an annual motion due to the Earth's orbit around the Sun. This annual motion, occurring over a period of one year, results in the appearance of different constellations at different times of the year on Earth, corresponding to the changing seasons.</p>
+        <p>Due to the simultaneous rotation of the Earth on its axis and its orbit around the Sun, the Earth completes its diurnal motion, or daily rotation, with respect to the Sun. In practice, this rotation exceeds 360 degrees by approximately 1 degree (as illustrated below), equivalent to about 4 minutes. This phenomenon causes a celestial body or constellation to rise approximately 4 minutes earlier each day. Consequently, different constellations are visible in the sky during different seasons.</p>
+        <img id="annualmotion_pic" src="{{ url_for('static', filename='picture/annualmotion.png') }}">
+        <br>
+        </div>
+        <script>
+          function toggleHide(id) {
+            event.preventDefault();
+            var element = document.getElementById(id);
+            if (element.style.display === 'none') {
+              element.style.display = '';
+            } else {
+              element.style.display = 'none';
+            }
+          }
+        </script>
+        </div>
+        </br></br></br></br>
+        <h6 id="88_constellation" style="color: black;">.</h6>
+        <div class="hr-container">
+          <h1><span class="hr-text">Modern 88 Constellations</span>
+          </h1>
+          <hr class="custom-hr">
+        </div>
+        <br><br>
+        <p>In 1930, the International Astronomical Union officially announced the internationally recognized scheme of 88 constellations, while simultaneously establishing the spring equinox point of 1875 and the equator as references. Based on the right ascension coordinates of the central points of constellations, the 88 constellations can be divided into spring, summer, autumn, and winter constellations. Similarly, based on the declination coordinates of the central points of constellations, the 88 constellations can be categorized as northern, equatorial, zodiacal, and southern constellations.</p>
+        <p>Additionally, constellations can also be grouped according to different regional collections. These constellation families are named after the most prominent constellations within each group, as well as after the zodiac, mythological regions, celestial aquaria, and the astronomers Johannes Bayer and Nicolas-Louis de Lacaille, who created the southern constellations.</p>
+        </br>
+    <div class="btn-container">
+        <button onclick="showContent('season')" class="btn">Seasonal Constellations</button>
+        <button onclick="showContent('sphere')" class="btn">Hemispheric Constellations</button>
+        <button onclick="showContent('group')" class="btn">Constellation Families</button>
+    </div>
+        <br><br>
+    <div>
+        <div id="season" class="classification">
+            <div>
+                <h2><a href="#spring" onclick="toggleHide('spring')" title="" type="button" style="color: white;" id="change-color"
+                    data-text="OPEN">Spring Constellations (total of 15 constellations)</a></h2>
+                <div id="spring" style="display: none;">
+                <img style="width:900px;height:auto;" src="{{ url_for('static', filename='picture/spring.png') }}">    
+                </div>
+               <table border="1" style="margin-left: 2em;">
+                <tr>
+                <th style="width:180px;">Names</th>
+                <th style="width:50px;">Abbreviation</th>
+                <th style="width:130px;">Area (square degrees)</th>
+                <th style="width:100px;">Right Ascension (hours, minutes)</th>
+                <th style="width:100px;">Declination (degrees, minutes)</th>
+                <th style="width:200px;">Brightest Star</th>
+                </tr>
+                <tr>
+                <th>Ursa Major</th>
+                <th>UMA</th>
+                <th>1279.66</th>
+                <th>(11,18.76)</th>
+                <th>(50,43.27)</th>
+                <th>ε Ursae Majoris</th>
+                </tr>
+                <tr>
+                <th>Boötes</th>
+                <th>BOO</th>
+                <th>906.831</th>
+                <th>(14,42.64)</th>
+                <th>(31,12.16)</th>
+                <th>Arcturus</th>
+                </tr>
+                <tr>
+                <th>Virgo</th>
+                <th>VIR</th>
+                <th>1294.428</th>
+                <th>(13,24.39)</th>
+                <th>(-4,9.51)</th>
+                <th>Spica</th>
+                </tr>
+                <tr>
+                <th>Corvus</th>
+                <th>CRV</th>
+                <th>183.801</th>
+                <th>(12,26.52)</th>
+                <th>(-18,26.2)</th>
+                <th>γ Corvi</th>
+                </tr>
+                <tr>
+                <th>Hydra</th>
+                <th>HYA</th>
+                <th>1302.844</th>
+                <th>(11,36.73)</th>
+                <th>(-14,31.91)</th>
+                <th>Alphard</th>
+                </tr>
+                <tr>
+                <th>Crater</th>
+                <th>CRT</th>
+                <th>282.398</th>
+                <th>(11,23.75)</th>
+                <th>(-15,55.74)</th>
+                <th>δ Crateris</th>
+                </tr>
+                <tr>
+                <th>Sextans</th>
+                <th>SEX</th>
+                <th>313.515</th>
+                <th>(10,16.29)</th>
+                <th>(-2,36.88)</th>
+                <th>α Sextantis</th>
+                </tr>
+                <tr>
+                <th>Leo</th>
+                <th>LEO</th>
+                <th>946.964</th>
+                <th>(10,40.03)</th>
+                <th>(13,8.32)</th>
+                <th>Regulus</th>
+                </tr>
+                <tr>
+                <th>Leo Minor</th>
+                <th>LMI</th>
+                <th>231.956</th>
+                <th>(10,14.72)</th>
+                <th>(32,8.08)</th>
+                <th>46 Leonis Minoris</th>
+                </tr>
+                <tr>
+                <th>Canes Venatici</th>
+                <th>CVN</th>
+                <th>465.194</th>
+                <th>(13,6.96)</th>
+                <th>(40,6.11)</th>
+                <th>Cor Caroli</th>
+                </tr>
+                <tr>
+                <th>Coma Berenices</th>
+                <th>COM</th>
+                <th>386.475</th>
+                <th>(12,47.27)</th>
+                <th>(23,18.34)</th>
+                <th>β Comae Berenices</th>
+                </tr>
+                <tr>
+                <th>Ursa Minor</th>
+                <th>UMI</th>
+                <th>255.864</th>
+                <th>(15,0)</th>
+                <th>(77,41.99)</th>
+                <th>Polaris</th>
+                </tr>
+                <tr>
+                <th>Draco</th>
+                <th>DRA</th>
+                <th>1082.952</th>
+                <th>(15,8.64)</th>
+                <th>(67,0.4)</th>
+                <th>γ Draconis</th>
+                </tr>
+                <tr>
+                <th>Lynx</th>
+                <th>LYN</th>
+                <th>545.386</th>
+                <th>(7,59.53)</th>
+                <th>(47,28)</th>
+                <th>α Lyncis</th>
+                </tr>
+                <tr>
+                <th>Camelopardalis</th>
+                <th>CAM</th>
+                <th>756.828</th>
+                <th>(8,51.37)</th>
+                <th>(69,22.89)</th>
+                <th>β Camelopardalis</th>
+                </tr>
+               </table>
+             <script>
+              function toggleHide(id) {
+                event.preventDefault();
+                var element = document.getElementById(id);
+                if (element.style.display === 'none') {
+                  element.style.display = '';
+                } else {
+                  element.style.display = 'none';
+                }
+              }
+             </script>
+            </div>
+            <br>
+            <div>
+                <h2><a href="#summer" onclick="toggleHide('summer')" title="" type="button" style="color: white;" id="change-color"
+                    data-text="OPEN">Summer Constellations (total of 16 constellations)</a></h2>
+                <div id="summer" style="display: none;">
+                <img style="width:900px; height:auto;" src="{{ url_for('static', filename='picture/summer.png') }}">    
+               </div>
+               <table border="1" style="margin-left: 2em;">
+                <tr>
+                <th style="width:180px;">Names</th>
+                <th style="width:50px;">Abbreviation</th>
+                <th style="width:130px;">Area (square degrees)</th>
+                <th style="width:100px;">Right Ascension (hours, minutes)</th>
+                <th style="width:100px;">Declination (degrees, minutes)</th>
+                <th style="width:200px;">Brightest Star</th>
+                </tr>
+                <tr>
+                <th>Lyra</th>
+                <th>LYR</th>
+                <th>286.476</th>
+                <th>(18,51.17)</th>
+                <th>(36,41.36)</th>
+                <th>Vega</th>
+                </tr>
+                <tr>
+                <th>Aquila</th>
+                <th>AQL</th>
+                <th>652.473</th>
+                <th>(19,40.02)</th>
+                <th>(3,24.65)</th>
+                <th>Altair</th>
+                </tr>
+                <tr>
+                <th>Cygnus</th>
+                <th>CYG</th>
+                <th>803.983</th>
+                <th>(20,35.28)</th>
+                <th>(44,32.7)</th>
+                <th>Deneb</th>
+                </tr>
+                <tr>
+                <th>Delphinus</th>
+                <th>DEL</th>
+                <th>188.549</th>
+                <th>(20,41.61)</th>
+                <th>(11,40.26)</th>
+                <th>β Delphini</th>
+                </tr>
+                <tr>
+                <th>Sagitta</th>
+                <th>SGE</th>
+                <th>79.932</th>
+                <th>(19,39.05)</th>
+                <th>(18,51.68)</th>
+                <th>γ Sagittae</th>
+                </tr>
+                <tr>
+                <th>Vulpecula</th>
+                <th>VUL</th>
+                <th>268.165</th>
+                <th>(20,13.88)</th>
+                <th>(24,26.56)</th>
+                <th>α Vulpeculae</th>
+                </tr>
+                <tr>
+                <th>Scorpius</th>
+                <th>SCO</th>
+                <th>496.783</th>
+                <th>(16,53.24)</th>
+                <th>(-27,1.89)</th>
+                <th>Antares</th>
+                </tr>
+                <tr>
+                <th>Sagittarius</th>
+                <th>SGR</th>
+                <th>867.432</th>
+                <th>(19,5.94)</th>
+                <th>(-28,28.61)</th>
+                <th>ε Sagittarii</th>
+                </tr>
+                <tr>
+                <th>Corona Australis</th>
+                <th>CRA</th>
+                <th>127.696</th>
+                <th>(18,38.79)</th>
+                <th>(-41,8.85)</th>
+                <th>α Coronae Australis</th>
+                </tr>
+                <tr>
+                <th>Corona Borealis</th>
+                <th>CRB</th>
+                <th>178.71</th>
+                <th>(15,50.59)</th>
+                <th>(32,37.49)</th>
+                <th>α Coronae Borealis</th>
+                </tr>
+                <tr>
+                <th>Libra</th>
+                <th>LIB</th>
+                <th>538.052</th>
+                <th>(15,11.96)</th>
+                <th>(-15,14.08)</th>
+                <th>β Librae</th>
+                </tr>
+                <tr>
+                <th>Capricornus</th>
+                <th>CAP</th>
+                <th>413.947</th>
+                <th>(21,2.93)</th>
+                <th>(-18,1.39)</th>
+                <th>δ Capricorni</th>
+                </tr>
+                <tr>
+                <th>Ophiuchus</th>
+                <th>OPH</th>
+                <th>948.34</th>
+                <th>(17,23.69)</th>
+                <th>(-7,54.74)</th>
+                <th>α Ophiuchi</th>
+                </tr>
+                <tr>
+                <th>Hercules</th>
+                <th>HER</th>
+                <th>1225.148</th>
+                <th>(17,23.16)</th>
+                <th>(27,29.93)</th>
+                <th>β Herculis</th>
+                </tr>
+                <tr>
+                <th>Serpens</th>
+                <th>SER</th>
+                <th>636.928</th>
+                <th>(16,57.04)</th>
+                <th>(6,7.32)</th>
+                <th>α Serpentis</th>
+                </tr>
+                <tr>
+                <th>Scutum</th>
+                <th>SCT</th>
+                <th>109.114</th>
+                <th>(18,40.39)</th>
+                <th>(-9,53.32)</th>
+                <th>α Scuti</th>
+                </tr>                
+               </table>
+             <script>
+              function toggleHide(id) {
+                event.preventDefault();
+                var element = document.getElementById(id);
+                if (element.style.display === 'none') {
+                  element.style.display = '';
+                } else {
+                  element.style.display = 'none';
+                }
+              }
+             </script>
+            </div>
+            <br>
+            <div>
+                <h2><a href="#fall" onclick="toggleHide('fall')" title="" type="button" style="color: white;" id="change-color"
+                    data-text="OPEN">Autumn Constellations (total of 14 constellations)</a></h2>
+                <div id="fall" style="display: none;">
+                <img style="width:700px;height:auto;" src="{{ url_for('static', filename='picture/fall.png') }}">    
+                </div>
+               <table border="1" style="margin-left: 2em;">
+                <tr>
+                <th style="width:180px;">Names</th>
+                <th style="width:50px;">Abbreviation</th>
+                <th style="width:130px;">Area (square degrees)</th>
+                <th style="width:100px;">Right Ascension (hours, minutes)</th>
+                <th style="width:100px;">Declination (degrees, minutes)</th>
+                <th style="width:200px;">Brightest Star</th>
+                </tr>
+                <tr>
+                <th>Pegasus</th>
+                <th>PEG</th>
+                <th>1120.794</th>
+                <th>(22,41.84)</th>
+                <th>(19,27.98)</th>
+                <th>ε Pegasi</th>
+                </tr>
+                <tr>
+                <th>Andromeda</th>
+                <th>AND</th>
+                <th>722.278</th>
+                <th>(0,48.46)</th>
+                <th>(37,25.91)</th>
+                <th>Alpheratz</th>
+                </tr>
+                <tr>
+                <th>Perseus</th>
+                <th>PER</th>
+                <th>614.997</th>
+                <th>(3,10.5)</th>
+                <th>(45,0.79)</th>
+                <th>α Persei</th>
+                </tr>
+                <tr>
+                <th>Cassiopeia</th>
+                <th>CAS</th>
+                <th>598.407</th>
+                <th>(1,19.16)</th>
+                <th>(62,11.04)</th>
+                <th>α Cassiopeiae</th>
+                </tr>
+                <tr>
+                <th>Cepheus</th>
+                <th>CEP</th>
+                <th>587.787</th>
+                <th>(22,0)</th>
+                <th>(71,0.51)</th>
+                <th>α Cephei</th>
+                </tr>
+                <tr>
+                <th>Lacerta</th>
+                <th>LAC</th>
+                <th>200.688</th>
+                <th>(22,27.68)</th>
+                <th>(46,2.51)</th>
+                <th>α Lacertae</th>
+                </tr>
+                <tr>
+                <th>Aries</th>
+                <th>ARI</th>
+                <th>441.395</th>
+                <th>(2,38.16)</th>
+                <th>(20,47.54)</th>
+                <th>Hamal</th>
+                </tr>
+                <tr>
+                <th>Triangulum</th>
+                <th>TRI</th>
+                <th>131.847</th>
+                <th>(2,11.07)</th>
+                <th>(31,28.56)</th>
+                <th>β Trianguli</th>
+                </tr>
+                <tr>
+                <th>Pisces</th>
+                <th>PSC</th>
+                <th>889.417</th>
+                <th>(0,28.97)</th>
+                <th>(13,41.23)</th>
+                <th>η Piscium</th>
+                </tr>
+                <tr>
+                <th>Aquarius</th>
+                <th>AQR</th>
+                <th>979.854</th>
+                <th>(22,17.38)</th>
+                <th>(-10,47.35)</th>
+                <th>β Aquarii</th>
+                </tr>
+                <tr>
+                <th>Equuleus</th>
+                <th>EQU</th>
+                <th>71.641</th>
+                <th>(21,11.26)</th>
+                <th>(7,45.49)</th>
+                <th>α Equulei</th>
+                </tr>
+                <tr>
+                <th>Piscis Austrinus</th>
+                <th>PSA</th>
+                <th>245.375</th>
+                <th>(22,17.07)</th>
+                <th>(-30,38.53)</th>
+                <th>Fomalhaut</th>
+                </tr>
+                <tr>
+                <th>Cetus</th>
+                <th>CET</th>
+                <th>1231.411</th>
+                <th>(1,40.1)</th>
+                <th>(-7,10.76)</th>
+                <th>β Ceti</th>
+                </tr>
+                <tr>
+                <th>Sculptor</th>
+                <th>SCL</th>
+                <th>474.764</th>
+                <th>(0,26.28)</th>
+                <th>(-32,5.3)</th>
+                <th>α Sculptoris</th>
+                </tr>
+               </table>
+             <script>
+              function toggleHide(id) {
+                event.preventDefault();
+                var element = document.getElementById(id);
+                if (element.style.display === 'none') {
+                  element.style.display = '';
+                } else {
+                  element.style.display = 'none';
+                }
+              }
+             </script>
+            </div>
+            <br>
+            <div>
+                <h2><a href="#winter" onclick="toggleHide('winter')" title="" type="button" style="color: white;" id="change-color"
+                    data-text="OPEN">Winter Constellations (total of 12 constellations)</a></h2>
+                <div id="winter" style="display: none;">
+                <img style="width:900px;height:auto;" src="{{ url_for('static', filename='picture/winter.png') }}">    
+                </div>
+               <table border="1" style="margin-left: 2em;">
+                <tr>
+                <th style="width:180px;">Names</th>
+                <th style="width:50px;">Abbreviation</th>
+                <th style="width:130px;">Area (square degrees)</th>
+                <th style="width:100px;">Right Ascension (hours, minutes)</th>
+                <th style="width:100px;">Declination (degrees, minutes)</th>
+                <th style="width:200px;">Brightest Star</th>
+                </tr>
+                <tr>
+                <th>Orion</th>                
+                <th>ORI</th>
+                <th>594.12</th>
+                <th>(5,34.59)</th>
+                <th>(5,56.94)</th>
+                <th>Rigel</th>
+                </tr>
+                <tr>
+                <th>Taurus</th>
+                <th>TAU</th>
+                <th>797.249</th>
+                <th>(4,42.13)</th>
+                <th>(14,52.63)</th>
+                <th>Aldebaran</th>
+                </tr>
+                <tr>
+                <th>Auriga</th>
+                <th>AUR</th>
+                <th>657.438</th>
+                <th>(6,4.42)</th>
+                <th>(42,1.68)</th>
+                <th></th>
+                </tr>
+                <tr>
+                <th>Gemini</th>
+                <th>GEM</th>
+                <th>513.761</th>
+                <th>(7,4.24)</th>
+                <th>(22,36.01)</th>
+                <th>Pollux</th>
+                </tr>
+                <tr>
+                <th>Canis Minor</th>
+                <th>CMI</th>
+                <th>183.367</th>
+                <th>(7,39.17)</th>
+                <th>(6,25.63)</th>
+                <th>Procyon</th>
+                </tr>
+                <tr>
+                <th>Canis Major</th>
+                <th>CMA</th>
+                <th>380.118</th>
+                <th>(6,49.74)</th>
+                <th>(-22,8.42)</th>
+                <th>Sirius</th>
+                </tr>
+                <tr>
+                <th>Cancer</th>
+                <th>CNC</th>
+                <th>505.872</th>
+                <th>(8,38.96)</th>
+                <th>(19,48.35)</th>
+                <th>β Cancri</th>
+                </tr>
+                <tr>
+                <th>Lepus</th>
+                <th>LEP</th>
+                <th>290.291</th>
+                <th>(5,33.95)</th>
+                <th>(-19,2.78)</th>
+                <th>α Leporis</th>
+                </tr>
+                <tr>
+                <th>Columba</th>
+                <th>COL</th>
+                <th>270.184</th>
+                <th>(5,51.76)</th>
+                <th>(-35,5.67)</th>
+                <th>α Columbae</th>
+                </tr>
+                <tr>
+                <th>Monoceros</th>
+                <th>MON</th>
+                <th>481.569</th>
+                <th>(7,3.63)</th>
+                <th>(0,16.93)</th>
+                <th>β Monocerotis</th>
+                </tr>
+                <tr>
+                <th>Eridanus</th>
+                <th>ERI</th>
+                <th>1137.919</th>
+                <th>(3,18.02)</th>
+                <th>(-28,45.37)</th>
+                <th>Achernar</th>
+                </tr>
+                <tr>
+                <th>Fornax</th>
+                <th>FOR</th>
+                <th>397.502</th>
+                <th>(2,47.88)</th>
+                <th>(-31,38.07)</th>
+                <th>α Fornacis</th>
+                </tr>
+               </table>
+             <script>
+              function toggleHide(id) {
+                event.preventDefault();
+                var element = document.getElementById(id);
+                if (element.style.display === 'none') {
+                  element.style.display = '';
+                } else {
+                  element.style.display = 'none';
+                }
+              }
+             </script>
+            </div>
+            <div>
+            <br>
+                <h2><a href="#south1" onclick="toggleHide('south1')" title="" type="button" style="color: white;" id="change-color"
+                    data-text="OPEN">Southern Constellations (total of 31 constellations)</a></h2>
+                <div id="south1" style="display: none;">
+                <img style="width:900px;height:auto;" src="{{ url_for('static', filename='picture/south.png') }}">    
+                <br>
+                </div>
+                <br>
+               <table border="1" style="margin-left: 2em;">
+                <tr>
+                <th style="width:180px;">Names</th>
+                <th style="width:50px;">Abbreviation</th>
+                <th style="width:130px;">Area (square degrees)</th>
+                <th style="width:100px;">Right Ascension (hours, minutes)</th>
+                <th style="width:100px;">Declination (degrees, minutes)</th>
+                <th style="width:200px;">Brightest Star</th>
+                </tr>
+                <tr>
+                <th>Crux</th>
+                <th>CRU</th>
+                <th>68.447</th>
+                <th>(12,26.99)</th>
+                <th>(-60,11.19)</th>
+                <th>Acrux</th>
+                </tr>
+                <tr>
+                <th>Centaurus</th>
+                <th>CEN</th>
+                <th>1060.422</th>
+                <th>(13,4.27)</th>
+                <th>(-47,20.72)</th>
+                <th>α Centauri</th>
+                </tr>
+                <tr>
+                <th>Musca</th>
+                <th>MUS</th>
+                <th>138.355</th>
+                <th>(12,35.28)</th>
+                <th>(-70,9.66)</th>
+                <th>α Muscae</th>
+                </tr>
+                <tr>
+                <th>Chamaeleon</th>                
+                <th>CHA</th>
+                <th>131.592</th>
+                <th>(10,41.53)</th>
+                <th>(-79,12.3)</th>
+                <th>α Chamaeleontis</th>
+                </tr>
+                <tr>
+                <th>Apus</th>
+                <th>APS</th>
+                <th>206.327</th>
+                <th>(16,8.65)</th>
+                <th>(-75,18)</th>
+                <th>α Apodis</th>
+                </tr>
+                <tr>
+                <th>Lupus</th>
+                <th>LUP</th>
+                <th>333.683</th>
+                <th>(15,13.21)</th>
+                <th>(-42,42.53)</th>
+                <th>α Lupi</th>
+                </tr>
+                <tr>
+                <th>Circinus</th>
+                <th>CIR</th>
+                <th>93.353</th>
+                <th>(14,34.54)</th>
+                <th>(-63,1.82)</th>
+                <th>α Circini</th>
+                </tr>
+                <tr>
+                <th>Triangulum Australe</th>
+                <th>TRA</th>
+                <th>109.978</th>
+                <th>(16,4.95)</th>
+                <th>(-65,23.28)</th>
+                <th>α Trianguli Australis</th>
+                </tr>
+                <tr>
+                <th>Norma</th>
+                <th>NOR</th>
+                <th>165.29</th>
+                <th>(15,54.18)</th>
+                <th>(-51,21.09)</th>
+                <th>γ2 Normae</th>
+                </tr>
+                <tr>
+                <th>Ara</th>
+                <th>ARA</th>
+                <th>237.057</th>
+                <th>(17,22.49)</th>
+                <th>(-56,35.3)</th>
+                <th>β Arae</th>
+                </tr>
+                <tr>
+                <th>Microscopium</th>
+                <th>MIC</th>
+                <th>209.513</th>
+                <th>(20,57.88)</th>
+                <th>(-36,16.49)</th>
+                <th>γ Microscopii</th>
+                </tr>
+                <tr>
+                <th>Phoenix</th>
+                <th>PHE</th>
+                <th>469.319</th>
+                <th>(0,55.91)</th>
+                <th>(-48,34.84)</th>
+                <th>α Phoenicis</th>
+                </tr>
+                <tr>
+                <th>Grus</th>
+                <th>GRU</th>
+                <th>365.513</th>
+                <th>(22,27.39)</th>
+                <th>(-46,21.11)</th>
+                <th>α Gruis</th>
+                </tr>
+                <tr>
+                <th>Tucana</th>
+                <th>TUC</th>
+                <th>294.557</th>
+                <th>(23,46.64)</th>
+                <th>(-65,49.8)</th>
+                <th>α Tucanae</th>
+                </tr>
+                <tr>
+                <th>Pavo</th>
+                <th>PAV</th>
+                <th>377.666</th>
+                <th>(19,36.71)</th>
+                <th>(-65,46.89)</th>
+                <th>α Pavonis</th>
+                </tr>
+                <tr>
+                <th>Indus</th>
+                <th>IND</th>
+                <th>294.006</th>
+                <th>(21,58.33)</th>
+                <th>(-59,42.4)</th>
+                <th>α Indi</th>
+                </tr>
+                <tr>
+                <th>Vela</th>
+                <th>VEL</th>
+                <th>499.649</th>
+                <th>(9,34.64)</th>
+                <th>(-47,10.03)</th>
+                <th>γ Velorum</th>
+                </tr>
+                <tr>
+                <th>Carina</th>
+                <th>CAR</th>
+                <th>494.184</th>
+                <th>(8,41.7)</th>
+                <th>(-63,13.16)</th>
+                <th>Canopus</th>
+                </tr>
+                <tr>
+                <th>Puppis</th>
+                <th>PUP</th>
+                <th>673.434</th>
+                <th>(7,15.48)</th>
+                <th>(-31,10.64)</th>
+                <th>ζ Puppis</th>
+                </tr>
+                <tr>
+                <th>Antlia</th>
+                <th>ANT</th>
+                <th>238.901</th>
+                <th>(10,16.43)</th>
+                <th>(-32,29.01)</th>
+                <th>α Antliae</th>
+                </tr>
+                <tr>
+                <th>Pyxis</th>
+                <th>PYX</th>
+                <th>220.833</th>
+                <th>(8,57.16)</th>
+                <th>(-27,21.1)</th>
+                <th>α Pyxidis</th>
+                </tr>
+                <tr>
+                <th>Telescopium</th>
+                <th>TEL</th>
+                <th>251.512</th>
+                <th>(19,19.54)</th>
+                <th>(-51,2.21)</th>
+                <th>α Telescopii</th>
+                </tr>
+                <tr>
+                <th>Dorado</th>
+                <th>DOR</th>
+                <th>179.173</th>
+                <th>(5,14.51)</th>
+                <th></th>
+                <th>α Doradus</th>
+                </tr>
+                <tr>
+                <th>Volans</th>
+                <th>VOL</th>
+                <th>141.354</th>
+                <th>(7,47.73)</th>
+                <th>(-69,48.07)</th>
+                <th>β Volantis</th>
+                </tr>
+                <tr>
+                <th>Reticulum</th>
+                <th>RET</th>
+                <th>113.936</th>
+                <th>(3,55.27)</th>
+                <th>(-59,59.85)</th>
+                <th>α Reticuli</th>
+                </tr>
+                <tr>
+                <th>Horologium</th>
+                <th>HOR</th>
+                <th>248.885</th>
+                <th>(3,16.56)</th>
+                <th>(-53,20.18)</th>
+                <th>α Horologii</th>
+                </tr>
+                <tr>
+                <th>Pictor</th>                
+                <th>PIC</th>
+                <th>246.739</th>
+                <th>(5,42.46)</th>
+                <th>(-53,28.45)</th>
+                <th>α Pictoris</th>
+                </tr>
+                <tr>
+                <th>Hydrus</th>
+                <th>HYI</th>
+                <th>243.035</th>
+                <th>(2,20.65)</th>
+                <th>(-69,57.39)</th>
+                <th>β Hydri</th>
+                </tr>
+                <tr>
+                <th>Mensa</th>
+                <th>MEN</th>
+                <th>153.484</th>
+                <th>(5,24.9)</th>
+                <th>(-77,30.24)</th>
+                <th>α Mensae</th>
+                </tr>
+                <tr>
+                <th>Caelum</th>
+                <th>CAE</th>
+                <th>124.865</th>
+                <th>(4,42.27)</th>
+                <th>(-37,52.9)</th>
+                <th>α Caeli</th>
+                </tr>
+                <tr>
+                <th>Octans</th>
+                <th>OCT</th>
+                <th>291.045</th>
+                <th>(23,0)</th>
+                <th>(-82,9.12)</th>
+                <th>ν Octantis</th>
+                </tr>
+               </table>
+             <script>
+              function toggleHide(id) {
+                event.preventDefault();
+                var element = document.getElementById(id);
+                if (element.style.display === 'none') {
+                  element.style.display = '';
+                } else {
+                  element.style.display = 'none';
+                }
+              }
+             </script>
+            </div>
+        </div>
+        <div id="sphere" class="classification">
+            <h2>北天星座 (共24個星座)</h2>
+            <table border="1" style="margin-left: 2em;">
+                <tr>
+                <th style="width:180px;">Names</th>
+                <th style="width:50px;">Abbreviation</th>
+                <th style="width:130px;">Area (square degrees)</th>
+                <th style="width:100px;">Right Ascension (hours, minutes)</th>
+                <th style="width:100px;">Declination (degrees, minutes)</th>
+                <th style="width:200px;">Brightest Star</th>
+                </tr>
+             <tr>
+             <th>小熊座</th>
+             <th>UMI</th>
+             <th>Ursa Minor</th>
+             <th>255.864</th>
+             <th>(15,0)</th>
+             <th>(77,41.99)</th>
+             <th>小熊座α(勾陳一)</th>
+             </tr>
+             <tr>
+             <th>大熊座</th>
+             <th>UMA</th>
+             <th>Ursa Major</th>
+             <th>1279.66</th>
+             <th>(11,18.76)</th>
+             <th>(50,43.27)</th>
+             <th>大熊座ε(玉衡/北斗五)</th>
+             </tr>
+             <tr>
+             <th>仙后座</th>
+             <th>CAS</th>
+             <th>Cassiopeia</th>
+             <th>598.407</th>
+             <th>(1,19.16)</th>
+             <th>(62,11.04)</th>
+             <th>仙后座α(王良四)</th>
+             </tr>
+             <tr>
+             <th>仙王座</th>
+             <th>CEP</th>
+             <th>Cepheus</th>
+             <th>587.787</th>
+             <th>(22,0)</th>
+             <th>(71,0.51)</th>
+             <th>仙王座α(天鉤五)</th>
+             </tr>
+             <tr>
+             <th>天龍座</th>
+             <th>DRA</th>
+             <th>Draco</th>
+             <th>1082.952</th>
+             <th>(15,8.64)</th>
+             <th>(67,0.4)</th>
+             <th>天龍座γ(天棓四)</th>
+             </tr>
+             <tr>
+             <th>飛馬座</th>
+             <th>PEG</th>
+             <th>Pegasus</th>
+             <th>1120.794</th>
+             <th>(22,41.84)</th>
+             <th>(19,27.98)</th>
+             <th>飛馬座ε(危宿三)</th>
+             </tr>
+             <tr>
+             <th>天鵝座</th>
+             <th>CYG</th>
+             <th>Cygnus</th>
+             <th>803.983</th>
+             <th>(20,35.28)</th>
+             <th>(44,32.7)</th>
+             <th>天鵝座α(天津四)</th>
+             </tr>
+             <tr>
+             <th>蝎虎座</th>
+             <th>LAC</th>
+             <th>Lacerta</th>
+             <th>200.688</th>
+             <th>(22,27.68)</th>
+             <th>(46,2.51)</th>
+             <th>蝎虎座α(螣蛇一)</th>
+             </tr>
+             <tr>
+             <th>仙女座</th>
+             <th>AND</th>
+             <th>Andromeda</th>
+             <th>722.278</th>
+             <th>(0,48.46)</th>
+             <th>(37,25.91)</th>
+             <th>仙女座α(壁宿二)</th>
+             </tr>
+             <tr>
+             <th>鹿豹座</th>
+             <th>CAM</th>
+             <th>Camelopardalis</th>
+             <th>756.828</th>
+             <th>(8,51.37)</th>
+             <th>(69,22.89)</th>
+             <th>鹿豹座β(八穀增十四)</th>
+             </tr>
+             <tr>
+             <th>御夫座</th>
+             <th>AUR</th>
+             <th>Auriga</th>
+             <th>657.438</th>
+             <th>(6,4.42)</th>
+             <th>(42,1.68)</th>
+             <th>御夫座α(五車二)</th>
+             </tr>
+             <tr>
+             <th>獵犬座</th>
+             <th>CVN</th>
+             <th>Canes Venatici</th>
+             <th>465.194</th>
+             <th>(13,6.96)</th>
+             <th>(40,6.11)</th>
+             <th>獵犬座α(常陳一)</th>
+             </tr>
+             <tr>
+             <th>狐狸座</th>
+             <th>VUL</th>
+             <th>Vulpecula</th>
+             <th>268.165</th>
+             <th>(20,13.88)</th>
+             <th>(24,26.56)</th>
+             <th>狐狸座α(齊增五)</th>
+             </tr>
+             <tr>
+             <th>小獅座</th>
+             <th>LMI</th>
+             <th>Leo Minor</th>
+             <th>231.956</th>
+             <th>(10,14.72)</th>
+             <th>(32,8.08)</th>
+             <th>小獅座46(勢四)</th>
+             </tr>
+             <tr>
+             <th>英仙座</th>
+             <th>PER</th>
+             <th>Perseus</th>
+             <th>614.997</th>
+             <th>(3,10.5)</th>
+             <th>(45,0.79)</th>
+             <th>英仙座α(天船三)</th>
+             </tr>
+             <tr>
+             <th>牧夫座</th>
+             <th>BOO</th>
+             <th>Boötes</th>
+             <th>906.831</th>
+             <th>(14,42.64)</th>
+             <th>(31,12.16)</th>
+             <th>牧夫座α(大角星)</th>
+             </tr>
+             <tr>
+             <th>武仙座</th>
+             <th>HER</th>
+             <th>Hercules</th>
+             <th>1225.148</th>
+             <th>(17,23.16)</th>
+             <th>(27,29.93)</th>
+             <th>武仙座β(河中/天市右垣一)</th>
+             </tr>
+             <tr>
+             <th>后髮座</th>
+             <th>COM</th>
+             <th>Coma Berenices</th>
+             <th>386.475</th>
+             <th>(12,47.27)</th>
+             <th>(23,18.34)</th>
+             <th>后髮座β(周鼎一)</th>
+             </tr>
+             <tr>
+             <th>北冕座</th>
+             <th>CRB</th>
+             <th>Corona Borealis</th>
+             <th>178.71</th>
+             <th>(15,50.59)</th>
+             <th>(32,37.49)</th>
+             <th>北冕座α(貫索四)</th>
+             </tr>
+             <tr>
+             <th>天貓座</th>
+             <th>LYN</th>
+             <th>Lynx</th>
+             <th>545.386</th>
+             <th>(7,59.53)</th>
+             <th>(47,28)</th>
+             <th>天貓座α(軒轅四)</th>
+             </tr>
+             <tr>
+             <th>天琴座</th>
+             <th>LYR</th>
+             <th>Lyra</th>
+             <th>286.476</th>
+             <th>(18,51.17)</th>
+             <th>(36,41.36)</th>
+             <th>天琴座α(織女一)</th>
+             </tr>
+             <tr>
+             <th>海豚座</th>
+             <th>DEL</th>
+             <th>Delphinus</th>
+             <th>188.549</th>
+             <th>(20,41.61)</th>
+             <th>(11,40.26)</th>
+             <th>海豚座β(瓠瓜四)</th>
+             </tr>
+             <tr>
+             <th>三角座</th>
+             <th>TRI</th>
+             <th>Triangulum</th>
+             <th>131.847</th>
+             <th>(2,11.07)</th>
+             <th>(31,28.56)</th>
+             <th>三角座β(天大將軍九)</th>
+             </tr>
+             <tr>
+             <th>天箭座</th>
+             <th>SGE</th>
+             <th>Sagitta</th>
+             <th>79.932</th>
+             <th>(19,39.05)</th>
+             <th>(18,51.68)</th>
+             <th>天箭座γ(左旗五)</th>
+             </tr>
+            </table>
+            <br>
+            <h2>黃道星座 (共13個星座)</h2>
+            <table border="1" style="margin-left: 2em;">
+                <tr>
+                <th style="width:180px;">Names</th>
+                <th style="width:50px;">Abbreviation</th>
+                <th style="width:130px;">Area (square degrees)</th>
+                <th style="width:100px;">Right Ascension (hours, minutes)</th>
+                <th style="width:100px;">Declination (degrees, minutes)</th>
+                <th style="width:200px;">Brightest Star</th>
+                </tr>
+             <tr>
+             <th>雙魚座</th>
+             <th>PSC</th>
+             <th>Pisces</th>
+             <th>889.417</th>
+             <th>(0,28.97)</th>
+             <th>(13,41.23)</th>
+             <th>雙魚座η(右更二)</th>
+             </tr>
+             <tr>
+             <th>白羊座</th>
+             <th>ARI</th>
+             <th>Aries</th>
+             <th>441.395</th>
+             <th>(2,38.16)</th>
+             <th>(20,47.54)</th>
+             <th>牡羊座α(婁宿三)</th>
+             </tr>
+             <tr>
+             <th>金牛座</th>
+             <th>TAU</th>
+             <th>Taurus</th>
+             <th>797.249</th>
+             <th>(4,42.13)</th>
+             <th>(14,52.63)</th>
+             <th>金牛座α(畢宿五)</th>
+             </tr>
+             <tr>
+             <th>雙子座</th>
+             <th>GEM</th>
+             <th>Gemini</th>
+             <th>513.761</th>
+             <th>(7,4.24)</th>
+             <th>(22,36.01)</th>
+             <th>雙子座β(北河三)</th>
+             </tr>
+             <tr>
+             <th>巨蟹座</th>
+             <th>CNC</th>
+             <th>Cancer</th>
+             <th>505.872</th>
+             <th>(8,38.96)</th>
+             <th>(19,48.35)</th>
+             <th>巨蟹座β(柳宿增十)</th>
+             </tr>
+             <tr>
+             <th>獅子座</th>
+             <th>LEO</th>
+             <th>Leo</th>
+             <th>946.964</th>
+             <th>(10,40.03)</th>
+             <th>(13,8.32)</th>
+             <th>獅子座α(軒轅十四)</th>
+             </tr>
+             <tr>
+             <th>室女座</th>
+             <th>VIR</th>
+             <th>Virgo</th>
+             <th>1294.428</th>
+             <th>(13,24.39)</th>
+             <th>(-4,9.51)</th>
+             <th>室女座α(角宿一)</th>
+             </tr>
+             <tr>
+             <th>天秤座</th>
+             <th>LIB</th>
+             <th>Libra</th>
+             <th>538.052</th>
+             <th>(15,11.96)</th>
+             <th>(-15,14.08)</th>
+             <th>天秤座β(氐宿四)</th>
+             </tr>
+             <tr>
+             <th>天蝎座</th>
+             <th>SCO</th>
+             <th>Scorpius</th>
+             <th>496.783</th>
+             <th>(16,53.24)</th>
+             <th>(-27,1.89)</th>
+             <th>天蝎座α(心宿二)</th>
+             </tr>
+             <tr>
+             <th>蛇夫座</th>
+             <th>OPH</th>
+             <th>Ophiuchus</th>
+             <th>948.34</th>
+             <th>(17,23.69)</th>
+             <th>(-7,54.74)</th>
+             <th>蛇夫座α(候)</th>
+             </tr>
+             <tr>
+             <th>人馬座</th>
+             <th>SGR</th>
+             <th>Sagittarius</th>
+             <th>867.432</th>
+             <th>(19,5.94)</th>
+             <th>(-28,28.61)</th>
+             <th>人馬座ε(箕宿三)</th>
+             </tr>
+             <tr>
+             <th>摩羯座</th>
+             <th>CAP</th>
+             <th>Capricornus</th>
+             <th>413.947</th>
+             <th>(21,2.93)</th>
+             <th>(-18,1.39)</th>
+             <th>摩羯座δ(壘壁陣四)</th>
+             </tr>
+             <tr>
+             <th>寶瓶座</th>
+             <th>AQR</th>
+             <th>Aquarius</th>
+             <th>979.854</th>
+             <th>(22,17.38)</th>
+             <th>(-10,47.35)</th>
+             <th>寶瓶座β(虛宿一)</th>
+             </tr>
+            </table>
+            <br>
+            <h2>赤道帶星座 (共10個星座)</h2>
+            <table border="1" style="margin-left: 2em;">
+                <tr>
+                <th style="width:180px;">Names</th>
+                <th style="width:50px;">Abbreviation</th>
+                <th style="width:130px;">Area (square degrees)</th>
+                <th style="width:100px;">Right Ascension (hours, minutes)</th>
+                <th style="width:100px;">Declination (degrees, minutes)</th>
+                <th style="width:200px;">Brightest Star</th>
+                </tr>
+             <tr>
+             <th>蛇夫座</th>
+             <th>OPH</th>
+             <th>Ophiuchus</th>
+             <th>948.34</th>
+             <th>(17,23.69)</th>
+             <th>(-7,54.74)</th>
+             <th>蛇夫座α(候)</th>
+             </tr>
+             <tr>
+             <th>天鷹座</th>
+             <th>AQL</th>
+             <th>Aquila</th>
+             <th>652.473</th>
+             <th>(19,40.02)</th>
+             <th>(3,24.65)</th>
+             <th>天鷹座α(河鼓二)</th>
+             </tr>
+             <tr>
+             <th>麒麟座</th>
+             <th>MON</th>
+             <th>Monoceros</th>
+             <th>481.569</th>
+             <th>(7,3.63)</th>
+             <th>(0,16.93)</th>
+             <th>麒麟座β(參宿增二十六)</th>
+             </tr>
+             <tr>
+             <th>小馬座</th>
+             <th>EQU</th>
+             <th>Equuleus</th>
+             <th>71.641</th>
+             <th>(21,11.26)</th>
+             <th>(7,45.49)</th>
+             <th>小馬座α(虛宿二)</th>
+             </tr>
+             <tr>
+             <th>小犬座</th>
+             <th>CMI</th>
+             <th>Canis Minor</th>
+             <th>183.367</th>
+             <th>(7,39.17)</th>
+             <th>(6,25.63)</th>
+             <th>小犬座α(南河三)</th>
+             </tr>
+             <tr>
+             <th>巨蛇座</th>
+             <th>SER</th>
+             <th>Serpens</th>
+             <th>636.928</th>
+             <th>(16,57.04)</th>
+             <th>(6,7.32)</th>
+             <th>巨蛇座α(蜀/天市右垣七)</th>
+             </tr>
+             <tr>
+             <th>六分儀座</th>
+             <th>SEX</th>
+             <th>Sextans</th>
+             <th>313.515</th>
+             <th>(10,16.29)</th>
+             <th>(-2,36.88)</th>
+             <th>六分儀座α(天相二)</th>
+             </tr>
+             <tr>
+             <th>長蛇座</th>
+             <th>HYA</th>
+             <th>Hydra</th>
+             <th>1302.844</th>
+             <th>(11,36.73)</th>
+             <th>(-14,31.91)</th>
+             <th>長蛇座α(星宿一)</th>
+             </tr>
+             <tr>
+             <th>獵戶座</th>
+             <th>ORI</th>
+             <th>Orion</th>
+             <th>594.12</th>
+             <th>(5,34.59)</th>
+             <th>(5,56.94)</th>
+             <th>獵戶座β(參宿七)</th>
+             </tr>
+             <tr>
+             <th>鯨魚座</th>
+             <th>CET</th>
+             <th>Cetus</th>
+             <th>1231.411</th>
+             <th>(1,40.1)</th>
+             <th>(-7,10.76)</th>
+             <th>鯨魚座β(土司空)</th>
+             </tr>
+             </table>
+             <br>
+            <h2>南天星座 (共42個星座)</h2>
+            <table border="1" style="margin-left: 2em;">
+                <tr>
+                <th style="width:180px;">Names</th>
+                <th style="width:50px;">Abbreviation</th>
+                <th style="width:130px;">Area (square degrees)</th>
+                <th style="width:100px;">Right Ascension (hours, minutes)</th>
+                <th style="width:100px;">Declination (degrees, minutes)</th>
+                <th style="width:200px;">Brightest Star</th>
+                </tr>
+             <tr>
+             <th>南十字座</th>
+             <th>CRU</th>
+             <th>Crux</th>
+             <th>68.447</th>
+             <th>(12,26.99)</th>
+             <th>(-60,11.19)</th>
+             <th>南十字座α(十字架二)</th>
+             </tr>
+             <tr>
+             <th>半人馬座</th>
+             <th>CEN</th>
+             <th>Centaurus</th>
+             <th>1060.422</th>
+             <th>(13,4.27)</th>
+             <th>(-47,20.72)</th>
+             <th>半人馬座α(南門二)</th>
+             </tr>
+             <tr>
+             <th>蒼蠅座</th>
+             <th>MUS</th>
+             <th>Musca</th>
+             <th>138.355</th>
+             <th>(12,35.28)</th>
+             <th>(-70,9.66)</th>
+             <th>蒼蠅座α(蜜蜂三)</th>
+             </tr>
+             <tr>
+             <th>蝘蜓座</th>
+             <th>CHA</th>
+             <th>Chamaeleon</th>
+             <th>131.592</th>
+             <th>(10,41.53)</th>
+             <th>(-79,12.3)</th>
+             <th>蝘蜓座α(小斗增一)</th>
+             </tr>
+             <tr>
+             <th>天燕座</th>
+             <th>APS</th>
+             <th>Apus</th>
+             <th>206.327</th>
+             <th>(16,8.65)</th>
+             <th>(-75,18)</th>
+             <th>天燕座α(異雀八)</th>
+             </tr>
+             <tr>
+             <th>豺狼座</th>
+             <th>LUP</th>
+             <th>Lupus</th>
+             <th>333.683</th>
+             <th>(15,13.21)</th>
+             <th>(-42,42.53)</th>
+             <th>豺狼座α(騎官十)</th>
+             </tr>
+             <tr>
+             <th>圓規座</th>
+             <th>CIR</th>
+             <th>Circinus</th>
+             <th>93.353</th>
+             <th>(14,34.54)</th>
+             <th>(-63,1.82)</th>
+             <th>圓規座α(南門增二)</th>
+             </tr>
+             <tr>
+             <th>南三角座</th>
+             <th>TRA</th>
+             <th>Triangulum Australe</th>
+             <th>109.978</th>
+             <th>(16,4.95)</th>
+             <th>(-65,23.28)</th>
+             <th>南三角座α(三角形三)</th>
+             </tr>
+             <tr>
+             <th>矩尺座</th>
+             <th>NOR</th>
+             <th>Norma</th>
+             <th>165.29</th>
+             <th>(15,54.18)</th>
+             <th>(-51,21.09)</th>
+             <th>矩尺座γ2(近波斯一)</th>
+             </tr>
+             <tr>
+             <th>天壇座</th>
+             <th>ARA</th>
+             <th>Ara</th>
+             <th>237.057</th>
+             <th>(17,22.49)</th>
+             <th>(-56,35.3)</th>
+             <th>天壇座β(杵三)</th>
+             </tr>
+             <tr>
+             <th>顯微鏡座</th>
+             <th>MIC</th>
+             <th>Microscopium</th>
+             <th>209.513</th>
+             <th>(20,57.88)</th>
+             <th>(-36,16.49)</th>
+             <th>顯微鏡座γ(璃瑜增一)</th>
+             </tr>
+             <tr>
+             <th>鳳凰座</th>
+             <th>PHE</th>
+             <th>Phoenix</th>
+             <th>469.319</th>
+             <th>(0,55.91)</th>
+             <th>(-48,34.84)</th>
+             <th>鳳凰座α(火鳥六)</th>
+             </tr>
+             <tr>
+             <th>天鶴座</th>
+             <th>GRU</th>
+             <th>Grus</th>
+             <th>365.513</th>
+             <th>(22,27.39)</th>
+             <th>(-46,21.11)</th>
+             <th>天鶴座α(鶴一)</th>
+             </tr>
+             <tr>
+             <th>杜鵑座</th>
+             <th>TUC</th>
+             <th>Tucana</th>
+             <th>294.557</th>
+             <th>(23,46.64)</th>
+             <th>(-65,49.8)</th>
+             <th>杜鵑座α(鳥喙一)</th>
+             </tr>
+             <tr>
+             <th>孔雀座</th>
+             <th>PAV</th>
+             <th>Pavo</th>
+             <th>377.666</th>
+             <th>(19,36.71)</th>
+             <th>(-65,46.89)</th>
+             <th>孔雀座α(孔雀十一)</th>
+             </tr>
+             <tr>
+             <th>印第安座</th>
+             <th>IND</th>
+             <th>Indus</th>
+             <th>294.006</th>
+             <th>(21,58.33)</th>
+             <th>(-59,42.4)</th>
+             <th>印第安座α(波斯二)</th>
+             </tr>
+             <tr>
+             <th>船帆座</th>
+             <th>VEL</th>
+             <th>Vela</th>
+             <th>499.649</th>
+             <th>(9,34.64)</th>
+             <th>(-47,10.03)</th>
+             <th>船帆座γ(天社一)</th>
+             </tr>
+             <tr>
+             <th>船底座</th>
+             <th>CAR</th>
+             <th>Carina</th>
+             <th>494.184</th>
+             <th>(8,41.7)</th>
+             <th>(-63,13.16)</th>
+             <th>船底座α(老人星)</th>
+             </tr>
+             <tr>
+             <th>船尾座</th>
+             <th>PUP</th>
+             <th>Puppis</th>
+             <th>673.434</th>
+             <th>(7,15.48)</th>
+             <th>(-31,10.64)</th>
+             <th>船尾座ζ(弧矢增二十二)</th>
+             </tr>
+             <tr>
+             <th>唧筒座</th>
+             <th>ANT</th>
+             <th>Antlia</th>
+             <th>238.901</th>
+             <th>(10,16.43)</th>
+             <th>(-32,29.01)</th>
+             <th>唧筒座α(近天紀增二)</th>
+             </tr>
+             <tr>
+             <th>羅盤座</th>
+             <th>PYX</th>
+             <th>Pyxis</th>
+             <th>220.833</th>
+             <th>(8,57.16)</th>
+             <th>(-27,21.1)</th>
+             <th>羅盤座α(天狗五)</th>
+             </tr>
+             <tr>
+             <th>望遠鏡座</th>
+             <th>TEL</th>
+             <th>Telescopium</th>
+             <th>251.512</th>
+             <th>(19,19.54)</th>
+             <th>(-51,2.21)</th>
+             <th>望遠鏡座α(鱉一)</th>
+             </tr>
+             <tr>
+             <th>劍魚座</th>
+             <th>DOR</th>
+             <th>Dorado</th>
+             <th>179.173</th>
+             <th>(5,14.51)</th>
+             <th></th>
+             <th>劍魚座α(金魚二)</th>
+             </tr>
+             <tr>
+             <th>飛魚座</th>
+             <th>VOL</th>
+             <th>Volans</th>
+             <th>141.354</th>
+             <th>(7,47.73)</th>
+             <th>(-69,48.07)</th>
+             <th>飛魚座β(飛魚三)</th>
+             </tr>
+             <tr>
+             <th>網罟座</th>
+             <th>RET</th>
+             <th>Reticulum</th>
+             <th>113.936</th>
+             <th>(3,55.27)</th>
+             <th>(-59,59.85)</th>
+             <th>網罟座α(夾白二)</th>
+             </tr>
+             <tr>
+             <th>時鐘座</th>
+             <th>HOR</th>
+             <th>Horologium</th>
+             <th>248.885</th>
+             <th>(3,16.56)</th>
+             <th>(-53,20.18)</th>
+             <th>時鐘座α(天園增六)</th>
+             </tr>
+             <tr>
+             <th>繪架座</th>
+             <th>PIC</th>
+             <th>Pictor</th>
+             <th>246.739</th>
+             <th>(5,42.46)</th>
+             <th>(-53,28.45)</th>
+             <th>繪架座α(金魚增一)</th>
+             </tr>
+             <tr>
+             <th>水蛇座</th>
+             <th>HYI</th>
+             <th>Hydrus</th>
+             <th>243.035</th>
+             <th>(2,20.65)</th>
+             <th>(-69,57.39)</th>
+             <th>水蛇座β(蛇尾一)</th>
+             </tr>
+             <tr>
+             <th>山案座</th>
+             <th>MEN</th>
+             <th>Mensa</th>
+             <th>153.484</th>
+             <th>(5,24.9)</th>
+             <th>(-77,30.24)</th>
+             <th>山案座α(近附白一)</th>
+             </tr>
+             <tr>
+             <th>雕具座</th>
+             <th>CAE</th>
+             <th>Caelum</th>
+             <th>124.865</th>
+             <th>(4,42.27)</th>
+             <th>(-37,52.9)</th>
+             <th>雕具座α(近天園增六)</th>
+             </tr>
+             <tr>
+             <th>南極座</th>
+             <th>OCT</th>
+             <th>Octans</th>
+             <th>291.045</th>
+             <th>(23,0)</th>
+             <th>(-82,9.12)</th>
+             <th>南極座ν(蛇尾三)</th>
+             </tr>
+             <tr>
+             <th>南冕座</th>
+             <th>CRA</th>
+             <th>Corona Australis</th>
+             <th>127.696</th>
+             <th>(18,38.79)</th>
+             <th>(-41,8.85)</th>
+             <th>南冕座α(鱉六)</th>
+             </tr>
+             <tr>
+             <th>大犬座</th>
+             <th>CMA</th>
+             <th>Canis Major</th>
+             <th>380.118</th>
+             <th>(6,49.74)</th>
+             <th>(-22,8.42)</th>
+             <th>大犬座α(天狼星)</th>
+             </tr>
+             <tr>
+             <th>天鴿座</th>
+             <th>COL</th>
+             <th>Columba</th>
+             <th>270.184</th>
+             <th>(5,51.76)</th>
+             <th>(-35,5.67)</th>
+             <th>天鴿座α(丈人一)</th>
+             </tr>
+             <tr>
+             <th>烏鴉座</th>
+             <th>CRV</th>
+             <th>Corvus</th>
+             <th>183.801</th>
+             <th>(12,26.52)</th>
+             <th>(-18,26.2)</th>
+             <th>烏鴉座γ(軫宿一)</th>
+             </tr>
+             <tr>
+             <th>南魚座</th>
+             <th>PSA</th>
+             <th>Piscis Austrinus</th>
+             <th>245.375</th>
+             <th>(22,17.07)</th>
+             <th>(-30,38.53)</th>
+             <th>南魚座α(北落師門)</th>
+             </tr>
+             <tr>
+             <th>天兔座</th>
+             <th>LEP</th>
+             <th>Lepus</th>
+             <th>290.291</th>
+             <th>(5,33.95)</th>
+             <th>(-19,2.78)</th>
+             <th>天兔座α(廁一)</th>
+             </tr>
+             <tr>
+             <th>波江座</th>
+             <th>ERI</th>
+             <th>Eridanus</th>
+             <th>1137.919</th>
+             <th>(3,18.02)</th>
+             <th>(-28,45.37)</th>
+             <th>波江座α(水委一)</th>
+             </tr>
+             <tr>
+             <th>盾牌座</th>
+             <th>SCT</th>
+             <th>Scutum</th>
+             <th>109.114</th>
+             <th>(18,40.39)</th>
+             <th>(-9,53.32)</th>
+             <th>盾牌座α(天弁一)</th>
+             </tr>
+             <tr>
+             <th>天爐座</th>
+             <th>FOR</th>
+             <th>Fornax</th>
+             <th>397.502</th>
+             <th>(2,47.88)</th>
+             <th>(-31,38.07)</th>
+             <th>天爐座α(天苑增三)</th>
+             </tr>
+             <tr>
+             <th>巨爵座</th>
+             <th>CRT</th>
+             <th>Crater</th>
+             <th>282.398</th>
+             <th>(11,23.75)</th>
+             <th>(-15,55.74)</th>
+             <th>巨爵座δ(翼宿七)</th>
+             </tr>
+             <tr>
+             <th>玉夫座</th>
+             <th>SCL</th>
+             <th>Sculptor</th>
+             <th>474.764</th>
+             <th>(0,26.28)</th>
+             <th>(-32,5.3)</th>
+             <th>玉夫座α(近土司空南)</th>
+             </tr>
+            </table>
+        </div>
+        <div id="group" class="classification">
+            <h2>大熊家族 (共10個星座)</h2>
+            <table border="1" style="margin-left: 2em;">
+                <tr>
+                <th style="width:180px;">Names</th>
+                <th style="width:50px;">Abbreviation</th>
+                <th style="width:130px;">Area (square degrees)</th>
+                <th style="width:100px;">Right Ascension (hours, minutes)</th>
+                <th style="width:100px;">Declination (degrees, minutes)</th>
+                <th style="width:200px;">Brightest Star</th>
+                </tr>
+             <tr>
+             <th>大熊座</th>
+             <th>UMA</th>
+             <th>Ursa Major</th>
+             <th>1279.66</th>
+             <th>(11,18.76)</th>
+             <th>(50,43.27)</th>
+             <th>大熊座ε(玉衡/北斗五)</th>
+             </tr>
+             <tr>
+             <th>小熊座</th>
+             <th>UMI</th>
+             <th>Ursa Minor</th>
+             <th>255.864</th>
+             <th>(15,0)</th>
+             <th>(77,41.99)</th>
+             <th>小熊座α(勾陳一)</th>
+             </tr>
+             <tr>
+             <th>天龍座</th>
+             <th>DRA</th>
+             <th>Draco</th>
+             <th>1082.952</th>
+             <th>(15,8.64)</th>
+             <th>(67,0.4)</th>
+             <th>天龍座γ(天棓四)</th>
+             </tr>
+             <tr>
+             <th>獵犬座</th>
+             <th>CVN</th>
+             <th>Canes Venatici</th>
+             <th>465.194</th>
+             <th>(13,6.96)</th>
+             <th>(40,6.11)</th>
+             <th>獵犬座α(常陳一)</th>
+             </tr>
+             <tr>
+             <th>牧夫座</th>
+             <th>BOO</th>
+             <th>Boötes</th>
+             <th>906.831</th>
+             <th>(14,42.64)</th>
+             <th>(31,12.16)</th>
+             <th>牧夫座α(大角星)</th>
+             </tr>
+             <tr>
+             <th>后髮座</th>
+             <th>COM</th>
+             <th>Coma Berenices</th>
+             <th>386.475</th>
+             <th>(12,47.27)</th>
+             <th>(23,18.34)</th>
+             <th>后髮座β(周鼎一)</th>
+             </tr>
+             <tr>
+             <th>北冕座</th>
+             <th>CRB</th>
+             <th>Corona Borealis</th>
+             <th>178.71</th>
+             <th>(15,50.59)</th>
+             <th>(32,37.49)</th>
+             <th>北冕座α(貫索四)</th>
+             </tr>
+             <tr>
+             <th>天貓座</th>
+             <th>LYN</th>
+             <th>Lynx</th>
+             <th>545.386</th>
+             <th>(7,59.53)</th>
+             <th>(47,28)</th>
+             <th>天貓座α(軒轅四)</th>
+             </tr>
+             <tr>
+             <th>鹿豹座</th>
+             <th>CAM</th>
+             <th>Camelopardalis</th>
+             <th>756.828</th>
+             <th>(8,51.37)</th>
+             <th>(69,22.89)</th>
+             <th>鹿豹座β(八穀增十四)</th>
+             </tr>
+             <tr>
+             <th>小獅座</th>
+             <th>LMI</th>
+             <th>Leo Minor</th>
+             <th>231.956</th>
+             <th>(10,14.72)</th>
+             <th>(32,8.08)</th>
+             <th>小獅座46(勢四)</th>
+             </tr>
+            </table>
+            <br>
+            <h2>黃道家族 (共13個星座)</h2>
+            <table border="1" style="margin-left: 2em;">
+                <tr>
+                <th style="width:180px;">Names</th>
+                <th style="width:50px;">Abbreviation</th>
+                <th style="width:130px;">Area (square degrees)</th>
+                <th style="width:100px;">Right Ascension (hours, minutes)</th>
+                <th style="width:100px;">Declination (degrees, minutes)</th>
+                <th style="width:200px;">Brightest Star</th>
+                </tr>
+             <tr>
+             <th>雙魚座</th>
+             <th>PSC</th>
+             <th>Pisces</th>
+             <th>889.417</th>
+             <th>(0,28.97)</th>
+             <th>(13,41.23)</th>
+             <th>雙魚座η(右更二)</th>
+             </tr>
+             <tr>
+             <th>白羊座</th>
+             <th>ARI</th>
+             <th>Aries</th>
+             <th>441.395</th>
+             <th>(2,38.16)</th>
+             <th>(20,47.54)</th>
+             <th>牡羊座α(婁宿三)</th>
+             </tr>
+             <tr>
+             <th>金牛座</th>
+             <th>TAU</th>
+             <th>Taurus</th>
+             <th>797.249</th>
+             <th>(4,42.13)</th>
+             <th>(14,52.63)</th>
+             <th>金牛座α(畢宿五)</th>
+             </tr>
+             <tr>
+             <th>雙子座</th>
+             <th>GEM</th>
+             <th>Gemini</th>
+             <th>513.761</th>
+             <th>(7,4.24)</th>
+             <th>(22,36.01)</th>
+             <th>雙子座β(北河三)</th>
+             </tr>
+             <tr>
+             <th>巨蟹座</th>
+             <th>CNC</th>
+             <th>Cancer</th>
+             <th>505.872</th>
+             <th>(8,38.96)</th>
+             <th>(19,48.35)</th>
+             <th>巨蟹座β(柳宿增十)</th>
+             </tr>
+             <tr>
+             <th>獅子座</th>
+             <th>LEO</th>
+             <th>Leo</th>
+             <th>946.964</th>
+             <th>(10,40.03)</th>
+             <th>(13,8.32)</th>
+             <th>獅子座α(軒轅十四)</th>
+             </tr>
+             <tr>
+             <th>室女座</th>
+             <th>VIR</th>
+             <th>Virgo</th>
+             <th>1294.428</th>
+             <th>(13,24.39)</th>
+             <th>(-4,9.51)</th>
+             <th>室女座α(角宿一)</th>
+             </tr>
+             <tr>
+             <th>天秤座</th>
+             <th>LIB</th>
+             <th>Libra</th>
+             <th>538.052</th>
+             <th>(15,11.96)</th>
+             <th>(-15,14.08)</th>
+             <th>天秤座β(氐宿四)</th>
+             </tr>
+             <tr>
+             <th>天蝎座</th>
+             <th>SCO</th>
+             <th>Scorpius</th>
+             <th>496.783</th>
+             <th>(16,53.24)</th>
+             <th>(-27,1.89)</th>
+             <th>天蝎座α(心宿二)</th>
+             </tr>
+             <tr>
+             <th>蛇夫座</th>
+             <th>OPH</th>
+             <th>Ophiuchus</th>
+             <th>948.34</th>
+             <th>(17,23.69)</th>
+             <th>(-7,54.74)</th>
+             <th>蛇夫座α(候)</th>
+             </tr>
+             <tr>
+             <th>人馬座</th>
+             <th>SGR</th>
+             <th>Sagittarius</th>
+             <th>867.432</th>
+             <th>(19,5.94)</th>
+             <th>(-28,28.61)</th>
+             <th>人馬座ε(箕宿三)</th>
+             </tr>
+             <tr>
+             <th>摩羯座</th>
+             <th>CAP</th>
+             <th>Capricornus</th>
+             <th>413.947</th>
+             <th>(21,2.93)</th>
+             <th>(-18,1.39)</th>
+             <th>摩羯座δ(壘壁陣四)</th>
+             </tr>
+             <tr>
+             <th>寶瓶座</th>
+             <th>AQR</th>
+             <th>Aquarius</th>
+             <th>979.854</th>
+             <th>(22,17.38)</th>
+             <th>(-10,47.35)</th>
+             <th>寶瓶座β(虛宿一)</th>
+             </tr>
+            </table>
+            <br>
+            <h2>英仙家族 (共9個星座)</h2>
+            <table border="1" style="margin-left: 2em;">
+                <tr>
+                <th style="width:180px;">Names</th>
+                <th style="width:50px;">Abbreviation</th>
+                <th style="width:130px;">Area (square degrees)</th>
+                <th style="width:100px;">Right Ascension (hours, minutes)</th>
+                <th style="width:100px;">Declination (degrees, minutes)</th>
+                <th style="width:200px;">Brightest Star</th>
+                </tr>
+             <tr>
+             <th>飛馬座</th>
+             <th>PEG</th>
+             <th>Pegasus</th>
+             <th>1120.794</th>
+             <th>(22,41.84)</th>
+             <th>(19,27.98)</th>
+             <th>飛馬座ε(危宿三)</th>
+             </tr>
+             <tr>
+             <th>仙女座</th>
+             <th>AND</th>
+             <th>Andromeda</th>
+             <th>722.278</th>
+             <th>(0,48.46)</th>
+             <th>(37,25.91)</th>
+             <th>仙女座α(壁宿二)</th>
+             </tr>
+             <tr>
+             <th>英仙座</th>
+             <th>PER</th>
+             <th>Perseus</th>
+             <th>614.997</th>
+             <th>(3,10.5)</th>
+             <th>(45,0.79)</th>
+             <th>英仙座α(天船三)</th>
+             </tr>
+             <tr>
+             <th>仙后座</th>
+             <th>CAS</th>
+             <th>Cassiopeia</th>
+             <th>598.407</th>
+             <th>(1,19.16)</th>
+             <th>(62,11.04)</th>
+             <th>仙后座α(王良四)</th>
+             </tr>
+             <tr>
+             <th>仙王座</th>
+             <th>CEP</th>
+             <th>Cepheus</th>
+             <th>587.787</th>
+             <th>(22,0)</th>
+             <th>(71,0.51)</th>
+             <th>仙王座α(天鉤五)</th>
+             </tr>
+             <tr>
+             <th>鯨魚座</th>
+             <th>CET</th>
+             <th>Cetus</th>
+             <th>1231.411</th>
+             <th>(1,40.1)</th>
+             <th>(-7,10.76)</th>
+             <th>鯨魚座β(土司空)</th>
+             </tr>
+             <tr>
+             <th>御夫座</th>
+             <th>AUR</th>
+             <th>Auriga</th>
+             <th>657.438</th>
+             <th>(6,4.42)</th>
+             <th>(42,1.68)</th>
+             <th>御夫座α(五車二)</th>
+             </tr>
+             <tr>
+             <th>蝎虎座</th>
+             <th>LAC</th>
+             <th>Lacerta</th>
+             <th>200.688</th>
+             <th>(22,27.68)</th>
+             <th>(46,2.51)</th>
+             <th>蝎虎座α(螣蛇一)</th>
+             </tr>
+             <tr>
+             <th>三角座</th>
+             <th>TRI</th>
+             <th>Triangulum</th>
+             <th>131.847</th>
+             <th>(2,11.07)</th>
+             <th>(31,28.56)</th>
+             <th>三角座β(天大將軍九)</th>
+             </tr>
+             </table>
+             <br>
+            <h2>武仙家族 (共18個星座)</h2>
+            <table border="1" style="margin-left: 2em;">
+                <tr>
+                <th style="width:180px;">Names</th>
+                <th style="width:50px;">Abbreviation</th>
+                <th style="width:130px;">Area (square degrees)</th>
+                <th style="width:100px;">Right Ascension (hours, minutes)</th>
+                <th style="width:100px;">Declination (degrees, minutes)</th>
+                <th style="width:200px;">Brightest Star</th>
+                </tr>
+             <tr>
+             <th>武仙座</th>
+             <th>HER</th>
+             <th>Hercules</th>
+             <th>1225.148</th>
+             <th>(17,23.16)</th>
+             <th>(27,29.93)</th>
+             <th>武仙座β(河中/天市右垣一)</th>
+             </tr>
+             <tr>
+             <th>天箭座</th>
+             <th>SGE</th>
+             <th>Sagitta</th>
+             <th>79.932</th>
+             <th>(19,39.05)</th>
+             <th>(18,51.68)</th>
+             <th>天箭座γ(左旗五)</th>
+             </tr>
+             <tr>
+             <th>天琴座</th>
+             <th>LYR</th>
+             <th>Lyra</th>
+             <th>286.476</th>
+             <th>(18,51.17)</th>
+             <th>(36,41.36)</th>
+             <th>天琴座α(織女一)</th>
+             </tr>
+             <tr>
+             <th>天鷹座</th>
+             <th>AQL</th>
+             <th>Aquila</th>
+             <th>652.473</th>
+             <th>(19,40.02)</th>
+             <th>(3,24.65)</th>
+             <th>天鷹座α(河鼓二)</th>
+             </tr>
+             <tr>
+             <th>天鵝座</th>
+             <th>CYG</th>
+             <th>Cygnus</th>
+             <th>803.983</th>
+             <th>(20,35.28)</th>
+             <th>(44,32.7)</th>
+             <th>天鵝座α(天津四)</th>
+             </tr>
+             <tr>
+             <th>狐狸座</th>
+             <th>VUL</th>
+             <th>Vulpecula</th>
+             <th>268.165</th>
+             <th>(20,13.88)</th>
+             <th>(24,26.56)</th>
+             <th>狐狸座α(齊增五)</th>
+             </tr>
+             <tr>
+             <th>烏鴉座</th>
+             <th>CRV</th>
+             <th>Corvus</th>
+             <th>183.801</th>
+             <th>(12,26.52)</th>
+             <th>(-18,26.2)</th>
+             <th>烏鴉座γ(軫宿一)</th>
+             </tr>
+             <tr>
+             <th>長蛇座</th>
+             <th>HYA</th>
+             <th>Hydra</th>
+             <th>1302.844</th>
+             <th>(11,36.73)</th>
+             <th>(-14,31.91)</th>
+             <th>長蛇座α(星宿一)</th>
+             </tr>
+             <tr>
+             <th>巨爵座</th>
+             <th>CRT</th>
+             <th>Crater</th>
+             <th>282.398</th>
+             <th>(11,23.75)</th>
+             <th>(-15,55.74)</th>
+             <th>巨爵座δ(翼宿七)</th>
+             </tr>
+             <tr>
+             <th>六分儀座</th>
+             <th>SEX</th>
+             <th>Sextans</th>
+             <th>313.515</th>
+             <th>(10,16.29)</th>
+             <th>(-2,36.88)</th>
+             <th>六分儀座α(天相二)</th>
+             </tr>
+             <tr>
+             <th>巨蛇座</th>
+             <th>SER</th>
+             <th>Serpens</th>
+             <th>636.928</th>
+             <th>(16,57.04)</th>
+             <th>(6,7.32)</th>
+             <th>巨蛇座α(蜀/天市右垣七)</th>
+             </tr>
+             <tr>
+             <th>盾牌座</th>
+             <th>SCT</th>
+             <th>Scutum</th>
+             <th>109.114</th>
+             <th>(18,40.39)</th>
+             <th>(-9,53.32)</th>
+             <th>盾牌座α(天弁一)</th>
+             </tr>
+             <tr>
+             <th>半人馬座</th>
+             <th>CEN</th>
+             <th>Centaurus</th>
+             <th>1060.422</th>
+             <th>(13,4.27)</th>
+             <th>(-47,20.72)</th>
+             <th>半人馬座α(南門二)</th>
+             </tr>
+             <tr>
+             <th>豺狼座</th>
+             <th>LUP</th>
+             <th>Lupus</th>
+             <th>333.683</th>
+             <th>(15,13.21)</th>
+             <th>(-42,42.53)</th>
+             <th>豺狼座α(騎官十)</th>
+             </tr>
+             <tr>
+             <th>南冕座</th>
+             <th>CRA</th>
+             <th>Corona Australis</th>
+             <th>127.696</th>
+             <th>(18,38.79)</th>
+             <th>(-41,8.85)</th>
+             <th>南冕座α(鱉六)</th>
+             </tr>
+             <tr>
+             <th>天壇座</th>
+             <th>ARA</th>
+             <th>Ara</th>
+             <th>237.057</th>
+             <th>(17,22.49)</th>
+             <th>(-56,35.3)</th>
+             <th>天壇座β(杵三)</th>
+             </tr>
+             <tr>
+             <th>南三角座</th>
+             <th>TRA</th>
+             <th>Triangulum Australe</th>
+             <th>109.978</th>
+             <th>(16,4.95)</th>
+             <th>(-65,23.28)</th>
+             <th>南三角座α(三角形三)</th>
+             </tr>
+             <tr>
+             <th>南十字座</th>
+             <th>CRU</th>
+             <th>Crux</th>
+             <th>68.447</th>
+             <th>(12,26.99)</th>
+             <th>(-60,11.19)</th>
+             <th>南十字座α(十字架二)</th>
+             </tr>
+            </table>
+            <br>
+            <h2>獵戶家族 (共5個星座)</h2>
+            <table border="1" style="margin-left: 2em;">
+                <tr>
+                <th style="width:180px;">Names</th>
+                <th style="width:50px;">Abbreviation</th>
+                <th style="width:130px;">Area (square degrees)</th>
+                <th style="width:100px;">Right Ascension (hours, minutes)</th>
+                <th style="width:100px;">Declination (degrees, minutes)</th>
+                <th style="width:200px;">Brightest Star</th>
+                </tr>
+             <tr>
+             <th>獵戶座</th>
+             <th>ORI</th>
+             <th>Orion</th>
+             <th>594.12</th>
+             <th>(5,34.59)</th>
+             <th>(5,56.94)</th>
+             <th>獵戶座β(參宿七)</th>
+             </tr>
+             <tr>
+             <th>小犬座</th>
+             <th>CMI</th>
+             <th>Canis Minor</th>
+             <th>183.367</th>
+             <th>(7,39.17)</th>
+             <th>(6,25.63)</th>
+             <th>小犬座α(南河三)</th>
+             </tr>
+             <tr>
+             <th>大犬座</th>
+             <th>CMA</th>
+             <th>Canis Major</th>
+             <th>380.118</th>
+             <th>(6,49.74)</th>
+             <th>(-22,8.42)</th>
+             <th>大犬座α(天狼星)</th>
+             </tr>
+             <tr>
+             <th>天兔座</th>
+             <th>LEP</th>
+             <th>Lepus</th>
+             <th>290.291</th>
+             <th>(5,33.95)</th>
+             <th>(-19,2.78)</th>
+             <th>天兔座α(廁一)</th>
+             </tr>
+             <tr>
+             <th>麒麟座</th>
+             <th>MON</th>
+             <th>Monoceros</th>
+             <th>481.569</th>
+             <th>(7,3.63)</th>
+             <th>(0,16.93)</th>
+             <th>麒麟座β(參宿增二十六)</th>
+             </tr>
+             </table>
+             <br>
+            <h2>幻之水族家族 (共9個星座)</h2>
+            <table border="1" style="margin-left: 2em;">
+                <tr>
+                <th style="width:180px;">Names</th>
+                <th style="width:50px;">Abbreviation</th>
+                <th style="width:130px;">Area (square degrees)</th>
+                <th style="width:100px;">Right Ascension (hours, minutes)</th>
+                <th style="width:100px;">Declination (degrees, minutes)</th>
+                <th style="width:200px;">Brightest Star</th>
+                </tr>
+             <tr>
+             <th>海豚座</th>
+             <th>DEL</th>
+             <th>Delphinus</th>
+             <th>188.549</th>
+             <th>(20,41.61)</th>
+             <th>(11,40.26)</th>
+             <th>海豚座β(瓠瓜四)</th>
+             </tr>
+             <tr>
+             <th>小馬座</th>
+             <th>EQU</th>
+             <th>Equuleus</th>
+             <th>71.641</th>
+             <th>(21,11.26)</th>
+             <th>(7,45.49)</th>
+             <th>小馬座α(虛宿二)</th>
+             </tr>
+             <tr>
+             <th>波江座</th>
+             <th>ERI</th>
+             <th>Eridanus</th>
+             <th>1137.919</th>
+             <th>(3,18.02)</th>
+             <th>(-28,45.37)</th>
+             <th>波江座α(水委一)</th>
+             </tr>
+             <tr>
+             <th>南魚座</th>
+             <th>PSA</th>
+             <th>Piscis Austrinus</th>
+             <th>245.375</th>
+             <th>(22,17.07)</th>
+             <th>(-30,38.53)</th>
+             <th>南魚座α(北落師門)</th>
+             </tr>
+             <tr>
+             <th>船帆座</th>
+             <th>VEL</th>
+             <th>Vela</th>
+             <th>499.649</th>
+             <th>(9,34.64)</th>
+             <th>(-47,10.03)</th>
+             <th>船帆座γ(天社一)</th>
+             </tr>
+             <tr>
+             <th>船底座</th>
+             <th>CAR</th>
+             <th>Carina</th>
+             <th>494.184</th>
+             <th>(8,41.7)</th>
+             <th>(-63,13.16)</th>
+             <th>船底座α(老人星)</th>
+             </tr>
+             <tr>
+             <th>船尾座</th>
+             <th>PUP</th>
+             <th>Puppis</th>
+             <th>673.434</th>
+             <th>(7,15.48)</th>
+             <th>(-31,10.64)</th>
+             <th>船尾座ζ(弧矢增二十二)</th>
+             </tr>
+             <tr>
+             <th>羅盤座</th>
+             <th>PYX</th>
+             <th>Pyxis</th>
+             <th>220.833</th>
+             <th>(8,57.16)</th>
+             <th>(-27,21.1)</th>
+             <th>羅盤座α(天狗五)</th>
+             </tr>
+             <tr>
+             <th>天鴿座</th>
+             <th>COL</th>
+             <th>Columba</th>
+             <th>270.184</th>
+             <th>(5,51.76)</th>
+             <th>(-35,5.67)</th>
+             <th>天鴿座α(丈人一)</th>
+             </tr>
+            </table>
+            <br>
+            <h2>拜耳家族 (共11個星座)</h2>
+            <table border="1" style="margin-left: 2em;">
+                <tr>
+                <th style="width:180px;">Names</th>
+                <th style="width:50px;">Abbreviation</th>
+                <th style="width:130px;">Area (square degrees)</th>
+                <th style="width:100px;">Right Ascension (hours, minutes)</th>
+                <th style="width:100px;">Declination (degrees, minutes)</th>
+                <th style="width:200px;">Brightest Star</th>
+                </tr>
+             <tr>
+             <th>水蛇座</th>
+             <th>HYI</th>
+             <th>Hydrus</th>
+             <th>243.035</th>
+             <th>(2,20.65)</th>
+             <th>(-69,57.39)</th>
+             <th>水蛇座β(蛇尾一)</th>
+             </tr>
+             <tr>
+             <th>劍魚座</th>
+             <th>DOR</th>
+             <th>Dorado</th>
+             <th>179.173</th>
+             <th>(5,14.51)</th>
+             <th></th>
+             <th>劍魚座α(金魚二)</th>
+             </tr>
+             <tr>
+             <th>飛魚座</th>
+             <th>VOL</th>
+             <th>Volans</th>
+             <th>141.354</th>
+             <th>(7,47.73)</th>
+             <th>(-69,48.07)</th>
+             <th>飛魚座β(飛魚三)</th>
+             </tr>
+             <tr>
+             <th>天燕座</th>
+             <th>APS</th>
+             <th>Apus</th>
+             <th>206.327</th>
+             <th>(16,8.65)</th>
+             <th>(-75,18)</th>
+             <th>天燕座α(異雀八)</th>
+             </tr>
+             <tr>
+             <th>孔雀座</th>
+             <th>PAV</th>
+             <th>Pavo</th>
+             <th>377.666</th>
+             <th>(19,36.71)</th>
+             <th>(-65,46.89)</th>
+             <th>孔雀座α(孔雀十一)</th>
+             </tr>
+             <tr>
+             <th>鳳凰座</th>
+             <th>PHE</th>
+             <th>Phoenix</th>
+             <th>469.319</th>
+             <th>(0,55.91)</th>
+             <th>(-48,34.84)</th>
+             <th>鳳凰座α(火鳥六)</th>
+             </tr>
+             <tr>
+             <th>天鶴座</th>
+             <th>GRU</th>
+             <th>Grus</th>
+             <th>365.513</th>
+             <th>(22,27.39)</th>
+             <th>(-46,21.11)</th>
+             <th>天鶴座α(鶴一)</th>
+             </tr>
+             <tr>
+             <th>杜鵑座</th>
+             <th>TUC</th>
+             <th>Tucana</th>
+             <th>294.557</th>
+             <th>(23,46.64)</th>
+             <th>(-65,49.8)</th>
+             <th>杜鵑座α(鳥喙一)</th>
+             </tr>
+             <tr>
+             <th>蒼蠅座</th>
+             <th>MUS</th>
+             <th>Musca</th>
+             <th>138.355</th>
+             <th>(12,35.28)</th>
+             <th>(-70,9.66)</th>
+             <th>蒼蠅座α(蜜蜂三)</th>
+             </tr>
+             <tr>
+             <th>蝘蜓座</th>
+             <th>CHA</th>
+             <th>Chamaeleon</th>
+             <th>131.592</th>
+             <th>(10,41.53)</th>
+             <th>(-79,12.3)</th>
+             <th>蝘蜓座α(小斗增一)</th>
+             </tr>
+             <tr>
+             <th>印第安座</th>
+             <th>IND</th>
+             <th>Indus</th>
+             <th>294.006</th>
+             <th>(21,58.33)</th>
+             <th>(-59,42.4)</th>
+             <th>印第安座α(波斯二)</th>
+             </tr>
+            </table>
+            <br>
+            <h2>拉卡伊家族 (共13個星座)</h2>
+            <table border="1" style="margin-left: 2em;">
+                <tr>
+                <th style="width:180px;">Names</th>
+                <th style="width:50px;">Abbreviation</th>
+                <th style="width:130px;">Area (square degrees)</th>
+                <th style="width:100px;">Right Ascension (hours, minutes)</th>
+                <th style="width:100px;">Declination (degrees, minutes)</th>
+                <th style="width:200px;">Brightest Star</th>
+                </tr>
+             <tr>
+             <th>矩尺座</th>
+             <th>NOR</th>
+             <th>Norma</th>
+             <th>165.29</th>
+             <th>(15,54.18)</th>
+             <th>(-51,21.09)</th>
+             <th>矩尺座γ2(近波斯一)</th>
+             </tr>
+             <tr>
+             <th>圓規座</th>
+             <th>CIR</th>
+             <th>Circinus</th>
+             <th>93.353</th>
+             <th>(14,34.54)</th>
+             <th>(-63,1.82)</th>
+             <th>圓規座α(南門增二)</th>
+             </tr>
+             <tr>
+             <th>望遠鏡座</th>
+             <th>TEL</th>
+             <th>Telescopium</th>
+             <th>251.512</th>
+             <th>(19,19.54)</th>
+             <th>(-51,2.21)</th>
+             <th>望遠鏡座α(鱉一)</th>
+             </tr>
+             <tr>
+             <th>顯微鏡座</th>
+             <th>MIC</th>
+             <th>Microscopium</th>
+             <th>209.513</th>
+             <th>(20,57.88)</th>
+             <th>(-36,16.49)</th>
+             <th>顯微鏡座γ(璃瑜增一)</th>
+             </tr>
+             <tr>
+             <th>玉夫座</th>
+             <th>SCL</th>
+             <th>Sculptor</th>
+             <th>474.764</th>
+             <th>(0,26.28)</th>
+             <th>(-32,5.3)</th>
+             <th>玉夫座α(近土司空南)</th>
+             </tr>
+             <tr>
+             <th>天爐座</th>
+             <th>FOR</th>
+             <th>Fornax</th>
+             <th>397.502</th>
+             <th>(2,47.88)</th>
+             <th>(-31,38.07)</th>
+             <th>天爐座α(天苑增三)</th>
+             </tr>
+             <tr>
+             <th>雕具座</th>
+             <th>CAE</th>
+             <th>Caelum</th>
+             <th>124.865</th>
+             <th>(4,42.27)</th>
+             <th>(-37,52.9)</th>
+             <th>雕具座α(近天園增六)</th>
+             </tr>
+             <tr>
+             <th>時鐘座</th>
+             <th>HOR</th>
+             <th>Horologium</th>
+             <th>248.885</th>
+             <th>(3,16.56)</th>
+             <th>(-53,20.18)</th>
+             <th>時鐘座α(天園增六)</th>
+             </tr>
+             <tr>
+             <th>南極座</th>
+             <th>OCT</th>
+             <th>Octans</th>
+             <th>291.045</th>
+             <th>(23,0)</th>
+             <th>(-82,9.12)</th>
+             <th>南極座ν(蛇尾三)</th>
+             </tr>
+             <tr>
+             <th>山案座</th>
+             <th>MEN</th>
+             <th>Mensa</th>
+             <th>153.484</th>
+             <th>(5,24.9)</th>
+             <th>(-77,30.24)</th>
+             <th>山案座α(近附白一)</th>
+             </tr>
+             <tr>
+             <th>網罟座</th>
+             <th>RET</th>
+             <th>Reticulum</th>
+             <th>113.936</th>
+             <th>(3,55.27)</th>
+             <th>(-59,59.85)</th>
+             <th>網罟座α(夾白二)</th>
+             </tr>
+             <tr>
+             <th>繪架座</th>
+             <th>PIC</th>
+             <th>Pictor</th>
+             <th>246.739</th>
+             <th>(5,42.46)</th>
+             <th>(-53,28.45)</th>
+             <th>繪架座α(金魚增一)</th>
+             </tr>
+             <tr>
+             <th>唧筒座</th>
+             <th>ANT</th>
+             <th>Antlia</th>
+             <th>238.901</th>
+             <th>(10,16.43)</th>
+             <th>(-32,29.01)</th>
+             <th>唧筒座α(近天紀增二)</th>
+             </tr>
+            </table>
+            <br>
+        </div>
+    </div>
+    <script>
+        function showContent(contentId) {
+            // Hide all content divs
+            var contents = document.querySelectorAll('.classification');
+            contents.forEach(function(content) {
+                content.classList.remove('active');
+            });
+
+            // Show the selected content
+            var selectedContent = document.getElementById(contentId);
+            selectedContent.classList.add('active');
+        }
+
+        // Show the first content by default
+        showContent('season');
+    </script>
+    <br><br><br><br>
+    </div>
+
+
+    <div class="nav2">
+
+
+      <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+      <a href="#" data-text="TOP"><button type="button" id="BackTop" class="toTop-arrow"></button></a>
+      <script>
+      $(function () {
+        $('#BackTop').click(function () {
+          $('html,body').animate({scrollTop: 0}, 333);
+        });
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 100) {
+            $('#BackTop').fadeIn(222);
+          } else {
+            $('#BackTop').stop().fadeOut(222);
+          }
+        }).scroll();
+      });
+      </script>
+
+      <nav class="nav-box">
+        <input type="checkbox" id="menu">
+        <label for="menu" class="line">
+          <div class="menu"></div>
+        </label>
+
+        <div class="menu-list">
+         <ul>
+          <li><a class="custom-link" href="#meaning" id="change-color">Significance and Application</a></li>
+          <li><a class="custom-link" href="#motion" id="change-color">Motions</a></li>
+          <li><a class="custom-link" href="#88_constellation" id="change-color">Modern 88 Constellations</a></li>
+         </ul>
+        </div>
+     </nav>
+   </div>
+   </div>
+
+  <div class="footer">
+    <h2>純屬娛樂性質，非營利目的，版權歸所有</h2>
+  </div>
+  <script>
+    let cursor = document.getElementById("myCursor");
+    let circle = document.getElementById("circle");
+    window.addEventListener("mousemove", function (e) {
+      let x = e.clientX;
+      let y = e.clientY;
+      cursor.style.left = x - 20 + "px";
+      cursor.style.top = y - 20 + "px";
+      circle.style.left = x - 12 + "px";
+      circle.style.top = y - 12 + "px";
+    });
+
+    window.addEventListener("scroll", function (e) {
+      let x = event.clientX;
+      let y = event.clientY;
+      cursor.style.left = x - 20 + "px";
+      cursor.style.top = y - 20 + "px";
+      circle.style.left = x - 12 + "px";
+      circle.style.top = y - 12 + "px";
+    })
+
+  </script>
+  <script>
+    let links = document.querySelectorAll("a");
+
+    // 監聽每個超連結的 mouseover 事件
+    links.forEach(link => {
+      link.addEventListener("mouseover", function () {
+        // 改變特殊鼠標的尺寸
+        myCursor.style.width = "65px";
+        myCursor.style.height = "65px";
+        circle.style.width = "0px";
+        circle.style.height = "0px";
+        circle.style.boxShadow = "none";
+        // 獲取超連結的自定義文字內容屬性
+        let customText = link.getAttribute("data-text");
+
+        // 創建一個新的文字元素，並設置超連結的自定義文字內容
+        let textElement = document.createElement("div");
+        textElement.textContent = customText;
+        textElement.classList.add("cursor-text"); // 添加一個 CSS 類名以便於樣式設置
+
+        // 將文字元素添加到 myCursor 中
+        cursor.appendChild(textElement);
+      });
+
+      // 監聽 mouseout 事件以移除文字元素
+      link.addEventListener("mouseout", function () {
+        myCursor.style.width = "40px";
+        myCursor.style.height = "40px";
+        circle.style.width = "24px";
+        circle.style.height = "24px";
+        circle.style.boxShadow ="0px 0px 10px 2px rgba(250, 150, 50, 0.8), 0px 0px 20px 5px rgba(250, 102, 59, 0.6), 0px 0px 30px 10px rgba(250, 102, 59, 0.4)";
+        let textElement = document.querySelector(".cursor-text");
+        if (textElement) {
+          textElement.remove(); // 移除文字元素
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAIN PAGE</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/mainpage.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/cursor.css') }}">
+  <!--設定背景圖片(flask下只能在這裡設定，不能用css) -->
+  <style>
+    body {
+      background: url("{{ url_for('static', filename='picture/mainpage.gif') }}");
+    }
+  </style>
+  <!--重新整理時會自動回到頁面頂部 -->
+  <script src="{{ url_for('static', filename='js/refresh_to_top.js') }}"></script>
+
+</head>
+
+<body>
+  <div id="myCursor"></div>
+  <div id="circle"></div>
+  <div class="wrapper">
+    <div class="nav1">
+      <a class="custom-link" href="/" data-text="PREFACE"><img id="fade-in"
+          src="{{ url_for('static', filename='picture/astrology.png') }}"></a>
+    </div>
+    <div class="content">
+      <div class="fig-container">
+        <img id="main_fig" src="{{ url_for('static', filename='picture/Jack Frost.jpg') }}">
+
+        <p class="scroll-down" style="text-align:center;">SCROLL DOWN</p>
+        <div class="scroll-down">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 16l-6-6h12l-6 6z" fill="currentColor" />
+          </svg>
+        </div>
+      </div>
+      <div class="switch-container">
+        <button class="switch" style="color:#FFD700;">繁體中文</button>
+        <a class="custom-link" href="/mainpage_eng"><button class="switch">English</button></a>
+      </div>
+      </br></br>
+      <h1 id="introduction">INTRODUCTION</h1>
+      </br>
+      <h2 style="text-indent: 2em;">星空 (Skyfield)</h2>
+      <p style="margin-left: 3em;">
+        夕陽落下，夜幕低垂，繁星爭輝，這般景觀自古以來不知勾發了多少詩人墨客的思愁與好奇的心靈。是什麼神秘力量讓日夜規律交替、牽動日月星辰東昇西落？漆黑的夜空有多深邃？我們從哪裡來？將往何處去？天、地，以及天地之間的這一切有起點、終點嗎？千百年來同樣的問題一再出現，這些原本只屬於哲學與宗教範疇的問題，如今我們以科學的方法逐漸揭開宇宙天體的奧秘....
+      </p>
+      </br></br>
+      <div class="btn-container">
+        <a href="/skyfield"><button class="btn">More</button></a>
+      </div>
+      </br>
+      <h2 style="text-indent: 2em;">星座 (Constellation)</h2>
+      <p style="margin-left: 3em;">
+        是指天上一群在天球上投影的位置相近的恆星的組合。不同的文明和歷史時期對星座的劃分可能不同。現代星座大多由古希臘傳統星座演化而來，由國際天文學聯合會把全天精確劃分為八十八星座。
+      </p>
+      </br></br>
+      <div class="btn-container">
+        <a href="/constellation"><button class="btn">More</button></a>
+      </div>
+
+      </br></br></br></br></br></br>
+
+      <h1 id="history">HISTORY</h1>
+      <br>
+      <p style="margin-left: 3em;">
+        為了方便研究及觀測天上諸多恆星，人們把星空分為若干個區域，每一區就是一個星座。很難確切的說出人類是從何時開始有星座的概念的，這類天文知識遠在有歷史記載以前就被人們所領會。星座的名稱則很可能來源於早期航海的水手。不同地域的文明中，星座的起源可能完全不同，但是隨著各文明的擴張和相互影響，星座的文化也包含了融合的過程。
+      </p>
+      </br></br>
+      <div class="btn-container">
+        <a href="/history"><button class="btn">More</button></a>
+      </div>
+      </br></br></br></br></br></br>
+      <h1 id="creater">CHART_CREATER</h1>
+      </br></br>
+      <div class="star_map">
+        <div class="star_map1">
+          <h2 style="margin-left: 1em;">STAR_MAP CREATER
+          </h2>
+          <p style="margin-left: 2em;">
+            輸入自訂的時間、地點、仰角及方位，建立屬於自己的星空圖吧~~
+          </p>
+        </div>
+        <div class="star_map2">
+          <h2 style="margin-left: 1em;">SAMPLE
+          </h2>
+          <a class="custom-link" href="/generator1" data-text="START">
+            <img id="sample1" src="{{ url_for('static', filename='picture/sample1.png') }}" alt="Sample">
+          </a>
+        </div>
+      </div>
+      </br></br>
+      </br></br>
+      <div class="btn-container">
+        <a href="/creater"><button class="btn">More</button></a>
+      </div>
+        </br></br></br></br></br></br>
+        <h1 id="quiz">QUIZ</h1>
+        </br></br>
+        <div class="star_map">
+          <div class="star_map1">
+            <h2 style="margin-left: 1em;">ASTRONOMY KNOWLEDGE QUIZ
+            </h2>
+            <p style="margin-left: 2em;">
+              做個天文知識小測驗，測試自己的實力吧~~
+            </p>
+          </div>
+          <div class="star_map2">
+            <h2 style="margin-left: 1em;">SAMPLE
+            </h2>
+            <a class="custom-link" href="/quiz" data-text="START">
+              <img id="sample4" src="{{ url_for('static', filename='picture/sample4.png') }}" alt="Sample">
+            </a>
+          </div>
+        </div>
+      </br></br></br></br></br></br>
+      <div>
+        <!--設定按鈕可以顯示隱藏內容 -->
+        <h1><a href="#web" onclick="toggleHide('web')" title="" type="button" style="color: white;" id="change-color"
+            data-text="OPEN">REFERENCE</a><a name="bottom"></a></h1></br>
+        <div id="web" style="display: none;">
+          <a class="custom-link" href="/presentation" data-text="PPT">
+            <img id="ref_fig" src="{{ url_for('static', filename='picture/logo.gif') }}">
+          </a>
+          <ul>
+            <li><a href="https://zh.wikipedia.org/zh-tw/%E6%98%9F%E5%BA%A7#" id="change-color"
+                style="color: white; font-size: 18px;" target="_blank"
+                data-text="LINK">維基百科:https://zh.wikipedia.org/zh-tw/%E6%98%9F%E5%BA%A7# </a></li>
+            <li><a href="https://baike.baidu.hk/item/%E6%98%9F%E5%BA%A7/12781#3" id="change-color"
+                style="color: white; font-size: 18px;" target="_blank"
+                data-text="LINK">百度百科:https://baike.baidu.hk/item/%E6%98%9F%E5%BA%A7/12781#3 </a></li>
+            <li><a href="https://moodle.fg.tp.edu.tw/~tfgcoocs/blog/wp-content/uploads/2015/11/textbook10401_37_43.pdf"
+                id="change-color" style="color: white; font-size: 18px;" target="_blank"
+                data-text="LINK">教科書:https://moodle.fg.tp.edu.tw/~tfgcoocs/blog/wp-content/uploads/2015/11/textbook10401_37_43.pdf
+              </a></li>
+            <li><a href="https://home.gamer.com.tw/creationDetail.php?sn=4983451" id="change-color"
+                style="color: white; font-size: 18px;" target="_blank"
+                data-text="LINK">星座導覽:https://home.gamer.com.tw/creationDetail.php?sn=4983451 </a></li>
+            <li><a href="https://mynotes.org/earth/?p=7172" id="change-color" style="color: white; font-size: 18px;"
+                target="_blank" data-text="LINK">星空與宇宙:https://mynotes.org/earth/?p=7172 </a></li>
+            <li><a href="https://starwalk.space/zh-Hant/news/celestial-coordinates" id="change-color"
+                style="color: white; font-size: 18px;" target="_blank"
+                data-text="LINK">Starwalk:https://starwalk.space/zh-Hant/news/celestial-coordinates </a></li>
+            <li><a href="https://reader.readmoo.com/book/preview/210201075000101/OEBPS/9786267028797-2.xhtml"
+                id="change-color" style="color: white; font-size: 18px;" target="_blank"
+                data-text="LINK">春天的星空神話:https://reader.readmoo.com/book/preview/210201075000101/OEBPS/9786267028797-2.xhtml
+              </a></li>
+            <li><a href="https://taea.tn.edu.tw/main" id="change-color" style="color: white; font-size: 18px;"
+                target="_blank" data-text="LINK">南瀛天文館:https://taea.tn.edu.tw/main </a></li>
+            <li><a href="https://forum.gamer.com.tw/Co.php?bsn=60433&sn=544821" id="change-color"
+                style="color: white; font-size: 18px;" target="_blank"
+                data-text="LINK">四季的星星介紹or星座神話的美妙故事:https://forum.gamer.com.tw/Co.php?bsn=60433&sn=544821 </a></li>
+          </ul>
+        </div>
+        <script src="{{ url_for('static', filename='js/togglehide.js') }}"></script>
+      </div>
+      </br></br></br></br></br></br></br></br></br></br>
+
+    </div>
+
+
+    <div class="nav2">
+
+      <!--設定返回頂部的按鈕 -->
+      <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+      <a href="#" data-text="TOP"><button type="button" id="BackTop" class="toTop-arrow"></button></a>
+      <script src="{{ url_for('static', filename='js/scroll_to_top.js') }}"></script>
+
+      <nav class="nav-box">
+        <input type="checkbox" id="menu">
+        <label for="menu" class="line">
+          <div class="menu"></div>
+        </label>
+
+        <div class="menu-list">
+          <ul>
+            <li><a class="custom-link" href="#introduction" id="change-color">Introduction</a></li>
+            <li><a class="custom-link" href="#history" id="change-color">History</a></li>
+            <li><a class="custom-link" href="#creater" id="change-color">Chart_Creater</a></li>
+            <li><a class="custom-link" href="#quiz" id="change-color">Quiz</a></li>
+            <li><a class="custom-link" href="#bottom" id="change-color">Reference</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="footer">
+    <h2>純屬娛樂性質，非營利目的，版權歸所有</h2>
+  </div>
+  <!--設定鼠標延遲效果 -->
+  <script src="{{ url_for('static', filename='js/cursor_circle.js') }}"></script>
+  <!--設定鼠標碰到超連結時會放大+文字 -->
+  <script src="{{ url_for('static', filename='js/mouse_link.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator2</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/generator2_result.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cursor.css') }}">
+    <style>
+        body {
+               background: url("{{ url_for('static', filename='picture/meteor.gif') }}");
+        }
+    </style>
+    <script>
+    window.onload = function () {
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      window.scrollTo(0, 0);
+    }
+  </script>
+  
+</head>
+
+<body>
+  <div id="myCursor"></div>
+  <div id="circle"></div>
+  <div class="wrapper">
+    <div class="nav1">
+      <a class="custom-link" href="/creater_eng" data-text="CREATER"><img id="fade-in" src="{{ url_for('static', filename='picture/astrology.png') }}"></a>
+    </div>
+    <div class="content" style="text-align: center;">
+        <h1>Created Successfully!!</h1>
+        <h2>Here is your star map:</h2>
+        <img src="{{ url_for('static', filename='picture/star_chart.png') }}" alt="Star Chart">
+        <br><br><br>
+        <a href="/generator2_eng" style="color: white;" class="custom-link" data-text="BACK"><button type="submit" class="btn">Create Another</button></a>
+        <br><br><br>
+    </div>
+
+  </div>
+  <div class="nav2">
+
+
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+    <a href="#" data-text="TOP"><button type="button" id="BackTop" class="toTop-arrow"></button></a>
+    <script>
+      $(function () {
+        $('#BackTop').click(function () {
+          $('html,body').animate({scrollTop: 0}, 333);
+        });
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 100) {
+            $('#BackTop').fadeIn(222);
+          } else {
+            $('#BackTop').stop().fadeOut(222);
+          }
+        }).scroll();
+      });
+    </script>
+
+    <nav class="nav-box">
+      <input type="checkbox" id="menu">
+      <label for="menu" class="line">
+        <div class="menu"></div>
+      </label>
+
+      <div class="menu-list">
+
+      </div>
+    </nav>
+  </div>
+  </div>
+  </div>
+  <div class="footer">
+    <h2>For entertainment purposes only, non-profit, all rights reserved.</h2>
+  </div>
+  <script>
+    let cursor = document.getElementById("myCursor");
+    let circle = document.getElementById("circle");
+    window.addEventListener("mousemove", function (e) {
+      let x = e.clientX;
+      let y = e.clientY;
+      cursor.style.left = x - 20 + "px";
+      cursor.style.top = y - 20 + "px";
+      circle.style.left = x - 12 + "px";
+      circle.style.top = y - 12 + "px";
+    });
+
+    window.addEventListener("scroll", function (e) {
+      let x = event.clientX;
+      let y = event.clientY;
+      cursor.style.left = x - 20 + "px";
+      cursor.style.top = y - 20 + "px";
+      circle.style.left = x - 12 + "px";
+      circle.style.top = y - 12 + "px";
+    })
+
+  </script>
+  <script>
+    let links = document.querySelectorAll("a");
+
+    // 監聽每個超連結的 mouseover 事件
+    links.forEach(link => {
+      link.addEventListener("mouseover", function () {
+        // 改變特殊鼠標的尺寸
+        myCursor.style.width = "65px";
+        myCursor.style.height = "65px";
+        circle.style.width = "0px";
+        circle.style.height = "0px";
+        circle.style.boxShadow = "none";
+        // 獲取超連結的自定義文字內容屬性
+        let customText = link.getAttribute("data-text");
+
+        // 創建一個新的文字元素，並設置超連結的自定義文字內容
+        let textElement = document.createElement("div");
+        textElement.textContent = customText;
+        textElement.classList.add("cursor-text"); // 添加一個 CSS 類名以便於樣式設置
+
+        // 將文字元素添加到 myCursor 中
+        cursor.appendChild(textElement);
+      });
+
+      // 監聽 mouseout 事件以移除文字元素
+      link.addEventListener("mouseout", function () {
+        myCursor.style.width = "40px";
+        myCursor.style.height = "40px";
+        circle.style.width = "24px";
+        circle.style.height = "24px";
+        circle.style.boxShadow = "0px 0px 10px 2px rgba(250, 150, 50, 0.8), 0px 0px 20px 5px rgba(250, 102, 59, 0.6), 0px 0px 30px 10px rgba(250, 102, 59, 0.4)";
+        let textElement = document.querySelector(".cursor-text");
+        if (textElement) {
+          textElement.remove(); // 移除文字元素
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

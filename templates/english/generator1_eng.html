@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator1</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/generator1.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cursor.css') }}">
+    <style>
+        body {
+               background: url("{{ url_for('static', filename='picture/meteor.gif') }}");
+        }
+    </style>
+    <script>
+    window.onload = function () {
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      window.scrollTo(0, 0);
+    }
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.getElementById('year').addEventListener('blur', validateYear);
+      document.getElementById('month').addEventListener('blur', validateMonth);
+      document.getElementById('day').addEventListener('blur', validateDay);
+      document.getElementById('hour').addEventListener('blur', validateHour);
+      document.getElementById('minute').addEventListener('blur', validateMinute);
+      document.getElementById('altitude').addEventListener('blur', validateAltitude);
+      document.getElementById('azimuth').addEventListener('blur', validateAzimuth);
+    });
+
+    function validateYear() {
+      let year = document.getElementById('year').value;
+      if (year && (year < 1550 || year > 2650)) {
+        alert("The year must be between 1550 and 2650.");
+        document.getElementById('year').value = '';
+      }
+    }
+
+    function validateMonth() {
+      let month = document.getElementById('month').value;
+      if (month && (month < 1 || month > 12)) {
+        alert("The month must be between 1 and 12.");
+        document.getElementById('month').value = '';
+      }
+    }
+
+    function validateDay() {
+      let day = document.getElementById('day').value;
+      if (day && (day < 1 || day > 31)) {
+        alert("The date must be between 1 and 31.");
+        document.getElementById('day').value = '';
+      }
+    }
+
+    function validateHour() {
+      let hour = document.getElementById('hour').value;
+      if (hour && (hour < 0 || hour > 23)) {
+        alert("The hour must be between 0 and 23.");
+        document.getElementById('hour').value = '';
+      }
+    }
+
+    function validateMinute() {
+      let minute = document.getElementById('minute').value;
+      if (minute && (minute < 0 || minute > 59)) {
+        alert("The minute must be between 0 and 59.");
+        document.getElementById('minute').value = '';
+      }
+    }
+    
+    function validateAltitude() {
+      let altitude = document.getElementById('altitude').value;
+      if (altitude && (altitude < 0 || altitude > 90)) {
+        alert("The altitude must be between 0 and 90.");
+        document.getElementById('altitude').value = '';
+      }
+    }
+    
+    function validateAzimuth() {
+      let azimuth = document.getElementById('azimuth').value;
+      if (azimuth && (azimuth < 0 || azimuth > 360)) {
+        alert("The azimuth must be between 0 and 360.");
+        document.getElementById('azimuth').value = '';
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div id="myCursor"></div>
+  <div id="circle"></div>
+  <div class="wrapper">
+    <div class="nav1">
+      <a class="custom-link" href="/creater_eng" data-text="CREATER"><img id="fade-in" src="{{ url_for('static', filename='picture/astrology.png') }}"></a>
+    </div>
+    <div class="content" style="text-align: center;">
+    <div class="hr-container">
+      <h1><span class="hr-text">STAR_MAP</span>
+      </h1>
+      <hr class="custom-hr">
+    </div>
+    </br>
+      <form action="/generator1_eng" method="post">
+        <div id="location_time">
+          <div class="form">
+            <p><label for="location">Location:</label></p>
+            <input class="form-name" placeholder="Please input location:" type="text" id="location" name="location" required
+              autocomplete="off"><br>
+            <p style="color:red;">{{location_error}}</p>
+          </div>
+          <br>
+          <div class="form">
+            <p><label for="year">Year (YYYY):</label></p>
+            <input class="form-name" placeholder="Please input year(1550~2650):" type="number" id="year" name="year" required
+              autocomplete="off"><br>
+          </div>
+          <br>
+          <div class="form">
+            <p><label for="month">Month (MM):</label></p>
+            <input class="form-name" placeholder="Please input month:" type="number" id="month" name="month" required
+              autocomplete="off"><br>
+          </div>
+          <br>
+          <div class="form">
+            <p><label for="day">Day (DD):</label></p>
+            <input class="form-name" placeholder="Please input date:" type="number" id="day" name="day" required
+              autocomplete="off"><br>
+           <p style="color:red;">{{date_error}}</p>
+          </div>
+          <br>
+          <div class="form">
+            <p><label for="hour">Hour (HH):</label></p>
+            <input class="form-name" placeholder="Please input hour:" type="number" id="hour" name="hour" required
+              autocomplete="off"><br>
+          </div>
+          <br>
+          <div class="form">
+            <p><label for="minute">Minute (MM):</label></p>
+            <input class="form-name" placeholder="Please input minute:" type="number" id="minute" name="minute" required
+              autocomplete="off"><br>
+          </div>
+          <br>
+          <div class="form">
+            <p><label for="altitude">Altitude :</label></p>
+            <input class="form-name" placeholder="Please input altitude(0~90):" type="number" id="altitude" name="altitude" required autocomplete="off"><br>
+          </div>
+          <br>
+          <div class="form">
+            <p><label for="azimuth">Azimuth :</label></p>
+            <input class="form-name" placeholder="PLease input azimuth(0~360):" type="number" id="azimuth" name="azimuth" required autocomplete="off"><br>
+          </div>
+          <br>
+          <div class="checkbox">
+            <input class="form-name" type="checkbox" id="draw_lines" name="draw_lines">
+            <label for="draw_lines">Constellation Lines</label>
+            <input class="form-name" type="checkbox" id="draw_constellation_names" name="draw_constellation_names">
+            <label for="draw_constellation_names">Constellation Names</label><br>
+          </div>
+          <br>
+          <a class="custom-link" data-text="SUBMIT"><button type="submit" class="btn">CREATE</button></a>
+        </div>
+      </form>
+        <br><br>
+    </div>
+
+  </div>
+  <div class="nav2">
+
+
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+    <a href="#" data-text="TOP"><button type="button" id="BackTop" class="toTop-arrow"></button></a>
+    <script>
+      $(function () {
+        $('#BackTop').click(function () {
+          $('html,body').animate({scrollTop: 0}, 333);
+        });
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 100) {
+            $('#BackTop').fadeIn(222);
+          } else {
+            $('#BackTop').stop().fadeOut(222);
+          }
+        }).scroll();
+      });
+    </script>
+
+    <nav class="nav-box">
+      <input type="checkbox" id="menu">
+      <label for="menu" class="line">
+        <div class="menu"></div>
+      </label>
+
+      <div class="menu-list">
+
+      </div>
+    </nav>
+  </div>
+  </div>
+  </div>
+  <div class="footer">
+    <h2>For entertainment purposes only, non-profit, all rights reserved.</h2>
+  </div>
+  <script>
+    let cursor = document.getElementById("myCursor");
+    let circle = document.getElementById("circle");
+    window.addEventListener("mousemove", function (e) {
+      let x = e.clientX;
+      let y = e.clientY;
+      cursor.style.left = x - 20 + "px";
+      cursor.style.top = y - 20 + "px";
+      circle.style.left = x - 12 + "px";
+      circle.style.top = y - 12 + "px";
+    });
+
+    window.addEventListener("scroll", function (e) {
+      let x = event.clientX;
+      let y = event.clientY;
+      cursor.style.left = x - 20 + "px";
+      cursor.style.top = y - 20 + "px";
+      circle.style.left = x - 12 + "px";
+      circle.style.top = y - 12 + "px";
+    })
+
+  </script>
+  <script>
+    let links = document.querySelectorAll("a");
+
+    // 監聽每個超連結的 mouseover 事件
+    links.forEach(link => {
+      link.addEventListener("mouseover", function () {
+        // 改變特殊鼠標的尺寸
+        myCursor.style.width = "65px";
+        myCursor.style.height = "65px";
+        circle.style.width = "0px";
+        circle.style.height = "0px";
+        circle.style.boxShadow = "none";
+        // 獲取超連結的自定義文字內容屬性
+        let customText = link.getAttribute("data-text");
+
+        // 創建一個新的文字元素，並設置超連結的自定義文字內容
+        let textElement = document.createElement("div");
+        textElement.textContent = customText;
+        textElement.classList.add("cursor-text"); // 添加一個 CSS 類名以便於樣式設置
+
+        // 將文字元素添加到 myCursor 中
+        cursor.appendChild(textElement);
+      });
+
+      // 監聽 mouseout 事件以移除文字元素
+      link.addEventListener("mouseout", function () {
+        myCursor.style.width = "40px";
+        myCursor.style.height = "40px";
+        circle.style.width = "24px";
+        circle.style.height = "24px";
+        circle.style.boxShadow = "0px 0px 10px 2px rgba(250, 150, 50, 0.8), 0px 0px 20px 5px rgba(250, 102, 59, 0.6), 0px 0px 30px 10px rgba(250, 102, 59, 0.4)";
+        let textElement = document.querySelector(".cursor-text");
+        if (textElement) {
+          textElement.remove(); // 移除文字元素
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
